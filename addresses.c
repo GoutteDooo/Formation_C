@@ -8,9 +8,10 @@ int main(int argc, char* argv[])
         printf("error\n");
         return 1;
     }
-    int i = get_int("i: ");
+    int i = get_int("it: ");
     int j = get_int("j: ");
-    printf("i: %i\n",i);
+    printf("it: %i\n",i);
     printf("j: %i\n",j);
+    printf("%s\n",argv[1]);
     return 0;
 }
