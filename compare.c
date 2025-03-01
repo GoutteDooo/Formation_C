@@ -16,4 +16,5 @@ int main(void)
     {
         printf("different!\n");
     }
+    printf("after s: %p\n", &s[0]);
 }
