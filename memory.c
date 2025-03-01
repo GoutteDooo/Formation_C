@@ -7,5 +7,5 @@ int main(void)
   x[1] = 72;
   x[2] = 73;
   x[3] = 33;
-  return 0;
+  return 1;
 }
