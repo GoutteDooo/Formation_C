@@ -8,10 +8,15 @@ int main(int argc, char* argv[])
         printf("error\n");
         return 1;
     }
-    int i = get_int("i: ");
-    int j = get_int("j: ");
-    printf("it: %i\n",i);
-    printf("j: %i\n",j);
-    printf("%s\n",argv[1]);
+    int i = get_string("i: ");
+    int j = get_string("j: ");
+    if (strcmp(i,j) == 0)
+    {
+        printf("same\n");
+    }
+    else
+    {
+        printf("diff\n");
+    }
     return 0;
 }
