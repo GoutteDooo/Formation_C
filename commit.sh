@@ -1,6 +1,6 @@
 #!/bin/bash
 git aa
-git datecommit
+./git_datecommit.sh
 
 #!/bin/bash
 while true; do
@@ -12,7 +12,7 @@ while true; do
         git aa
 
         # Commiter avec la date actuelle
-        git datecommit
+        ./git_datecommit.sh
 
         # (Optionnel) Pousser automatiquement les commits
         # git push origin main  # ou la branche sur laquelle tu travailles
