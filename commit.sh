@@ -13,7 +13,7 @@ while true; do
         git aa
 
         # Commiter avec la date actuelle
-        git commit -m "$commit_message"
+        git commit -m $commit_message
 
         # (Optionnel) Pousser automatiquement les commits
         # git push origin main  # ou la branche sur laquelle tu travailles
