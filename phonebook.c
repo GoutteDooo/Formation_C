@@ -4,11 +4,11 @@
 
 int main(void)
 {
-  FILE *file = fopen("phonebook.csv", "w");//w = write
+  FILE *file = fopen("phonebook.csv", "a");//w = write, a = append
   char *name = get_string("Name: ");
   char *number = get_string("Number: ");
 
-  fprintf(file, "%s,%s\n", name, number);
+  fprintf(file, "%s: %s\n", name, number);
 
   fclose(file);
 
