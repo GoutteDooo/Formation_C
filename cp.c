@@ -1,10 +1,17 @@
 #include <stdio.h>
 #include <stdint.h>
 
+typedef uint8_t BYTE;//unsigned 8 bits int
+
 int main(int argc, char *argv[])
 {
-  FILE *src = fopen(argv[1], "r");
-  FILE *dst = fopen(argv[2], "w");
+  if (argc < 2)
+  {
+    printf("error\n");
+    return 2;
+  }
+  FILE *src = fopen(argv[1], "rb");//read in binary
+  FILE *dst = fopen(argv[2], "wb");
   if (src == NULL || dst == NULL)
   {
     return 1;
