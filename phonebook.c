@@ -1,3 +1,4 @@
+#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -10,6 +11,6 @@ int main(void)
   fprintf(file, "%s,%s\n", name, number);
 
   fclose(file);
-  
+
   return 0;
 }
