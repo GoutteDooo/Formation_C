@@ -4,6 +4,7 @@
 
 int main(int argc, char* argv[])
 {
+  if (argc != 2) return 1;
   char* file = argv[1];
   int r_queue = strlen(file) - 5;
   char* pdf_buffer = malloc(4);
