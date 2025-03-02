@@ -6,12 +6,17 @@
 int main(void)
 {
   int *x;
-  // int *y;
+  int *y;
 
   x = malloc(sizeof(int));
 
   *x = 42;
 
-  printf("x = %li\n",x);
+  y = x;
+
+  *y = 13;
+
+  printf("x = %i\n",*x);
+  printf("y = %i\n",*y);
   return 0;
 }
