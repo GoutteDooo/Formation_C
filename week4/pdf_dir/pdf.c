@@ -15,11 +15,12 @@ int main(int argc, char* argv[])
 
   fread(buffer, sizeof(uint8_t), 4, input);
 
-  if (buffer == signature)
+  if (strcmp(buffer, signature) == 0)
   {
     printf("Success!\n");
     return 0;
   }
+  printf("%s, %s\n", buffer, signature);
   printf("Nope.\n");
 
   fclose(input);
