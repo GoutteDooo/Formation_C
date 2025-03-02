@@ -1,7 +1,6 @@
+#include <cs50.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <stdint.h>
-#include <string.h>
 
 
 int main(int argc, char* argv[])
@@ -20,7 +19,7 @@ int main(int argc, char* argv[])
     if (buffer[i] != signature[i])
     {
       printf("Nope.\n");
-      // return 1;
+      return 1;
     }
   }
   /*
