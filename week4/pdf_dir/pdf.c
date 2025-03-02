@@ -15,14 +15,23 @@ int main(int argc, char* argv[])
 
   fread(buffer, sizeof(uint8_t), 4, input);
 
+  for (int i = 0; i < 4; i++)
+  {
+    if (buffer[i] != signature[i])
+    {
+      printf("Nope.\n");
+      return 1;
+    }
+  }
+  /*
   if (strcmp(buffer, signature) == 0)
   {
     printf("Success!\n");
     return 0;
   }
+  */
   printf("%s, %s\n", buffer, signature);
-  printf("Nope.\n");
-
+  printf("Success!\n");
   fclose(input);
   return 0;
 }
