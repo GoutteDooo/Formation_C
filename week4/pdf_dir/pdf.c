@@ -29,7 +29,6 @@ int main(int argc, char* argv[])
     return 0;
   }
   */
-  printf("%s, %s\n", buffer, signature);
   printf("Success!\n");
   fclose(input);
   return 0;
