@@ -16,6 +16,12 @@ int main(void)
 void swap(int *a, int *b)
 {
   int tmp = *a;
+  printf("tmp: %i\n",tmp);
+  printf("a before: %i\n",*a);
   *a = *b;
+  printf("a after: %i\n",*a);
+  printf("b before: %i\n",*b);
   *b = tmp;
+  printf("b after: %i\n",*b);
+
 }
