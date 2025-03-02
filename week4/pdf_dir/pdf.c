@@ -17,11 +17,11 @@ int main(int argc, char* argv[])
   {
     if (buffer[i] != signature[i])
     {
-      printf("Nope.\n");
+      printf("This is not a PDF File.\n");
       return 0;
     }
   }
-  printf("Success!\n");
+  printf("This is a PDF File!\n");
   fclose(input);
   return 0;
 }
