@@ -6,9 +6,7 @@ int main(void)
 {
   int a = 12;
   int b = 33;
-  int *pa = a;
-  int *pb = b;
-  swap(pa,pb);
+  swap(&a,&b);
 
   printf("a: %i\n",a);
   printf("b: %i\n",b);
