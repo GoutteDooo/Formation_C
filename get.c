@@ -3,8 +3,9 @@
 
 int main(void)
 {
-  int n;
-  printf("n: ");
-  scang("%i", &n);
+  char *s;
+  printf("s: ");
+  scanf("%s", s);
+  printf("s: %s\n", s);
   return 0;
 }
