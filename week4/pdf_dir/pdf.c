@@ -8,7 +8,7 @@ typedef uint8_t BYTE;
 int main(int argc, char* argv[])
 {
   if (argc != 2) return 1;
-  FILE *input = fopen(argv[1], "rb");
+  FILE* input = fopen(argv[1], "r");
 
   BYTE b;
 
