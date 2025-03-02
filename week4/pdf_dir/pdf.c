@@ -1,4 +1,3 @@
-#include <cs50.h>
 #include <stdio.h>
 #include <stdint.h>
 
@@ -22,13 +21,6 @@ int main(int argc, char* argv[])
       return 1;
     }
   }
-  /*
-  if (strcmp(buffer, signature) == 0)
-  {
-    printf("Success!\n");
-    return 0;
-  }
-  */
   printf("Success!\n");
   fclose(input);
   return 0;
