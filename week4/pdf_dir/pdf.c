@@ -3,14 +3,13 @@
 #include <stdint.h>
 #include <string.h>
 
-typedef uint8_t BYTE;
 
 int main(int argc, char* argv[])
 {
   if (argc != 2) return 1;
   FILE* input = fopen(argv[1], "r");
 
-  BYTE b;
+  uint8_t b[4];//size of byte : unsigned int (8B)
 
   while(fread(&b, sizeof(b), 4, input))
   {
