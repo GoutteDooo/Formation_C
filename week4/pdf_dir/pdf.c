@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     if (buffer[i] != signature[i])
     {
       printf("Nope.\n");
-      return 1;
+      // return 1;
     }
   }
   /*
