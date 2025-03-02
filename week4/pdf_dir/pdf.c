@@ -11,11 +11,10 @@ int main(int argc, char* argv[])
 
   uint8_t b[4];//size of byte : unsigned int (8B)
 
-  while(fread(&b, sizeof(b), 4, input))
-  {
-    printf("reading...");
-  }
-  printf("\n");
+  uint8_t signature[] = {0x25, 0X50, 0x44, 0x46}
+
+  fread(buffer, sizeof())
+
   fclose(input);
   return 0;
 }
