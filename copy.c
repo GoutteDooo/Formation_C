@@ -12,9 +12,9 @@ int main(void)
   {
     return 1;
   }
-  for (int i = 0; i < strlen(s) + 1; i++)
+  for (int i = 0, n = strlen(s) + 1; i < n; i++)
   {
-    printf("memory loc: %p, contain value: %i\n", &t[i], t[i]);
+    printf("memory loc: %p, contain value: %c\n", &t[i], t[i]);
   }
 
   strcpy(t,s);
