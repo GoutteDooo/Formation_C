@@ -4,12 +4,12 @@ void swap(int *a, int *b);
 
 int main(void)
 {
-  int a = 12;
-  int b = 33;
-  swap(&a,&b);
+  int x = 12;
+  int y = 33;
+  swap(&x,&y);
 
-  printf("a: %i\n",a);
-  printf("b: %i\n",b);
+  printf("x: %i\n",x);
+  printf("y: %i\n",y);
   return 0;
 }
 
