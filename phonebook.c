@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main(void)
 {
@@ -17,5 +18,5 @@ int main(void)
 
   fclose(file);
 
-  return 0;
+  return EXIT_SUCCESS;
 }
