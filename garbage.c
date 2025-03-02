@@ -18,5 +18,6 @@ int main(void)
 
   printf("x = %i\n",*x);
   printf("y = %i\n",*y);
+  free(x);
   return 0;
 }
