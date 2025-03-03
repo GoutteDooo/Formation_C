@@ -48,10 +48,10 @@ int main(int argc, char *argv[])
     // TODO: Read samples from input file and write updated data to output file
     uint16_t* c;
     printf("end of input: \n");
-    while (fread(c, sizeof(uint16_t), 1, output))
+    while (fread(&c, sizeof(uint16_t), 1, input) != EOF)
     {
         printf("%hn",c);
-        fputc(c,output);
+        fputc(*c,output);
     }
     /*
     printf("buffer content: \n");
