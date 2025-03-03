@@ -8,7 +8,7 @@ int main(void)
 {
   int* pk = malloc(1);
   *pk = get_int("k: ");
-  printf("k= %i\n", *pk);
+  printf("k= %i, pk= %p\n", *pk,pk);
   return 0;
 }
 
