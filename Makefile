@@ -1,5 +1,5 @@
 # MODIFIER LE NOM DU COMP_FILE POUR LA COMPILATION
-COMP_FILE = read
+COMP_FILE = pointers
 
 
 # Définition des dossiers
