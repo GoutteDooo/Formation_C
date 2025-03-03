@@ -6,7 +6,7 @@ int vdecrement(int x);
 
 int main(void)
 {
-  int* pk = malloc(1);
+  int* pk = malloc(sizeof(int));
   *pk = get_int("k: ");
   printf("k= %i, pk= %p\n", *pk,pk);
   free(pk);
