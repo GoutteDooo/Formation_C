@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
     while (fread(&buffer16, sizeof(uint16_t), 1, input))
     {
         buffer16 *= factor;
+        printf("%u,",buffer16);
         fwrite(&buffer16, sizeof(uint16_t), 1, output);
     }
     printf("\n");
