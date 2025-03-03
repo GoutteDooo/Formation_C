@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     fread(buffer, sizeof(uint8_t), HEADER_SIZE, input);
     fwrite(buffer, sizeof(uint8_t), HEADER_SIZE, output);
     // TODO: Read samples from input file and write updated data to output file
-    uint16_t* c;
+    uint16_t* c = malloc();
     printf("end of input: \n");
     while (fread(c, sizeof(uint16_t), 1, input))
     {
