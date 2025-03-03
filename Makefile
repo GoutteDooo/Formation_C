@@ -1,5 +1,7 @@
 # MODIFIER LE NOM DU COMP_FILE POUR LA COMPILATION
-COMP_FILE = recursive
+COMP_FILE = pointers
+
+
 # Définition des dossiers
 ROOT_DIR := $(patsubst %/, %, $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 SRC_DIR = $(ROOT_DIR)/week4/$(COMP_FILE)
