@@ -14,7 +14,8 @@ int fact(int n);
 */
 int main(void)
 {
-  printf("n= %i\n",fact(4));
+  int f = get_int("f: ");
+  printf("n= %i\n",fact(f));
   return 0;
 }
 
@@ -46,6 +47,15 @@ void recursive(int c)
 }
 
 
+/**
+  fact(1) <-- 1
+  fact(2) <-- 2 * 1 = 2
+  fact(3) <-- 3 * 2 = 6
+  fact(4) <-- 4 * 6 = 24
+  fact(5) <-- 5 * 24 = 120
+  printf() <-- 120
+  main()  <-- return 0 "EXIT_SUCCESS"
+*/
 int fact(int n)
 {
   printf("f= %i\n",n);
