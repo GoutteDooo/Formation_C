@@ -1,3 +1,5 @@
+ROOT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+
 CC = gcc
 CFLAGS = -Wall -Wextra
 LDLIBS = -lcs50
