@@ -46,11 +46,19 @@ int main(int argc, char *argv[])
     fread(buffer, sizeof(uint8_t), HEADER_SIZE, input);
     fwrite(buffer, sizeof(uint8_t), HEADER_SIZE, output);
     // TODO: Read samples from input file and write updated data to output file
+    char c;
+    printf("end of input: \n");
+    while ((c = fgetc(input)) != EOF)
+    {
+        printf("%c",c);
+    }
+    /*
     printf("buffer content: \n");
     for (int i = 0; i < HEADER_SIZE; i++)
     {
         printf("%c",buffer[i]);
     }
+    */
     printf("\n");
     // Close files
     fclose(input);
