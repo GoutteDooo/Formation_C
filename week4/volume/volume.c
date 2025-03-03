@@ -40,16 +40,18 @@ int main(int argc, char *argv[])
     }
     printf("\n");
     */
-    // float factor = atof(argv[3]);
     // TODO: Copy header from input file to output file
     uint8_t* buffer = malloc(HEADER_SIZE);
     fread(buffer, sizeof(uint8_t), HEADER_SIZE, input);
     fwrite(buffer, sizeof(uint8_t), HEADER_SIZE, output);
     free(buffer);
+
+    float factor = atof(argv[3]);
     // TODO: Read samples from input file and write updated data to output file
     uint16_t buffer16;
     while (fread(&buffer16, sizeof(uint16_t), 1, input))
     {
+        buffer16 *= factor;
         fwrite(&buffer16, sizeof(uint16_t), 1, output);
     }
     printf("\n");
