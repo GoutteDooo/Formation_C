@@ -8,11 +8,10 @@ int main(int argc, char* argv[])
   char ch;
   while ((ch = fgetc(input)) != EOF)
   {
-    printf("%c",ch);
     fputc(ch, output);
   }
   fclose(input);
   fclose(output);
-  printf("succes.\n");
+  printf("Success.\n");
   return 0;
 }
