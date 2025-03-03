@@ -4,11 +4,10 @@ CC = gcc
 CFLAGS = -Wall -Wextra
 LDLIBS = -lcs50
 
-SRC_DIR = $(ROOT_DIR)/week4
-BUILD_DIR = $(ROOT_DIR)/build
-INCLUDE_DIR = $(ROOT_DIR)/include
+SRC_DIR = $(ROOT_DIR)/week4/recursive
+BUILD_DIR = $(ROOT_DIR)
 
-all: $(BUILD_DIR)/recursive
+all: $(BUILD_DIR)
 
 $(BUILD_DIR)/recursive: $(SRC_DIR)/recursive.c
 	$(CC) $(CFLAGS) -I$(INCLUDE_DIR) $^ $(LDLIBS) -o $@

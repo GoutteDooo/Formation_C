@@ -58,7 +58,7 @@ void recursive(int c)
 */
 int fact(int n)
 {
-  printf("f= %i\n",n);
+  // printf("f= %i\n",n);
   if (n == 1)
   {
     return 1;
