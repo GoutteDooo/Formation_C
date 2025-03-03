@@ -48,27 +48,11 @@ int main(int argc, char *argv[])
     free(buffer);
     // TODO: Read samples from input file and write updated data to output file
     uint16_t* buffer16;
-    printf("end of input: \n");
-    /*
-    while (fread(&buffer16, sizeof(uint16_t), 1, input))
+    while (fread(buffer16, sizeof(uint16_t), 1, input))
     {
-        printf("%d",buffer16);
-        fputc(buffer16,output);
-    }
-    */
-    int i = 0;
-    while (fread(buffer16, sizeof(uint16_t), 1000, input))
-    {
-        printf("%i",i++);
         fwrite(buffer16, sizeof(int16_t), 1, output);
     }
-    /*
-    printf("buffer content: \n");
-    for (int i = 0; i < HEADER_SIZE; i++)
-    {
-        printf("%c",buffer[i]);
-    }
-    */
+    free(buffer16);
     printf("\n");
     // Close files
     fclose(input);
