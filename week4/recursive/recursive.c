@@ -1,12 +1,20 @@
 #include <cs50.h>
 #include <stdio.h>
-void recursive(int c);
+void recursive(int c);//for testing
 int fact(int n);
 
+/**
+  fact(1)
+  fact(2)
+  fact(3)
+  fact(4)
+  fact(5)
+  printf()
+  main()
+*/
 int main(void)
 {
-  int f = fact(4);
-  printf("f= %i\n",f);
+  printf("n= %i\n",fact(4));
   return 0;
 }
 
@@ -36,6 +44,7 @@ void recursive(int c)
   }
   printf("\n");
 }
+
 
 int fact(int n)
 {
