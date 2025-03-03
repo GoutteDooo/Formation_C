@@ -5,15 +5,9 @@ int vdecrement(int x);
 
 int main(void)
 {
-  int k = 52;
-  int* pk = &k;
-  int* pn = NULL;
-  printf("k before dec: %i\n", k);
-  pdecrement(pk);
-  printf("k after pdec: %i\n", k);
-  k = vdecrement(k);
-  printf("k after vdec: %i\n", k);
-  printf("pn: %i\n", *pn);
+  int* pk = malloc(1);
+  *pk = get_int("k: ");
+  printf("k= %i\n"; *pk);
   return 0;
 }
 
