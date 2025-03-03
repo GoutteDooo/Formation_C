@@ -56,8 +56,12 @@ int main(int argc, char *argv[])
         fputc(buffer16,output);
     }
     */
-    ;
-    printf("%d",fread(buffer16, sizeof(uint16_t), 1, input));
+    int i = 0;
+    while (fread(buffer16, sizeof(uint16_t), 1000, input))
+    {
+        printf("%i",i++);
+        fwrite(buffer16, sizeof(int16_t), 1, output);
+    }
     /*
     printf("buffer content: \n");
     for (int i = 0; i < HEADER_SIZE; i++)
