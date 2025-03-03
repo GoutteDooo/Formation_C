@@ -41,19 +41,19 @@ int main(int argc, char *argv[])
     printf("\n");
     */
     // TODO: Copy header from input file to output file
-    uint8_t* buffer = malloc(HEADER_SIZE);
-    fread(buffer, sizeof(uint8_t), HEADER_SIZE, input);
-    fwrite(buffer, sizeof(uint8_t), HEADER_SIZE, output);
+    int8_t* buffer = malloc(HEADER_SIZE);
+    fread(buffer, sizeof(int8_t), HEADER_SIZE, input);
+    fwrite(buffer, sizeof(int8_t), HEADER_SIZE, output);
     free(buffer);
 
     float factor = atof(argv[3]);
     // TODO: Read samples from input file and write updated data to output file
-    uint16_t buffer16;
-    while (fread(&buffer16, sizeof(uint16_t), 1, input))
+    int16_t buffer16;
+    while (fread(&buffer16, sizeof(int16_t), 1, input))
     {
         buffer16 *= factor;
         printf("%u,",buffer16);
-        fwrite(&buffer16, sizeof(uint16_t), 1, output);
+        fwrite(&buffer16, sizeof(int16_t), 1, output);
     }
     printf("\n");
     // Close files
