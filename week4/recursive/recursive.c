@@ -1,10 +1,12 @@
 #include <cs50.h>
 #include <stdio.h>
 void recursive(int c);
+int fact(int n);
 
 int main(void)
 {
-  recursive(3);
+  int f = fact(4);
+  printf("f= %i\n",f);
   return 0;
 }
 
@@ -37,6 +39,7 @@ void recursive(int c)
 
 int fact(int n)
 {
+  printf("f= %i\n",n);
   if (n == 1)
   {
     return 1;
