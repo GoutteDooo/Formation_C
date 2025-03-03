@@ -37,11 +37,6 @@ int main(int argc, char *argv[])
     fread(buffer, sizeof(uint8_t), HEADER_SIZE, input);
     fwrite(buffer, sizeof(uint8_t), HEADER_SIZE, output);
     // TODO: Read samples from input file and write updated data to output file
-    char c;
-    while((c = fgetc(output)))
-    {
-        printf("%c",c);
-    }
     printf("\n");
     // Close files
     fclose(input);
