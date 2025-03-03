@@ -16,8 +16,8 @@ EXEC = $(BUILD_DIR)/week4/$(COMP_FILE)/$(COMP_FILE)
 # Règle principale
 all: $(EXEC)
 
-# Ajout de la cible "recursive" pour que make -C ../.. recursive fonctionne
-recursive: $(EXEC)
+# Ajout de la cible "COMP_FILE" pour que make -C ../.. COMP_FILE fonctionne
+$(COMP_FILE): $(EXEC)
 
 # Compilation du programme
 $(EXEC): $(SRC_DIR)/$(COMP_FILE).c
