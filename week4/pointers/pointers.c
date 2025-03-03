@@ -12,7 +12,6 @@ int main(void)
   pdecrement(pk);
   printf("k after pdec: %i\n", k);
   k = vdecrement(k);
-  *pk = 35;
   printf("k after vdec: %i\n", k);
   printf("pn: %i\n", *pn);
   return 0;
