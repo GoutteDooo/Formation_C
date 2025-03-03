@@ -51,7 +51,13 @@ int main(int argc, char *argv[])
     uint16_t buffer16;
     while (fread(&buffer16, sizeof(uint16_t), 1, input))
     {
-        buffer16 *= factor;
+        if (buffer16 * factor < 0) {
+            buffer16 = 0;
+        }
+        else
+        {
+            buffer16 *= factor;
+        }
         fwrite(&buffer16, sizeof(uint16_t), 1, output);
     }
     printf("\n");
