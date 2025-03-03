@@ -4,7 +4,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra
 LDLIBS = -lcs50
 
-SRC_DIR = $(ROOT_DIR)/week4/recursive
+SRC_DIR = $(ROOT_DIR)week4/recursive
 BUILD_DIR = $(ROOT_DIR)
 
 all: $(BUILD_DIR)
