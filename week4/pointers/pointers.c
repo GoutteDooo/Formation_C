@@ -6,6 +6,10 @@ int main(void)
 {
   FILE* input = fopen("./test.txt","r");
   char ch = fgetc(input);
-  printf("%c\n",ch);
+  for (int i = 0; i < 5; i++)
+  {
+    printf("%c\n",ch);
+    ch = fgetc(input);
+  }
   return 0;
 }
