@@ -14,8 +14,11 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             double green = image[i][j].rgbtGreen;
             double blue = image[i][j].rgbtBlue;
             double avg = (red + green + blue) / 3;
+            // printf("avg= %f\n",avg);
             //Puis, ajouter cette moyenne dans chacune des couleurs pour donner un niveau de gris
-            
+            image[i][j].rgbtRed = avg;
+            image[i][j].rgbtGreen = avg;
+            image[i][j].rgbtBlue = avg;
         }
     }
     return;
