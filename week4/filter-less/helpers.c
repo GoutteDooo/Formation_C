@@ -52,12 +52,20 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    printf("reflect!\n");
     //Pour chaque pixel
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width; j++)
+        for (int j = 0, reverse_j = width - 1; j < width; j++,reverse_j--)
         {
-
+            //switch, pixel par pixel, sur la colonne opposée
+            if (j >= reverse_j)
+            {
+                break;
+            }
+            RGBTRIPLE temp = image[i][j];
+            image[i][j] = image[i][reverse_j];
+            image[i][reverse_j] = temp;
         }
     }
     return;
