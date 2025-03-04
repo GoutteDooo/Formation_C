@@ -36,14 +36,14 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             BYTE red = image[i][j].rgbtRed;
             BYTE green = image[i][j].rgbtGreen;
             BYTE blue = image[i][j].rgbtBlue;
-            BYTE rs = (0.393 * red) + (0.769 * green) + (0.189 * blue);
-            BYTE gs = (0.349 * red) + (0.686 * green) + (0.168 * blue);
-            BYTE bs = (0.272 * red) + (0.534 * green) + (0.131 * blue);
+            int rs = (0.393 * red) + (0.769 * green) + (0.189 * blue);
+            int gs = (0.349 * red) + (0.686 * green) + (0.168 * blue);
+            int bs = (0.272 * red) + (0.534 * green) + (0.131 * blue);
             // printf("avg= %f\n",avg);
             //Puis, ajouter cette moyenne dans chacune des couleurs pour donner un niveau de gris
-            image[i][j].rgbtRed = rs;
-            image[i][j].rgbtGreen = gs;
-            image[i][j].rgbtBlue = bs;
+            image[i][j].rgbtRed = rs > 255 ? 255 : rs;
+            image[i][j].rgbtGreen = gs > 255 ? 255 : gs;
+            image[i][j].rgbtBlue = bs > 255 ? 255 : bs;
         }
     }
     return;
