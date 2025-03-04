@@ -108,6 +108,7 @@ int main(int argc, char *argv[])
         // Grayscale
         case 'g':
             grayscale(height, width, image);
+            printf("grayscale!\n");
             break;
 
         // Reflection
