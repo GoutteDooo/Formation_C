@@ -52,6 +52,13 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    //Parcourir toutes les colonnes de pixels
+    for (int i = 0; i < width; i++)
+    {
+        //Réécrire chaque colonne dans un buffer
+        
+        //Puis, écrire du buffer dans l'output
+    }
     return;
 }
 
