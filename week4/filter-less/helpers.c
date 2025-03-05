@@ -96,17 +96,27 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 }
 
 /**
-/* Sélectionne les pixels autour du pixel sélectionné par défaut
-/* Et renvoie un array contenant tout les pixels sélectionnés
+/* Sélectionne tout les pixels existants autour du pixel sélectionné par défaut
+/* et renvoie la moyenne de la sélection
 */
-int select_around(RGBTRIPLE p[x][y])
+int avg_boxes(RGBTRIPLE pixel[x][y], int h, int w)
 {
-    //Vérifie le nombre de cases disponibles autour du pixel
-    int box_count = 9;
-    if (x == 0) {
-        box_count -= 3;
+    int x_zone[2] = {1, 3};
+    int y _zone[2] = {1, 3};
+    //Vérifier ce qui est inclu dans la zone de sélection
+    if (x - 1 < 0) x_zone[0] = 2;
+    if (y - 1 < 0) y_zone[0] = 2;
+    if (x + 1 == w) x_zone[1] = 2;
+    if (y + 1 == h) y_zone[1] = 2;
+    RGBTRIPLE selection[x_zone[1]][y_zone[1]];
+    //Inclu tout les pixels
+    for (int i = x_zone[0]; i <= x_zone[1] ; i++)
+    {
+        for (int j = y_zone[0]; j <= y_zone[1]; j++)
+        {
+            selection[i][j] = pixel[x - i];
+        }
     }
-    int selection[9];
 
     return selection;
 }
