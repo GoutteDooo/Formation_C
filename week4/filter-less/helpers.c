@@ -112,8 +112,8 @@ RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image
     //Interdire sélection avant x = 0, y = 0 et x = width - 1 et  y = width - 1
     if (x - 1 < 0) x_area[0] = 0;
     if (y - 1 < 0) y_area[0] = 0;
-    if (x + 1 == w) x_area[1] = 0;
-    if (y + 1 == h) y_area[1] = 0;
+    if (x + 1 == h) x_area[1] = 0;
+    if (y + 1 == w) y_area[1] = 0;
     //Inclu tout les pixels
     RGBTRIPLE avg;
     avg.rgbtRed = 0;
@@ -131,11 +131,11 @@ RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image
         }
     }
     //avg contient actuellement la somme des pixels sélectionné
-    printf("px before div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue);
+    // printf("px before div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue);
     avg.rgbtRed /= count;
     avg.rgbtGreen /= count;
     avg.rgbtBlue /= count;
-    printf("px after div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue);
+    // printf("px after div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue);
     //Calculer la moyenne et la retourner
     return avg;
 }
