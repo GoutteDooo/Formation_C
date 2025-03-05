@@ -1,5 +1,6 @@
 #include "helpers.h"
 #include <stdio.h>
+#include <math.h>
 
 RGBTRIPLE avg_boxes(int x, int y, int h, int w, RGBTRIPLE image[h][w]);
 
@@ -13,10 +14,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //Pour chaque pixel, faire la moyenne des trois couleurs
-            double red = image[i][j].rgbtRed;
-            double green = image[i][j].rgbtGreen;
-            double blue = image[i][j].rgbtBlue;
-            double avg = (red + green + blue) / 3;
+            int red = image[i][j].rgbtRed;
+            int green = image[i][j].rgbtGreen;
+            int blue = image[i][j].rgbtBlue;
+            int avg = ceil(red + green + blue) / 3;
             // printf("avg= %f\n",avg);
             //Puis, ajouter cette moyenne dans chacune des couleurs pour donner un niveau de gris
             image[i][j].rgbtRed = avg;
