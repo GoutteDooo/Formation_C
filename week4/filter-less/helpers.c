@@ -88,6 +88,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             copy[x][y] = avg_boxes(x, y, image[x][y], height, width, image);
         }
     }
+    //On assigne l'image à la copie
+    for (int x = 0; x < height; x++)
+    {
+        for (int y = 0; y < width; y++)
+        {
+            //Modifier le pixel
+            image[x][y] = copy[x][y];
+        }
+    }
     return;
 }
 
