@@ -130,11 +130,12 @@ RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image
             count++;
         }
     }
+    count = 1;
     //avg contient actuellement la somme des pixels sélectionné
-    // printf("px before div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue);
-    avg.rgbtRed /= count;
-    avg.rgbtGreen /= count;
-    avg.rgbtBlue /= count;
+    // printf("px before div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue); 
+    // avg.rgbtRed /= count;
+    // avg.rgbtGreen /= count;
+    // avg.rgbtBlue /= count;
     // printf("px after div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue);
     //Calculer la moyenne et la retourner
     return avg;
