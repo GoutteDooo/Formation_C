@@ -120,10 +120,10 @@ RGBTRIPLE avg_boxes(int x, int y, int h, int w, RGBTRIPLE image[h][w])
     avg.rgbtRed = 0;
     avg.rgbtGreen = 0;
     avg.rgbtBlue = 0;
-    int red = 0;
-    int green = 0;
-    int blue = 0;
-    int count = 0;
+    double red = 0;
+    double green = 0;
+    double blue = 0;
+    double count = 0;
     for (int i = x_area[0]; i <= x_area[1] ; i++)
     {
         for (int j = y_area[0]; j <= y_area[1]; j++)
