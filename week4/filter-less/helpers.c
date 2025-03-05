@@ -14,10 +14,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             //Pour chaque pixel, faire la moyenne des trois couleurs
-            int red = image[i][j].rgbtRed;
-            int green = image[i][j].rgbtGreen;
-            int blue = image[i][j].rgbtBlue;
-            int avg = ceil((red + green + blue) / 3);
+            uint24_t red = image[i][j].rgbtRed;
+            uint24_t green = image[i][j].rgbtGreen;
+            uint24_t blue = image[i][j].rgbtBlue;
+            uint24_t avg = ceil((red + green + blue) / 3);
             // printf("avg= %f\n",avg);
             //Puis, ajouter cette moyenne dans chacune des couleurs pour donner un niveau de gris
             image[i][j].rgbtRed = avg;
@@ -77,7 +77,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    printf("blur...\n");
+    // printf("blur...\n");
     //Create a copy of image
     RGBTRIPLE copy[height][width];
     //Pour chaque pixel
