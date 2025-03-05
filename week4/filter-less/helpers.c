@@ -74,6 +74,35 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     printf("blur...\n");
-    
+    //Pour chaque pixel
+    for (int x = 0; x < width; x++)
+    {
+        for (y = 0; y < height; y++)
+        {
+            //Sélectionne le box 3*3 autour, incluant celui-ci
+            //Interdire sélection avant x = 0, y = 0 et x = width - 1 et  y = width - 1
+            if (x == 0)
+            {
+                
+            }
+            //Faire la moyenne de toutes les sélections
+            //Modifier le pixel
+        }
+    }
     return;
+}
+
+/**
+/* Sélectionne les pixels autour du pixel sélectionné par défaut
+/* Et renvoie un array contenant tout les pixels sélectionnés
+*/
+int select_around(RGBTRIPLE p[x][y])
+{
+    //Vérifie le nombre de cases disponibles autour du pixel
+    if (x == 0) {
+
+    }
+    int selection[9];
+
+    return selection;
 }
