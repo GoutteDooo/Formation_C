@@ -1,7 +1,7 @@
 #include "helpers.h"
 #include <stdio.h>
 
-int avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w);
+RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w);
 
 
 // Convert image to grayscale
@@ -95,7 +95,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     Sélectionne tout les pixels existants autour du pixel sélectionné par défaut
     et renvoie la moyenne de la sélection
 */
-int avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w)
+RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w)
 {
     //Sélectionne le box 3*3 autour, incluant le pixel sélectionné par défaut
     int x_area[2] = {-1, 1};
@@ -122,6 +122,9 @@ int avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w)
         }
     }
     //avg contient actuellement la somme des pixels sélectionné
+    avg.rgbtRed /= count;
+    avg.rgbtGreen /= count;
+    avg.rgbtBlue /= count;
     //Calculer la moyenne et la retourner
-    return (avg / count);
+    return avg;
 }
