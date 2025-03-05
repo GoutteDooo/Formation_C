@@ -1,7 +1,7 @@
 #include "helpers.h"
 #include <stdio.h>
 
-RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w);
+RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image[h][w]);
 
 
 // Convert image to grayscale
@@ -85,7 +85,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int y = 0; y < height; y++)
         {
             //Modifier le pixel
-            copy[x][y] = avg_boxes(x, y, image[x][y], height, width);
+            copy[x][y] = avg_boxes(x, y, image[x][y], height, width, image);
         }
     }
     return;
