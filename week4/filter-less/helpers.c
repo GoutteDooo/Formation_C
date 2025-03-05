@@ -134,6 +134,7 @@ RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image
     avg.rgbtRed /= count;
     avg.rgbtGreen /= count;
     avg.rgbtBlue /= count;
+    printf("px RGB: %)
     //Calculer la moyenne et la retourner
     return avg;
 }
