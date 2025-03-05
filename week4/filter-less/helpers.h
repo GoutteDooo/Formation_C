@@ -1,6 +1,5 @@
 #include "bmp.h"
 
-int avg_boxes(RGBTRIPLE pixel[x][y], int h, int w);
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width]);
