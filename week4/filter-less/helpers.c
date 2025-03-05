@@ -119,18 +119,17 @@ RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image
     avg.rgbtRed = 0;
     avg.rgbtGreen = 0;
     avg.rgbtBlue = 0;
-    int count = 0;
+    // int count = 0;
     for (int i = x_area[0]; i <= x_area[1] ; i++)
     {
         for (int j = y_area[0]; j <= y_area[1]; j++)
         {
-            avg.rgbtRed += image[x + i][x + j].rgbtRed;
-            avg.rgbtGreen += image[x + i][x + j].rgbtGreen;
-            avg.rgbtBlue += image[x + i][x + j].rgbtBlue;
-            count++;
+            avg.rgbtRed = image[x + i][x + j].rgbtRed;
+            avg.rgbtGreen = image[x + i][x + j].rgbtGreen;
+            avg.rgbtBlue = image[x + i][x + j].rgbtBlue;
+            // count++;
         }
     }
-    count = 1;
     //avg contient actuellement la somme des pixels sélectionné
     // printf("px before div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue); 
     // avg.rgbtRed /= count;
