@@ -74,6 +74,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     printf("blur...\n");
+    //Create a copy of image
+    RGBTRIPLE copy[height][width];
     //Pour chaque pixel
     for (int x = 0; x < width; x++)
     {
@@ -83,7 +85,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             //Interdire sélection avant x = 0, y = 0 et x = width - 1 et  y = width - 1
             if (x == 0)
             {
-                
+
             }
             //Faire la moyenne de toutes les sélections
             //Modifier le pixel
