@@ -40,14 +40,14 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             BYTE red = image[i][j].rgbtRed;
             BYTE green = image[i][j].rgbtGreen;
             BYTE blue = image[i][j].rgbtBlue;
-            int rs = (0.393 * red) + (0.769 * green) + (0.189 * blue);
-            int gs = (0.349 * red) + (0.686 * green) + (0.168 * blue);
-            int bs = (0.272 * red) + (0.534 * green) + (0.131 * blue);
+            float rs = (0.393 * red) + (0.769 * green) + (0.189 * blue);
+            float gs = (0.349 * red) + (0.686 * green) + (0.168 * blue);
+            float bs = (0.272 * red) + (0.534 * green) + (0.131 * blue);
             // printf("avg= %f\n",avg);
             //Puis, ajouter cette moyenne dans chacune des couleurs pour donner un niveau de gris
-            image[i][j].rgbtRed = rs > 255 ? 255 : rs;
-            image[i][j].rgbtGreen = gs > 255 ? 255 : gs;
-            image[i][j].rgbtBlue = bs > 255 ? 255 : bs;
+            image[i][j].rgbtRed = rs > 255 ? 255 : round(rs);
+            image[i][j].rgbtGreen = gs > 255 ? 255 : round(gs);
+            image[i][j].rgbtBlue = bs > 255 ? 255 : round(bs);
         }
     }
     return;
@@ -136,9 +136,9 @@ RGBTRIPLE avg_boxes(int x, int y, int h, int w, RGBTRIPLE image[h][w])
     }
     //avg contient actuellement la somme des pixels sélectionné
     // printf("px before div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue); 
-    avg.rgbtRed = (red / count) > 255 ? 255 : (red / count);
-    avg.rgbtGreen = (green / count) > 255 ? 255 : (green / count);
-    avg.rgbtBlue = (blue / count) > 255 ? 255 : (blue / count);
+    avg.rgbtRed = (red / count) > 255 ? 255 : round(red / count);
+    avg.rgbtGreen = (green / count) > 255 ? 255 : round(green / count);
+    avg.rgbtBlue = (blue / count) > 255 ? 255 : round(blue / count);
     // printf("px after div (rgb): %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue);
     //Calculer la moyenne et la retourner
     return avg;
