@@ -1,6 +1,7 @@
 #include "helpers.h"
 #include <stdio.h>
 
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -81,13 +82,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (y = 0; y < height; y++)
         {
-            //Sélectionne le box 3*3 autour, incluant celui-ci
-            //Interdire sélection avant x = 0, y = 0 et x = width - 1 et  y = width - 1
-            if (x == 0)
-            {
-
-            }
-            //Faire la moyenne de toutes les sélections
             //Modifier le pixel
             copy[x][y] = avg_boxes(image[x][y], height, width);
         }
@@ -101,9 +95,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 */
 int avg_boxes(RGBTRIPLE pixel[x][y], int h, int w)
 {
+    //Sélectionne le box 3*3 autour, incluant le pixel sélectionné par défaut
     int x_area[2] = {-1, 1};
     int y _area[2] = {-1, 1};
-    //Vérifier ce qui est inclu dans la area de sélection
+    //Interdire sélection avant x = 0, y = 0 et x = width - 1 et  y = width - 1
     if (x - 1 < 0) x_area[0] = 0;
     if (y - 1 < 0) y_area[0] = 0;
     if (x + 1 == w) x_area[1] = 0;
