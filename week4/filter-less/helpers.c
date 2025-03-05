@@ -89,7 +89,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             //Faire la moyenne de toutes les sélections
             //Modifier le pixel
-            copy[x][y] = image[x][y];
+            copy[x][y] = avg_boxes(image[x][y], height, width);
         }
     }
     return;
@@ -101,22 +101,25 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 */
 int avg_boxes(RGBTRIPLE pixel[x][y], int h, int w)
 {
-    int x_zone[2] = {1, 3};
-    int y _zone[2] = {1, 3};
-    //Vérifier ce qui est inclu dans la zone de sélection
-    if (x - 1 < 0) x_zone[0] = 2;
-    if (y - 1 < 0) y_zone[0] = 2;
-    if (x + 1 == w) x_zone[1] = 2;
-    if (y + 1 == h) y_zone[1] = 2;
-    RGBTRIPLE selection[x_zone[1]][y_zone[1]];
+    int x_area[2] = {-1, 1};
+    int y _area[2] = {-1, 1};
+    //Vérifier ce qui est inclu dans la area de sélection
+    if (x - 1 < 0) x_area[0] = 0;
+    if (y - 1 < 0) y_area[0] = 0;
+    if (x + 1 == w) x_area[1] = 0;
+    if (y + 1 == h) y_area[1] = 0;
     //Inclu tout les pixels
-    for (int i = x_zone[0]; i <= x_zone[1] ; i++)
+    int avg = 0;
+    int count = 0
+    for (int i = x_area[0]; i <= x_area[1] ; i++)
     {
-        for (int j = y_zone[0]; j <= y_zone[1]; j++)
+        for (int j = y_area[0]; j <= y_area[1]; j++)
         {
-            selection[i][j] = pixel[x - i];
+            avg += pixel[x + i][x + j];
+            count++;
         }
     }
-
-    return selection;
+    //avg contient actuellement la somme des pixels sélectionné
+    //Calculer la moyenne et la retourner
+    return (avg / count);
 }
