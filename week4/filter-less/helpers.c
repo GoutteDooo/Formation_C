@@ -1,7 +1,7 @@
 #include "helpers.h"
 #include <stdio.h>
 
-RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image[h][w]);
+RGBTRIPLE avg_boxes(int x, int y, int h, int w, RGBTRIPLE image[h][w]);
 
 
 // Convert image to grayscale
@@ -85,7 +85,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int y = 0; y < width; y++)
         {
             //Modifier le pixel
-            copy[x][y] = avg_boxes(x, y, image[x][y], height, width, image);
+            copy[x][y] = avg_boxes(x, y, height, width, image);
         }
     }
     //On assigne l'image à la copie
@@ -104,7 +104,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     Sélectionne tout les pixels existants autour du pixel sélectionné par défaut
     et renvoie la moyenne de la sélection
 */
-RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image[h][w])
+RGBTRIPLE avg_boxes(int x, int y, int h, int w, RGBTRIPLE image[h][w])
 {
     //Sélectionne le box 3*3 autour, incluant le pixel sélectionné par défaut
     int x_area[2] = {-1, 1};
@@ -124,9 +124,9 @@ RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image
     {
         for (int j = y_area[0]; j <= y_area[1]; j++)
         {
-            avg.rgbtRed = image[x + i][x + j].rgbtRed;
-            avg.rgbtGreen = image[x + i][x + j].rgbtGreen;
-            avg.rgbtBlue = image[x + i][x + j].rgbtBlue;
+            avg.rgbtRed += image[x + i][y + j].rgbtRed;
+            avg.rgbtGreen += image[x + i][y + j].rgbtGreen;
+            avg.rgbtBlue += image[x + i][y + j].rgbtBlue;
             // count++;
         }
     }
