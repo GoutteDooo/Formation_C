@@ -52,7 +52,6 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
-    printf("reflect!\n");
     //Pour chaque pixel
     for (int i = 0; i < height; i++)
     {
@@ -74,6 +73,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+    printf("blur...\n");
     
     return;
 }
