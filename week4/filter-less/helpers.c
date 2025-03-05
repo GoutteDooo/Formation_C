@@ -1,7 +1,7 @@
 #include "helpers.h"
 #include <stdio.h>
 
-int avg_boxes(RGBTRIPLE pixel[int x][int y], int h, int w);
+int avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w);
 
 
 // Convert image to grayscale
@@ -85,21 +85,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         for (int y = 0; y < height; y++)
         {
             //Modifier le pixel
-            copy[x][y] = avg_boxes(image[x][y], height, width);
+            copy[x][y] = avg_boxes(x, y, image[x][y], height, width);
         }
     }
     return;
 }
 
 /**
-/* Sélectionne tout les pixels existants autour du pixel sélectionné par défaut
-/* et renvoie la moyenne de la sélection
+    Sélectionne tout les pixels existants autour du pixel sélectionné par défaut
+    et renvoie la moyenne de la sélection
 */
-int avg_boxes(RGBTRIPLE pixel[int x][int y], int h, int w)
+int avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w)
 {
     //Sélectionne le box 3*3 autour, incluant le pixel sélectionné par défaut
     int x_area[2] = {-1, 1};
-    int y _area[2] = {-1, 1};
+    int y_area[2] = {-1, 1};
     //Interdire sélection avant x = 0, y = 0 et x = width - 1 et  y = width - 1
     if (x - 1 < 0) x_area[0] = 0;
     if (y - 1 < 0) y_area[0] = 0;
@@ -107,7 +107,7 @@ int avg_boxes(RGBTRIPLE pixel[int x][int y], int h, int w)
     if (y + 1 == h) y_area[1] = 0;
     //Inclu tout les pixels
     int avg = 0;
-    int count = 0
+    int count = 0;
     for (int i = x_area[0]; i <= x_area[1] ; i++)
     {
         for (int j = y_area[0]; j <= y_area[1]; j++)
