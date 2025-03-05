@@ -125,8 +125,8 @@ RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image
         for (int j = y_area[0]; j <= y_area[1]; j++)
         {
             avg.rgbtRed += image[x + i][x + j].rgbtRed;
-            avg.rgbtGreen = image[x + i][x + j].rgbtGreen;
-            avg.rgbtBlue = image[x + i][x + j].rgbtBlue;
+            avg.rgbtGreen += image[x + i][x + j].rgbtGreen;
+            avg.rgbtBlue += image[x + i][x + j].rgbtBlue;
             count++;
         }
     }
@@ -134,7 +134,7 @@ RGBTRIPLE avg_boxes(int x, int y, RGBTRIPLE pixel, int h, int w, RGBTRIPLE image
     avg.rgbtRed /= count;
     avg.rgbtGreen /= count;
     avg.rgbtBlue /= count;
-    printf("px RGB: %)
+    printf("px RGB: %x %x %x\n", avg.rgbtRed,avg.rgbtGreen,avg.rgbtBlue);
     //Calculer la moyenne et la retourner
     return avg;
 }
