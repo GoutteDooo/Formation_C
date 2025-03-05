@@ -80,9 +80,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     //Create a copy of image
     RGBTRIPLE copy[height][width];
     //Pour chaque pixel
-    for (int x = 0; x < width; x++)
+    for (int x = 0; x < height; x++)
     {
-        for (int y = 0; y < height; y++)
+        for (int y = 0; y < width; y++)
         {
             //Modifier le pixel
             copy[x][y] = avg_boxes(x, y, image[x][y], height, width, image);
