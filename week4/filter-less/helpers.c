@@ -89,6 +89,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             //Faire la moyenne de toutes les sélections
             //Modifier le pixel
+            copy[x][y] = image[x][y];
         }
     }
     return;
@@ -101,8 +102,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 int select_around(RGBTRIPLE p[x][y])
 {
     //Vérifie le nombre de cases disponibles autour du pixel
+    int box_count = 9;
     if (x == 0) {
-
+        box_count -= 3;
     }
     int selection[9];
 
