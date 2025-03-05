@@ -106,13 +106,18 @@ int avg_boxes(int x, int y, RGBTRIPLE pixel[x][y], int h, int w)
     if (x + 1 == w) x_area[1] = 0;
     if (y + 1 == h) y_area[1] = 0;
     //Inclu tout les pixels
-    int avg = 0;
+    RGBTRIPLE avg;
+    avg.rgbtRed = 0;
+    avg.rgbtGreen = 0;
+    avg.rgbtBlue = 0;
     int count = 0;
     for (int i = x_area[0]; i <= x_area[1] ; i++)
     {
         for (int j = y_area[0]; j <= y_area[1]; j++)
         {
-            avg += pixel[x + i][x + j];
+            avg.rgbtRed += pixel[x + i][x + j].rgbtRed;
+            avg.rgbtGreen = pixel[x + i][x + j].rgbtGreen;
+            avg.rgbtBlue = pixel[x + i][x + j].rgbtBlue;
             count++;
         }
     }
