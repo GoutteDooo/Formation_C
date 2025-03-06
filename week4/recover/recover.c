@@ -29,11 +29,10 @@ int main(int argc, char *argv[])
     if (search[0] == 0xff && search[1] == 0xd8 && search[2] == 0xff && (search[3] & 0xF0) == 0xE0)
     {
       //Signature JPEG trouvée
-      count++;
       printf("Jpeg found : %i\n", count);
-
+      
       //On crée le nouveau fichier JPEG
-      char* name = malloc(30);
+      char* name = malloc(32);
       if (count < 10) 
       {
         sprintf(name, "recovered_dir/00%i.jpg", count);
@@ -43,7 +42,7 @@ int main(int argc, char *argv[])
         sprintf(name, "recovered_dir/0%i.jpg", count);
       }
       FILE* newJPG = fopen(name, "w");
-
+      
       //Ecrire dans le nouveau fichier jusqu'à trouver une nouvelle signature JPEG
       do
       {
@@ -52,6 +51,7 @@ int main(int argc, char *argv[])
         if (feof(card)) break;
       } while (!(search[0] == 0xff && search[1] == 0xd8 && search[2] == 0xff && (search[3] & 0xF0) == 0xE0));
       //sortie de la boucle : Nouvelle signature JPEG trouvée
+      count++;
       has_printed = 1;
       free(name);
       fclose(newJPG);
