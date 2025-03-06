@@ -1,5 +1,4 @@
 #include "helpers.h"
-#include <stdio.h>
 #include <math.h>
 
 RGBTRIPLE avg_boxes(int x, int y, int h, int w, RGBTRIPLE image[h][w]);
