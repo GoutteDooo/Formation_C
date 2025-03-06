@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
   if (argc != 2)
   {
-    printf("error");
+    printf("error\n");
     return 1;
   }
   char *infile = argv[1];
@@ -12,10 +12,8 @@ int main(int argc, char *argv[])
   if (inptr == NULL)
   {
       printf("Could not open %s.\n", infile);
-      return 4;
+      return 1;
   }
-  fprintf(card,"r");
-  int v = 2;
-  printf("ok %i\n", v);
-  fclose(card);
+  fprintf(inptr,"r");
+  fclose(inptr);
 }
