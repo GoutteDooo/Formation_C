@@ -16,7 +16,10 @@ int main(int argc, char *argv[])
       printf("Could not open %s.\n", infile);
       return 1;
   }
-  uint16_t b;
+  //Une fois le fichier ouvert, le parcourir et trouver une signature JPEG
+  //Une fois une signature trouvée, créer un fichier avec pour nom "###.jpg" (démarrer a 000.jpg et incrémenter à chaque trouvaille)
+  //
+  BYTE b;
   while ((b = fgetc(inptr)) != EOF)
   {
     printf("%x",b);
