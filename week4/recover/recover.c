@@ -7,7 +7,13 @@ int main(int argc, char *argv[])
     printf("error");
     return 1;
   }
-  FILE* card = fopen("card.raw", "r");
+  char *infile = argv[1];
+  FILE* inptr = fopen(infile, "r");
+  if (inptr == NULL)
+  {
+      printf("Could not open %s.\n", infile);
+      return 4;
+  }
   fprintf(card,"r");
   int v = 2;
   printf("ok %i\n", v);
