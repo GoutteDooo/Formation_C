@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdio.h>
 typedef __int8_t BYTE;
 
@@ -15,7 +16,7 @@ int main(int argc, char *argv[])
       printf("Could not open %s.\n", infile);
       return 1;
   }
-  double b;
+  uint16_t b;
   while ((b = fgetc(inptr)) != EOF)
   {
     printf("%x",b);
