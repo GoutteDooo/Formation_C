@@ -31,6 +31,12 @@ int main(int argc, char *argv[])
       char name[8];
       sprintf(name, "%d.jpg", count);
       FILE* newJPG = fopen(name, "w");
+      //Ecrire dans le nouveau fichier jusqu'à trouver une nouvelle signature JPEG
+      do
+      {
+        fwrite(search, 512,1,card);
+      } 
+      while (fread(search, 512, 1, card));
     }
   }
   //Remplir le nouveau fichier jusqu'à trouver une prochaine signature JPEG ou arriver à la fin de la lecture
