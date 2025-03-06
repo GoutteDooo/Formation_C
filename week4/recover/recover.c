@@ -28,8 +28,9 @@ int main(int argc, char *argv[])
       //Signature JPEG trouvée
       count++;
       printf("Jpeg found : %i\n", count);
-      char* name = count + ".jpg";
-      FILE* newJPG = fopen(count + ".jpg", "w");
+      char name[8];
+      sprintf(name, "%d.jpg", count);
+      FILE* newJPG = fopen(name, "w");
     }
   }
   //Remplir le nouveau fichier jusqu'à trouver une prochaine signature JPEG ou arriver à la fin de la lecture
