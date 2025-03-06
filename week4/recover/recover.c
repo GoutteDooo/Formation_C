@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
   BYTE b;
   while ((b = fgetc(inptr)) != EOF)
   {
-    printf("%c",b);
+    printf("%d",b);
   }
   printf("\n");
   fclose(inptr);
