@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
       printf("Could not open %s.\n", infile);
       return 1;
   }
+  //Rechercher par paquets de 512 B
   //Une fois le fichier ouvert, le parcourir et trouver une signature JPEG (ffd8ffe?)
   //Une fois une signature trouvée, créer un fichier avec pour nom "###.jpg" (démarrer a 000.jpg et incrémenter à chaque trouvaille)
   //
