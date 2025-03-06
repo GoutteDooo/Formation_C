@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
   __int16_t b;
   while ((b = fgetc(inptr)) != EOF)
   {
-    if (b == "ff") {
+    if (b == 0xff) {
       printf("%x",b);
     }
   }
