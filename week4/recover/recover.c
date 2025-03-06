@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
   uint8_t search[512];
   int count = 0;
   //Une fois le fichier ouvert, le parcourir et trouver une signature JPEG (ffd8ffe?) -> 4 first B of block of 512 B
-  while (fread(search, 512, 1, card))
+  do
   {
     //Une fois une signature trouvée, créer un fichier avec pour nom "###.jpg" (démarrer a 000.jpg et incrémenter à chaque trouvaille)
     if (search[0] == 0xff && search[1] == 0xd8 && search[2] == 0xff && (search[3] & 0xF0) == 0xE0)
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
         fread(search, 512, 1, card);
       } while (!(search[0] == 0xff && search[1] == 0xd8 && search[2] == 0xff && (search[3] & 0xF0) == 0xE0));
     }
-  }
+  } while (fread(search, 512, 1, card));
   //Remplir le nouveau fichier jusqu'à trouver une prochaine signature JPEG ou arriver à la fin de la lecture
   /* TEST LECTURE
   __int16_t b;
