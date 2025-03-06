@@ -15,10 +15,10 @@ int main(int argc, char *argv[])
       printf("Could not open %s.\n", infile);
       return 1;
   }
-  BYTE b;
+  double b;
   while ((b = fgetc(inptr)) != EOF)
   {
-    printf("%c",b);
+    printf("%x",b);
   }
   printf("\n");
   fclose(inptr);
