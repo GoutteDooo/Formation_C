@@ -1,4 +1,5 @@
 #include <stdio.h>
+typedef __int8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -14,6 +15,11 @@ int main(int argc, char *argv[])
       printf("Could not open %s.\n", infile);
       return 1;
   }
-  fprintf(inptr,"r");
+  BYTE b;
+  while ((b = fgetc(inptr)) != EOF)
+  {
+    printf("%c",b);
+  }
+  printf("\n");
   fclose(inptr);
 }
