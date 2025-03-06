@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 typedef __int8_t BYTE;
 
 int main(int argc, char *argv[])
@@ -30,8 +31,8 @@ int main(int argc, char *argv[])
       printf("Jpeg found : %i\n", count);
 
       //On crée le nouveau fichier JPEG
-      char name[16];
-      sprintf(name, "%d.jpg", count);
+      char* name = malloc(30);
+      sprintf(name, "recovered_dir/%i.jpg", count);
       FILE* newJPG = fopen(name, "w");
 
       //Ecrire dans le nouveau fichier jusqu'à trouver une nouvelle signature JPEG
