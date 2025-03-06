@@ -34,7 +34,14 @@ int main(int argc, char *argv[])
 
       //On crée le nouveau fichier JPEG
       char* name = malloc(30);
-      sprintf(name, "recovered_dir/%i.jpg", count);
+      if (count < 10) 
+      {
+        sprintf(name, "recovered_dir/00%i.jpg", count);
+      }
+      else
+      {
+        sprintf(name, "recovered_dir/0%i.jpg", count);
+      }
       FILE* newJPG = fopen(name, "w");
 
       //Ecrire dans le nouveau fichier jusqu'à trouver une nouvelle signature JPEG
