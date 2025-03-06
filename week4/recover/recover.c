@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
       {
         fwrite(search, 512,1,newJPG);
         fread(search, 512, 1, card);
-      } while (!(search[0] == 0xff && search[1] == 0xd8 && search[2] == 0xff && (search[3] & 0xF0) == 0xE0) || fgetc(newJPG) == EOF);
+      } while (!(search[0] == 0xff && search[1] == 0xd8 && search[2] == 0xff && (search[3] & 0xF0) == 0xE0));
       //sortie de la boucle : Nouvelle signature JPEG trouvée
       has_printed = 1;
       fclose(newJPG);
