@@ -1,6 +1,5 @@
 #include <stdint.h>
 #include <stdio.h>
-#include <sys/types.h>
 typedef __int8_t BYTE;
 
 int main(int argc, char *argv[])
@@ -29,7 +28,8 @@ int main(int argc, char *argv[])
       //Signature JPEG trouvée
       count++;
       printf("Jpeg found : %i\n", count);
-      
+      char* name = count + ".jpg";
+      FILE* newJPG = fopen(count + ".jpg", "w");
     }
   }
   //Remplir le nouveau fichier jusqu'à trouver une prochaine signature JPEG ou arriver à la fin de la lecture
