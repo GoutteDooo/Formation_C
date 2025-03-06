@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
       printf("Jpeg found : %i\n", count);
 
       //On crée le nouveau fichier JPEG
-      char name[8];
+      char name[16];
       sprintf(name, "%d.jpg", count);
       FILE* newJPG = fopen(name, "w");
 
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
       {
         fwrite(search, 512,1,card);
         fread(search, 512, 1, card);
-      } while (search[0] == 0xff && search[1] == 0xd8 && search[2] == 0xff && (search[3] & 0xF0) == 0xE0);
+      } while (!(search[0] == 0xff && search[1] == 0xd8 && search[2] == 0xff && (search[3] & 0xF0) == 0xE0));
     }
   }
   //Remplir le nouveau fichier jusqu'à trouver une prochaine signature JPEG ou arriver à la fin de la lecture
