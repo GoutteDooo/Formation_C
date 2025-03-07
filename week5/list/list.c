@@ -47,5 +47,16 @@ int main(void)
     printf("%i\n", ptr->number);
   }
 
+  //Time passes
+
+  node* ptr = list;
+
+  while(ptr != NULL)
+  {
+    node* next = ptr->next;
+    free(ptr);
+    ptr = next;
+  }
+
   return 0;
 }
