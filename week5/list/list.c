@@ -20,9 +20,18 @@ int main(void)
       return 1;
     }
     n->number = i + 1;
-    n->next = list;
-    
-    list = n;
+    n->next = NULL;
+
+    //if list is empty
+    if (list == NULL)
+    {
+      list = n;
+    }
+    //if list has numbers already
+    else
+    {
+      
+    }
   }
 
   //Time passes
