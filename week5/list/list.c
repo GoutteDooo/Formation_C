@@ -11,8 +11,7 @@ typedef struct node
 int main(void)
 {
   node* list = NULL;
-  int count = get_int("Number: ");
-  for (int i = 0; i < count; i++)
+  for (int i = 0; i < 3; i++)
   {
     node* n = malloc(sizeof(node));
     if (n == NULL)
@@ -20,7 +19,7 @@ int main(void)
       //TODO: free any memory already malloc'd
       return 1;
     }
-    n->number = i + 1;
+    n->number = get_int("Number: ");
     n->next = NULL;
 
     //if list is empty
@@ -29,7 +28,7 @@ int main(void)
       list = n;
     }
     //if list has numbers already
-    else
+    else if (n)
     {
       for (node* ptr = list; ptr != NULL; ptr = ptr->next)
       {
