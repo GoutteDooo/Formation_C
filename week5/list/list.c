@@ -33,6 +33,25 @@ int main(void)
       n->next = list;
       list = n;
     }
+    else
+    {
+      for (node* ptr = list; ptr != NULL; ptr = ptr->next)
+      {
+        if (ptr->next == NULL)
+        {
+          ptr->next = n;
+          break;
+        }
+
+        //If in middle of list
+        if (n->number < ptr->next->number)
+        {
+          n->next = ptr->next;
+          ptr->next = n;
+          break;
+        }
+      }
+    }
   }
 
   //Time passes
