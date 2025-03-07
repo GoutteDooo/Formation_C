@@ -5,7 +5,7 @@ WEEK = 5
 
 # Définition des dossiers
 ROOT_DIR := $(patsubst %/, %, $(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
-SRC_DIR = $(ROOT_DIR)/week4/$(COMP_FILE)
+SRC_DIR = $(ROOT_DIR)/week$(WEEK)/$(COMP_FILE)
 BUILD_DIR = $(ROOT_DIR)
 
 # Compilation
