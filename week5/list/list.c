@@ -11,7 +11,7 @@ typedef struct node
 int main(void)
 {
   node* list = NULL;
-  for (int i = 0; i < 3; i++)
+  for (int i = 0; i < 10; i++)
   {
     node* n = malloc(sizeof(node));
     if (n == NULL)
@@ -39,12 +39,13 @@ int main(void)
       {
         if (ptr->next == NULL)
         {
+          //Append node
           ptr->next = n;
           break;
         }
 
         //If in middle of list
-        if (n->number < ptr->next->number)
+        if (n->number <  ptr->next->number)
         {
           n->next = ptr->next;
           ptr->next = n;
