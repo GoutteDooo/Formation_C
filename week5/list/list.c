@@ -5,7 +5,6 @@ int main(void)
   int* list = malloc(3 * sizeof(int));
   if (list == NULL)
   {
-    free(list);
     return 1;
   }
   list[0] = 1;
@@ -14,16 +13,11 @@ int main(void)
 
   //Time passes
 
-  int *tmp = malloc(4 * sizeof(int));
+  int *tmp = realloc(list, 4 * sizeof(int));
   if (tmp == NULL)
   {
     free(list);
     return 1;
-  }
-
-  for (int i = 0; i < 3; i++)
-  {
-    tmp[i] = list[i];
   }
 
   tmp[3] = 4;
