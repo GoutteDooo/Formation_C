@@ -30,7 +30,14 @@ int main(void)
     //if list has numbers already
     else
     {
-      
+      for (node* ptr = list; ptr != NULL; ptr = ptr->next)
+      {
+        if (ptr->next == NULL)
+        {
+          ptr->next = n;
+          break;
+        }
+      }
     }
   }
 
