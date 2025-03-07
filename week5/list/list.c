@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <cs50.h>
 
 typedef struct node
 {
@@ -13,7 +14,13 @@ int main(void)
 
   for (int i = 0; i < 3; i++)
   {
-    
+    node* n = malloc(sizeof(node));
+    if (n == NULL)
+    {
+      return 1;
+    }
+    (*n)->number = get_int("Number: ");
+    (*n).next = NULL;
   }
   return 0;
 }
