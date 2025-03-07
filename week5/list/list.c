@@ -19,8 +19,8 @@ int main(void)
     {
       return 1;
     }
-    (*n).number = get_int("Number: ");
-    (*n).next = NULL;. 0
+    n->number = get_int("Number: ");
+    n->next = NULL;
   }
   return 0;
 }
