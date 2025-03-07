@@ -20,7 +20,7 @@ int main(void)
       return 1;
     }
     (*n).number = get_int("Number: ");
-    (*n).next = NULL;
+    (*n).next = NULL;. 0
   }
   return 0;
 }
