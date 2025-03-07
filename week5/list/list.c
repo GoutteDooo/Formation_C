@@ -28,16 +28,10 @@ int main(void)
       list = n;
     }
     //if list has numbers already
-    else if (n)
+    else if (n->number < list->number)
     {
-      for (node* ptr = list; ptr != NULL; ptr = ptr->next)
-      {
-        if (ptr->next == NULL)
-        {
-          ptr->next = n;
-          break;
-        }
-      }
+      n->next = list;
+      list = n;
     }
   }
 
