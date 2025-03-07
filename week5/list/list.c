@@ -21,17 +21,22 @@ int main(void)
   }
 
   tmp[3] = 4;
-
-  free(list);
-
-  list = tmp;
-
   for (int i = 0; i < 4; i++)
   {
-    printf("%i\n", list[i]);
+    printf("%i\n", tmp[i]);
   }
 
-  // Time passes
   free(list);
+  /*
+  list = tmp;
+
+for (int i = 0; i < 4; i++)
+{
+  printf("%i\n", list[i]);
+}
+
+// Time passes
+free(list);
+*/
   return 0;
 }
