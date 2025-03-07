@@ -1,5 +1,6 @@
 # MODIFIER LE NOM DU COMP_FILE POUR LA COMPILATION
-COMP_FILE = volume
+COMP_FILE = list
+WEEK = 5
 
 
 # Définition des dossiers
@@ -13,7 +14,7 @@ CFLAGS = -Wall -Wextra
 LDLIBS = -lcs50
 
 # Nom de l'exécutable
-EXEC = $(BUILD_DIR)/week4/$(COMP_FILE)/$(COMP_FILE)
+EXEC = $(BUILD_DIR)/week$(WEEK)/$(COMP_FILE)/$(COMP_FILE)
 
 # Règle principale
 all: $(EXEC)
