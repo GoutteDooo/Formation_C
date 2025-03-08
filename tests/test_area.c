@@ -2,10 +2,13 @@
 #include <stdlib.h>
 #include <stdbool.h>
 float guess_blue(int blueStart, int redStart, int bluePulled, int redPulled);
+bool pythagorean_triple(const unsigned sides[3]);
 
 int main(void)
 {
-  
+  const unsigned int a[3] = {5,3,4};
+  bool b = pythagorean_triple(a);
+  printf("%b\n",b);
   return 0;
 }
 
@@ -14,13 +17,16 @@ bool pythagorean_triple(const unsigned sides[3])
   for (int i = 0; i < 3; i++)
   {
     int sum = 0;
+    int calc = sides[i] * sides[i];
     for (int j = 0; j < 3; j++)
     {
       //on ne veut pas vérifier le même indice
       if (i == j) break;
       sum += sides[j]*sides[j];
     }
-    if (sum == sides[i]*sides[i])
+
+    printf("sum = %i & sides[i] = %i\n",sum, calc);
+    if (sum == calc)
     {
       return true;
     }
