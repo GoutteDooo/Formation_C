@@ -21,7 +21,7 @@ bool pythagorean_triple(const unsigned sides[3])
     for (int j = 0; j < 3; j++)
     {
       //on ne veut pas vérifier le même indice
-      if (i == j) break;
+      if (i == j) continue;
       sum += sides[j]*sides[j];
     }
 
