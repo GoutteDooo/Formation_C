@@ -21,6 +21,7 @@ int diffsum(const int *arr, size_t n)
   // Sort the array
   qsort(arr, n, sizeof(int), comp);
   int sum = 0;
+  printf("array: %i\n", arr);
   // Then, take each pair and add it to sum
   for (int i = 0; i < n - 1; i++) 
   {
