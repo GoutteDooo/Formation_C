@@ -1,10 +1,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <stddef.h>
 float guess_blue(int blueStart, int redStart, int bluePulled, int redPulled);
 bool pythagorean_triple(const unsigned sides[3]);
+int diffsum(const int *arr, size_t n);
 
 int main(void)
+{
+  diffsum();
+  return 0;
+}
+
+
+int diffsum(const int *arr, size_t n)
+{
+    return 0;
+}
+
+int main_pythagorean_triple(void)
 {
   const unsigned int a[3] = {5,3,4};
   bool b = pythagorean_triple(a);
