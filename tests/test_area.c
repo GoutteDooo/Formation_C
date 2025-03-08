@@ -9,8 +9,9 @@ int comp(const void* a, const void* b) ;
 
 int main(void)
 {
-  int arr[3] = {10,2,1};
-  diffsum(arr,3);
+  const int arr[3] = {10,2,1};
+  int s = diffsum(arr,3);
+  printf("%i\n",s);
   return 0;
 }
 
@@ -19,10 +20,16 @@ int diffsum(const int *arr, size_t n)
 {
   // Sort the array
   qsort(arr, n, sizeof(int), comp);
+  int sum = 0;
   // Then, take each pair and add it to sum
-  for (int i = 0; i < n; i++) 
-    printf("%d ", arr[i]);
-  return 0;
+  for (int i = 0; i < n - 1; i++) 
+  {
+    int p1 = i + 1;
+    int p2 = i;
+    sum += p2 - p1;
+    printf("i: %i\n actual sum: %i\n",i,sum);
+  }
+  return sum;
 }
 
 // Custom comparator
