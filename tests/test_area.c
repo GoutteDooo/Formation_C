@@ -5,41 +5,44 @@
 float guess_blue(int blueStart, int redStart, int bluePulled, int redPulled);
 bool pythagorean_triple(const unsigned sides[3]);
 int diffsum(const int *arr, size_t n);
+int comp(const void* a, const void* b) ;
+
 int main(void)
 {
-  const int arr[3] = {2,1,10};
+  const int arr[3] = {10,2,1};
   int s = diffsum(arr,3);
   printf("%i\n",s);
   return 0;
 }
 
+
 int diffsum(const int *arr, size_t n)
 {
+  // Sort the array
+  qsort(arr, n, sizeof(int), comp);
   int sum = 0;
-  //search the highest
-  int h1 = arr[0];
-  for (int i = 1; i < n; i++)
+  printf("arr: [");
+
+  for (int i = 0; i < n; i++) 
+    printf("%i,",arr[i]);
+
+  printf("]\n");
+  // Then, take each pair and add it to sum
+  for (int i = 0; i < n - 1; i++) 
   {
-    if (arr[i] > h1) h1 = arr[i];
-  }
-  int h2 = -2000000;
-  for (int i = 0; i < n - 1; i++)
-  {
-    //search the second highest
-    if (arr[i] > h2 && arr[i] < h1) {
-      h2 = arr[i];
-      //then, add its sum
-      sum += h1 - h2;
-      //set highest to second highest
-      h1 = h2;
-      //set second highest to 0
-      h2 = 0;
-      i = 0;
-    }
-    //search second highest
-    //and so on...
+    int p1 = arr[i + 1];
+    int p2 = arr[i];
+    sum += p1 - p2;
+    printf("i: %i\n actual sum: %i\n",i,sum);
   }
   return sum;
+}
+
+// Custom comparator
+int comp(const void* a, const void* b) 
+{
+    // If a is smaller, positive value will be returned
+    return (*(int*)a - *(int*)b);
 }
 
 int main_pythagorean_triple(void)
