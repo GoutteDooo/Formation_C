@@ -15,6 +15,9 @@ int main(void)
 
 int diffsum(const int *arr, size_t n)
 {
+  //sort l'array décroissant
+  for
+  //pick up each pairs (i & i + 1) and add its sum to a variable
     return 0;
 }
 
