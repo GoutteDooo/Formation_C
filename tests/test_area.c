@@ -9,6 +9,24 @@ int main(void)
   return 0;
 }
 
+bool pythagorean_triple(const unsigned sides[3])
+{
+  for (int i = 0; i < 3; i++)
+  {
+    int sum = 0;
+    for (int j = 0; j < 3; j++)
+    {
+      //on ne veut pas vérifier le même indice
+      if (i == j) break;
+      sum += sides[j]*sides[j];
+    }
+    if (sum == sides[i]*sides[i])
+    {
+      return true;
+    }
+  }
+  return false;
+}
 
 int main_guess_blue(int argc, char* argv[])
 {
