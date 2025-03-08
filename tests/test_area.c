@@ -21,13 +21,18 @@ int diffsum(const int *arr, size_t n)
   // Sort the array
   qsort(arr, n, sizeof(int), comp);
   int sum = 0;
-  printf("array: %i\n", arr);
+  printf("arr: [");
+
+  for (int i = 0; i < n; i++) 
+    printf("%i,",arr[i]);
+
+  printf("]\n");
   // Then, take each pair and add it to sum
   for (int i = 0; i < n - 1; i++) 
   {
-    int p1 = i + 1;
-    int p2 = i;
-    sum += p2 - p1;
+    int p1 = arr[i + 1];
+    int p2 = arr[i];
+    sum += p1 - p2;
     printf("i: %i\n actual sum: %i\n",i,sum);
   }
   return sum;
