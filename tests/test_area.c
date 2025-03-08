@@ -9,7 +9,7 @@ int comp(const void* a, const void* b) ;
 
 int main(void)
 {
-  const int arr[3] = {10,2,1};
+  const int arr[3] = {2,1,10};
   int s = diffsum(arr,3);
   printf("%i\n",s);
   return 0;
@@ -19,7 +19,7 @@ int main(void)
 int diffsum(const int *arr, size_t n)
 {
   // Sort the array
-  qsort(arr, n, sizeof(int), comp);
+  // qsort(arr, n, sizeof(int), comp);
   int sum = 0;
   printf("arr: [");
 
