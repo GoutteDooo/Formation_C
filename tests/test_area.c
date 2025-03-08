@@ -22,7 +22,7 @@ int diffsum(const int *arr, size_t n)
   {
     if (arr[i] > h1) h1 = arr[i];
   }
-  int h2 = 0;
+  int h2 = -2000000;
   for (int i = 0; i < n - 1; i++)
   {
     //search the second highest
@@ -38,14 +38,6 @@ int diffsum(const int *arr, size_t n)
     }
     //search second highest
     //and so on...
-  }
-  // Then, take each pair and add it to sum
-  for (int i = 0; i < n - 1; i++) 
-  {
-    int p1 = arr[i + 1];
-    int p2 = arr[i];
-    sum += p1 - p2;
-    printf("i: %i\n actual sum: %i\n",i,sum);
   }
   return sum;
 }
