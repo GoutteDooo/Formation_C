@@ -1,8 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 float guess_blue(int blueStart, int redStart, int bluePulled, int redPulled);
 
-int main(int argc, char* argv[])
+int main(void)
+{
+  
+  return 0;
+}
+
+
+int main_guess_blue(int argc, char* argv[])
 {
   if (argc != 5) return 1;
   float f = guess_blue(atoi(argv[1]),atoi(argv[2]),atoi(argv[3]),atoi(argv[4]));
