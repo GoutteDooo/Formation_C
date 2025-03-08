@@ -5,30 +5,31 @@
 float guess_blue(int blueStart, int redStart, int bluePulled, int redPulled);
 bool pythagorean_triple(const unsigned sides[3]);
 int diffsum(const int *arr, size_t n);
+int comp(const void* a, const void* b) ;
 
 int main(void)
 {
-  diffsum();
+  int arr[3] = {10,2,1};
+  diffsum(arr,3);
   return 0;
 }
 
 
 int diffsum(const int *arr, size_t n)
 {
-  //Take highest value of arr
-  int h1 = arr[0];
-  for (int i = 1; i < n; i++)
-  {
-    if (arr[i] > h1)
-    {
-      h1 = arr[i];
-    }
-  }
-  //Then, take the highest before this one
-  //Add it to sum
-  //Then, search highest value again before the highest2
-  //And continue the ope
-    return 0;
+  // Sort the array
+  qsort(arr, n, sizeof(int), comp);
+  // Then, take each pair and add it to sum
+  for (int i = 0; i < n; i++) 
+    printf("%d ", arr[i]);
+  return 0;
+}
+
+// Custom comparator
+int comp(const void* a, const void* b) 
+{
+    // If a is smaller, positive value will be returned
+    return (*(int*)a - *(int*)b);
 }
 
 int main_pythagorean_triple(void)
