@@ -15,9 +15,19 @@ int main(void)
 
 int diffsum(const int *arr, size_t n)
 {
-  //sort l'array décroissant
-  for
-  //pick up each pairs (i & i + 1) and add its sum to a variable
+  //Take highest value of arr
+  int h1 = arr[0];
+  for (int i = 1; i < n; i++)
+  {
+    if (arr[i] > h1)
+    {
+      h1 = arr[i];
+    }
+  }
+  //Then, take the highest before this one
+  //Add it to sum
+  //Then, search highest value again before the highest2
+  //And continue the ope
     return 0;
 }
 
