@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <stdlib.h>
 float guess_blue(int blueStart, int redStart, int bluePulled, int redPulled);
 
 int main(int argc, char* argv[])
 {
-  if (argc != 2) return 1;
-  float f = guess_blue(10,10,0,0);
+  if (argc != 5) return 1;
+  float f = guess_blue(atoi(argv[1]),atoi(argv[2]),atoi(argv[3]),atoi(argv[4]));
   printf("%f\n",f);
   return 0;
 }
