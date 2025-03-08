@@ -16,6 +16,29 @@ int main(void)
 int diffsum(const int *arr, size_t n)
 {
   int sum = 0;
+  //search the highest
+  int h1 = arr[0];
+  for (int i = 1; i < n; i++)
+  {
+    if (arr[i] > h1) h1 = arr[i];
+  }
+  int h2 = 0;
+  for (int i = 0; i < n - 1; i++)
+  {
+    //search the second highest
+    if (arr[i] > h2 && arr[i] < h1) {
+      h2 = arr[i];
+      //then, add its sum
+      sum += h1 - h2;
+      //set highest to second highest
+      h1 = h2;
+      //set second highest to 0
+      h2 = 0;
+      i = 0;
+    }
+    //search second highest
+    //and so on...
+  }
   // Then, take each pair and add it to sum
   for (int i = 0; i < n - 1; i++) 
   {
