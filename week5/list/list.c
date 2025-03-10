@@ -55,9 +55,9 @@ bool unload(node* list)
 	node* ptr = list;
 	while(ptr != NULL)
 	{
-		node* next = ptr->next;
-		free(ptr);
-		ptr = next;
+		ptr = list->next;
+		free(list);
+		list = ptr;;
 	}
 	if (ptr == NULL) return true;
 	return false;
