@@ -52,15 +52,12 @@ bool unload(node* list)
 		free(list);
 		return true;
 	}
-	for (node* ptr = list->next; ptr != NULL; ptr = ptr->next)
+	node* ptr = list;
+	while(ptr != NULL)
 	{
-		if (ptr == NULL)
-		{
-			free(list);
-			return true;
-		}
-		free(list);
-		list = ptr;
+		node* next = ptr->next;
+		free(ptr);
+		ptr = next;
 	}
 	return false;
 }
