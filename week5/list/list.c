@@ -9,10 +9,10 @@ typedef struct node
   struct node* next;
 } node;
 
-#define LIST_SIZE = 2
+#define LIST_SIZE 2
 
-bool unload(node * list);
-void visualizer(node *list);
+bool unload(node* list);
+void visualizer(node* list);
 
 int main(void)
 {
@@ -20,19 +20,37 @@ int main(void)
 
   for (int i = 0; i < LIST_SIZE; i++)
   {
-
+    string phrase = get_string("Enter a phrase: ");
+    node *n = malloc(sizeof(node));
+    if (n == NULL)
+    {
+      return 1;
+    }
+    
+    n->phrase = phrase;
+    n->next = NULL;
+    n->next = list;
+    
+    visualizer(list);
   }
-  string phrase = get_string("Enter a phrase: ");
-  node *n = malloc(sizeof(node));
-  if (n == NULL)
+
+  if (!unload(list))
   {
+    printf("Error freeing the list.\n");
     return 1;
   }
 
-  n->phrase = phrase;
-  n->next = NULL;
-  n->next = list;
+  printf("Freed the list.\n");
+	return 0;
+}
 
-  visualizer(list);
-  return 0;
+bool unload(node* list)
+{
+	//TODO: Free all allocated nodes
+	return false;
+}
+
+void visualizer(node* list)
+{
+
 }
