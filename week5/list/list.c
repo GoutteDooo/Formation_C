@@ -52,5 +52,9 @@ bool unload(node* list)
 
 void visualizer(node* list)
 {
-
+	printf("+-- List Visualizer --+\n");
+	printf("Location %x\n", list);
+	printf("Phrase: %s\n", list->phrase);
+	printf("Next: %x\n",list->next);
+	printf("+---------------------+\n");
 }
