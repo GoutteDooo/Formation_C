@@ -30,3 +30,21 @@ int main(void)
   free_family(p);
   return 0;
 }
+
+person* create_family(int generations)
+{
+  // TODO: Allocate memory for new person
+
+
+  // If there are still generations left to create
+  if (generations > 1)
+  {
+    // Create two parents for current person by recursively calling
+    person* parent0 = create_family(generations - 1);
+    person* parent1 = create_family(generations - 1);
+
+    // TODO: Set parent pointers for current person
+
+    // TODO: Randomly assign cyrrent person's alleles 
+  }
+}
