@@ -59,6 +59,7 @@ bool unload(node* list)
 		free(ptr);
 		ptr = next;
 	}
+	if (ptr == NULL) return true;
 	return false;
 }
 
