@@ -79,5 +79,16 @@ void free_list(slnode* list)
 
 void destroy(slnode* list, int id)
 {
-  
+  // TODO: Search id in list
+  for (slnode* ptr = list; ptr != NULL; ptr = ptr->next)
+  {
+    if (id == ptr->id)
+    {
+
+    }
+  }
+  // TODO: When found, isolate it in a new variable
+  // TODO: link node before id and node after
+  // TODO: free isolated node
+  // TODO: If id didn't found, print "didn't found id"
 }
