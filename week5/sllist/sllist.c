@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <cs50.h>
 
 typedef struct slnode
 {
@@ -16,8 +17,12 @@ int main(void)
   if (list == NULL) return 1;
   list->phrase = "Hello!";
   list->next = NULL;
-  slnode* node = create(list, "saloute");
-  list = node;
+  for (int i = 0; i < 3; i++)
+  {
+    string s = get_string("Enter a phrase: ");
+    slnode* node = create(list, s);
+    list = node;
+  }
   print_list(list);
 
   return 0;
