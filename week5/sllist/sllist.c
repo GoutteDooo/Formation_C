@@ -12,7 +12,7 @@ typedef struct slnode
 slnode* create(slnode* list, char* phrase, int id);
 void print_list(slnode* list);
 void free_list(slnode* list);
-void destroy(slnode* list, int id);
+slnode* destroy(slnode* list, int id);
 
 int main(void)
 {
@@ -32,7 +32,7 @@ int main(void)
   while (!finish)
   { 
     int d = get_int("Enter id to destroy: ");
-    destroy(list, d);
+    list = destroy(list, d);
     // printf("new list :\n");
     if (list == NULL) {
       printf("No more nodes, end of program.\n");
@@ -76,7 +76,7 @@ void free_list(slnode* list)
   }
 }
 
-void destroy(slnode* list, int id)
+slnode* destroy(slnode* list, int id)
 {
   if (list == NULL)
   {
@@ -114,8 +114,10 @@ void destroy(slnode* list, int id)
   {
     printf("value didn't found !\n");
   }
-  else {
+  else
+  {
     // print_list(list);
     printf("node destroyed.\n");
   }
+  return list;
 }
