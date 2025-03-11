@@ -8,6 +8,7 @@ typedef struct slnode
 } slnode;
 
 slnode* create(slnode* list, char* phrase);
+void print_list(slnode* list);
 
 int main(void)
 {
@@ -16,7 +17,8 @@ int main(void)
   list->phrase = "Hello!";
   list->next = NULL;
   slnode* node = create(list, "saloute");
-  printf("phrase: %s, next: %p\n", list->phrase, list->next);
+  list = node;
+  print_list(list);
 
   return 0;
 }
@@ -27,6 +29,15 @@ slnode* create(slnode* list, char* phrase)
   if (new_node == NULL) return NULL;
   new_node->phrase = phrase;
   new_node->next = list;
-  list = new_node;
   return new_node;
+}
+
+void print_list(slnode* list)
+{
+  for(slnode* ptr = list; ptr != NULL; ptr = ptr->next)
+  {
+    printf("address: %p\n",ptr);
+    printf("phrase: %s\n",ptr->phrase);
+    printf("next: %p\n",ptr->next);
+  }
 }
