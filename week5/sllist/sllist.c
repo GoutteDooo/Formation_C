@@ -94,6 +94,7 @@ slnode* destroy(slnode* list, int id)
   }
   for (slnode* ptr = list; ptr != NULL; ptr = ptr->next)
   {
+    if (ptr == NULL) break;
     if (founded) break;
     if (id == ptr->next->id)
     { 
@@ -107,7 +108,6 @@ slnode* destroy(slnode* list, int id)
       // TODO: free isolated node
       free(destroyedptr);
     }
-    printf("searching... ptr: %p\n", ptr);
   }
   // TODO: If id didn't found, print "didn't found id"
   if (!founded)
