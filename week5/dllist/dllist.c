@@ -32,7 +32,7 @@ int main(void)
     list = list->next;
   }
   print_list(list);
-
+  free_list(list);
   return 0;
 }
 
@@ -71,7 +71,7 @@ void free_list(dllnode* list)
     {
       if (list == NULL) {
         direction = 1;
-        break;
+        continue;
       }
       ptr = list;
       list = list->next;
