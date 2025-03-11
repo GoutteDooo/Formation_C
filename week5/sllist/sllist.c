@@ -106,6 +106,7 @@ void destroy(slnode* list, int id)
     printf("value didn't found !\n");
   }
   else {
+    print_list(list);
     printf("node destroyed.\n");
   }
 }
