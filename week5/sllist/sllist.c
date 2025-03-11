@@ -34,11 +34,11 @@ int main(void)
     int d = get_int("Enter id to destroy: ");
     destroy(list, d);
     // printf("new list :\n");
-    // print_list(list);
     if (list == NULL) {
       printf("No more nodes, end of program.\n");
       return 0;
     }
+    print_list(list);
   }
   free_list(list);
   return 0;
@@ -115,7 +115,7 @@ void destroy(slnode* list, int id)
     printf("value didn't found !\n");
   }
   else {
-    print_list(list);
+    // print_list(list);
     printf("node destroyed.\n");
   }
 }
