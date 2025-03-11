@@ -25,6 +25,7 @@ int main(void)
     list = node;
   }
   print_list(list);
+  bool 
   free_list(list);
   return 0;
 }
