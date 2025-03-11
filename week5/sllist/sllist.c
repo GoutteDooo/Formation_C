@@ -41,6 +41,10 @@ int main(void)
     }
     printf("new list :\n");
     print_list(list);
+    if (list == NULL) {
+      printf("No more nodes, end of program.\n");
+      return 0;
+    }
   }
   free_list(list);
   return 0;
@@ -61,6 +65,7 @@ void print_list(slnode* list)
   for(slnode* ptr = list; ptr != NULL; ptr = ptr->next)
   {
     printf("address: %p\n",ptr);
+    printf("id: %i\n",ptr->id);
     printf("phrase: %s\n",ptr->phrase);
     printf("next: %p\n",ptr->next);
   }
@@ -79,6 +84,10 @@ void free_list(slnode* list)
 
 void destroy(slnode* list, int id)
 {
+  if (list == NULL)
+  {
+    printf("No more nodes.\n");
+  }
   // TODO: Search id in list
   bool founded = false;
   for (slnode* ptr = list; ptr != NULL; ptr = ptr->next)
@@ -99,6 +108,9 @@ void destroy(slnode* list, int id)
   // TODO: If id didn't found, print "didn't found id"
   if (!founded)
   {
-    printf("value didn't found !\n")
+    printf("value didn't found !\n");
+  }
+  else {
+    printf("node destroyed.\n");
   }
 }
