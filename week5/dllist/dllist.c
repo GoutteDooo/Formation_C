@@ -50,7 +50,7 @@ dllnode* create_node(dllnode* list)
 
 void print_list(dllnode* list)
 {
-  for(dllnode* ptr = list; ptr != NULL; ptr = ptr->next)
+  for(dllnode* ptr = list; ptr != NULL; ptr = ptr->before)
   {
     printf("address: %p\n",ptr);
     printf("id: %i\n",ptr->id);
@@ -64,22 +64,29 @@ void print_list(dllnode* list)
 void free_list(dllnode* list)
 {
   dllnode* ptr = list;
-  int direction = 0; //direction 0 -> left, 1 -> right, 2 -> STOP
+  int direction = 0; //direction 0 -> right, 1 -> left
   while (ptr != NULL)
   {
     if (direction == 0)
     {
-      list = list->next;
       if (list == NULL) {
         direction = 1;
         break;
       }
       ptr = list;
+      list = list->next;
     }
     //if we reached the bottom right, we go left and free all memories
     if (direction == 1)
     {
-
+      list = ptr;
+      ptr = ptr->before;
+      free(list);
+      if (ptr == NULL)
+      {
+        //We freed all nodes
+        break;
+      }
     }
   }
 }
