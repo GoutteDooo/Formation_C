@@ -95,6 +95,7 @@ slnode* destroy(slnode* list, int id)
   for (slnode* ptr = list; ptr != NULL; ptr = ptr->next)
   {
     if (ptr->next == NULL) {
+      // TODO: If id didn't found, print "didn't found id"
       printf("id didn't found !\n");
       return list;
     }
@@ -111,7 +112,6 @@ slnode* destroy(slnode* list, int id)
       break;
     }
   }
-  // TODO: If id didn't found, print "didn't found id"
   printf("node destroyed.\n");
   return list;
 }
