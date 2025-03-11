@@ -64,10 +64,22 @@ void print_list(dllnode* list)
 void free_list(dllnode* list)
 {
   dllnode* ptr = list;
+  int direction = 0; //direction 0 -> left, 1 -> right, 2 -> STOP
   while (ptr != NULL)
   {
-    list = list->next;
-    free(ptr);
-    ptr = list;
+    if (direction == 0)
+    {
+      list = list->next;
+      if (list == NULL) {
+        direction = 1;
+        break;
+      }
+      ptr = list;
+    }
+    //if we reached the bottom right, we go left and free all memories
+    if (direction == 1)
+    {
+
+    }
   }
 }
