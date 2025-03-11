@@ -84,20 +84,29 @@ void destroy(slnode* list, int id)
   }
   // TODO: Search id in list
   bool founded = false;
+
+  // base case : if id is the first of the list
+  if (id == list->id)
+  {
+    slnode* next = list->next;
+    free(list);
+    list = next;
+    founded = true;
+  }
   for (slnode* ptr = list; ptr != NULL; ptr = ptr->next)
   {
+    if (founded) break;
     if (id == ptr->next->id)
     { 
       founded = true;
       // TODO: When found, isolate it in a new variable
       slnode* destroyedptr = ptr->next;
-
+      
       // TODO: link node before id and node after
       ptr->next = destroyedptr->next;
-
+      
       // TODO: free isolated node
       free(destroyedptr);
-      break;
     }
   }
   // TODO: If id didn't found, print "didn't found id"
