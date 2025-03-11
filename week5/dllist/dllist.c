@@ -13,6 +13,8 @@ typedef struct dllnode
 #define NODES_NUMBER 3
 
 dllnode* create_node(dllnode* list);
+void print_list(dllnode* list);
+void free_list(dllnode* list);
 
 
 int main(void)
@@ -26,9 +28,10 @@ int main(void)
   for (int i = 0; i < NODES_NUMBER; i++)
   {
     list->next = create_node(list);
-    string phrase = get_string("Enter a phrase: ");
-
+    list->next->id = i + 1;
+    list = list->next;
   }
+  print_list(list);
 
   return 0;
 }
@@ -42,4 +45,29 @@ dllnode* create_node(dllnode* list)
   new_node->before = list;
   new_node->next = NULL;
   return new_node;
+}
+
+
+void print_list(dllnode* list)
+{
+  for(dllnode* ptr = list; ptr != NULL; ptr = ptr->next)
+  {
+    printf("address: %p\n",ptr);
+    printf("id: %i\n",ptr->id);
+    printf("phrase: %s\n",ptr->phrase);
+    printf("before: %p\n",ptr->before);
+    printf("next: %p\n",ptr->next);
+  }
+}
+
+
+void free_list(dllnode* list)
+{
+  dllnode* ptr = list;
+  while (ptr != NULL)
+  {
+    list = list->next;
+    free(ptr);
+    ptr = list;
+  }
 }
