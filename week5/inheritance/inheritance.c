@@ -7,7 +7,7 @@ typedef struct person
   char alleles[2];
 } person;
 
-const int GENERATIONS = 3;
+const int GENERATIONS = 6;
 const int INDENT_LENGTH = 4;
 
 person* create_family(int generations);
