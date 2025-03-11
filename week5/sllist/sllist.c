@@ -33,7 +33,6 @@ int main(void)
   { 
     int d = get_int("Enter id to destroy: ");
     list = destroy(list, d);
-    // printf("new list :\n");
     if (list == NULL) {
       printf("No more nodes, end of program.\n");
       return 0;
@@ -108,11 +107,12 @@ slnode* destroy(slnode* list, int id)
       // TODO: free isolated node
       free(destroyedptr);
     }
+    printf("searching... ptr: %p\n", ptr);
   }
   // TODO: If id didn't found, print "didn't found id"
   if (!founded)
   {
-    printf("value didn't found !\n");
+    printf("id didn't found !\n");
   }
   else
   {
