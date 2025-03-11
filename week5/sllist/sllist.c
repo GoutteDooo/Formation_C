@@ -32,15 +32,9 @@ int main(void)
   while (!finish)
   { 
     int d = get_int("Enter id to destroy: ");
-    if (d) {
-      destroy(list, d);
-    }
-    else
-    {
-      break;
-    }
-    printf("new list :\n");
-    print_list(list);
+    destroy(list, d);
+    // printf("new list :\n");
+    // print_list(list);
     if (list == NULL) {
       printf("No more nodes, end of program.\n");
       return 0;
@@ -103,6 +97,7 @@ void destroy(slnode* list, int id)
 
       // TODO: free isolated node
       free(destroyedptr);
+      break;
     }
   }
   // TODO: If id didn't found, print "didn't found id"
