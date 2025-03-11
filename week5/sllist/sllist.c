@@ -90,15 +90,16 @@ slnode* destroy(slnode* list, int id)
     slnode* next = list->next;
     free(list);
     list = next;
-    founded = true;
+    return list;
   }
   for (slnode* ptr = list; ptr != NULL; ptr = ptr->next)
   {
-    if (ptr == NULL) break;
-    if (founded) break;
+    if (ptr->next == NULL) {
+      printf("id didn't found !\n");
+      return list;
+    }
     if (id == ptr->next->id)
     { 
-      founded = true;
       // TODO: When found, isolate it in a new variable
       slnode* destroyedptr = ptr->next;
       
@@ -107,17 +108,10 @@ slnode* destroy(slnode* list, int id)
       
       // TODO: free isolated node
       free(destroyedptr);
+      break;
     }
   }
   // TODO: If id didn't found, print "didn't found id"
-  if (!founded)
-  {
-    printf("id didn't found !\n");
-  }
-  else
-  {
-    // print_list(list);
-    printf("node destroyed.\n");
-  }
+  printf("node destroyed.\n");
   return list;
 }
