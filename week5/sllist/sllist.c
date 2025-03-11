@@ -10,6 +10,7 @@ typedef struct slnode
 
 slnode* create(slnode* list, char* phrase);
 void print_list(slnode* list);
+void free_list(slnode* list);
 
 int main(void)
 {
@@ -24,7 +25,7 @@ int main(void)
     list = node;
   }
   print_list(list);
-
+  free_list(list);
   return 0;
 }
 
@@ -44,5 +45,16 @@ void print_list(slnode* list)
     printf("address: %p\n",ptr);
     printf("phrase: %s\n",ptr->phrase);
     printf("next: %p\n",ptr->next);
+  }
+}
+
+void free_list(slnode* list)
+{
+  slnode* ptr = list;
+  while (ptr != NULL)
+  {
+    list = list->next;
+    free(ptr);
+    ptr = list;
   }
 }
