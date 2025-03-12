@@ -2,7 +2,7 @@
 
 unsigned int hash(char* str);
 
-#define HASH_MAX 25
+#define HASH_MAX 250
 
 int main(int argc, char* argv[])
 {
