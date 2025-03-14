@@ -12,7 +12,7 @@
 #undef getrusage
 
 // Default dictionary
-#define DICTIONARY "dictionaries/large"
+#define DICTIONARY "dictionaries/large" 
 
 // Prototype
 double calculate(const struct rusage *b, const struct rusage *a);
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
             word[index] = '\0';
 
             // Update counter
-            words++;
+            words++; 
 
             // Check word's spelling
             getrusage(RUSAGE_SELF, &before);
