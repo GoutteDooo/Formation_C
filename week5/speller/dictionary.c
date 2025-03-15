@@ -38,7 +38,6 @@ unsigned int hash(const char *word)
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
-    // TODO
     FILE *dico = fopen(dictionary, "r");
     if (dico == NULL)
     {
@@ -46,7 +45,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char* scanned_word;
+    char* scanned_word = NULL;
     int test = 0;
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
