@@ -1,10 +1,10 @@
 // Implements a dictionary's functionality
 
-#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -26,11 +26,12 @@ bool check(const char *word)
 {
     // Hash the word to find which bucket it is stored
     unsigned int h = hash(word);
-    // Go find 
+    // Go seek the word through the founded bucket
     for (node* checker = table[h]; checker != NULL; checker = checker->next)
     {
-
+        if (strcasecmp(word, checker->word)) return true;
     }
+    // we traverse all the nodes and didn't find the word
     return false;
 }
 
