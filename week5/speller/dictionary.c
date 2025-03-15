@@ -29,7 +29,7 @@ bool check(const char *word)
     // Go seek the word through the founded bucket
     for (node* checker = table[h]; checker != NULL; checker = checker->next)
     {
-        if (strcasecmp(word, checker->word)) return true;
+        if (strcasecmp(word, checker->word) == 0) return true;
     }
     // we traverse all the nodes and didn't find the word
     return false;
@@ -110,5 +110,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    
     return false;
 }
