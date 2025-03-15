@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #include "dictionary.h"
 
@@ -36,9 +37,13 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE dico = fopen(dictionary, "r");
-
-    return false;
+    FILE *input = fopen(dictionary, "r");
+    if (input == NULL)
+    {
+        printf("Could not open dictionary!\n");
+        return 1;
+    }
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
