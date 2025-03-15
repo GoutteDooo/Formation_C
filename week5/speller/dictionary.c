@@ -46,9 +46,10 @@ bool load(const char *dictionary)
     }
 
     //Définir tout les nexts de la hashtable à NULL par défaut
-    for (int i = 0; i < sizeof(table) ; i++)
+    for (int i = 0; i < N ; i++)
     {
         table[i] = NULL;
+        table[i]->next = NULL;
     }
 
     char* scanned_word = malloc(LENGTH);
