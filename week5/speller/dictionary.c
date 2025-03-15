@@ -77,10 +77,9 @@ bool load(const char *dictionary)
             //                     |
             //                     V
             //                 other_word
-            table[hindex]->next = new_word;
+            table[hindex] = new_word;
             // and : head -> new_word -> last_word -> other_word
             printf("table aft: %p\n", table[hindex]);
-            break;
         }
     }
     free(scanned_word);
