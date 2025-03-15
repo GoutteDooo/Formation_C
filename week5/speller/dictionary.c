@@ -46,7 +46,7 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char* scanned_word = NULL;
+    char* scanned_word;
     int test = 0;
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
