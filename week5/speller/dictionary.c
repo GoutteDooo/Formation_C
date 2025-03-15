@@ -111,6 +111,14 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-
+    //explorer chaque bucket, et free tout les nodes
+    for (int i = 0; i < N; i++)
+    {
+        for(node* checker = table[i]->next; checker != NULL; checker = checker->next)
+        {
+            free(table[i]);
+            table[i] = checker;
+        }
+    }
     return false;
 }
