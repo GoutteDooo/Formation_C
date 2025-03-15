@@ -43,7 +43,6 @@ bool load(const char *dictionary)
     if (dico == NULL)
     {
         printf("Could not open dictionary!\n");
-        fclose(dico);
         return false;
     }
 
@@ -54,13 +53,13 @@ bool load(const char *dictionary)
         if (new_word == NULL)
         {
             printf("Error when loading. No more memory available.\n");
-            fclose(dico);
             return false;
         }
         strcpy(scanned_word, new_word->word);
         new_word->next = NULL;
+        
     }
-    
+
     return true;
 }
 
