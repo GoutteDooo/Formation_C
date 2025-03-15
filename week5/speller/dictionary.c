@@ -1,6 +1,5 @@
 // Implements a dictionary's functionality
 
-#include <cmath>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -71,7 +70,7 @@ bool load(const char *dictionary)
         }
         number_words++;
         
-        if(scanned_word[0] != '')
+        if(strlen(scanned_word) > 0)
         {
             // insert scanned word into new node
             strcpy(new_word->word, scanned_word);
