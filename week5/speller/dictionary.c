@@ -47,15 +47,7 @@ bool load(const char *dictionary)
     int i = 0;
     while (fscanf(input, "s") != EOF)
     {
-        node* new_word = malloc(sizeof(node));
-        if (new_word == NULL) 
-        {
-            printf("Error while scanning dictionary :\n No more memory available.\n");
-            return false;
-        }
-        printf("scan ok!\n");
-        i++;
-        if (i == 3) break;
+        
     }
     return true;
 }
