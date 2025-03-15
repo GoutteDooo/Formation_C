@@ -71,7 +71,7 @@ bool load(const char *dictionary)
         }
         number_words++;
         
-        if(scanned_word != "")
+        if(scanned_word[0] != '')
         {
             // insert scanned word into new node
             strcpy(new_word->word, scanned_word);
