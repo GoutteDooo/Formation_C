@@ -66,7 +66,7 @@ bool load(const char *dictionary)
         table[i] = NULL;
     }
 
-    char* scanned_word = malloc(LENGTH);
+    char scanned_word[LENGTH];
     while (fscanf(dico,"%s", scanned_word) != EOF)
     {
 
@@ -81,7 +81,6 @@ bool load(const char *dictionary)
         if (new_word == NULL)
         {
             printf("Error when loading. No more memory available.\n");
-            free(scanned_word);
             return false;
         }
         number_words++;
@@ -108,7 +107,6 @@ bool load(const char *dictionary)
             // and : head -> new_word -> last_word -> other_word
         }
     }
-    free(scanned_word);
     fclose(dico);
     return true;
 }
