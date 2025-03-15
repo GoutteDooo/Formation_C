@@ -47,24 +47,30 @@ bool load(const char *dictionary)
     }
 
     char* scanned_word = NULL;
+    int test = 0;
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
+        printf("scanned word: %s\n",scanned_word);
+        test++;
+        if (test > 3) break;
+        /*
         node* new_word = malloc(sizeof(node));
         if (new_word == NULL)
         {
             printf("Error when loading. No more memory available.\n");
             return false;
         }
-        // strcpy(scanned_word, new_word->word);
+        strcpy(scanned_word, new_word->word);
         // before : head -> last_word -> other_word
-        // int hindex = hash(new_word->word);
-        // new_word->next = table[hindex]->next;
+        int hindex = hash(new_word->word);
+        new_word->next = table[hindex]->next;
         //here : head -> last_word <- new_word
         //                     |
         //                     V
         //                 other_word
-        // table[hindex]->next = new_word;
+        table[hindex]->next = new_word;
         // and : head -> new_word -> last_word -> other_word
+        */
     }
 
     return true;
