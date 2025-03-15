@@ -49,15 +49,14 @@ bool load(const char *dictionary)
     for (int i = 0; i < N ; i++)
     {
         // table[i] = malloc(sizeof(node));
-        table[i]->next = NULL;
-        printf("table[%i]: %p\n",i,&table[i]);
+        table[i] = NULL;
+        printf("table[%i]: %p\n",i,table[i]);
     }
 
     char* scanned_word = malloc(LENGTH);
     int test = 0;
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
-        break;
         /*
         printf("scanned word: %s\n",scanned_word);
         test++;
