@@ -32,7 +32,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    return (toupper(word[0]) - 'A') % 26;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -67,11 +67,11 @@ bool load(const char *dictionary)
             printf("Error when loading. No more memory available.\n");
             return false;
         }
-        // strcpy(new_word->word, scanned_word);
+        strcpy(new_word->word, scanned_word);
         // before : head -> last_word -> other_word
-        printf("new_word->word: %s\n",new_word->word);
-        break;
         int hindex = hash(new_word->word);
+        printf("new_word->word: %s, hindex: %i\n",new_word->word, hindex);
+        continue;
         new_word->next = table[hindex]->next;
         //here : head -> last_word <- new_word
         //                     |
