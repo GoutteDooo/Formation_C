@@ -32,6 +32,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO : Implement this function
+    // Hash sum of ASCII values of the length of a word
     return (toupper(word[0]) - 'A') % N;
 }
 
