@@ -1,5 +1,6 @@
 // Implements a dictionary's functionality
 
+#include <cmath>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -69,8 +70,18 @@ bool load(const char *dictionary)
             return false;
         }
         number_words++;
-        // insert scanned word into new node
-        strcpy(new_word->word, scanned_word);
+        
+        if(scanned_word != "")
+        {
+            // insert scanned word into new node
+            strcpy(new_word->word, scanned_word);
+        }
+        else 
+        {
+            printf("No word to insert into node.\n");
+            free(new_word);
+            continue;
+        }
 
         // hash word to find which bucket we'll store the new node
         int hindex = hash(new_word->word);
