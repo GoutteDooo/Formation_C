@@ -48,7 +48,7 @@ bool load(const char *dictionary)
     //Définir tout les nexts de la hashtable à NULL par défaut
     for (int i = 0; i < N ; i++)
     {
-        table[i] = NULL;
+        table[i] = malloc(sizeof(node));
         table[i]->next = NULL;
     }
 
@@ -71,7 +71,7 @@ bool load(const char *dictionary)
         strcpy(new_word->word, scanned_word);
         // before : head -> last_word -> other_word
         int hindex = hash(new_word->word);
-        printf("new_word->word: %s, hindex: %i\n",new_word->word, hindex);
+        printf("table->next: %p\n", table[hindex]->next);
         continue;
         new_word->next = table[hindex]->next;
         //here : head -> last_word <- new_word
