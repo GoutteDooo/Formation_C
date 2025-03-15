@@ -49,8 +49,8 @@ bool load(const char *dictionary)
     for (int i = 0; i < N ; i++)
     {
         // table[i] = malloc(sizeof(node));
-        // table[i]->next = NULL;
-        printf("table[%i]: %p\n",i,table[i]);
+        table[i]->next = NULL;
+        printf("table[%i]: %p\n",i,&table[i]);
     }
 
     char* scanned_word = malloc(LENGTH);
