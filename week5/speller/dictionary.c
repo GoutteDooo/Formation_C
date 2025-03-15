@@ -45,7 +45,8 @@ bool load(const char *dictionary)
         printf("Could not open dictionary!\n");
         return false;
     }
-    while (fscanf(input, "%s") != EOF)
+    char* word;
+    while ((word = fscanf(input, "%s")) != EOF)
     {
         node* new_word = malloc(sizeof(node));
         if (new_word == NULL) 
@@ -53,6 +54,8 @@ bool load(const char *dictionary)
             printf("Error while scanning dictionary :\n No more memory available.\n");
             return false;
         }
+        char* copy = 
+        new_word->word = 
     }
     return true;
 }
