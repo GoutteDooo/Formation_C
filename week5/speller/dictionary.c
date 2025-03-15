@@ -1,5 +1,6 @@
 // Implements a dictionary's functionality
 
+#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -25,12 +26,13 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // Hash the word to find which bucket it is stored
+    // Hash the word to find which bucket to it is stored
     unsigned int h = hash(word);
     // Go find the word through the selected bucket
     for (node* checker = table[h]; checker != NULL; checker = checker->next)
     {
-        if (strcasecmp(word, checker->word) == 0) return true;
+        char* cword = tolower(word);
+        if (strcasecmp(cword, checker->word) == 0) return true;
     }
     // we traverse all the nodes and didn't find the word
     return false;
@@ -128,7 +130,6 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    // TODO
     //explorer chaque bucket, et free tout les nodes
     for (int i = 0; i < N; i++)
     {
