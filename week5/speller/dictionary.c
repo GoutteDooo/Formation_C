@@ -90,6 +90,12 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
+    unsigned int count = 0;
+    for (int i = 0; i < N; i++)
+    {
+        // checker chaque bucket
+        for (node* checker = table[i]; checker != NULL; checker = checker->next, count++);
+    }
     return 0;
 }
 
