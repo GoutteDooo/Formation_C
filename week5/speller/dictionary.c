@@ -65,18 +65,12 @@ bool load(const char *dictionary)
     }
 
     char* scanned_word = malloc(LENGTH);
-    while (fscanf(dico, "%s", scanned_word) != EOF)
+    while (fscanf(dico, "%44s", scanned_word) != EOF)
     {
 
         if(scanned_word[0] == '\0')
         {
             printf("No word to insert into node.\n");
-            continue;
-        }
-
-        if (strlen(scanned_word) > LENGTH - 1)
-        {
-            printf("Too long word, ignored.\n");
             continue;
         }
 
