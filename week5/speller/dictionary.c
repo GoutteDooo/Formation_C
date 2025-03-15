@@ -45,14 +45,16 @@ bool load(const char *dictionary)
         return false;
     }
 
-    char* scanned_word = NULL;
-    int test = 0;
+    char* scanned_word = malloc(LENGTH);
+    // int test = 0;
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
+        /* TEST
         printf("scanned word: %s\n",scanned_word);
         test++;
-        if (test > 3) break;
-        /*
+        if (test > 10) break;
+        */
+        
         node* new_word = malloc(sizeof(node));
         if (new_word == NULL)
         {
@@ -60,6 +62,7 @@ bool load(const char *dictionary)
             return false;
         }
         strcpy(scanned_word, new_word->word);
+        free(scanned_word);
         // before : head -> last_word -> other_word
         int hindex = hash(new_word->word);
         new_word->next = table[hindex]->next;
@@ -69,7 +72,6 @@ bool load(const char *dictionary)
         //                 other_word
         table[hindex]->next = new_word;
         // and : head -> new_word -> last_word -> other_word
-        */
     }
 
     return true;
