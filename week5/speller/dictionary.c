@@ -61,9 +61,10 @@ bool load(const char *dictionary)
             printf("Error when loading. No more memory available.\n");
             return false;
         }
-        strcpy(scanned_word, new_word->word);
-        free(scanned_word);
+        // strcpy(new_word->word, scanned_word);
         // before : head -> last_word -> other_word
+        printf("new_word->word: %s\n",new_word->word);
+        break;
         int hindex = hash(new_word->word);
         new_word->next = table[hindex]->next;
         //here : head -> last_word <- new_word
@@ -73,7 +74,8 @@ bool load(const char *dictionary)
         table[hindex]->next = new_word;
         // and : head -> new_word -> last_word -> other_word
     }
-
+    free(scanned_word);
+    
     return true;
 }
 
