@@ -62,6 +62,13 @@ bool load(const char *dictionary)
     char* scanned_word = malloc(LENGTH);
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
+
+        if(strlen(scanned_word) == 0)
+        {
+            printf("No word to insert into node.\n");
+            continue;
+        }
+        
         node* new_word = malloc(sizeof(node));
         if (new_word == NULL)
         {
@@ -70,17 +77,8 @@ bool load(const char *dictionary)
         }
         number_words++;
         
-        if(strlen(scanned_word) > 0)
-        {
-            // insert scanned word into new node
-            strcpy(new_word->word, scanned_word);
-        }
-        else 
-        {
-            printf("No word to insert into node.\n");
-            free(new_word);
-            continue;
-        }
+        // insert scanned word into new node
+        strcpy(new_word->word, scanned_word);
 
         // hash word to find which bucket we'll store the new node
         int hindex = hash(new_word->word);
