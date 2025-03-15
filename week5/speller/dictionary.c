@@ -90,6 +90,7 @@ bool load(const char *dictionary)
         }
     }
     free(scanned_word);
+    fclose(dico);
     return true;
 }
 
@@ -110,6 +111,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    
+
     return false;
 }
