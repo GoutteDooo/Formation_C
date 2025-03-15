@@ -8,9 +8,6 @@
 
 #include "dictionary.h"
 
-#define STR_HELPER(x)
-#define STR(x) STR_HELPER(x)
-
 // Represents a node in a hash table
 typedef struct node
 {
@@ -68,7 +65,7 @@ bool load(const char *dictionary)
     }
 
     char* scanned_word = malloc(LENGTH);
-    while (fscanf(dico, "%" STR(LENGTH - 1) "s", scanned_word) != EOF)
+    while (fscanf(dico, "%44s", scanned_word) != EOF)
     {
 
         if(scanned_word[0] == '\0')
