@@ -38,14 +38,14 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *input = fopen(dictionary, "r");
-    if (input == NULL)
+    FILE *dico = fopen(dictionary, "r");
+    if (dico == NULL)
     {
         printf("Could not open dictionary!\n");
         return false;
     }
     char* word;
-    while (fscanf(input, "%s", word) != EOF)
+    while (fscanf(dico, "%s", word) != EOF)
     {
         
     }
