@@ -59,6 +59,11 @@ bool load(const char *dictionary)
         return false;
     }
 
+    for (int i = 0; i < N; i++)
+    {
+        table[i] = NULL;
+    }
+
     char* scanned_word = malloc(LENGTH);
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
