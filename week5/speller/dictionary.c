@@ -63,12 +63,12 @@ bool load(const char *dictionary)
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
 
-        if(strlen(scanned_word) == 0)
+        if(scanned_word[0] == '\0')
         {
             printf("No word to insert into node.\n");
             continue;
         }
-        
+
         node* new_word = malloc(sizeof(node));
         if (new_word == NULL)
         {
