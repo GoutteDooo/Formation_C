@@ -1,0 +1,2 @@
+rm speller
+make speller
