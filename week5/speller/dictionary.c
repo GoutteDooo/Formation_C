@@ -49,7 +49,6 @@ bool load(const char *dictionary)
     int test = 0;
     while (fscanf(dico, "%s", scanned_word) != EOF)
     {
-        break;
         /*
         printf("scanned word: %s\n",scanned_word);
         test++;
@@ -63,21 +62,26 @@ bool load(const char *dictionary)
             return false;
         }
         strcpy(new_word->word, scanned_word);
-        // before : head -> last_word -> other_word
         int hindex = hash(new_word->word);
-        // si table[i] est vide
-        break;
-        if (table[hindex]->next == NULL) {
-
+        // if table[i] is empty, define head -> new_word
+        if (table[hindex] == NULL) {
+            table[hindex] = new_word;
         }
-        new_word->next = table[hindex]->next;
-        printf("table->next: %p\n", table[hindex]->next);
-        //here : head -> last_word <- new_word
-        //                     |
-        //                     V
-        //                 other_word
-        table[hindex]->next = new_word;
-        // and : head -> new_word -> last_word -> other_word
+        else 
+        {
+            // else
+            // before : head -> last_word -> other_word
+            printf("table bef: %p\n", table[hindex]);
+            new_word->next = table[hindex];
+            //here : head -> last_word <- new_word
+            //                     |
+            //                     V
+            //                 other_word
+            table[hindex]->next = new_word;
+            // and : head -> new_word -> last_word -> other_word
+            printf("table aft: %p\n", table[hindex]);
+            break;
+        }
     }
     free(scanned_word);
     
