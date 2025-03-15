@@ -54,15 +54,18 @@ bool load(const char *dictionary)
             printf("Error when loading. No more memory available.\n");
             return false;
         }
+        // insert scanned word into new node
         strcpy(new_word->word, scanned_word);
+
+        // hash word to find which bucket we'll store the new node
         int hindex = hash(new_word->word);
+
         // if table[i] is empty, define head -> new_word
         if (table[hindex] == NULL) {
             table[hindex] = new_word;
         }
-        else 
+        else
         {
-            // else
             // before : head -> last_word -> other_word
             new_word->next = table[hindex];
             //here : head -> last_word <- new_word
