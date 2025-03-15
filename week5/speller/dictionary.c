@@ -65,7 +65,8 @@ bool load(const char *dictionary)
     }
 
     char* scanned_word = malloc(LENGTH);
-    while (fscanf(dico, "%44s", scanned_word) != EOF)
+    char format[4];
+    while (fscanf(dico,"%" itoa(LENGTH, format, 10) "s", scanned_word) != EOF)
     {
 
         if(scanned_word[0] == '\0')
