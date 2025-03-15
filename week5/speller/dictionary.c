@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -45,8 +46,9 @@ bool load(const char *dictionary)
         fclose(dico);
         return false;
     }
-    char* word;
-    while (fscanf(dico, "%s", word) != EOF)
+
+    char* scanned_word;
+    while (fscanf(dico, "%s", scanned_word) != EOF)
     {
         node* new_word = malloc(sizeof(node));
         if (new_word == NULL)
@@ -55,8 +57,10 @@ bool load(const char *dictionary)
             fclose(dico);
             return false;
         }
-        new_word
+        strcpy(scanned_word, new_word->word);
+        new_word->next = NULL;
     }
+    
     return true;
 }
 
