@@ -114,10 +114,13 @@ bool unload(void)
     //explorer chaque bucket, et free tout les nodes
     for (int i = 0; i < N; i++)
     {
-        for(node* checker = table[i]->next; checker != NULL; checker = checker->next)
+        if (table[i] != NULL)
         {
-            free(table[i]);
-            table[i] = checker;
+            for(node* checker = table[i]->next; checker != NULL; checker = checker->next)
+            {
+                free(table[i]);
+                table[i] = checker;
+            }
         }
     }
     // All buckets is empty
