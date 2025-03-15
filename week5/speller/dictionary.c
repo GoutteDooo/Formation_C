@@ -33,6 +33,11 @@ unsigned int hash(const char *word)
 {
     // TODO : Implement this function
     // Hash sum of ASCII values of the length of a word
+    unsigned int ascii_sum = 0;
+    for (int i = 0; i < sizeof(word); i ++)
+    {
+        ascii_sum += toupper(word[i]) - 'A' % 26;
+    }
     return (toupper(word[0]) - 'A') % N;
 }
 
