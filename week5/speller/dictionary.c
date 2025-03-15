@@ -120,5 +120,6 @@ bool unload(void)
             table[i] = checker;
         }
     }
-    return false;
+    // All buckets is empty
+    return true;
 }
