@@ -15,7 +15,7 @@ typedef struct node
     struct node *next;
 } node;
 
-// TODO: Choose number of buckets in hash table
+//Globals
 const unsigned int N = 26;
 unsigned int number_words = 0;
 
@@ -27,7 +27,7 @@ bool check(const char *word)
 {
     // Hash the word to find which bucket it is stored
     unsigned int h = hash(word);
-    // Go seek the word through the founded bucket
+    // Go find the word through the selected bucket
     for (node* checker = table[h]; checker != NULL; checker = checker->next)
     {
         if (strcasecmp(word, checker->word) == 0) return true;
