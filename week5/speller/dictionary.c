@@ -24,7 +24,13 @@ node *table[N];
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
-    // TODO
+    // Hash the word to find which bucket it is stored
+    unsigned int h = hash(word);
+    // Go find 
+    for (node* checker = table[h]; checker != NULL; checker = checker->next)
+    {
+
+    }
     return false;
 }
 
