@@ -124,6 +124,11 @@ bool unload(void)
             {
                 free(table[i]);
                 table[i] = checker;
+                if (checker->next == NULL)
+                {
+                    free(checker);
+                    break;
+                }
             }
         }
     }
