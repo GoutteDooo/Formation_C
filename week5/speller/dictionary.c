@@ -45,6 +45,12 @@ bool load(const char *dictionary)
         return false;
     }
 
+    //Définir tout les nexts de la hashtable à NULL par défaut
+    for (int i = 0; i < sizeof(table) ; i++)
+    {
+        table[i] = NULL;
+    }
+
     char* scanned_word = malloc(LENGTH);
     int test = 0;
     while (fscanf(dico, "%s", scanned_word) != EOF)
