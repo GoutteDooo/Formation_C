@@ -44,8 +44,8 @@ bool load(const char *dictionary)
         printf("Could not open dictionary!\n");
         return false;
     }
-    int i = 0;
-    while (fscanf(input, "s") != EOF)
+    char* word;
+    while (fscanf(input, "%s", word) != EOF)
     {
         
     }
