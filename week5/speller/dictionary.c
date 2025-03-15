@@ -24,15 +24,15 @@ unsigned int number_words = 0;
 node *table[N];
 
 // Returns true if word is in dictionary, else false
-bool check(const char *word)
+bool check(char *word)
 {
     // Hash the word to find which bucket to it is stored
     unsigned int h = hash(word);
     // Go find the word through the selected bucket
     for (node* checker = table[h]; checker != NULL; checker = checker->next)
     {
-        char* cword = tolower(word);
-        if (strcasecmp(cword, checker->word) == 0) return true;
+        char* lowercase_word = strtolower(word);
+        if (strcasecmp(lowercase_word, checker->word) == 0) return true;
     }
     // we traverse all the nodes and didn't find the word
     return false;
@@ -149,4 +149,16 @@ bool unload(void)
     }
     // All buckets is empty
     return true;
+}
+
+
+/* -- Helpers --*/
+/* Convert a full string to lowercase */
+char* strtolower(char* word)
+{
+    for (int i = 0, n = strlen(word); i < n ; i++)
+    {
+        word[i] = tolower(word[i]);
+    }
+    return word;
 }
