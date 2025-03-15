@@ -42,12 +42,20 @@ bool load(const char *dictionary)
     if (dico == NULL)
     {
         printf("Could not open dictionary!\n");
+        fclose(dico);
         return false;
     }
     char* word;
     while (fscanf(dico, "%s", word) != EOF)
     {
-        
+        node* new_word = malloc(sizeof(node));
+        if (new_word == NULL)
+        {
+            printf("Error when loading. No more memory available.\n");
+            fclose(dico);
+            return false;
+        }
+        new_word
     }
     return true;
 }
