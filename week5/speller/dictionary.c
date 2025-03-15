@@ -53,7 +53,6 @@ bool load(const char *dictionary)
             printf("Error while scanning dictionary :\n No more memory available.\n");
             return false;
         }
-        new_word->word = strcpy(char *__restrict dest, const char *__restrict src)
     }
     return true;
 }
