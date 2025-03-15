@@ -8,8 +8,6 @@
 // Maximum length for a word
 // (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
 #define LENGTH 45
-#define STR_HELPER(x) #x
-#define STR(x) STR_HELPER(x)
 
 
 // Prototypes
