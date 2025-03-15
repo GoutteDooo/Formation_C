@@ -1,6 +1,5 @@
 // Implements a dictionary's functionality
 
-#include <cstring>
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -45,8 +44,8 @@ bool load(const char *dictionary)
         printf("Could not open dictionary!\n");
         return false;
     }
-    char* word;
-    while ((word = fscanf(input, "%s")) != EOF)
+    int i = 0;
+    while (fscanf(input, "%s") != EOF)
     {
         node* new_word = malloc(sizeof(node));
         if (new_word == NULL) 
@@ -54,8 +53,9 @@ bool load(const char *dictionary)
             printf("Error while scanning dictionary :\n No more memory available.\n");
             return false;
         }
-        char* copy = 
-        new_word->word = 
+        printf("scan ok!\n");
+        i++;
+        if (i == 3) break;
     }
     return true;
 }
