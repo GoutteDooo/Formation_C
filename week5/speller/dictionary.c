@@ -36,9 +36,9 @@ unsigned int hash(const char *word)
     unsigned int ascii_sum = 0;
     for (int i = 0; i < sizeof(word); i ++)
     {
-        ascii_sum += toupper(word[i]) - 'A' % 26;
+        ascii_sum += word[i];
     }
-    return (toupper(word[0]) - 'A') % N;
+    return ascii_sum % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
