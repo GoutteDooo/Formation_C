@@ -56,7 +56,8 @@ bool load(const char *dictionary)
             return false;
         }
         strcpy(scanned_word, new_word->word);
-        new_word->next = NULL;
+        int hindex = hash(new_word->word);
+        table[hindex]->next = new_word;
         
     }
 
