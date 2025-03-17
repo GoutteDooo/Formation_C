@@ -87,6 +87,7 @@ bool load(const char *dictionary)
         if (new_word == NULL)
         {
             printf("Error when loading. No more memory available.\n");
+            free(new_word);
             return false;
         }
         number_words++;
