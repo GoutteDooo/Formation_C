@@ -161,7 +161,7 @@ bool unload(void)
 /* Convert a full string to lowercase */
 char* strtolower(const char* word)
 {
-    char* copy = malloc(sizeof(word));
+    char* copy = malloc(strlen(word) + 1);
     strcpy(copy, word);
 
     if (copy == NULL) return NULL;
