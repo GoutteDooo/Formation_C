@@ -87,11 +87,10 @@ bool load(const char *dictionary)
         if (new_word == NULL)
         {
             printf("Error when loading. No more memory available.\n");
-            free(new_word);
             return false;
         }
         number_words++;
-        
+
         // insert scanned word into new node
         strcpy(new_word->word, scanned_word);
 
@@ -141,15 +140,12 @@ bool unload(void)
     {
         if (table[i] != NULL)
         {
-            for(node* checker = table[i]->next; checker != NULL; checker = checker->next)
+            node* checker = table[i];
+            while(checker != NULL)
             {
+                checker = table[i]->next;
                 free(table[i]);
                 table[i] = checker;
-                if (checker->next == NULL)
-                {
-                    free(checker);
-                    break;
-                }
             }
         }
     }
