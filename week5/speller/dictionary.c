@@ -16,7 +16,7 @@ typedef struct node
     struct node *next;
 } node;
 
-//Globals
+// Globals
 const unsigned int N = 26;
 unsigned int number_words = 0;
 
@@ -28,11 +28,12 @@ bool check(const char *word)
 {
     // Hash the word to find which bucket to it is stored
     unsigned int h = hash(word);
-    char* lowercase_word = strtolower(word);
+    char *lowercase_word = strtolower(word);
     // Go find the word through the selected bucket
-    for (node* checker = table[h]; checker != NULL; checker = checker->next)
+    for (node *checker = table[h]; checker != NULL; checker = checker->next)
     {
-        if (strcasecmp(lowercase_word, checker->word) == 0) {
+        if (strcasecmp(lowercase_word, checker->word) == 0)
+        {
             free(lowercase_word);
             return true;
         }
@@ -47,9 +48,10 @@ unsigned int hash(const char *word)
 {
     // Hash sum of ASCII values of the length of a word
     unsigned int ascii_sum = 0;
-    char* lowercase_word = strtolower(word);
-    if (lowercase_word == 0) return 0;
-    for (int i = 0, n = strlen(word); i < n; i ++)
+    char *lowercase_word = strtolower(word);
+    if (lowercase_word == 0)
+        return 0;
+    for (int i = 0, n = strlen(word); i < n; i++)
     {
         ascii_sum += lowercase_word[i];
     }
@@ -73,16 +75,16 @@ bool load(const char *dictionary)
     }
 
     char scanned_word[LENGTH];
-    while (fscanf(dico,"%s", scanned_word) != EOF)
+    while (fscanf(dico, "%s", scanned_word) != EOF)
     {
 
-        if(scanned_word[0] == '\0')
+        if (scanned_word[0] == '\0')
         {
             printf("No word to insert into node.\n");
             continue;
         }
 
-        node* new_word = malloc(sizeof(node));
+        node *new_word = malloc(sizeof(node));
         new_word->next = NULL;
         if (new_word == NULL)
         {
@@ -98,17 +100,18 @@ bool load(const char *dictionary)
         int hindex = hash(new_word->word);
 
         // if table[i] is empty, define head -> new_word
-        if (table[hindex] == NULL) {
+        if (table[hindex] == NULL)
+        {
             table[hindex] = new_word;
         }
         else
         {
             // before : head -> last_word -> other_word
             new_word->next = table[hindex];
-            //here : head -> last_word <- new_word
-            //                     |
-            //                     V
-            //                 other_word
+            // here : head -> last_word <- new_word
+            //                      |
+            //                      V
+            //                  other_word
             table[hindex] = new_word;
             // and : head -> new_word -> last_word -> other_word
         }
@@ -120,28 +123,19 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    /*
-    unsigned int count = 0;
-    for (int i = 0; i < N; i++)
-    {
-        if (table[i] == NULL) break;
-        // checker chaque bucket
-        for (node* checker = table[i]; checker != NULL; checker = checker->next, count++);
-    }
-    */
     return number_words;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    //explorer chaque bucket, et free tout les nodes
+    // explorer chaque bucket, et free tout les nodes
     for (int i = 0; i < N; i++)
     {
         if (table[i] != NULL)
         {
-            node* checker = table[i];
-            while(checker != NULL)
+            node *checker = table[i];
+            while (checker != NULL)
             {
                 checker = table[i]->next;
                 free(table[i]);
@@ -153,17 +147,17 @@ bool unload(void)
     return true;
 }
 
-
 /* -- Helpers -- */
 /* Convert a full string to lowercase */
-char* strtolower(const char* word)
+char *strtolower(const char *word)
 {
-    char* copy = malloc(strlen(word) + 1);
+    char *copy = malloc(strlen(word) + 1);
     strcpy(copy, word);
 
-    if (copy == NULL) return NULL;
+    if (copy == NULL)
+        return NULL;
 
-    for (int i = 0, n = strlen(copy); i < n ; i++)
+    for (int i = 0, n = strlen(copy); i < n; i++)
     {
         copy[i] = tolower(copy[i]);
     }
