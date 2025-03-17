@@ -153,11 +153,12 @@ bool unload(void)
 
 /* -- Helpers --*/
 /* Convert a full string to lowercase */
-char* strtolower(char* word)
+char* strtolower(const char* word)
 {
-    for (int i = 0, n = strlen(word); i < n ; i++)
+    char* copy = strcpy(copy, word);
+    for (int i = 0, n = strlen(copy); i < n ; i++)
     {
-        word[i] = tolower(word[i]);
+        copy[i] = tolower(copy[i]);
     }
-    return word;
+    return copy;
 }
