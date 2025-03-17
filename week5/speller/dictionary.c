@@ -28,16 +28,17 @@ bool check(const char *word)
 {
     // Hash the word to find which bucket to it is stored
     unsigned int h = hash(word);
+    char* lowercase_word = strtolower(word);
     // Go find the word through the selected bucket
     for (node* checker = table[h]; checker != NULL; checker = checker->next)
     {
-        char* lowercase_word = strtolower(word);
         if (strcasecmp(lowercase_word, checker->word) == 0) {
             free(lowercase_word);
             return true;
         }
     }
     // we traverse all the nodes and didn't find the word
+    free(lowercase_word);
     return false;
 }
 
