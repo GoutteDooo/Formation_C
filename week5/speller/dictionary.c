@@ -48,6 +48,7 @@ unsigned int hash(const char *word)
     // Hash sum of ASCII values of the length of a word
     unsigned int ascii_sum = 0;
     char* lowercase_word = strtolower(word);
+    if (lowercase_word == 0) return 0;
     for (int i = 0, n = strlen(word); i < n; i ++)
     {
         ascii_sum += lowercase_word[i];
@@ -162,9 +163,13 @@ char* strtolower(const char* word)
 {
     char* copy = malloc(sizeof(word));
     copy = strcpy(copy, word);
+
+    if (copy == NULL) return NULL;
+
     for (int i = 0, n = strlen(copy); i < n ; i++)
     {
         copy[i] = tolower(copy[i]);
     }
+    
     return copy;
 }
