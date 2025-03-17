@@ -39,7 +39,7 @@ bool check(char *word)
 }
 
 // Hashes word to a number
-unsigned int hash(char *word)
+unsigned int hash(const char *word)
 {
     // Hash sum of ASCII values of the length of a word
     unsigned int ascii_sum = 0;
