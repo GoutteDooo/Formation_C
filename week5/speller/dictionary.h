@@ -11,8 +11,8 @@
 
 
 // Prototypes
-bool check(char *word);
-unsigned int hash(char *word);
+bool check(const char *word);
+unsigned int hash(const char *word);
 bool load(const char *dictionary);
 unsigned int size(void);
 bool unload(void);

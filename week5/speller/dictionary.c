@@ -24,7 +24,7 @@ unsigned int number_words = 0;
 node *table[N];
 
 // Returns true if word is in dictionary, else false
-bool check(char *word)
+bool check(const char *word)
 {
     // Hash the word to find which bucket to it is stored
     unsigned int h = hash(word);
@@ -39,7 +39,7 @@ bool check(char *word)
 }
 
 // Hashes word to a number
-unsigned int hash(char *word)
+unsigned int hash(const char *word)
 {
     // Hash sum of ASCII values of the length of a word
     unsigned int ascii_sum = 0;
