@@ -32,7 +32,10 @@ bool check(const char *word)
     for (node* checker = table[h]; checker != NULL; checker = checker->next)
     {
         char* lowercase_word = strtolower(word);
-        if (strcasecmp(lowercase_word, checker->word) == 0) return true;
+        if (strcasecmp(lowercase_word, checker->word) == 0) {
+            free(lowercase_word);
+            return true;
+        }
     }
     // we traverse all the nodes and didn't find the word
     return false;
@@ -48,6 +51,7 @@ unsigned int hash(const char *word)
     {
         ascii_sum += lowercase_word[i];
     }
+    free(lowercase_word);
     return ascii_sum % N;
 }
 
@@ -155,7 +159,8 @@ bool unload(void)
 /* Convert a full string to lowercase */
 char* strtolower(const char* word)
 {
-    char* copy = strcpy(copy, word);
+    char* copy = malloc(sizeof(word));
+    copy = strcpy(copy, word);
     for (int i = 0, n = strlen(copy); i < n ; i++)
     {
         copy[i] = tolower(copy[i]);
