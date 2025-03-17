@@ -162,7 +162,7 @@ bool unload(void)
 char* strtolower(const char* word)
 {
     char* copy = malloc(sizeof(word));
-    copy = strcpy(copy, word);
+    strcpy(copy, word);
 
     if (copy == NULL) return NULL;
 
@@ -170,6 +170,6 @@ char* strtolower(const char* word)
     {
         copy[i] = tolower(copy[i]);
     }
-    
+
     return copy;
 }
