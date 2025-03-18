@@ -33,12 +33,12 @@ else:
   print("Not found :(...")
 """
 
+"""
 people = {
   "Yuliia": "+1165546875",
   "David": "+1486547564",
   "John": "+1687654782"
 }
-"""
 name = input("Name: ")
 if name in people:
   print(f"Number: {people[name]}")
@@ -47,11 +47,9 @@ else:
 
 import csv
 
-file = open("phonebook.csv", "a")
 name = input("Name: ")
 number = input("Number: ")
 
-writer = csv.writer(file)
-writer.writerow([name, number])
-
-file.close()
+with open("phonebook.csv", "a") as file:
+  writer = csv.DictWriter(file, fieldnames=["name","number"])
+  writer.writerow({"name": name, "number": number})
