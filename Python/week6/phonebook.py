@@ -2,9 +2,7 @@ names = ["Yuliia","David","John"]
 
 name = input("Name: ")
 
-for n in names:
-  if n == name:
-    print("Found!")
-    break
+if name in names:
+  print("Found!")
 else:
-  print("Not found")
+  print(":(... Not found.")
