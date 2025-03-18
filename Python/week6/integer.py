@@ -1,1 +1,5 @@
-n = int(input("Input: "))
+try:
+  n = int(input("Input: "))
+  print("Integer.")
+except ValueError:
+  print("Not Integer.")
