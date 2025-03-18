@@ -1,5 +1,2 @@
 before = input("Before: ")
-print("After: ",end="")
-for c in before:
-  print(c.uppercase(), end="")
-print()
+print(f"After: {before.upper()}")
