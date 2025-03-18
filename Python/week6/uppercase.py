@@ -1,5 +1,5 @@
 before = input("Before: ")
-print("After: ", end="")
+print("After: ")
 for c in before:
-  print(c.uppercase(), end="")
+  print(c.uppercase())
 print()
