@@ -9,6 +9,7 @@ else:
   print(":(... Not found.")
 """
 
+"""
 people = [
   {
     "name": "Yuliia",
@@ -23,7 +24,6 @@ people = [
     "number": "+1687654782",
   }
 ]
-
 name = input("Name: ")
 for person in people:
   if person["name"] == name:
@@ -31,3 +31,10 @@ for person in people:
     break
 else:
   print("Not found :(...")
+"""
+
+people = {
+  "Yuliia": "+1165546875",
+  "David": "+1486547564",
+  "John": "+1687654782"
+}
