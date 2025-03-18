@@ -38,9 +38,20 @@ people = {
   "David": "+1486547564",
   "John": "+1687654782"
 }
-
+"""
 name = input("Name: ")
 if name in people:
   print(f"Number: {people[name]}")
 else:
-  print("Not found.")
+  print("Not")"""
+
+import csv
+
+file = open("phonebook.csv", "a")
+name = input("Name: ")
+number = input("Number: ")
+
+writer = csv.writer(file)
+writer.writerow([name, number])
+
+file.close()

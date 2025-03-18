@@ -5,4 +5,4 @@ if len(argv) != 2:
   exit(1)
 
 print(f"Hello, {argv[1]}")
-sys.exit(0)
+exit(0)
