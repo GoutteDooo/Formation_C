@@ -23,3 +23,11 @@ people = [
     "number": "+1687654782",
   }
 ]
+
+name = input("Name: ")
+for person in people:
+  if person["name"] == name:
+    print(f"Phone: {person["number"]}")
+    break
+else:
+  print("Not found :(...")
