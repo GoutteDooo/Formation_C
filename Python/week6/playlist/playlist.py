@@ -13,7 +13,7 @@ def main():
         file_reader = DictReader(file)
         for song in file_reader:
             if float(song["tempo"]) > min_tempo and float(song["tempo"]) < max_tempo:
-                                                    playlist.append(song["name"])
+                playlist.append(song["name"])
 
     # TODO: Print song titles from playlist
     for song in playlist:
