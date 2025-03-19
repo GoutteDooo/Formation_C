@@ -4,5 +4,6 @@ for i in range(ord('a'),ord('z'),5):
 phrase = "You're off to Great Places"
 
 for i in range(len(phrase)):
-  print(phrase[i], end="/")
-print()
+  print(phrase[i], end=" ")
+print(end="!!!!\n")
+print(phrase, sep=".", end="!!!!\n")
