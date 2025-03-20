@@ -1,8 +1,8 @@
 from cs50 import get_int
 
 height = get_int("Height: ")
-right_blocks = " "
+blocks = ""
 
 for i in range(height):
-  right_blocks += "#"
-  print(right_blocks)
+  blocks += "#"
+  print(" " * (height - i - 1) + blocks + "  " + blocks)
