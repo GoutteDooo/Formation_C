@@ -1,4 +1,5 @@
 from cs50 import get_string
+import re
 
 text = get_string("Text: ")
 
@@ -15,7 +16,8 @@ L = 100 * sum_letters / len(words)
 sum_words = (len(words))
 
 # get rid of blank items
-sum_sentences = len([phrase for phrase in text.split(".") if phrase])
+sentences = re.split(r"[.!?]", text)
+sum_sentences = len([s for s in sentences if s.strip()])
 S = 100 * (sum_sentences) / (sum_words)
 
 ColemanLiauIndex = ((0.0588 * L) - (0.296 * S) - 15.8)
