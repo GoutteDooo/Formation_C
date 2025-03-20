@@ -44,15 +44,16 @@ def main():
             print(f"head {j}: {head[j]}")
             print(f"rows {i}: {rows[i][head[j]]}")
             print(f"longest {j}: {longests[j-1]}")
-            if longests[j-1] == rows[i][head[j]]:
+            print("true ?", int(longests[j-1]) == int(rows[i][head[j]]))
+            if int(longests[j-1]) == int(rows[i][head[j]]):
                 correct += 1
                 if correct == len(head) - 1:
                     name = rows[i]["name"]
-                    print(f"Found: {name}")
+                    print(f"{name}.")
                     return
-                continue
             else:
                 break
+    print("No match.")
     return
 
 
