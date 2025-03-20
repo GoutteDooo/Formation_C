@@ -36,7 +36,16 @@ def main():
         print("longest: ",longests)
 
     # TODO: Check database for matching profiles
-
+    for i in range(len(rows)):
+        correct = 0
+        name = ""
+        for j in range(1, len(head)):
+            if longests[j] == rows[i][head[j]]:
+                correct += 1
+                name += head[j]
+                continue
+            else:
+                break
     return
 
 
