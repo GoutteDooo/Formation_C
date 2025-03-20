@@ -17,7 +17,7 @@ sum_words = (len(words))
 
 # get rid of blank items
 # sentences = re.split(r"[.!?]", text)
-sentences = re.findall(r"[^.!?]+[.!?]", text)
+sentences = re.findall(r"[^.!?]+[.!?](?=\s|$)", text)
 print("sentences: ",sentences)
 sum_sentences = len(sentences)
 print("sum_sentences: ",sum_sentences)
