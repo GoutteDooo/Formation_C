@@ -21,20 +21,20 @@ def luhn(n):
         sum += numbers[i] * 2 - 9
       else:
         sum += numbers[i] * 2
-    print("sum: ", sum)
     step += 1 
-  print("sum: ", sum)
   return sum % 10 == 0
 
 if luhn(numbers):
   if int(str(numbers[0])+str(numbers[1])) in cards["AMEX"]:
     print("AMEX")
-  elif int(str(numbers[0])+str(numbers[1])) in cards["MASTERCARD"]:
+  elif int(str(numbers[0])+str(numbers[1])) in cards["MASTERCARD"] and len(numbers) :
     print("MASTERCARD")
   elif int(str(numbers[0])) in cards["VISA"]:
     print("VISA")
   else:
-    print("Invalid")
+    print("INVALID")
+else:
+  print("INVALID")
 
 
 # 4003600000000014
