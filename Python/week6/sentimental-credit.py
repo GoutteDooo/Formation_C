@@ -27,10 +27,14 @@ def luhn(n):
   return sum % 10 == 0
 
 if luhn(numbers):
-  print("Valid")
-else:
-  print("Invalid")
-
+  if int(str(numbers[0])+str(numbers[1])) in cards["AMEX"]:
+    print("AMEX")
+  elif int(str(numbers[0])+str(numbers[1])) in cards["MASTERCARD"]:
+    print("MASTERCARD")
+  elif int(str(numbers[0])) in cards["VISA"]:
+    print("VISA")
+  else:
+    print("Invalid")
 
 
 # 4003600000000014
