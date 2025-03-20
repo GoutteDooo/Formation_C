@@ -17,12 +17,12 @@ def main():
         print(reader.fieldnames)
         for row in reader:
             rows.append(row)
-    print(rows)
+
     # TODO: Read DNA sequence file into a variable
     sequence = []
     with open(sys.argv[2]) as seq:
         reader = csv.DictReader(seq)
-    sequence.append(reader)
+        sequence.append(reader.fieldnames)
     print(sequence)
     # TODO: Find longest match of each STR in DNA sequence
 
