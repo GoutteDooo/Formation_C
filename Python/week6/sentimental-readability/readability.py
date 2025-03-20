@@ -13,6 +13,7 @@ L = 100 * sum_letters / len(words)
 
 # counts number of sentences
 sum_words = (len(words))
+
 # get rid of blank items
 sum_sentences = len([phrase for phrase in text.split(".") if phrase])
 S = 100 * (sum_sentences) / (sum_words)
