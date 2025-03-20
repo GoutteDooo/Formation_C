@@ -13,11 +13,10 @@ def main():
     # TODO: Read database file into a variable
     rows = []
     with open(sys.argv[1]) as database:
-        reader = csv.DictReader(database)
-        print(reader.fieldnames)
-        for row in reader:
+        reader_db = csv.DictReader(database)
+        print(reader_db.fieldnames)
+        for row in reader_db:
             rows.append(row)
-    print("reader ool:",reader.fieldnames)
     print("rows:",rows)
 
 
@@ -25,13 +24,13 @@ def main():
     sequence = ""
     with open(sys.argv[2]) as seq:
         reader_seq = csv.DictReader(seq)
-        sequence = reader_seq.fieldnames
-    print("reader seq:",reader_seq.fieldnames)
+        sequence = reader_seq.fieldnames[0]
     print("sequence:",sequence)
 
     # TODO: Find longest match of each STR in DNA sequence
-    for i in range(1, len(sequence)):
-        pass
+    for i in range(1, len(reader_db)):
+        sum_sequences = 0
+        for j in range(1, len(sequence)):
 
     # TODO: Check database for matching profiles
 
