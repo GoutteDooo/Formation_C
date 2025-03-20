@@ -12,7 +12,7 @@ def luhn(n):
       sum += numbers[i]
     else:
       if numbers[i] > 9:
-        sum += numbers[i] - 9
+        sum += numbers[i] * 2 - 9
       else:
         sum += numbers[i] * 2
     print("sum: ", sum)
