@@ -16,9 +16,10 @@ L = 100 * sum_letters / len(words)
 sum_words = (len(words))
 
 # get rid of blank items
-sentences = re.split(r"[.!?]", text)
+# sentences = re.split(r"[.!?]", text)
+sentences = re.findall(r"[^.!?]+[.!?]", text)
 print("sentences: ",sentences)
-sum_sentences = len([s for s in sentences if s.strip() + " "])
+sum_sentences = len(sentences)
 print("sum_sentences: ",sum_sentences)
 S = 100 * (sum_sentences) / (sum_words)
 
