@@ -6,7 +6,7 @@ text = inpute
 
 # counts number of words
 words = text.split()
-words = [words.isalpha() for word in words]
+words = [''.join(char for char in word if char.isalpha()) for word in raw_words]
 # counts number of characters
 
 # counts number of sentences
