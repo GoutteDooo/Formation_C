@@ -25,11 +25,11 @@ def luhn(n):
   return sum % 10 == 0
 
 if luhn(numbers):
-  if int(str(numbers[0])+str(numbers[1])) in cards["AMEX"]:
+  if int(str(numbers[0])+str(numbers[1])) in cards["AMEX"] and len(numbers) == 15:
     print("AMEX")
-  elif int(str(numbers[0])+str(numbers[1])) in cards["MASTERCARD"] and len(numbers) :
+  elif int(str(numbers[0])+str(numbers[1])) in cards["MASTERCARD"] and len(numbers) == 16 :
     print("MASTERCARD")
-  elif int(str(numbers[0])) in cards["VISA"]:
+  elif int(str(numbers[0])) in cards["VISA"] and (len(numbers) == 13 or len(numbers) == 16):
     print("VISA")
   else:
     print("INVALID")
