@@ -37,12 +37,19 @@ def main():
 
     # TODO: Check database for matching profiles
     for i in range(len(rows)):
+        print(f"rows {i}: {rows[i]}")
         correct = 0
         name = ""
         for j in range(1, len(head)):
-            if longests[j] == rows[i][head[j]]:
+            print(f"head {j}: {head[j]}")
+            print(f"rows {i}: {rows[i][head[j]]}")
+            print(f"longest {j}: {longests[j-1]}")
+            if longests[j-1] == rows[i][head[j]]:
                 correct += 1
-                name += head[j]
+                if correct == len(head) - 1:
+                    name = rows[i]["name"]
+                    print(f"Found: {name}")
+                    return
                 continue
             else:
                 break
