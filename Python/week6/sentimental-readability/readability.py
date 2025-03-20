@@ -1,6 +1,7 @@
 from cs50 import get_string
 
 inpute = "One Fish. Two Fish. Red Fish. Blue Fish."
+inpute = "Would you like them here or there? I would not like them here or there. I would not like them anywhere."
 # text = get_string("Text: ")
 text = inpute
 
@@ -16,8 +17,8 @@ L = 100 * sum_letters / len(words)
 # counts number of sentences
 sum_words = (len(words))
 sum_sentences = (len(text.split(".")) - 1)
-S = 100 * sum_sentences / sum_words
+S = 100 * round(sum_sentences) / round(sum_words)
 
 print(L, S)
-ColemanLiauIndex = 0.0588 * L - 0.296 * S - 15.8
-print(ColemanLiauIndex)
+ColemanLiauIndex = ((0.0588 * L) - (0.296 * S) - 15.8)
+print(round(ColemanLiauIndex))
