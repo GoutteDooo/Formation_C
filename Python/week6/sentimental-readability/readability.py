@@ -8,7 +8,7 @@ text = inpute
 words = text.split()
 words = [''.join(char for char in word if char.isalpha()) for word in words]
 sum_letters = sum(len(word) for word in words)
-L = sum_letters
+L = 100 * sum_letters / len(words)
 
 # counts number of characters
 
@@ -18,4 +18,6 @@ sum_words = (len(words))
 sum_sentences = (len(text.split(".")) - 1)
 S = 100 * sum_sentences / sum_words
 
-print(L)
+print(L, S)
+ColemanLiauIndex = (0.0588 * L) - (0.296 * (S - 15.8))
+print(ColemanLiauIndex)
