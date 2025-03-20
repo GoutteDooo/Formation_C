@@ -19,10 +19,10 @@ def main():
             rows.append(row)
 
     # TODO: Read DNA sequence file into a variable
-    sequence = []
+    sequence = ""
     with open(sys.argv[2]) as seq:
         reader = csv.DictReader(seq)
-        sequence.append(reader.fieldnames)
+        sequence = reader.fieldnames
     print(sequence)
     # TODO: Find longest match of each STR in DNA sequence
 
