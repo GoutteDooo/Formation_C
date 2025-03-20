@@ -1,9 +1,6 @@
 from cs50 import get_string
 
-inpute = "One Fish. Two Fish. Red Fish. Blue Fish."
-inpute = "Would you like them here or there? I would not like them here or there. I would not like them anywhere."
-# text = get_string("Text: ")
-text = inpute
+text = get_string("Text: ")
 
 # counts number of words
 words = text.split()
@@ -17,7 +14,7 @@ L = 100 * sum_letters / len(words)
 # counts number of sentences
 sum_words = (len(words))
 # get rid of blank items
-sum_sentences = len([x for x in text.split(".") if x != ""])
+sum_sentences = len(text.split("."))
 S = 100 * (sum_sentences) / (sum_words)
 
 ColemanLiauIndex = ((0.0588 * L) - (0.296 * S) - 15.8)
