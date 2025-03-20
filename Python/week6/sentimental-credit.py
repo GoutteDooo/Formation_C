@@ -15,6 +15,7 @@ def luhn(n):
         sum += numbers[i] - 9
       else:
         sum += numbers[i] * 2
+    print("sum: ", sum)
   print("sum: ", sum)
   return sum % 10 == 0
 
