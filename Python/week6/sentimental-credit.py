@@ -7,13 +7,16 @@ def luhn(n):
   numbers = [int(x) for x in str(n)]
   sum = 0
 
-  for i in range(len(numbers)-1, 0, -2):
-    if numbers[i] > 9:
-      sum += numbers[i] - 9
+  for i in range(len(numbers)-1, -1, -1):
+    if i % 2 != 0:
+      sum += numbers[i]
     else:
-      sum += numbers[i] * 2
-  for i in range(len(numbers), 0, -2):
-    sum += numbers[i]
+      if numbers[i] > 9:
+        sum += numbers[i] - 9
+      else:
+        sum += numbers[i] * 2
+  print("sum: ", sum)
+  return sum % 10 == 0
 
 if luhn(n):
   print("Valid")
