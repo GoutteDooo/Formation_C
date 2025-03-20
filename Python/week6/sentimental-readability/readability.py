@@ -19,5 +19,5 @@ sum_sentences = (len(text.split(".")) - 1)
 S = 100 * sum_sentences / sum_words
 
 print(L, S)
-ColemanLiauIndex = (0.0588 * L) - (0.296 * (S - 15.8))
+ColemanLiauIndex = 0.0588 * L - 0.296 * S - 15.8
 print(ColemanLiauIndex)
