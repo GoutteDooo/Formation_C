@@ -5,8 +5,8 @@ n = get_int("Number: ")
 # Luhn's Algorithm
 def luhn(n):
   sum = 0
-  for i in range(len(n), 0, -1):
-    digit = int(n[i - 1])
+  for i in range(n, 0, -1):
+    digit = n.lastdigit()
     if i % 2 == 1:
       digit *= 2
     if digit > 9:
