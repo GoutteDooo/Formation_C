@@ -17,7 +17,9 @@ sum_words = (len(words))
 
 # get rid of blank items
 sentences = re.split(r"[.!?]", text)
-sum_sentences = len([s for s in sentences if s.strip()])
+print("sentences: ",sentences)
+sum_sentences = len([s for s in sentences if s.strip() + " "])
+print("sum_sentences: ",sum_sentences)
 S = 100 * (sum_sentences) / (sum_words)
 
 ColemanLiauIndex = ((0.0588 * L) - (0.296 * S) - 15.8)
