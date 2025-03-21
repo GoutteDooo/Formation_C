@@ -10,4 +10,5 @@ with open("favorites.csv" ,"r") as file:
         else:
             counts[favorite] = 1
     
-    print(f"counts: {counts}")
+    for favorite in counts:
+        print(f"{favorite}: {counts[favorite]}")
