@@ -1,7 +1,6 @@
 import csv
 
 with open("favorites.csv" ,"r") as file:
-    reader =  csv.reader(file)
-    next(reader)
+    reader =  csv.DictReader(file)
     for row in reader:
-      print(row["name"])
+      print(row["tempo"])
