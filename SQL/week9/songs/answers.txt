@@ -4,4 +4,4 @@ If songs.db contains the top 100 songs of one listener from 2018, how would you 
 Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
 Because we just find one aura only with this method.
 We need a way to mix multiple auras in one to get a more unique for each user.
-A better way is maybe to calculate one aura for each month of the year. And then, we could mix these ones into a portrait to have a more global aura from the year.
+A better way is maybe to calculate one aura for each month of the year. And then, we could mix these ones into a portrait to have a more global aura from the year of the user.
