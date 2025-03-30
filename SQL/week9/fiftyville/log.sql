@@ -60,4 +60,6 @@ SELECT * FROM people WHERE license_plate IN (
 -- 686048  Bruce    (367) 555-5533  5773159633       94KL13X 
 
 --IDK what to do with this for the moment. Let's get the datas Eugene told us.
---Search for withdrawing at LEgget Street before 10:15.
+--Search for withdrawing at Leggett Street before 10:15.
+--There is no hours, but I got all transactions this day and the account_numbers.
+SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw';
