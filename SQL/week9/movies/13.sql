@@ -4,4 +4,4 @@ SELECT name FROM people WHERE id IN (
       SELECT id FROM people WHERE name = "Kevin Bacon" AND birth="1958"
     )
   )
-);
+) AND NOT name="Kevin Bacon";
