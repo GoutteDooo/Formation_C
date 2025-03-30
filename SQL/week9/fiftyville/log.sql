@@ -63,3 +63,14 @@ SELECT * FROM people WHERE license_plate IN (
 --Search for withdrawing at Leggett Street before 10:15.
 --There is no hours, but I got all transactions this day and the account_numbers.
 SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw';
+-- account_number
+-- --------------
+-- 28500762      
+-- 28296815      
+-- 76054385      
+-- 49610011      
+-- 16153065      
+-- 25506511      
+-- 81061156      
+-- 26013199
+
