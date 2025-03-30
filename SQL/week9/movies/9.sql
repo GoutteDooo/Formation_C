@@ -1,2 +1,1 @@
-SELECT name FROM people WHERE id IN (
-  SELECT person_id FROM stars JOIN movies ON movie_id = id WHERE year = 2004);
+SELECT name FROM people p JOIN stars s ON s.person_id = p.id JOIN movies m ON m.id = s.movie_id WHERE m.year = '2004' GROUP BY p.id ORDER BY p.birth ASC;
