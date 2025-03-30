@@ -7,3 +7,6 @@ SELECT * FROM crime_scene_reports WHERE description LIKE "%CS50 duck%";
 --                                          Street bakery. Interviews were conducted today with three w
 --                                         itnesses who were present at the time – each of their interv
 --                                         iew transcripts mentions the bakery. 
+
+-- Obtain the interviews of interviewees who were present at the theft.
+SELECT * FROM interviews WHERE year='2024' AND month='7' AND day='28' AND transcript LIKE "%thief%" OR "%theft%";
