@@ -31,11 +31,10 @@ SELECT * FROM interviews WHERE year='2024' AND month='7' AND day='28' AND transc
 --                                 person on the other end of the phone to purchase the flight 
 --                                 ticket.                                                    
 
---Get the range of moments when the thief exited the parking of the bakery.
-SELECT * FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour < '11' AND minute > '15' AND minute < '30' AND activity LIKE 'exit';
+--Get the range of moments when the thief exited the parking of the bakery with their car.
+SELECT * FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit';
 -- id   year  month  day  hour  minute  activity  license_plate
 -- ---  ----  -----  ---  ----  ------  --------  -------------
--- 235  2024  7      28   8     25      exit      HOD8639      
 -- 260  2024  7      28   10    16      exit      5P2BI95      
 -- 261  2024  7      28   10    18      exit      94KL13X      
 -- 262  2024  7      28   10    18      exit      6P58WS2      
@@ -44,4 +43,5 @@ SELECT * FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' 
 -- 265  2024  7      28   10    21      exit      L93JTIZ      
 -- 266  2024  7      28   10    23      exit      322W7JE      
 -- 267  2024  7      28   10    23      exit      0NTHK55
+
 
