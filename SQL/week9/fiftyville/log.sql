@@ -45,6 +45,6 @@ SELECT * FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' 
 -- 267  2024  7      28   10    23      exit      0NTHK55
 
 
---GET all people who left the bakery with their car between 10:15 and 10:30.
+--GET infos about all people who left the bakery with their car between 10:15 and 10:30.
 SELECT * FROM people WHERE license_plate IN (
   SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit');
