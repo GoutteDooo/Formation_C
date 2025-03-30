@@ -31,4 +31,5 @@ SELECT * FROM interviews WHERE year='2024' AND month='7' AND day='28' AND transc
 --                                 person on the other end of the phone to purchase the flight 
 --                                 ticket.                                                    
 
-
+--Get the range of moments when the thief exited the parking of the bakery.
+SELECT * FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour < '11' AND minute > '15' AND minute < '30' AND activity LIKE 'exit';
