@@ -125,7 +125,7 @@ SELECT * FROM people WHERE id IN (
 
 
 --I can't unfortunately check time when a call was made, but I can check duration.
---Check people who phone called with a duration less than a minute.
+--Check people who phone called this day with a duration less than a minute.
 SELECT * FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND duration < '60';
 -- id   caller          receiver        year  month  day  duration
 -- ---  --------------  --------------  ----  -----  ---  --------
@@ -139,3 +139,6 @@ SELECT * FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND durat
 -- 279  (826) 555-1652  (066) 555-9701  2024  7      28   55      
 -- 281  (338) 555-6650  (704) 555-2131  2024  7      28   54
 
+
+--Mix it up with the previous query.
+SELECT caller FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND duration < '60';
