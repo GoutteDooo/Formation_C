@@ -102,9 +102,9 @@ SELECT a.account_number FROM (
     )
   ) AS b ON a.account_number = b.account_number;
 
---... And now, get their names
---So, this is the names of people who withdrawed this morning AND who left the bakery with their car between 10:15 and 10:30.
-SELECT name FROM people WHERE id IN (
+--... And now, get their datas
+--So, this is the datas of people who withdrawed this morning AND who left the bakery with their car between 10:15 and 10:30.
+SELECT * FROM people WHERE id IN (
   SELECT b.person_id FROM (
     SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw'
   ) 
@@ -116,9 +116,13 @@ SELECT name FROM people WHERE id IN (
     )
   ) AS b ON a.account_number = b.account_number
 );
--- name 
--- -----
--- Iman 
--- Luca 
--- Diana
--- Bruce
+-- id      name   phone_number    passport_number  license_plate
+-- ------  -----  --------------  ---------------  -------------
+-- 396669  Iman   (829) 555-5269  7049073643       L93JTIZ      
+-- 467400  Luca   (389) 555-5198  8496433585       4328GD8      
+-- 514354  Diana  (770) 555-1861  3592750733       322W7JE      
+-- 686048  Bruce  (367) 555-5533  5773159633       94KL13X
+
+
+--Check people who phone called between 10:15 and 10:30 and duration less than a minute.
+SELECT * FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30';
