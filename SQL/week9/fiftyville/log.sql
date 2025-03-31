@@ -196,3 +196,4 @@ SELECT * FROM people WHERE name IN ('Diana','Bruce','Philip','Robin');
 
 --We just have to find the flight and the passport number of the THIEF, and I find them.
 SELECT * FROM airports WHERE city='Fiftyville';
+SELECT * FROM flights WHERE year='2024' AND month='7' AND day='29' AND origin_airport_id='8';
