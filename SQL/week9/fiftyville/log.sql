@@ -141,7 +141,7 @@ SELECT * FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND durat
 
 
 --Mix it up with the previous query.
-SELECT p.caller FROM phone_calls p WHERE year='2024' AND month='7' AND day='28' AND duration < '60' JOIN (
+SELECT caller FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND duration < '60' JOIN (
   SELECT phone_number FROM people WHERE id IN (
   SELECT b.person_id FROM (
     SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw'
@@ -153,5 +153,5 @@ SELECT p.caller FROM phone_calls p WHERE year='2024' AND month='7' AND day='28' 
       )
     )
   ) AS b ON a.account_number = b.account_number
-);
 )
+) ON caller = phone_number;
