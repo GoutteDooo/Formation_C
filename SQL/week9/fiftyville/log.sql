@@ -91,7 +91,7 @@ SELECT account_number FROM bank_accounts WHERE person_id IN (
 -- 56171033
 
 
---Get account numbers of people who left the bakery with their car between 10:15 and 10:30 AND them who withdrawed this morning.
+--Get account numbers of people who withdrawed this morning AND them who left the bakery with their car between 10:15 and 10:30.
 SELECT a.account_number FROM (
   SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw') AS a 
   JOIN ( 
