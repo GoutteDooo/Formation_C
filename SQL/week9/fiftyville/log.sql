@@ -210,4 +210,14 @@ SELECT * FROM flights WHERE year='2024' AND month='7' AND day='29' AND origin_ai
 -- 43  8                  1                       2024  7      29   9     30    
 -- 53  8                  9                       2024  7      29   15    20
 
+
 --Find all passengers of all flights and try to find passport from Bruce or Diana (respectively 5773159633 & 3592750733)
+SELECT * FROM passengers WHERE flight_id IN (
+  SELECT id FROM flights WHERE year='2024' AND month='7' AND day='29' AND origin_airport_id='8'
+) AND passport_number IN ('5773159633','3592750733');
+-- flight_id  passport_number  seat
+-- ---------  ---------------  ----
+-- 18         3592750733       4C  <- Bruce
+-- 36         5773159633       4A  <- Diana
+-- ... they both took flight this day, so it doesn't help me.
+-- 
