@@ -196,4 +196,18 @@ SELECT * FROM people WHERE name IN ('Diana','Bruce','Philip','Robin');
 
 --We just have to find the flight and the passport number of the THIEF, and I find them.
 SELECT * FROM airports WHERE city='Fiftyville';
+-- id  abbreviation  full_name                    city      
+-- --  ------------  ---------------------------  ----------
+-- 8   CSF           Fiftyville Regional Airport  Fiftyville
+
+--Find all flights this day from Fiftyville
 SELECT * FROM flights WHERE year='2024' AND month='7' AND day='29' AND origin_airport_id='8';
+-- id  origin_airport_id  destination_airport_id  year  month  day  hour  minute
+-- --  -----------------  ----------------------  ----  -----  ---  ----  ------
+-- 18  8                  6                       2024  7      29   16    0     
+-- 23  8                  11                      2024  7      29   12    15    
+-- 36  8                  4                       2024  7      29   8     20    
+-- 43  8                  1                       2024  7      29   9     30    
+-- 53  8                  9                       2024  7      29   15    20
+
+--Find all passengers of all flights and try to find passport from Bruce or Diana (respectively 5773159633 & 3592750733)
