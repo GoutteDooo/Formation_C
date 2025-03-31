@@ -157,5 +157,27 @@ SELECT caller, receiver FROM phone_calls AS c JOIN (
 ) AS d ON c.caller = d.phone_number WHERE (c.year='2024' AND c.month='7' AND c.day='28' AND c.duration < '60');
 -- caller          receiver      
 -- --------------  --------------
--- (770) 555-1861  (725) 555-3243  <- c: Diana | r: 
--- (367) 555-5533  (375) 555-8161  <- c: Bruce | r: 
+-- (770) 555-1861  (725) 555-3243  <- c: Diana | r: Philip
+-- (367) 555-5533  (375) 555-8161  <- c: Bruce | r: Robin
+
+--get receivers numbers
+SELECT name,phone_number FROM people JOIN (
+  SELECT receiver FROM phone_calls AS c JOIN (
+    SELECT phone_number FROM people WHERE id IN (
+      SELECT b.person_id FROM (
+        SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw'
+      )
+      AS a JOIN (
+        SELECT account_number,person_id FROM bank_accounts WHERE person_id IN (
+          SELECT id FROM people WHERE license_plate IN (
+            SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit'
+          )
+        )
+      ) AS b ON a.account_number = b.account_number
+    )
+  ) AS d ON c.caller = d.phone_number WHERE (c.year='2024' AND c.month='7' AND c.day='28' AND c.duration < '60')
+) AS e ON e.receiver = people.phone_number;
+-- name    phone_number  
+-- ------  --------------
+-- Philip  (725) 555-3243
+-- Robin   (375) 555-8161
