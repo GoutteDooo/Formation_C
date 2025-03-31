@@ -1,5 +1,5 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
--- Obtain the description of the crime scene report that contains the word "CS50".
+-- Get the description of the crime scene report that contains the word "CS50".
 SELECT * FROM crime_scene_reports WHERE description LIKE "%CS50 duck%";
 -- id   year  month  day  street           description                                                 
 -- ---  ----  -----  ---  ---------------  ------------------------------------------------------------
@@ -9,7 +9,7 @@ SELECT * FROM crime_scene_reports WHERE description LIKE "%CS50 duck%";
 --                                         iew transcripts mentions the bakery. 
 
 
--- Obtain the interviews of interviewees who were present at the theft.
+-- Get the interviews of interviewees who were present at the theft.
 SELECT name,transcript FROM interviews WHERE year='2024' AND month='7' AND day='28' AND transcript LIKE "%thief%" OR "%theft%";
 -- name     transcript                                                  
 -- -------  ------------------------------------------------------------
@@ -46,7 +46,7 @@ SELECT license_plate, hour, minute FROM bakery_security_logs WHERE year='2024' A
 -- 0NTHK55        10    23
 
 
---GET infos about all people who left the bakery with their car between 10:15 and 10:30.
+--Get infos about all people who left the bakery with their car between 10:15 and 10:30.
 SELECT * FROM people WHERE license_plate IN (
   SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit');
 -- id      name     phone_number    passport_number  license_plate
@@ -75,7 +75,9 @@ SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND 
 -- 81061156      
 -- 26013199
 
+
 --Try to get account numbers of people who left the bakery with their car between 10:15 and 10:30.
+--with their id because of their license plate.
 SELECT account_number FROM bank_accounts WHERE person_id IN (
   SELECT id FROM people WHERE license_plate IN (
     SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit')
@@ -87,3 +89,13 @@ SELECT account_number FROM bank_accounts WHERE person_id IN (
 -- 25506511      
 -- 28500762      
 -- 56171033
+
+
+--Get account numbers of people who left the bakery with their car between 10:15 and 10:30 AND them who withdrawed this morning.
+SELECT ( SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw'
+) a JOIN ( 
+  SELECT account_number FROM bank_accounts WHERE person_id IN (
+  SELECT id FROM people WHERE license_plate IN (
+    SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit')
+)
+) b ON a.account_number = b.account_number;
