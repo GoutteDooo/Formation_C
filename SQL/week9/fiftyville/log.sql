@@ -215,5 +215,17 @@ SELECT * FROM passengers WHERE flight_id=(
 -- ---------  ---------------  ----
 -- 36         5773159633       4A
 
--- ... they both took flight this day, so it doesn't help me.
--- 
+-- 5773159633 = Bruce
+-- The accomplice is Robin
+
+--Now, I have to find the town destination of the flight.
+SELECT * FROM airports WHERE id IN (
+  SELECT destination_airport_id FROM flights WHERE id=(
+    SELECT id FROM flights WHERE year='2024' AND month='7' AND day='29' AND origin_airport_id='8' ORDER BY hour,minute LIMIT 1
+  )
+);
+-- id  abbreviation  full_name          city         
+-- --  ------------  -----------------  -------------
+-- 4   LGA           LaGuardia Airport  New York City
+
+--The city the thief ESCAPED TO is New York City
