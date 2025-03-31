@@ -192,3 +192,6 @@ SELECT * FROM people WHERE name IN ('Diana','Bruce','Philip','Robin');
 -- 686048  Bruce   (367) 555-5533  5773159633       94KL13X      
 -- 847116  Philip  (725) 555-3243  3391710505       GW362R6      
 -- 864400  Robin   (375) 555-8161                   4V16VO0
+
+
+--We just have to find the flight and the passport number of the THIEF, and I find them.
