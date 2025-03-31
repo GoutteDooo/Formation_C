@@ -79,3 +79,10 @@ SELECT account_number FROM bank_accounts WHERE person_id IN (
   SELECT id FROM people WHERE license_plate IN (
     SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit')
 );
+-- account_number
+-- --------------
+-- 49610011      
+-- 26013199      
+-- 25506511      
+-- 28500762      
+-- 56171033
