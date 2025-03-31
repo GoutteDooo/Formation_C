@@ -141,17 +141,17 @@ SELECT * FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND durat
 
 
 --Mix it up with the previous query.
-SELECT caller FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND duration < '60' JOIN (
+SELECT caller FROM phone_calls AS c WHERE (year='2024' AND month='7' AND day='28' AND duration < '60') JOIN (
   SELECT phone_number FROM people WHERE id IN (
-  SELECT b.person_id FROM (
-    SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw'
-  ) 
-  AS a JOIN ( 
-    SELECT account_number,person_id FROM bank_accounts WHERE person_id IN (
-      SELECT id FROM people WHERE license_plate IN (
-        SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit'
-      )
+    SELECT b.person_id FROM (
+      SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw'
     )
-  ) AS b ON a.account_number = b.account_number
-)
-) ON caller = phone_number;
+    AS a JOIN (
+      SELECT account_number,person_id FROM bank_accounts WHERE person_id IN (
+        SELECT id FROM people WHERE license_plate IN (
+          SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit'
+        )
+      )
+    ) AS b ON a.account_number = b.account_number
+  )
+) AS d ON c.caller = d.phone_number;
