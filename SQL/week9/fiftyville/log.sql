@@ -140,8 +140,8 @@ SELECT * FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND durat
 -- 281  (338) 555-6650  (704) 555-2131  2024  7      28   54
 
 
---Mix it up with the previous query.
-SELECT caller FROM phone_calls AS c JOIN (
+--Find calls and receives of people who left the bakery with their car between 10:15 and 10:30 AND people who withdrawed this morning.
+SELECT caller, receiver FROM phone_calls AS c JOIN (
   SELECT phone_number FROM people WHERE id IN (
     SELECT b.person_id FROM (
       SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw'
@@ -155,7 +155,7 @@ SELECT caller FROM phone_calls AS c JOIN (
     ) AS b ON a.account_number = b.account_number
   )
 ) AS d ON c.caller = d.phone_number WHERE (c.year='2024' AND c.month='7' AND c.day='28' AND c.duration < '60');
--- caller        
--- --------------
--- (770) 555-1861
--- (367) 555-5533
+-- caller          receiver      
+-- --------------  --------------
+-- (770) 555-1861  (725) 555-3243
+-- (367) 555-5533  (375) 555-8161
