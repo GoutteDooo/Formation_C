@@ -10,40 +10,40 @@ SELECT * FROM crime_scene_reports WHERE description LIKE "%CS50 duck%";
 
 
 -- Obtain the interviews of interviewees who were present at the theft.
-SELECT * FROM interviews WHERE year='2024' AND month='7' AND day='28' AND transcript LIKE "%thief%" OR "%theft%";
--- id   name     year  month  day  transcript                                                  
--- ---  -------  ----  -----  ---  ------------------------------------------------------------
--- 161  Ruth     2024  7      28   Sometime within ten minutes of the theft, I saw the thief ge
---                                 t into a car in the bakery parking lot and drive away. If yo
---                                 u have security footage from the bakery parking lot, you mig
---                                 ht want to look for cars that left the parking lot in that t
---                                 ime frame.                                                  
+SELECT name,transcript FROM interviews WHERE year='2024' AND month='7' AND day='28' AND transcript LIKE "%thief%" OR "%theft%";
+-- name     transcript                                                  
+-- -------  ------------------------------------------------------------
+-- Ruth     Sometime within ten minutes of the theft, I saw the thief ge
+--          t into a car in the bakery parking lot and drive away. If yo
+--          u have security footage from the bakery parking lot, you mig
+--          ht want to look for cars that left the parking lot in that t
+--          ime frame.                                                  
 
--- 162  Eugene   2024  7      28   I don't know the thief's name, but it was someone I recogniz
---                                 ed. Earlier this morning, before I arrived at Emma's bakery,
---                                  I was walking by the ATM on Leggett Street and saw the thie
---                                 f there withdrawing some money.                             
+-- Eugene   I don't know the thief's name, but it was someone I recogniz
+--          ed. Earlier this morning, before I arrived at Emma's bakery,
+--           I was walking by the ATM on Leggett Street and saw the thie
+--          f there withdrawing some money.                             
 
--- 163  Raymond  2024  7      28   As the thief was leaving the bakery, they called someone who
---                                  talked to them for less than a minute. In the call, I heard
---                                  the thief say that they were planning to take the earliest 
---                                 flight out of Fiftyville tomorrow. The thief then asked the 
---                                 person on the other end of the phone to purchase the flight 
---                                 ticket.                                                    
+-- Raymond  As the thief was leaving the bakery, they called someone who
+--           talked to them for less than a minute. In the call, I heard
+--           the thief say that they were planning to take the earliest 
+--          flight out of Fiftyville tomorrow. The thief then asked the 
+--          person on the other end of the phone to purchase the flight 
+--          ticket.
 
 
 --Get the range of moments when the thief exited the parking of the bakery with their car.
-SELECT * FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit';
--- id   year  month  day  hour  minute  activity  license_plate
--- ---  ----  -----  ---  ----  ------  --------  -------------
--- 260  2024  7      28   10    16      exit      5P2BI95      
--- 261  2024  7      28   10    18      exit      94KL13X      
--- 262  2024  7      28   10    18      exit      6P58WS2      
--- 263  2024  7      28   10    19      exit      4328GD8      
--- 264  2024  7      28   10    20      exit      G412CB7      
--- 265  2024  7      28   10    21      exit      L93JTIZ      
--- 266  2024  7      28   10    23      exit      322W7JE      
--- 267  2024  7      28   10    23      exit      0NTHK55
+SELECT license_plate, hour, minute FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit';
+-- license_plate  hour  minute
+-- -------------  ----  ------
+-- 5P2BI95        10    16    
+-- 94KL13X        10    18    
+-- 6P58WS2        10    18    
+-- 4328GD8        10    19    
+-- G412CB7        10    20    
+-- L93JTIZ        10    21    
+-- 322W7JE        10    23    
+-- 0NTHK55        10    23
 
 
 --GET infos about all people who left the bakery with their car between 10:15 and 10:30.
