@@ -155,3 +155,7 @@ SELECT caller FROM phone_calls AS c JOIN (
     ) AS b ON a.account_number = b.account_number
   )
 ) AS d ON c.caller = d.phone_number WHERE (c.year='2024' AND c.month='7' AND c.day='28' AND c.duration < '60');
+-- caller        
+-- --------------
+-- (770) 555-1861
+-- (367) 555-5533
