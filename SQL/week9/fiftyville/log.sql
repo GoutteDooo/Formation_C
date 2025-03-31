@@ -92,10 +92,11 @@ SELECT account_number FROM bank_accounts WHERE person_id IN (
 
 
 --Get account numbers of people who left the bakery with their car between 10:15 and 10:30 AND them who withdrawed this morning.
-SELECT ( SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transaction_type LIKE 'withdraw'
-) a JOIN ( 
+SELECT a.account_number FROM ( SELECT account_number FROM atm_transactions WHERE year='2024' AND month='7' AND day='28' AND atm_location LIKE 'Leggett Street' AND transacti
+on_type LIKE 'withdraw'
+) AS a JOIN ( 
   SELECT account_number FROM bank_accounts WHERE person_id IN (
   SELECT id FROM people WHERE license_plate IN (
     SELECT license_plate FROM bakery_security_logs WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30' AND activity LIKE 'exit')
 )
-) b ON a.account_number = b.account_number;
+) AS b ON a.account_number = b.account_number;
