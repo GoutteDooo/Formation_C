@@ -181,3 +181,14 @@ SELECT name,phone_number FROM people JOIN (
 -- ------  --------------
 -- Philip  (725) 555-3243
 -- Robin   (375) 555-8161
+
+--So, Thief suspects are : Diana & Bruce, accomplice suspects are : Philip & Robin
+
+--get all infos about these guys
+SELECT * FROM people WHERE name IN ('Diana','Bruce','Philip','Robin');
+-- id      name    phone_number    passport_number  license_plate
+-- ------  ------  --------------  ---------------  -------------
+-- 514354  Diana   (770) 555-1861  3592750733       322W7JE      
+-- 686048  Bruce   (367) 555-5533  5773159633       94KL13X      
+-- 847116  Philip  (725) 555-3243  3391710505       GW362R6      
+-- 864400  Robin   (375) 555-8161                   4V16VO0
