@@ -124,5 +124,18 @@ SELECT * FROM people WHERE id IN (
 -- 686048  Bruce  (367) 555-5533  5773159633       94KL13X
 
 
---Check people who phone called between 10:15 and 10:30 and duration less than a minute.
-SELECT * FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND hour = '10' AND minute > '15' AND minute < '30';
+--I can't unfortunately check time when a call was made, but I can check duration.
+--Check people who phone called with a duration less than a minute.
+SELECT * FROM phone_calls WHERE year='2024' AND month='7' AND day='28' AND duration < '60';
+-- id   caller          receiver        year  month  day  duration
+-- ---  --------------  --------------  ----  -----  ---  --------
+-- 221  (130) 555-0289  (996) 555-8899  2024  7      28   51      
+-- 224  (499) 555-9472  (892) 555-8872  2024  7      28   36      
+-- 233  (367) 555-5533  (375) 555-8161  2024  7      28   45      
+-- 251  (499) 555-9472  (717) 555-1342  2024  7      28   50      
+-- 254  (286) 555-6063  (676) 555-6554  2024  7      28   43      
+-- 255  (770) 555-1861  (725) 555-3243  2024  7      28   49      
+-- 261  (031) 555-6622  (910) 555-3251  2024  7      28   38      
+-- 279  (826) 555-1652  (066) 555-9701  2024  7      28   55      
+-- 281  (338) 555-6650  (704) 555-2131  2024  7      28   54
+
