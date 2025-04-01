@@ -8,15 +8,17 @@
 <body>
   <form>
     <input type="text" autocomplete="off" autofocus id="name" name="name" placeholder="Type your name">
-    <p></p>
+    <p>Hello, whoever you are.</p>
   </form>  
   <script>
-    let input = document.querySelector('#name');
-    input.addEventListener('keyup', (e) => {
-      let name = document.querySelector('p');
-      if (input.value) name.innerHTML = `Hello, ${input.value}!`;
-      else name.innerHTML = 'Hello, whoever you are.';
-    })
+    document.addEventListener('DOMContentLoaded', () => {
+      let input = document.querySelector('#name');
+      input.addEventListener('keyup', (e) => {
+        let name = document.querySelector('p');
+        if (input.value) name.innerHTML = `Hello, ${input.value}!`;
+        else name.innerHTML = 'Hello, whoever you are.';
+      });
+    });
   </script>
 </body>
 </html>
