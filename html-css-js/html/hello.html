@@ -9,9 +9,12 @@
   <form>
     <input type="text" autocomplete="off" autofocus id="name" name="name" placeholder="Type your name">
     <input type="submit" value="Say Hello">
-  </form>
+  </form>  
   <script>
-    
+    function greet() {
+      let name = document.querySelector('#name').value;
+      alert("Hello, " + name + "!");
+    }
   </script>
 </body>
 </html>
