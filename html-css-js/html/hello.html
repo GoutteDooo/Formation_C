@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    function greet() {
+      let name = document.querySelect('#name').value;
+      alert("Hello, " + document.forms[0].name.value + "!");
+    }
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello, title</title>
 </head>
 <body>
-  <form action="" onsubmit="greet(); return false;"></form>
+  <form action="" onsubmit="greet(); return false;">
+    <input type="text" autocomplete="off" autofocus id="name" name="name" placeholder="Type your name">
+    <input type="submit" value="Say Hello">
+  </form>
 </body>
 </html>
