@@ -1,4 +1,4 @@
-import monsters from "./monsters.js";
+import { monsters } from "./monsters.js";
 console.log(monsters);
 
 const player_object = JSON.parse(localStorage.getItem("player"));
