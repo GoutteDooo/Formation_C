@@ -23,8 +23,8 @@ const updatePlayer = () => {
 }
 
 const updateActions = () => {
-  const state = localStorage.getItem("state");
-  if (state == "1") {
+  const state = JSON.parse(localStorage.getItem("game_datas"));
+  if (state.state == "1") {
     ACTIONS.innerHTML = `
       <button class="btn btn-primary" onclick="submitPlayer(event)">Fight</button>
       <button class="btn btn-primary" onclick="submitPlayer(event)">Trade</button>
@@ -38,8 +38,10 @@ const updateDay = () => {
   GAME_DAY.textContent = game_datas.day;
 }
 
-updatePage = () => {
+const updatePage = () => {
   updatePlayer();
   updateActions();
-
+  updateDay();
 }
+
+updatePage();
