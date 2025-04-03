@@ -9,23 +9,26 @@
             const multiple_choice = [];
             let free_response = "";
             function answer_multiple(e) {
-                let answer = e.target.textContent;
+                let answer = e.target;
                 if (multiple_choice.includes(answer))
                 {
                     const index = multiple_choice.indexOf(answer);
                     multiple_choice.splice(index, 1);
+                    answer.classList.remove("correct");
                 }
                 else
                 {
                     multiple_choice.push(answer);
+                    answer.classList.add("correct");
                 }
                 console.log(multiple_choice);
             }
 
             function answer_free(e) {
-                free_response = e.target.textContent;
+                if (free_response) free_response.classList.remove("correct");
+                free_response = e.target;
                 console.log(free_response);
-                
+                answer.classList.add("correct");
             }
         </script>
     </head>
