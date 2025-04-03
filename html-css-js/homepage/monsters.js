@@ -1,5 +1,5 @@
 const monsters = {
-  "monster1": {
+  monster1: {
     "name": "Slime",
     "health": 60,
     "strength": 2,
@@ -9,7 +9,7 @@ const monsters = {
     "distance": [0,50],
     "probability": 90
   },
-  "monster2": {
+  monster2: {
     "name": "Nasty martian",
     "health": 200,
     "strength": 5,
@@ -19,7 +19,7 @@ const monsters = {
     "distance": [8,70],
     "probability": 40
   },
-  "monster3": {
+  monster3: {
     "name": "Enraged werewolf",
     "health": 600,
     "strength": 10,
@@ -29,7 +29,7 @@ const monsters = {
     "distance": [20,100],
     "probability": 20
   },
-  "monster4": {
+  monster4: {
     "name": "Big button nose Sorcerer",
     "health": 1500,
     "strength": 3,

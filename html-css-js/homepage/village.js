@@ -104,4 +104,9 @@ function fight(distance) {
   //recreate new probabilities
   //and select the monster hitting with the rng
   console.log("possible monsters: ", possible_monsters);
+  console.log("1st monster :");
+  for (const data in monsters[possible_monsters[0]]) {
+    console.log(data + " : " + monsters[possible_monsters[0]][data]);
+  }
+  
 }
