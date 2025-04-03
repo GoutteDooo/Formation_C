@@ -60,8 +60,9 @@ function explore(e) {
   }
   else 
   {
-    console.log("Fight against a monster");
+    console.log("Fight a monster");
   }
+  
   e.preventDefault();
 }
 
