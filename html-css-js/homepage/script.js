@@ -9,7 +9,7 @@ const player = {
   stats: {
     level: 0,
     strength: 0,
-    defense: 0,
+    mental: 0,
     health : 0
   }
 }
@@ -28,17 +28,26 @@ const updateInfoPlayer = (e) => {
 }
 
 const submitPlayer = (e) => {
-  if (NAME_INPUT.value.length < 2) return;
-  console.log(NAME_INPUT.value.length);
-  
   e.preventDefault();
+}
+
+const generateHero = () => {
   /* Generate Hero */
   
   const selectedClass = document.querySelector('input[name="choose-class"]:checked');
   if (selectedClass) {
     player.class = selectedClass.value;
   }
-  player.name = PLAYER_TEXT.textContent;
-  console.log(player);
+  player.name = player.name ? player.name : "John";
   
+  if (player.class == "Warrior") {
+    player.stats.strength = 10;
+    player.stats.defense = 5;
+    player.stats.health = 360;
+  } else if (player.class == "Mage") {
+    player.stats.strength = 5;
+    player.stats.defense = 10;
+    player.stats.health = 360;
+  }
+  console.log(player);
 }
