@@ -20,7 +20,9 @@ const enterName = (e) => {
 
 const submitPlayer = (e) => {
   e.preventDefault();
+  console.log(CLASS_ELEMENT);
+  
   player.name = NAME_ELEMENT.textContent;
   player.class = CLASS_ELEMENT.value;
-  console.log(player);
+  console.log(player.class);
 }
