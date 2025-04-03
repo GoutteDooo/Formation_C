@@ -1,4 +1,4 @@
-{
+const monsters = {
   "monster1": {
     "name": "Slime",
     "health": 60,
@@ -40,3 +40,5 @@
     "probability": 10
   }
 }
+
+export default monsters;
