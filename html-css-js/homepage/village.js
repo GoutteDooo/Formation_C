@@ -8,6 +8,8 @@ const PLAYER_LEVEL = document.getElementById("player-level");
 const PLAYER_STRENGTH = document.getElementById("player-strength");
 const PLAYER_MENTAL = document.getElementById("player-mental");
 
+const ACTIONS = document.getElementById("actions");
+
 const updatePlayer = () => {
   PLAYER_CLASS.textContent = player_object.class;
   PLAYER_NAME.textContent = player_object.name;
@@ -16,6 +18,7 @@ const updatePlayer = () => {
   PLAYER_LEVEL.textContent = player_object.stats.level;
   PLAYER_STRENGTH.textContent = player_object.stats.strength;
   PLAYER_MENTAL.textContent = player_object.stats.mental;
+
 }
 
 updatePlayer();
