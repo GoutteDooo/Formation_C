@@ -7,7 +7,7 @@
     "gold": [30,90],
     "exp": [10,20],
     "distance": [0,10],
-    "probability": 0.9
+    "probability": 90
   },
   "monster2": {
     "name": "Nasty martian",
@@ -17,7 +17,7 @@
     "gold": [100,220],
     "exp": [50,100],
     "distance": [8,25],
-    "probability": 0.4
+    "probability": 40
   },
   "monster3": {
     "name": "Enraged werewolf",
@@ -27,7 +27,7 @@
     "gold": [300,500],
     "exp": [150,220],
     "distance": [20,50],
-    "probability": 0.2
+    "probability": 20
   },
   "monster4": {
     "name": "Big button nose Sorcerer",
@@ -37,6 +37,6 @@
     "gold": [700,1200],
     "exp": [300,500],
     "distance": [40,100],
-    "probability": 0.1
+    "probability": 10
   }
 }
