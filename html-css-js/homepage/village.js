@@ -51,10 +51,8 @@ updatePage();
 
 function explore(e) {
   const rng = Math.floor(Math.random() * 100);
-  if (rng < 5) {
-    console.log("Find nothing particular, just one day passed and some lives left.");
-  }
-  else if (rng < 15)
+  const input = prompt();
+  if (rng < 10)
   {
     console.log("Find object : Gold or item to sell");
   }
@@ -62,7 +60,7 @@ function explore(e) {
   {
     console.log("Fight a monster");
   }
-  
+
   e.preventDefault();
 }
 
@@ -79,4 +77,8 @@ function findMoney(e) {
 function rest(e) {
   console.log("Rest");
   e.preventDefault();
+}
+
+function fight() {
+  const rng = Math.floor(Math.random() * 100);
 }
