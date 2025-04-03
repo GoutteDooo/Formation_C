@@ -1,5 +1,3 @@
-let fs = require('fs');
-
 const PLAYER_TEXT = document.getElementById("player-text");
 const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
