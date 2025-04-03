@@ -1,3 +1,6 @@
+import monsters from "./monsters.js";
+console.log(monsters);
+
 const player_object = JSON.parse(localStorage.getItem("player"));
 
 const PLAYER_CLASS = document.getElementById("player-class");
@@ -79,13 +82,20 @@ function rest(e) {
   console.log("Rest");
 }
 
-import { monsters } from "./monsters.js";
 function fight(distance) {
   const rng = Math.floor(Math.random() * 100);
+
   //find possible monsters at this distance
+  const possible_monsters = [];
   for (const monster in monsters) {
-    if (monsters[monster].distance)
+    if (monsters[monster].distance[0] <= distance && monsters[monster].distance[1] >= distance) {
+      console.log("You have a " + monsters[monster].name + " at distance " + distance);
+      possible_monsters.push(monster);
+    }
+  }
   //do the sum of the probabilities of all monsters
   //recreate new probabilities
   //and select the monster hitting with the rng
+  console.log("possible monsters: ", possible_monsters);
+  
 }
