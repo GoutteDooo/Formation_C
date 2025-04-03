@@ -1,9 +1,20 @@
 table {
   margin: auto;
   border: 1px solid #000;
+  background-color: #eee;
 }
 
-thead {
-  background-color: #d4d4d4;
-  color: #fff;
+th {
+  text-align: center;
+}
+tr {
+  text-align: center;
+}
+
+table, td {
+  border: 1px solid #000;
+}
+
+#player-gold {
+  color: goldenrod;
 }
