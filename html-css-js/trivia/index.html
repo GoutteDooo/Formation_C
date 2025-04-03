@@ -20,9 +20,9 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>How do you think I feel today ?</h3>
-                <button onclick="answer_multiple(e)">Nice</button>
-                <button onclick="answer_multiple(e)">Somehow OK</button>
-                <button onclick="answer_multiple(e)">Bad</button>
+                <button onclick=answer_multiple(e)>Nice</button>
+                <button onclick=answer_multiple(e)>Somehow OK</button>
+                <button onclick=answer_multiple(e)>Bad</button>
             </div>
 
             <div class="section">
@@ -38,9 +38,9 @@
         <script>
             const multiple_choice = [];
             let free_response = "";
-            const answer_multiple = (e) => {
-                let triggerObject = e.srcElement;
-                console.log(triggerObject.innerText);
+            function answer_multiple(e) {
+                var triggerObject = e;
+                console.log(e);
             }                
         </script>
     </body>
