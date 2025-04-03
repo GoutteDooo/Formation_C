@@ -13,13 +13,13 @@
             <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name here" onkeyup="enterName(event)" maxlength="12" minlength="2" autocomplete="off">
             <p id="name-input"></p>
             <fieldset>
-                <legend>Choose your class</legend>
-                <input type="radio" name="choose-class" id="class-warrior" value="Warrior">
-                <label for="class-warrior">Warrior</label>
-                <input type="radio" name="choose-class" id="class-mage" value="Mage">
-                <label for="class-mage">Mage</label>
-                <input type="radio" name="choose-class" id="class-rogue" value="Rogue">
-                <label for="class-rogue">Rogue</label>
+                <legend class="mb-3">Choose your class</legend>
+                <input type="radio" name="choose-class" id="class-warrior" value="Warrior" class="form-check-input">
+                <label for="class-warrior" class="form-label">Warrior</label>
+                <input type="radio" name="choose-class" id="class-mage" value="Mage" class="form-check-input">
+                <label for="class-mage" class="form-label">Mage</label>
+                <input type="radio" name="choose-class" id="class-alchemist" value="Alchemist" class="form-check-input">
+                <label for="class-alchemist" class="form-label">Alchemist</label>
             </fieldset>
             <input type="submit" value="Submit" onclick="answer(event)">
         </form>
