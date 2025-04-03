@@ -29,6 +29,8 @@ const updateInfoPlayer = (e) => {
 
 const submitPlayer = (e) => {
   e.preventDefault();
+  generateHero();
+  startGame();
 }
 
 const generateHero = () => {
@@ -56,4 +58,9 @@ const generateHero = () => {
   player.gold = 200;
   player.level = 1;
   console.log(player);
+}
+
+function startGame() {
+  /* Start Game */
+  window.location.href = "village.html";
 }
