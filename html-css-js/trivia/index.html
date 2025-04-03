@@ -48,18 +48,21 @@
                 if (answer.textContent == "Bad") {
                     answer.classList.add("incorrect");
                     multiple_Element.textContent = "Incorrect!";
+                    multiple_Element.style.color = "red";
                     return;
                 }
+                answer.removeAttribute("class");
                 if (multiple_choice.includes(answer))
                 {
                     const index = multiple_choice.indexOf(answer);
                     multiple_choice.splice(index, 1);
-                    answer.classList.remove("correct");
                 }
                 else
                 {
                     multiple_choice.push(answer);
                     answer.classList.add("correct");
+                    multiple_Element.textContent = "Correct!";
+                    multiple_Element.style.color = "green";
                 }
                 console.log(multiple_choice);
             }
@@ -77,7 +80,7 @@
                 console.log(free_response);
                 free_response.classList.add("correct");
                 free_Element.textContent = "Correct!";
-                free_Element.styles.color = "green";
+                free_Element.style.color = "green";
             }
     </script>
     </body>
