@@ -28,11 +28,19 @@ const updateActions = () => {
   const state = JSON.parse(localStorage.getItem("game_datas")).state;
   if (state == "1") {
     ACTIONS.innerHTML = `
-      <button class="btn btn-primary" onclick="explore(event)">Explore the world</button>
-      <button class="btn btn-primary" onclick="trade(event)">Trade on internet</button>
-      <button class="btn btn-primary" onclick="findMoney(event)">Try to find money</button>
-      <button class="btn btn-primary" onclick="rest(event)">Rest</button>
+      <button class="btn btn-primary" id="button-explore">Explore the world</button>
+      <button class="btn btn-primary" id="button-trade">Trade on internet</button>
+      <button class="btn btn-primary" id="button-money">Try to find money</button>
+      <button class="btn btn-primary" id="button-rest">Rest</button>
     `;
+    const exploreBtn = document.querySelector("#button-explore");
+    const tradeBtn = document.querySelector("#button-trade");
+    const moneyBtn = document.querySelector("#button-money");
+    const restBtn = document.querySelector("#button-rest");
+    exploreBtn.addEventListener("click", explore);
+    tradeBtn.addEventListener("click", trade);
+    moneyBtn.addEventListener("click", findMoney);
+    restBtn.addEventListener("click", rest);
   }
 }
 
@@ -68,7 +76,6 @@ function explore(e) {
     console.log("Fight a monster of distance " + distance);
   }
 }
-window.explore = explore;
 
 function trade(e) {
   console.log("Trade");
@@ -97,5 +104,4 @@ function fight(distance) {
   //recreate new probabilities
   //and select the monster hitting with the rng
   console.log("possible monsters: ", possible_monsters);
-  
 }
