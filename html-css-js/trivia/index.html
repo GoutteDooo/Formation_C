@@ -20,9 +20,9 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>How do you think I feel today ?</h3>
-                <button onclick=answer_multiple(e)>Nice</button>
-                <button onclick=answer_multiple(e)>Somehow OK</button>
-                <button onclick=answer_multiple(e)>Bad</button>
+                <button onclick=answer_multiple(event)>Nice</button>
+                <button onclick=answer_multiple(event)>Somehow OK</button>
+                <button onclick=answer_multiple(event)>Bad</button>
             </div>
 
             <div class="section">
@@ -30,17 +30,23 @@
                 <hr>
                 <!-- TODO: Add free response question here -->
                 <h3>What is the capital of France?</h3>
-                <button onclick="answer_free(e)">Paris</button>
-                <button onclick="answer_free(e)">Madrid</button>
-                <button onclick="answer_free(e)">New York</button>
+                <button onclick="answer_free(event)">Paris</button>
+                <button onclick="answer_free(event)">Madrid</button>
+                <button onclick="answer_free(event)">New York</button>
                 </div>
         </div>
         <script>
             const multiple_choice = [];
             let free_response = "";
             function answer_multiple(e) {
-                var triggerObject = e;
-                console.log(e);
+                let answer = e.target.textContent;
+                if (multiple_choice.includes(answer)) {
+                    multiple_choice.filter(x => x !== answer);
+                }
+                else
+                {
+                    multiple_choice.push(answer);
+                }
             }                
         </script>
     </body>
