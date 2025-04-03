@@ -29,14 +29,15 @@
                 <!-- TODO: Add free response question here -->
                 <h3>What is the capital of France?</h3>
                 <p id="free"></p>
-                <button onclick="answer_free(event)">Paris</button>
-                <button onclick="answer_free(event)">Madrid</button>
-                <button onclick="answer_free(event)">New York</button>
+                <form action="">
+                    <input type="text" name="free" id="free_input" placeholder="Enter your answer here">
+                    <input type="submit" value="Submit" onclick="answer_free(event)">
+                </form>
                 </div>
         </div>
         <script>
             const multiple_choice = [];
-            let free_response = "";
+            let free_response = document.getElementById("free_input");
             const free_Element = document.getElementById("free");
             const multiple_Element = document.getElementById("multiple");
             console.log(multiple_Element);
@@ -75,19 +76,9 @@
             }
             
             function answer_free(e) {
-                if (free_response) free_response.removeAttribute("class");
-                free_response = e.target;
-                //If bad answer
-                if (free_response.textContent != "Paris") {
-                    free_Element.textContent = "Incorrect!";
-                    free_response.classList.add("incorrect");
-                    free_Element.style.color = "red";
-                    return;
-                }
+                free_response = document;
                 console.log(free_response);
-                free_response.classList.add("correct");
-                free_Element.textContent = "Correct!";
-                free_Element.style.color = "green";
+                e.preventDefault();
             }
     </script>
     </body>
