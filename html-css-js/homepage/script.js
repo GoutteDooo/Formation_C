@@ -3,7 +3,7 @@ const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
 
 const player = {
-  name: "",
+  name: "John",
   class: "Warrior",
   gold: 0,
   stats: {
@@ -16,8 +16,15 @@ const player = {
 
 const updateInfoPlayer = (e) => {
   console.log(e.srcElement.classList.contains("choose-class"));
-  
-  PLAYER_TEXT.textContent = `Your name is: ${NAME_INPUT.value} and you are a ${player.class}`;
+  if (e.srcElement.classList.contains("choose-class"))
+  {
+    player.class = e.srcElement.value;
+  }
+  else
+  {
+    player.name = NAME_INPUT.value;
+  }
+  PLAYER_TEXT.textContent = `Your name is: ${player.name ? player.name : "John"} and you are a ${player.class}`;
 }
 
 const submitPlayer = (e) => {
