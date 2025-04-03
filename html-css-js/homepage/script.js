@@ -1,4 +1,5 @@
 const NAME_ELEMENT = document.getElementById("name-input");
+const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
 
 const player = {
@@ -18,8 +19,8 @@ const enterName = (e) => {
 }
 
 const submitPlayer = (e) => {
-  if (!NAME_ELEMENT) return;
-  console.log(NAME_ELEMENT);
+  if (!NAME_INPUT.value.length < 2) return;
+  console.log(NAME_INPUT.value.length);
   
   e.preventDefault();
   /* Generate Hero */
