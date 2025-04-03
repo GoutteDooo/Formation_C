@@ -46,3 +46,36 @@ const updatePage = () => {
 }
 
 updatePage();
+
+/* ACTIONS */
+
+function explore(e) {
+  const rng = Math.floor(Math.random() * 100);
+  if (rng < 5) {
+    console.log("Find nothing particular, just one day passed and some lives left.");
+  }
+  else if (rng < 15)
+  {
+    console.log("Find object : Gold or item to sell");
+  }
+  else 
+  {
+    console.log("Fight against a monster");
+  }
+  e.preventDefault();
+}
+
+function trade(e) {
+  console.log("Trade");
+  e.preventDefault();
+}
+
+function findMoney(e) {
+  console.log("Find money");
+  e.preventDefault();
+}
+
+function rest(e) {
+  console.log("Rest");
+  e.preventDefault();
+}
