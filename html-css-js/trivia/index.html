@@ -40,17 +40,16 @@
             let free_response = "";
             function answer_multiple(e) {
                 let answer = e.target.textContent;
-                if (multiple_choice.includes(answer)) 
+                if (multiple_choice.includes(answer))
                 {
-                    multiple_choice.filter(x => x !== answer);
+                    const index = multiple_choice.indexOf(answer);
+                    multiple_choice.splice(index, 1);
                 }
                 else
                 {
                     multiple_choice.push(answer);
                 }
-                console.log(multiple_choice);
-                
-            }                
+            }
         </script>
     </body>
 </html>
