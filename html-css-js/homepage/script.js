@@ -1,4 +1,7 @@
-const nameElement = document.getElementById("name-input");
+const NAME_ELEMENT = document.getElementById("name-input");
+const SUBMIT_PLAYER = document.getElementById("submit-player");
+const CLASS_ELEMENT = document.getElementsByName("choose-class");
+
 const player = {
   name: "",
   class: "",
@@ -12,5 +15,12 @@ const player = {
 }
 
 const enterName = (e) => {
-  nameElement.textContent = `Your name is: ${e.target.value}`;
+  NAME_ELEMENT.textContent = `Your name is: ${e.target.value}`;
+}
+
+const submitPlayer = (e) => {
+  e.preventDefault();
+  player.name = NAME_ELEMENT.textContent;
+  player.class = CLASS_ELEMENT.value;
+  console.log(player);
 }
