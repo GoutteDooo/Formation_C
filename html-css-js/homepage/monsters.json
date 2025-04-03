@@ -10,14 +10,17 @@
     "probability": 0.9
   },
   "monster2": {
-    "name": "monster2",
-    "health": 100,
-    "strength": 10,
-    "mental": 10,
-    "gold": 100
+    "name": "Nasty martian",
+    "health": 200,
+    "strength": 5,
+    "mental": 2,
+    "gold": [100,220],
+    "exp": [50,100],
+    "distance": [8,25],
+    "probability": 0.4
   },
   "monster3": {
-    "name": "monster3",
+    "name": "Enraged werewolf",
     "health": 100,
     "strength": 10,
     "mental": 10,
