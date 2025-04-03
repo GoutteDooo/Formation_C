@@ -26,7 +26,7 @@ const updateActions = () => {
   const state = JSON.parse(localStorage.getItem("game_datas")).state;
   if (state == "1") {
     ACTIONS.innerHTML = `
-      <button class="btn btn-primary" onclick="explore(event)">Explore the world</button>
+      <input type="button" class="btn btn-primary" onclick="explore(event)">Explore the world</input>
       <button class="btn btn-primary" onclick="trade(event)">Trade on internet</button>
       <button class="btn btn-primary" onclick="findMoney(event)">Try to find money</button>
       <button class="btn btn-primary" onclick="rest(event)">Rest</button>
@@ -51,32 +51,32 @@ updatePage();
 
 function explore(e) {
   const rng = Math.floor(Math.random() * 100);
-  const input = prompt();
+
+  let distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms)");
+  while (distance < 0 || distance > 100) { distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms)");}
+
   if (rng < 10)
   {
+    findObject();
     console.log("Find object : Gold or item to sell");
   }
   else 
   {
-    console.log("Fight a monster");
+    fight(distance);
+    console.log("Fight a monster of distance " + distance);
   }
-
-  e.preventDefault();
 }
 
 function trade(e) {
   console.log("Trade");
-  e.preventDefault();
 }
 
 function findMoney(e) {
   console.log("Find money");
-  e.preventDefault();
 }
 
 function rest(e) {
   console.log("Rest");
-  e.preventDefault();
 }
 
 function fight() {
