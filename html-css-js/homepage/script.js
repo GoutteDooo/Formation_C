@@ -15,7 +15,9 @@ const player = {
 }
 
 const updateInfoPlayer = (e) => {
-  PLAYER_TEXT.textContent = `Your name is: ${e.target.value} and you are a ${player.class}`;
+  console.log(e.srcElement.classList.contains("choose-class"));
+  
+  PLAYER_TEXT.textContent = `Your name is: ${NAME_INPUT.value} and you are a ${player.class}`;
 }
 
 const submitPlayer = (e) => {
