@@ -56,21 +56,14 @@ const generateHero = () => {
     player.stats.health = 280;
   }
   player.gold = 200;
-  player.level = 1;
+  player.stats.level = 1;
   console.log(player);
   //write player in data.json
   let json_data = JSON.stringify(player);
-  fs.writeFile("data.json", json_data, function(err) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("Data written to file");
-    }
-  });
+  localStorage.setItem("player", json_data);
 }
 
 function startGame() {
   /* Start Game */
-  return;
   window.location.href = "village.html";
 }
