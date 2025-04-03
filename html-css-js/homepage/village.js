@@ -23,12 +23,13 @@ const updatePlayer = () => {
 }
 
 const updateActions = () => {
-  const state = JSON.parse(localStorage.getItem("game_datas"));
-  if (state.state == "1") {
+  const state = JSON.parse(localStorage.getItem("game_datas")).state;
+  if (state == "1") {
     ACTIONS.innerHTML = `
-      <button class="btn btn-primary" onclick="submitPlayer(event)">Fight</button>
-      <button class="btn btn-primary" onclick="submitPlayer(event)">Trade</button>
-      <button class="btn btn-primary" onclick="submitPlayer(event)">Rest</button>
+      <button class="btn btn-primary" onclick="explore(event)">Explore the world</button>
+      <button class="btn btn-primary" onclick="trade(event)">Trade on internet</button>
+      <button class="btn btn-primary" onclick="findMoney(event)">Try to find money</button>
+      <button class="btn btn-primary" onclick="rest(event)">Rest</button>
     `;
   }
 }
