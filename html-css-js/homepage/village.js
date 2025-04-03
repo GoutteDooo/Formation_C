@@ -18,7 +18,19 @@ const updatePlayer = () => {
   PLAYER_LEVEL.textContent = player_object.stats.level;
   PLAYER_STRENGTH.textContent = player_object.stats.strength;
   PLAYER_MENTAL.textContent = player_object.stats.mental;
-
 }
 
 updatePlayer();
+
+const updateActions = () => {
+  const state = localStorage.getItem("state");
+  if (state == "1") {
+    ACTIONS.innerHTML = `
+      <button class="btn btn-primary" onclick="submitPlayer(event)">Fight</button>
+      <button class="btn btn-primary" onclick="submitPlayer(event)">Trade</button>
+      <button class="btn btn-primary" onclick="submitPlayer(event)">Rest</button>
+    `;
+  }
+}
+
+updateActions();

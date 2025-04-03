@@ -65,5 +65,6 @@ const generateHero = () => {
 
 function startGame() {
   /* Start Game */
+  localStorage.setItem("state", "1");
   window.location.href = "village.html";
 }
