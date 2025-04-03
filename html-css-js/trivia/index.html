@@ -6,40 +6,47 @@
         <link href="./styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-            const multiple_choice = [];
-            let free_response = "";
-            const free_Element = document.getElementById("free");
-            const multiple_Element = document.getElementById("multiple");
+                const multiple_choice = [];
+                let free_response = "";
+                const free_Element = document.getElementById("free");
+                const multiple_Element = document.getElementById("multiple");
+                console.log(multiple_Element);
+                
 
-            function answer_multiple(e) {
-                let answer = e.target;
-                //If bad answer
-                if (answer.textContent == "Bad") {
-                    answer.classList.add("incorrect");
-                    free_Element.textContent = "Incorrect!";
-                    multiple_Element.textContent = "Incorrect!";
-                    return;
+                function answer_multiple(e) {
+                    let answer = e.target;
+                    //If bad answer
+                    if (answer.textContent == "Bad") {
+                        answer.classList.add("incorrect");
+                        multiple_Element.textContent = "Incorrect!";
+                        return;
+                    }
+                    if (multiple_choice.includes(answer))
+                    {
+                        const index = multiple_choice.indexOf(answer);
+                        multiple_choice.splice(index, 1);
+                        answer.classList.remove("correct");
+                    }
+                    else
+                    {
+                        multiple_choice.push(answer);
+                        answer.classList.add("correct");
+                    }
+                    console.log(multiple_choice);
                 }
-                if (multiple_choice.includes(answer))
-                {
-                    const index = multiple_choice.indexOf(answer);
-                    multiple_choice.splice(index, 1);
-                    answer.classList.remove("correct");
-                }
-                else
-                {
-                    multiple_choice.push(answer);
-                    answer.classList.add("correct");
-                }
-                console.log(multiple_choice);
-            }
 
-            function answer_free(e) {
-                if (free_response) free_response.classList.remove("correct");
-                free_response = e.target;
-                console.log(free_response);
-                free_response.classList.add("correct");
-            }
+                function answer_free(e) {
+                    if (free_response) free_response.classList.remove("correct");
+                    free_response = e.target;
+                    //If bad answer
+                    if (free_response != "Paris") {
+                        free_Element.textContent = "Incorrect!";
+                        free_response.classList.add("incorrect");
+                        return;
+                    }
+                    console.log(free_response);
+                    free_response.classList.add("correct");
+                }
         </script>
     </head>
     <body>
@@ -53,7 +60,7 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>How do you think I feel today ?</h3>
-                <p id="multiple"></p>
+                <p id="multiple">test multiple</p>
                 <button onclick=answer_multiple(event)>Nice</button>
                 <button onclick=answer_multiple(event)>Somehow OK</button>
                 <button onclick=answer_multiple(event)>Bad</button>
