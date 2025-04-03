@@ -1,0 +1,26 @@
+{
+  "monster1": {
+    "name": "Slime",
+    "health": 60,
+    "strength": 2,
+    "mental": 2,
+    "gold": [30,90],
+    "exp": [10,20],
+    "distance": [0,10],
+    "probability": 0.9
+  },
+  "monster2": {
+    "name": "monster2",
+    "health": 100,
+    "strength": 10,
+    "mental": 10,
+    "gold": 100
+  },
+  "monster3": {
+    "name": "monster3",
+    "health": 100,
+    "strength": 10,
+    "mental": 10,
+    "gold": 100
+  }
+}
