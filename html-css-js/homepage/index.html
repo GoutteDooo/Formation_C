@@ -10,7 +10,8 @@
     <body>
         <h1>Hello ! What's your name ?</h1>
         <form action="">
-            <input type="text" name="name" id="name" placeholder="Enter your name here">
+            <input type="text" name="name" id="name" placeholder="Enter your name here" onkeyup="enterName(event)">
+            <p id="name-input"></p>
             <h2>Choose your class</h2>
             <label for="class-warrior">Warrior</label>
             <input type="radio" name="Warrior" id="class-warrior" value="Warrior">
