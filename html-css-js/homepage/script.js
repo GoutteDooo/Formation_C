@@ -42,12 +42,18 @@ const generateHero = () => {
   
   if (player.class == "Warrior") {
     player.stats.strength = 10;
-    player.stats.defense = 5;
+    player.stats.mental = 4;
     player.stats.health = 360;
   } else if (player.class == "Mage") {
-    player.stats.strength = 5;
-    player.stats.defense = 10;
-    player.stats.health = 360;
+    player.stats.strength = 3;
+    player.stats.mental = 12;
+    player.stats.health = 220;
+  } else if (player.class == "Alchemist") {
+    player.stats.strength = 7;
+    player.stats.mental = 7;
+    player.stats.health = 280;
   }
+  player.gold = 200;
+  player.level = 1;
   console.log(player);
 }
