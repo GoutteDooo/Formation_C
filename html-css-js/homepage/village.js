@@ -68,6 +68,7 @@ function explore(e) {
     console.log("Fight a monster of distance " + distance);
   }
 }
+window.explore = explore;
 
 function trade(e) {
   console.log("Trade");
