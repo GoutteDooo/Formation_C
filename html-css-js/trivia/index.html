@@ -39,7 +39,7 @@
             const multiple_choice = [];
             let free_response = "";
             function answer_multiple(e) {
-                let answer = e.target.textContent;
+                let answer = e;
                 if (multiple_choice.includes(answer))
                 {
                     const index = multiple_choice.indexOf(answer);
@@ -49,6 +49,17 @@
                 {
                     multiple_choice.push(answer);
                 }
+                console.log(multiple_choice);
+                
+            }
+
+            function answer_free(e) {
+                free_response = e;
+            }
+
+            function update_buttons() {
+                multiple_choice.forEach(function(answer) {
+                    
             }
         </script>
     </body>
