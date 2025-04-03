@@ -9,7 +9,7 @@
             const multiple_choice = [];
             let free_response = "";
             function answer_multiple(e) {
-                let answer = e;
+                let answer = e.target.textContent;
                 if (multiple_choice.includes(answer))
                 {
                     const index = multiple_choice.indexOf(answer);
@@ -23,12 +23,8 @@
             }
 
             function answer_free(e) {
-                free_response = e;
+                free_response = e.target.textContent;
                 console.log(free_response);
-                
-            }
-
-            function update_buttons() {
                 
             }
         </script>
