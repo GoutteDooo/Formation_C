@@ -1,6 +1,5 @@
 const NAME_ELEMENT = document.getElementById("name-input");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
-const CLASS_ELEMENT = document.getElementsByName("choose-class");
 
 const player = {
   name: "",
@@ -19,10 +18,17 @@ const enterName = (e) => {
 }
 
 const submitPlayer = (e) => {
-  e.preventDefault();
-  console.log(CLASS_ELEMENT);
+  if (!NAME_ELEMENT) return;
+  console.log(NAME_ELEMENT);
   
+  e.preventDefault();
+  /* Generate Hero */
+  
+  const selectedClass = document.querySelector('input[name="choose-class"]:checked');
+  if (selectedClass) {
+    player.class = selectedClass.value;
+  }
   player.name = NAME_ELEMENT.textContent;
-  player.class = CLASS_ELEMENT.value;
-  console.log(player.class);
+  console.log(player);
+  
 }
