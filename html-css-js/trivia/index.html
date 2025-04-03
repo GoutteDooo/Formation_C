@@ -19,27 +19,29 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
-                 <h3>What is the capital of France?</h3>
-                 <button onclick=answer_multiple()>Paris</button>
-                 <button onclick=answer_multiple()>Madrid</button>
-                 <button onclick=answer_multiple()>New York</button>
+                <h3>How do you think I feel today ?</h3>
+                <button onclick="answer_multiple(e)">Nice</button>
+                <button onclick="answer_multiple(e)">Somehow OK</button>
+                <button onclick="answer_multiple(e)">Bad</button>
             </div>
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
                 <!-- TODO: Add free response question here -->
-                 <h3>How do you think I feel today ?</h3>
-                 <button onclick=answer_free()>Nice</button>
-                 <button onclick=answer_free()>Somehow OK</button>
-                 <button onclick=answer_free()>Bad</button>
+                <h3>What is the capital of France?</h3>
+                <button onclick="answer_free(e)">Paris</button>
+                <button onclick="answer_free(e)">Madrid</button>
+                <button onclick="answer_free(e)">New York</button>
                 </div>
         </div>
         <script>
             const multiple_choice = [];
             let free_response = "";
-            const answer_multiple = () => {
-                
+            const answer_multiple = (e) => {
+                let triggerObject = e.srcElement;
+                console.log(triggerObject.innerText);
+            }                
         </script>
     </body>
 </html>
