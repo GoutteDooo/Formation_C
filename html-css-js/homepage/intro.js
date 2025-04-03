@@ -65,6 +65,10 @@ const generateHero = () => {
 
 function startGame() {
   /* Start Game */
-  localStorage.setItem("state", "1");
+  const game_datas = {
+    state: "1",
+    day: "1",
+  }
+  localStorage.setItem("game_datas", JSON.stringify(game_datas));
   window.location.href = "village.html";
 }

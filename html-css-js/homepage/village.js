@@ -8,6 +8,8 @@ const PLAYER_LEVEL = document.getElementById("player-level");
 const PLAYER_STRENGTH = document.getElementById("player-strength");
 const PLAYER_MENTAL = document.getElementById("player-mental");
 
+const GAME_DAY = document.getElementById("game-day");
+
 const ACTIONS = document.getElementById("actions");
 
 const updatePlayer = () => {
@@ -20,8 +22,6 @@ const updatePlayer = () => {
   PLAYER_MENTAL.textContent = player_object.stats.mental;
 }
 
-updatePlayer();
-
 const updateActions = () => {
   const state = localStorage.getItem("state");
   if (state == "1") {
@@ -33,4 +33,13 @@ const updateActions = () => {
   }
 }
 
-updateActions();
+const updateDay = () => {
+  const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+  GAME_DAY.textContent = game_datas.day;
+}
+
+updatePage = () => {
+  updatePlayer();
+  updateActions();
+
+}
