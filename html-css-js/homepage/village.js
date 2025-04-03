@@ -83,5 +83,9 @@ import { monsters } from "./monsters.js";
 function fight(distance) {
   const rng = Math.floor(Math.random() * 100);
   //find possible monsters at this distance
-  //
+  for (const monster in monsters) {
+    if (monsters[monster].distance)
+  //do the sum of the probabilities of all monsters
+  //recreate new probabilities
+  //and select the monster hitting with the rng
 }

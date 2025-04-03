@@ -6,7 +6,7 @@
     "mental": 3,
     "gold": [30,90],
     "exp": [10,20],
-    "distance": [0,10],
+    "distance": [0,50],
     "probability": 90
   },
   "monster2": {
@@ -16,7 +16,7 @@
     "mental": 2,
     "gold": [100,220],
     "exp": [50,100],
-    "distance": [8,25],
+    "distance": [8,70],
     "probability": 40
   },
   "monster3": {
@@ -26,7 +26,7 @@
     "mental": 5,
     "gold": [300,500],
     "exp": [150,220],
-    "distance": [20,50],
+    "distance": [20,100],
     "probability": 20
   },
   "monster4": {
@@ -36,7 +36,7 @@
     "mental": 15,
     "gold": [700,1200],
     "exp": [300,500],
-    "distance": [40,100],
+    "distance": [60,100],
     "probability": 10
   }
 }
