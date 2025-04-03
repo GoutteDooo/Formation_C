@@ -6,13 +6,15 @@
         <link href="./styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
+            document.addEventListener("DOMContentLoaded", function() {
+
                 const multiple_choice = [];
                 let free_response = "";
                 const free_Element = document.getElementById("free");
                 const multiple_Element = document.getElementById("multiple");
                 console.log(multiple_Element);
                 
-
+                
                 function answer_multiple(e) {
                     let answer = e.target;
                     //If bad answer
@@ -34,7 +36,7 @@
                     }
                     console.log(multiple_choice);
                 }
-
+                
                 function answer_free(e) {
                     if (free_response) free_response.classList.remove("correct");
                     free_response = e.target;
@@ -47,13 +49,14 @@
                     console.log(free_response);
                     free_response.classList.add("correct");
                 }
+            });
         </script>
-    </head>
-    <body>
-        <div class="header">
-            <h1>Trivia!</h1>
-        </div>
-
+        </head>
+        <body>
+            <div class="header">
+                <h1>Trivia!</h1>
+                </div>
+                
         <div class="container">
             <div class="section">
                 <h2>Part 1: Multiple Choice </h2>
