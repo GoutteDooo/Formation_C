@@ -1,0 +1,9 @@
+table {
+  margin: auto;
+  border: 1px solid #000;
+}
+
+thead {
+  background-color: #d4d4d4;
+  color: #fff;
+}
