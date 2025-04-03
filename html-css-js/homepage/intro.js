@@ -1,3 +1,5 @@
+let fs = require("fs");
+
 const PLAYER_TEXT = document.getElementById("player-text");
 const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
@@ -58,9 +60,19 @@ const generateHero = () => {
   player.gold = 200;
   player.level = 1;
   console.log(player);
+  //write player in data.json
+  let json_data = JSON.stringify(player);
+  fs.writeFile("data.json", json_data, function(err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Data written to file");
+    }
+  });
 }
 
 function startGame() {
   /* Start Game */
+  return;
   window.location.href = "village.html";
 }
