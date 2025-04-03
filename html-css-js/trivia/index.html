@@ -76,8 +76,14 @@
             }
             
             function answer_free(e) {
-                free_response = document;
-                console.log(free_response);
+                console.log(free_response.value);
+                if (free_response.value.toLowerCase() == "paris") {
+                    free_Element.textContent = "Correct!";
+                    free_Element.style.color = "green";
+                } else {
+                    free_Element.textContent = "Incorrect!";
+                    free_Element.style.color = "red";
+                }
                 e.preventDefault();
             }
     </script>
