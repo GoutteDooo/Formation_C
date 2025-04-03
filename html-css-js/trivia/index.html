@@ -45,17 +45,24 @@
             function answer_multiple(e) {
                 let answer = e.target;
                 //If bad answer
+                if (answer.classList.contains("incorrect")) {
+                    answer.removeAttribute("class");
+                    multiple_Element.textContent = "";
+                    return;
+                } 
                 if (answer.textContent == "Bad") {
                     answer.classList.add("incorrect");
                     multiple_Element.textContent = "Incorrect!";
                     multiple_Element.style.color = "red";
                     return;
                 }
-                answer.removeAttribute("class");
                 if (multiple_choice.includes(answer))
                 {
                     const index = multiple_choice.indexOf(answer);
                     multiple_choice.splice(index, 1);
+                    answer.removeAttribute("class");
+                    multiple_Element.textContent = "";
+                    multiple_Element.style.color = "";
                 }
                 else
                 {
