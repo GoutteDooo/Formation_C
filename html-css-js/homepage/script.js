@@ -1,10 +1,10 @@
-const NAME_ELEMENT = document.getElementById("name-input");
+const PLAYER_TEXT = document.getElementById("player-text");
 const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
 
 const player = {
   name: "",
-  class: "",
+  class: "Warrior",
   gold: 0,
   stats: {
     level: 0,
@@ -14,12 +14,12 @@ const player = {
   }
 }
 
-const enterName = (e) => {
-  NAME_ELEMENT.textContent = `Your name is: ${e.target.value}`;
+const updateInfoPlayer = (e) => {
+  PLAYER_TEXT.textContent = `Your name is: ${e.target.value} and you are a ${player.class}`;
 }
 
 const submitPlayer = (e) => {
-  if (!NAME_INPUT.value.length < 2) return;
+  if (NAME_INPUT.value.length < 2) return;
   console.log(NAME_INPUT.value.length);
   
   e.preventDefault();
@@ -29,7 +29,7 @@ const submitPlayer = (e) => {
   if (selectedClass) {
     player.class = selectedClass.value;
   }
-  player.name = NAME_ELEMENT.textContent;
+  player.name = PLAYER_TEXT.textContent;
   console.log(player);
   
 }
