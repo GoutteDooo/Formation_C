@@ -1,4 +1,5 @@
 import monsters from "./monsters.js";
+import boss from "./boss.js";
 import clamp from "./helper_functions.js";
 import levels_data from "./levels_data.js";
 
