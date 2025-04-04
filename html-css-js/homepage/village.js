@@ -30,8 +30,15 @@ const updatePlayer = () => {
 
   if (player_object.stats.exp > levels_data[player_object.stats.level]["exp_needed"]) {
     player_object.stats.level += 1;
+    const new_strength = levels_data[player_object.stats.level]["stats_upgrade"][player_object.class]["strength"];
+    const new_mental = levels_data[player_object.stats.level]["stats_upgrade"][player_object.class]["mental"];
+    const new_health = levels_data[player_object.stats.level]["stats_upgrade"][player_object.class]["max_health"];
+    player_object.stats.strength += new_strength;
+    player_object.stats.mental += new_mental;
+    player_object.stats.max_health += new_health;
+    player_object.health = player_object.stats.max_health;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.player_infos = `${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}!`;
+    game_datas.player_infos = `${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}! You won ${new_strength} strengths, ${new_mental} mentals and ${new_health} healths and your hp are fully restored !`;
     localStorage.setItem("player", JSON.stringify(player_object));
   }
 }
