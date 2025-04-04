@@ -134,6 +134,10 @@ function explore_fight(distance) {
   console.log("monster to fight: ", monster_to_fight);
 }
 
+const fight = (monster) => {
+  //
+}
+
 const findObject = () => {
   console.log("Find object!");
 };
