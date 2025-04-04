@@ -148,21 +148,24 @@ const fight = (monster) => {
   const monster_object = monster;
 
   //calculate default attack vs monster attack
-  const default_attack = player_object.default_attack;
-  const monster_defense = player_object.default_attack;
-  const player_defense = monster_object.default_attack;
-  const monster_attack = monster_object.default_attack;
+  const p_attack = player_object.default_attack;
+  const m_defense = player_object.default_attack;
+  const p_defense = monster_object.default_attack;
+  const m_attack = monster_object.default_attack;
 
-  if (default_attack == "strength") {
-    if (monster_attack == "strength") {
-      console.log("You attack with strength and the monster attack with strength");
-    } else if (monster_attack == "mental") {
-      console.log("You attack with strength and the monster attack with mental");
-    } else if (monster_attack == "all") {
-      console.log("You attack with strength and the monster attack with all");
+  console.log("default attack: ", default_attack);
+  console.log("monster attack: ", monster_attack);
+  console.log("player defense: ", player_defense);
+  console.log("monster defense: ", monster_defense);
+
+  //fight loop
+  let player_turn = Math.random() < 0.5 ? true : false;
+  while (player_object.health > 0 && monster_object.health > 0) {
+    console.log("player health: ", player_object.health);
+    console.log("monster health: ", monster_object.health);
+    if (player_turn) {
+      const brut_damage = player_object.stats[p_attack] - monster_object[m_defense];
     }
-  }
-  
 }
 
 const findObject = () => {
