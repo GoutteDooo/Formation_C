@@ -2,8 +2,8 @@ const monsters = {
   monster1: {
     "name": "Slime",
     "health": 60,
-    "strength": 3,
-    "mental": 2,
+    "strength": 4,
+    "mental": 3,
     "default_attack": "strength",
     "gold": [30,90],
     "exp": [10,20],
@@ -13,8 +13,8 @@ const monsters = {
   monster2: {
     "name": "Nasty martian",
     "health": 200,
-    "strength": 5,
-    "mental": 2,
+    "strength": 8,
+    "mental": 5,
     "default_attack": "strength",
     "gold": [100,220],
     "exp": [50,100],
