@@ -1,4 +1,4 @@
-levels_data = {
+export default levels_data = {
   "1": 200,
   "2": 500,
   "3": 1000,

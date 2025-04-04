@@ -1,6 +1,6 @@
 import monsters from "./monsters.js";
 import clamp from "./helper_functions.js";
-
+import levels_data from "./levels_data.js";
 
 
 const PLAYER_CLASS = document.getElementById("player-class");
@@ -27,6 +27,11 @@ const updatePlayer = () => {
   PLAYER_STRENGTH.textContent = player_object.stats.strength;
   PLAYER_MENTAL.textContent = player_object.stats.mental;
   PLAYER_GOLD.textContent = player_object.gold;
+
+  if (player_object.stats.exp > levels_data["1"]) {
+    player_object.stats.level += 1;
+    localStorage.setItem("player", JSON.stringify(player_object));
+  }
 }
 
 const updateActions = () => {
