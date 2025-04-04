@@ -6,6 +6,7 @@ const player = {
   name: "John",
   class: "Warrior",
   gold: 0,
+  default_attack: "strength",
   stats: {
     level: 0,
     strength: 0,
