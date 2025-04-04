@@ -55,21 +55,35 @@ const updateActions = () => {
       <button class="btn btn-primary" id="button-money">Try to find money</button>
       <button class="btn btn-primary" id="button-rest">Rest</button>
     `;
-    const exploreBtn = document.querySelector("#button-explore");
-    const tradeBtn = document.querySelector("#button-trade");
-    const moneyBtn = document.querySelector("#button-money");
-    const restBtn = document.querySelector("#button-rest");
-    exploreBtn.addEventListener("click", explore);
-    tradeBtn.addEventListener("click", trade);
-    moneyBtn.addEventListener("click", findMoney);
-    restBtn.addEventListener("click", rest);
   }
+  if (state == "2") {
+    ACTIONS.innerHTML = `
+      <button class="btn btn-primary btn-boss" id="button-fight-boss">Fight Zrog the Dragon</button>
+      <button class="btn btn-primary" id="button-explore">Explore the world</button>
+      <button class="btn btn-primary" id="button-trade">Trade on internet</button>
+      <button class="btn btn-primary" id="button-money">Try to find money</button>
+      <button class="btn btn-primary" id="button-rest">Rest</button>
+    `;
+  }
+  const exploreBtn = document.querySelector("#button-explore");
+  const tradeBtn = document.querySelector("#button-trade");
+  const moneyBtn = document.querySelector("#button-money");
+  const restBtn = document.querySelector("#button-rest");
+  exploreBtn.addEventListener("click", explore);
+  tradeBtn.addEventListener("click", trade);
+  moneyBtn.addEventListener("click", findMoney);
+  restBtn.addEventListener("click", rest);
 }
 
 const updateInfos = () => {
   const game_datas = JSON.parse(localStorage.getItem("game_datas"));
   GAME_DAY.textContent = game_datas.day;
   PLAYER_INFOS.innerHTML = game_datas.player_infos;
+  if (game_datas.day > "20" && game_datas.state == "1") {
+    game_datas.state = "2";
+    localStorage.setItem("game_datas", JSON.stringify(game_datas));
+    updatePage();
+  }
 }
 
 const updatePage = () => {

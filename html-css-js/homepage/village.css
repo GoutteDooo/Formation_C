@@ -44,3 +44,9 @@ table, th, td {
   margin-top: 3rem;
   font-style: italic;
 }
+
+.btn-boss {
+  background: red;
+  height: 50px;
+  width: 150px;
+}
