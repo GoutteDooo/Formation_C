@@ -29,3 +29,7 @@ table, th, td {
   width: 200px;
   margin: auto;
 }
+
+#player-infos {
+  margin-top: 1rem;
+}

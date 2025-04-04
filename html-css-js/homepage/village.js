@@ -13,7 +13,7 @@ const PLAYER_MENTAL = document.getElementById("player-mental");
 const PLAYER_GOLD = document.getElementById("player-gold");
 
 const GAME_DAY = document.getElementById("game-day");
-const INFOS_PLAYER = document.getElementById("infos-player");
+const PLAYER_INFOS = document.getElementById("infos-player");
 
 const ACTIONS = document.getElementById("actions");
 
@@ -52,7 +52,7 @@ const updateActions = () => {
 const updateInfos = () => {
   const game_datas = JSON.parse(localStorage.getItem("game_datas"));
   GAME_DAY.textContent = game_datas.day;
-  PLAYER_INFOS.textContent = game_datas.infos_player;
+  PLAYER_INFOS.textContent = game_datas.player_infos;
 }
 
 const updatePage = () => {
@@ -204,7 +204,7 @@ const fight = (monster) => {
   if (player_object.health <= 0) {
     player_object.health = 1;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.infos_player = `You fought against a ${monster_object.name} and lost. Your body has been reconstitued thanks to the village altar, but it is weak now. You have to regain lives before exploring the world again.`;
+    game_datas.player_infos = `You fought against a ${monster_object.name} and lost. Your body has been reconstitued thanks to the village altar, but it is weak now. You have to regain lives before exploring the world again.`;
     localStorage.setItem("game_datas")
   }
   //if player wins, gain all he can win on the monster
