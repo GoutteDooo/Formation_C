@@ -114,9 +114,21 @@ function rest(e) {
   //get value between 0,20,40,60,80 or 100
   const pourcentage_hp = Math.floor(Math.floor((player_object.stats.health / player_object.stats.max_health) * 100) / 20) * 20;
   //20% hp = 1 day
+
   const days_to_rest = (100 - pourcentage_hp) / 20;
   console.log("days to rest: ",days_to_rest);
-  timePassed(days_to_rest);
+  dayPassed(days_to_rest);
+
+  //restore hp of player
+  player_object.stats.health = player_object.stats.max_health;
+  localStorage.setItem("player", JSON.stringify(player_object));
+
+  //update datas
+  const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+  game_datas.player_infos = `You have recovered ${days_to_rest} days of health.`;
+  localStorage.setItem("game_datas", JSON.stringify(game_datas));
+
+  updatePage();
 }
 
 /* ACTIONS END */
@@ -270,6 +282,15 @@ const findObject = () => {
 const timePassed = (distance) => {
   let day_number = Number(JSON.parse(localStorage.getItem("game_datas")).day);
   day_number += clamp(Math.round(distance / 20), 1, 5);
+  //set new day into localstorage
+  let game_datas = JSON.parse(localStorage.getItem("game_datas"));
+  game_datas.day = day_number;
+  localStorage.setItem("game_datas", JSON.stringify(game_datas));
+}
+
+const dayPassed = (day) => {
+  let day_number = Number(JSON.parse(localStorage.getItem("game_datas")).day);
+  day_number += day;
   //set new day into localstorage
   let game_datas = JSON.parse(localStorage.getItem("game_datas"));
   game_datas.day = day_number;
