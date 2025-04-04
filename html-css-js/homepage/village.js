@@ -69,12 +69,10 @@ function explore(e) {
   if (rng < 10)
   {
     findObject();
-    console.log("Find object : Gold or item to sell");
   }
   else 
   {
-    fight(distance);
-    console.log("Fight a monster of distance " + distance);
+    explore_fight(distance);
   }
 }
 
@@ -96,7 +94,7 @@ function rest(e) {
 /* Functions for actions */
 
 
-function fight(distance) {
+function explore_fight(distance) {
   //find possible monsters at this distance and store it in possible_monsters
   const possible_monsters = [];
   let monster_to_fight;
@@ -124,7 +122,7 @@ function fight(distance) {
   
   for (let i = 0; i < proba_sum.proba_monsters.length; i++) {
     //and select the monster hitting with the rng
-    if (proba_sum.proba_monsters[i] <= rng) {
+    if (proba_sum.proba_monsters[i] >= rng) {
       monster_to_fight = possible_monsters[i];
       break;
     }
