@@ -138,13 +138,17 @@ function explore_fight(distance) {
     }
   }
   console.log("monster to fight: ", monster_to_fight);
+  fight(monster_to_fight);
 }
 
 const fight = (monster) => {
   //Get player stats
   const player_object = JSON.parse(localStorage.getItem("player"));
   // Get monster stats
-  const monster_object = monsters[monster];
+  const monster_object = monster;
+  console.log(monster_object);
+  console.log(player_object);
+  
 }
 
 const findObject = () => {
