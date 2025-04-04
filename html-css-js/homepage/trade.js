@@ -16,22 +16,19 @@ const updatePage = () => {
 
 const connexion = () => {
   internet.textContent = "Connecting to the internet";
-  let connected = false;
   let dots = 0;
-  setInterval(() => {
+  const randomTime = Math.floor(Math.random() * 1000) + 1000;
+  let interval = setInterval(() => {
     internet.textContent += '.';
     dots++;
     if (dots > 3) {
     internet.textContent = "Connecting to the internet";
     dots = 0;
     }
-    if (connected) {
-      return;
-    }
   },300)
 
   setTimeout(() => {
-    connected = true;
-    removeInterval();
-  }, 1000);
+    clearInterval(interval);
+    internet.textContent = "Connected !";
+  }, randomTime);
 }
