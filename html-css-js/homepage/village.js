@@ -202,6 +202,7 @@ const fight = (monster) => {
   if (player_object.health <= 0) {
     player_object.health = 1;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    game_datas.infos_player = `You fought against a ${monster_object.name} and lost. The village Altar re`;
     localStorage.setItem("game_datas")
   }
   //if player wins, gain all he can win on the monster
