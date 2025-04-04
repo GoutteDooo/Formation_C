@@ -133,6 +133,12 @@ function rest(e) {
   updatePage();
 }
 
+//State 2 : BOSS
+
+function fightBoss(e) {
+  console.log("fight boss!");
+}
+
 /* ACTIONS END */
 
 
