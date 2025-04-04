@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const updatePage = () => {
   connexion();
+  setTimeout(() => {
+    internet.textContent = "Afficher les objets";
+  }, 2500);
 }
 
 const connexion = () => {
