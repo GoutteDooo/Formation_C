@@ -13,7 +13,7 @@ const PLAYER_MENTAL = document.getElementById("player-mental");
 const PLAYER_GOLD = document.getElementById("player-gold");
 
 const GAME_DAY = document.getElementById("game-day");
-const PLAYER_INFOS = document.getElementById("infos-player");
+const PLAYER_INFOS = document.getElementById("player-infos");
 
 const ACTIONS = document.getElementById("actions");
 
@@ -156,15 +156,15 @@ const fight = (monster) => {
   const p_defense = monster_object.default_attack;
   const m_attack = monster_object.default_attack;
 
-  console.log("default attack: ", default_attack);
-  console.log("monster attack: ", monster_attack);
-  console.log("player defense: ", player_defense);
-  console.log("monster defense: ", monster_defense);
+  console.log("default attack: ", p_attack);
+  console.log("monster attack: ", m_attack);
+  console.log("player defense: ", p_defense);
+  console.log("monster defense: ", m_defense);
 
   //fight loop
   let player_turn = Math.random() < 0.5 ? true : false;
   while (player_object.health > 0 && monster_object.health > 0) {
-    console.log("player health: ", player_object.health);
+    console.log("player health: ", player_object.stats.health);
     console.log("monster health: ", monster_object.health);
 
     if (player_turn) {
@@ -208,6 +208,10 @@ const fight = (monster) => {
     localStorage.setItem("game_datas")
   }
   //if player wins, gain all he can win on the monster
+  console.log("player lives left: ", player_object.health);
+  console.log("monster lives left: ", monster_object.health);
+  
+  
 }
 
 const findObject = () => {
