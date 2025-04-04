@@ -86,7 +86,7 @@ updatePage();
 function explore(e) {
   const rng = Math.floor(Math.random() * 100);
 
-  let distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms)");
+  let distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms. 20kms = 1 day passed)");
   while (distance < 0 || distance > 100) { distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms)");}
   if (distance == null) return;
   if (rng < 10)
@@ -110,7 +110,7 @@ function findMoney(e) {
 }
 
 function rest(e) {
-  const input = prompt("Are you sure you want to rest ?");
+  const input = prompt("Are you sure you want to rest ? (no answer means yes)");
   if (input.toLowerCase() == "no") return;
   const player_object = JSON.parse(localStorage.getItem("player"));
   //get value between 0,20,40,60,80 or 100
