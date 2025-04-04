@@ -122,7 +122,7 @@ function explore(e) {
 }
 
 function trade(e) {
-  console.log("Trade");
+  window.location.href = "trade.html";
 }
 
 function findMoney(e) {

@@ -2,6 +2,7 @@ const PLAYER_TEXT = document.getElementById("player-text");
 const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
 
+/* Initializing objects */
 const player = {
   name: "John",
   class: "Warrior",
@@ -14,8 +15,16 @@ const player = {
     max_health : 0,
     health : 0,
     exp : 0
-  }
+  },
+  objects: [],
 }
+
+const game_datas = {
+  state: "1",
+  day: "1",
+  player_infos: "You are in the village, you have to explore the world to become stronger and fight Zrog the Dragon.",
+}
+/* End of initializing objects */
 
 const updateInfoPlayer = (e) => {
   console.log(e.srcElement.classList.contains("choose-class"));
@@ -74,11 +83,6 @@ const generateHero = () => {
 
 function startGame() {
   /* Start Game */
-  const game_datas = {
-    state: "1",
-    day: "1",
-    player_infos: "You are in the village, you have to explore the world to become stronger and fight Zrog the Dragon.",
-  }
   localStorage.setItem("game_datas", JSON.stringify(game_datas));
   window.location.href = "village.html";
 }
