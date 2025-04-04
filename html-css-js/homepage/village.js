@@ -218,6 +218,8 @@ const fight = (monster) => {
   //end of fight
   //if player loses, set lives to 1 and nothing for him
   if (player_object.health <= 0) {
+    console.log("LOSE!");
+    
     player_object.health = 1;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
     game_datas.player_infos = `You fought against a ${monster_object.name} and lost. <br /> Your body has been reconstitued thanks to the village altar, but it is weak now. You have to regain lives before exploring the world again.`;
