@@ -19,14 +19,6 @@ const ACTIONS = document.getElementById("actions");
 
 const updatePlayer = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
-  PLAYER_CLASS.textContent = player_object.class;
-  PLAYER_NAME.textContent = player_object.name;
-  PLAYER_LEVEL.textContent = player_object.stats.level;
-  PLAYER_EXP.textContent = player_object.stats.exp;
-  PLAYER_HEALTH.textContent = player_object.stats.health;
-  PLAYER_STRENGTH.textContent = player_object.stats.strength;
-  PLAYER_MENTAL.textContent = player_object.stats.mental;
-  PLAYER_GOLD.textContent = player_object.gold;
 
   if (player_object.stats.exp > levels_data[player_object.stats.level]["exp_needed"]) {
     player_object.stats.level += 1;
@@ -40,7 +32,18 @@ const updatePlayer = () => {
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
     game_datas.player_infos = `${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}! You won ${new_strength} strengths, ${new_mental} mentals and ${new_health} healths and your hp are fully restored !`;
     localStorage.setItem("player", JSON.stringify(player_object));
+    localStorage.setItem("game_datas", JSON.stringify(game_datas));
   }
+
+  PLAYER_CLASS.textContent = player_object.class;
+  PLAYER_NAME.textContent = player_object.name;
+  PLAYER_LEVEL.textContent = player_object.stats.level;
+  PLAYER_EXP.textContent = player_object.stats.exp;
+  PLAYER_HEALTH.textContent = player_object.stats.health;
+  PLAYER_STRENGTH.textContent = player_object.stats.strength;
+  PLAYER_MENTAL.textContent = player_object.stats.mental;
+  PLAYER_GOLD.textContent = player_object.gold;
+
 }
 
 const updateActions = () => {
@@ -215,7 +218,7 @@ const fight = (monster) => {
   if (player_object.health <= 0) {
     player_object.health = 1;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.player_infos = `You fought against a ${monster_object.name} and lost. Your body has been reconstitued thanks to the village altar, but it is weak now. You have to regain lives before exploring the world again.`;
+    game_datas.player_infos = `You fought against a ${monster_object.name} and lost. <br /> Your body has been reconstitued thanks to the village altar, but it is weak now. You have to regain lives before exploring the world again.`;
     localStorage.setItem("game_datas")
     updatePage();
     return;
@@ -242,7 +245,7 @@ const fight = (monster) => {
     localStorage.setItem("player", JSON.stringify(player_object));
 
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.player_infos = `You fought against a ${monster_object.name} and won! You lost ${hp_lost} hp during the battle. You have gained ${gold_win} gold and ${exp_win} exp.`;
+    game_datas.player_infos = `You fought against a ${monster_object.name} and won! <br /> You lost ${hp_lost} hp during the battle. <br /> You have gained ${gold_win} gold and ${exp_win} exp.`;
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
     return;
