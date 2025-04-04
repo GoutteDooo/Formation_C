@@ -164,7 +164,10 @@ const fight = (monster) => {
     console.log("player health: ", player_object.health);
     console.log("monster health: ", monster_object.health);
     if (player_turn) {
-      const brut_damage = player_object.stats[p_attack] - monster_object[m_defense];
+      const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
+      if (damage_ratio > 0) {
+        let brut_damage = Math.min(0.8, Math.random()) player_object.stats[p_attack];
+      }
     }
 }
 
