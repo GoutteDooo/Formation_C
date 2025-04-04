@@ -1,4 +1,4 @@
-export default levels_data = {
+const levels_data = {
   "1": 200,
   "2": 500,
   "3": 1000,
@@ -7,3 +7,6 @@ export default levels_data = {
   "6": 4800,
   "7": 7777,
 }
+
+
+export default levels_data;

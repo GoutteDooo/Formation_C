@@ -28,8 +28,10 @@ const updatePlayer = () => {
   PLAYER_MENTAL.textContent = player_object.stats.mental;
   PLAYER_GOLD.textContent = player_object.gold;
 
-  if (player_object.stats.exp > levels_data["1"]) {
+  if (player_object.stats.exp > levels_data[player_object.stats.level]) {
     player_object.stats.level += 1;
+    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    game_datas.player_infos = `${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}!`;
     localStorage.setItem("player", JSON.stringify(player_object));
   }
 }
@@ -57,7 +59,7 @@ const updateActions = () => {
 const updateInfos = () => {
   const game_datas = JSON.parse(localStorage.getItem("game_datas"));
   GAME_DAY.textContent = game_datas.day;
-  PLAYER_INFOS.textContent = game_datas.player_infos;
+  PLAYER_INFOS.innerHTML = game_datas.player_infos;
 }
 
 const updatePage = () => {
