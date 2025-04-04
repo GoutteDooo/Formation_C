@@ -321,17 +321,26 @@ const fight = (monster) => {
     //update player datas
     localStorage.setItem("player", JSON.stringify(player_object));
 
-    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.player_infos = `You fought against a 
-    <span class="text-primary">${monster_object.name}</span> 
-    and <span class="text-warning">won!</span> 
-    <br /> 
-    You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
-    <br /> 
-    You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
-    <br />
-    <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`;
-    localStorage.setItem("game_datas", JSON.stringify(game_datas));
+    // const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    // game_datas.player_infos = `You fought against a 
+    // <span class="text-primary">${monster_object.name}</span> 
+    // and <span class="text-warning">won!</span> 
+    // <br /> 
+    // You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
+    // <br /> 
+    // You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
+    // <br />
+    // <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`;
+    // localStorage.setItem("game_datas", JSON.stringify(game_datas));
+    writeInfos(`You fought against a 
+      <span class="text-primary">${monster_object.name}</span> 
+      and <span class="text-warning">won!</span> 
+      <br /> 
+      You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
+      <br /> 
+      You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
+      <br />
+      <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`,500)
     updatePage();
     return;
   }
@@ -357,4 +366,12 @@ const dayPassed = (day) => {
   let game_datas = JSON.parse(localStorage.getItem("game_datas"));
   game_datas.day = day_number;
   localStorage.setItem("game_datas", JSON.stringify(game_datas));
+}
+
+const writeInfos = (text, time) => {
+  setTimeout(() => {
+    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    game_datas.player_infos = text;
+    localStorage.setItem("game_datas", JSON.stringify(game_datas));
+  }, time);
 }
