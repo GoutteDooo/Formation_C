@@ -13,6 +13,19 @@ const monsters = {
     "defeat_msg": "So sick to lose against a so weak creature."
   },
   monster2: {
+    "name": "Big Weird Tentacles Sticking Out Of The Ground", 
+    "health": 250,
+    "strength": 4,
+    "mental": 4,
+    "default_attack": "all",
+    "gold": [50,110],
+    "exp": [25,40],
+    "distance": [0,20],
+    "probability": 90,
+    "victory_msg": "Tintintintinnn Tintintintintiiiiiiiiiiiiiiin !",
+    "defeat_msg": "So sick to lose against a so weak creature."
+  },
+  monster2: {
     "name": "Nasty martian",
     "health": 500,
     "strength": 8,
