@@ -138,8 +138,7 @@ function explore_fight(distance) {
     }
   }
   console.log("monster to fight: ", monster_to_fight);
-  // fight(monster_to_fight);
-    console.log("test random: ", Math.random() * (1 - 0.8) + 0.8);
+  fight(monster_to_fight);
   
 }
 
@@ -165,13 +164,42 @@ const fight = (monster) => {
   while (player_object.health > 0 && monster_object.health > 0) {
     console.log("player health: ", player_object.health);
     console.log("monster health: ", monster_object.health);
+
     if (player_turn) {
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
       if (damage_ratio > 0) {
-        let brut_damage = Math.random() * (1 - 0.8) + 0.8;
-        player_object.stats[p_attack];
+        const brut_damage = (Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack];
+        monster_object.health -= brut_damage;
+      }
+      else
+      //damage ratio is bad, 33% of damages
+      {
+        const brut_damage = player_object.stats[p_attack] * 0.33;
+        monster_object.health -= brut_damage;
       }
     }
+    else
+    //monster turn
+    {
+      const damage_ratio = monster_object.stats[m_attack] - player_object[p_defense];
+      if (damage_ratio > 0) {
+        const brut_damage = (Math.random() * (1 - 0.8) + 0.8) * monster_object.stats[m_attack];
+        player_object.health -= brut_damage;
+      }
+      else
+      {
+        const brut_damage = monster_object.stats[m_attack] * 0.33;
+        player_object.health -= brut_damage;
+      }
+    }
+
+
+    if (monster_object.health <= 0 || player_object.health <= 0) {
+      break;
+    }
+    //end of a hit
+    //change turn
+    player_turn = !player_turn;
   }
 }
 
