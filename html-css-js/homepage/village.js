@@ -146,8 +146,22 @@ const fight = (monster) => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   // Get monster stats
   const monster_object = monster;
-  console.log(monster_object);
-  console.log(player_object);
+
+  //calculate default attack vs monster attack
+  const default_attack = player_object.default_attack;
+  const monster_defense = player_object.default_attack;
+  const player_defense = monster_object.default_attack;
+  const monster_attack = monster_object.default_attack;
+
+  if (default_attack == "strength") {
+    if (monster_attack == "strength") {
+      console.log("You attack with strength and the monster attack with strength");
+    } else if (monster_attack == "mental") {
+      console.log("You attack with strength and the monster attack with mental");
+    } else if (monster_attack == "all") {
+      console.log("You attack with strength and the monster attack with all");
+    }
+  }
   
 }
 
