@@ -128,9 +128,10 @@ function fight(distance) {
     }
     else
     {
-      proba_sum.proba_monsters[p + 1] += proba_sum.proba_monsters[p];
+      // proba_sum.proba_monsters[p + 1] += proba_sum.proba_monsters[p];
     }
   }
+  console.log("monster to fight: ", monster_to_fight);
 }
 
 const findObject = () => {
