@@ -182,30 +182,28 @@ const fight = (monster) => {
     
     if (player_turn) {
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
+      const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack]);
       if (damage_ratio > 0) {
-        const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack]);
         monster_object.health -= brut_damage;
       }
       else
       //damage ratio is bad, 33% of damages
       {
-        const brut_damage = Math.round(player_object.stats[p_attack] * 0.34);
-        monster_object.health -= brut_damage;
+        monster_object.health -= Math.round(brut_damage * 0.34);
       }
     }
     else
     //monster turn
     {
       const damage_ratio = monster_object[m_attack] - player_object[p_defense];
+      const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * monster_object[m_attack]);
       if (damage_ratio > 0) {
-        const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * monster_object.stats[m_attack]);
         player_object.stats.health -= brut_damage;
         hp_lost += brut_damage;
       }
       else
       {
-        const brut_damage = Math.round(monster_object[m_attack] * 0.34);
-        player_object.stats.health -= brut_damage;
+        player_object.stats.health -= Math.round(brut_damage * 0.34);
         hp_lost += brut_damage;
       }
     }
