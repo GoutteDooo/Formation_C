@@ -163,35 +163,35 @@ const fight = (monster) => {
 
   //fight loop
   let player_turn = Math.random() < 0.5 ? true : false;
-  while (player_object.health > 0 && monster_object.health > 0) {
+  while (player_object.stats.health > 0 && monster_object.health > 0) {
     console.log("player health: ", player_object.stats.health);
     console.log("monster health: ", monster_object.health);
 
     if (player_turn) {
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
       if (damage_ratio > 0) {
-        const brut_damage = (Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack];
+        const brut_damage = Math.floor((Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack]);
         monster_object.health -= brut_damage;
       }
       else
       //damage ratio is bad, 33% of damages
       {
-        const brut_damage = player_object.stats[p_attack] * 0.33;
+        const brut_damage = Math.floor(player_object.stats[p_attack] * 0.33);
         monster_object.health -= brut_damage;
       }
     }
     else
     //monster turn
     {
-      const damage_ratio = monster_object.stats[m_attack] - player_object[p_defense];
+      const damage_ratio = monster_object[m_attack] - player_object[p_defense];
       if (damage_ratio > 0) {
-        const brut_damage = (Math.random() * (1 - 0.8) + 0.8) * monster_object.stats[m_attack];
-        player_object.health -= brut_damage;
+        const brut_damage = Math.floor((Math.random() * (1 - 0.8) + 0.8) * monster_object.stats[m_attack]);
+        player_object.stats.health -= brut_damage;
       }
       else
       {
-        const brut_damage = monster_object.stats[m_attack] * 0.33;
-        player_object.health -= brut_damage;
+        const brut_damage = Math.floor(monster_object[m_attack] * 0.33);
+        player_object.stats.health -= brut_damage;
       }
     }
 
@@ -208,7 +208,7 @@ const fight = (monster) => {
     localStorage.setItem("game_datas")
   }
   //if player wins, gain all he can win on the monster
-  console.log("player lives left: ", player_object.health);
+  console.log("player lives left: ", player_object.stats.health);
   console.log("monster lives left: ", monster_object.health);
   
   
