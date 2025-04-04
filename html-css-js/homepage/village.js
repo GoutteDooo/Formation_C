@@ -28,7 +28,7 @@ const updatePlayer = () => {
     player_object.stats.strength += new_strength;
     player_object.stats.mental += new_mental;
     player_object.stats.max_health += new_health;
-    player_object.health = player_object.stats.max_health;
+    player_object.stats.health = player_object.stats.max_health;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
     game_datas.player_infos = `${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}! You won ${new_strength} strengths, ${new_mental} mentals and ${new_health} healths and your hp are fully restored !`;
     localStorage.setItem("player", JSON.stringify(player_object));
@@ -189,7 +189,8 @@ const fight = (monster) => {
       else
       //damage ratio is bad, 33% of damages
       {
-        monster_object.health -= Math.round(brut_damage * 0.34);
+        const net_damage = Math.round(brut_damage * 0.34);
+        monster_object.health -= net_damage;
       }
     }
     else
@@ -203,8 +204,9 @@ const fight = (monster) => {
       }
       else
       {
-        player_object.stats.health -= Math.round(brut_damage * 0.34);
-        hp_lost += brut_damage;
+        const net_damage = Math.round(brut_damage * 0.34);
+        player_object.stats.health -= net_damage;
+        hp_lost += net_damage;
       }
     }
 
