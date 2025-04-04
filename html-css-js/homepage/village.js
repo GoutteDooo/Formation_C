@@ -1,7 +1,7 @@
 import monsters from "./monsters.js";
 import clamp from "./helper_functions.js";
 
-const player_object = JSON.parse(localStorage.getItem("player"));
+
 
 const PLAYER_CLASS = document.getElementById("player-class");
 const PLAYER_NAME = document.getElementById("player-name");
@@ -16,6 +16,7 @@ const GAME_DAY = document.getElementById("game-day");
 const ACTIONS = document.getElementById("actions");
 
 const updatePlayer = () => {
+  const player_object = JSON.parse(localStorage.getItem("player"));
   PLAYER_CLASS.textContent = player_object.class;
   PLAYER_NAME.textContent = player_object.name;
   PLAYER_GOLD.textContent = player_object.gold;
@@ -66,7 +67,7 @@ function explore(e) {
 
   let distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms)");
   while (distance < 0 || distance > 100) { distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms)");}
-
+  if (distance == null) return;
   if (rng < 10)
   {
     findObject();
@@ -75,6 +76,8 @@ function explore(e) {
   {
     explore_fight(distance);
   }
+  timePassed(distance);
+  updatePage();
 }
 
 function trade(e) {
@@ -133,7 +136,6 @@ function explore_fight(distance) {
     }
   }
   console.log("monster to fight: ", monster_to_fight);
-  timePassed(distance);
 }
 
 const fight = (monster) => {
