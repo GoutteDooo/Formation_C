@@ -54,7 +54,18 @@ const monsters = {
     "distance": [15,30],
     "probability": 25
   },
-  monster3: {
+  monster6: {
+    "name": "Little Scary Dragon With A Thousand Teeth",
+    "health": 1200,
+    "strength": 10,
+    "mental": 22,
+    "default_attack": "mental",
+    "gold": [250,400],
+    "exp": [170,280],
+    "distance": [20,60],
+    "probability": 30
+  },
+  monster7: {
     "name": "Enraged werewolf",
     "health": 600,
     "strength": 10,
@@ -65,7 +76,7 @@ const monsters = {
     "distance": [20,100],
     "probability": 20
   },
-  monster4: {
+  monster8: {
     "name": "Big button nose Sorcerer",
     "health": 1500,
     "strength": 3,
