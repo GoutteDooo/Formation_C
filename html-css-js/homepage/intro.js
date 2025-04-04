@@ -11,7 +11,8 @@ const player = {
     level: 0,
     strength: 0,
     mental: 0,
-    health : 0
+    health : 0,
+    exp : 0
   }
 }
 
