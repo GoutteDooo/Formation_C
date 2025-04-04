@@ -99,6 +99,7 @@ function rest(e) {
 function fight(distance) {
   //find possible monsters at this distance and store it in possible_monsters
   const possible_monsters = [];
+  const monster_to_fight = {};
   let proba_sum = {
     sum: 0,
     proba_monsters: []
@@ -119,9 +120,17 @@ function fight(distance) {
   console.log(proba_sum);
   //recreate new probabilities
   const rng = Math.floor(Math.random() * proba_sum);
-  
-  //and select the monster hitting with the rng
-  
+  for (const p in proba_sum.proba_monsters) {
+    //and select the monster hitting with the rng
+    if (proba_sum.proba_monsters[p] <= rng) {
+      monster_to_fight = possible_monsters[p];
+      break;
+    }
+    else
+    {
+      proba_sum.proba_monsters[p + 1] += proba_sum.proba_monsters[p];
+    }
+  }
 }
 
 const findObject = () => {
