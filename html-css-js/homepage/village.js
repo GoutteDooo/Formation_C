@@ -221,7 +221,9 @@ const fight = (monster) => {
     player_object.health = 1;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
     game_datas.player_infos = `You fought against a ${monster_object.name} and lost. <br /> Your body has been reconstitued thanks to the village altar, but it is weak now. You have to regain lives before exploring the world again.`;
-    localStorage.setItem("game_datas")
+    localStorage.setItem("game_datas", JSON.stringify(game_datas));
+    //update player datas
+    localStorage.setItem("player", JSON.stringify(player_object));
     updatePage();
     return;
   }
