@@ -64,17 +64,17 @@ const updateActions = () => {
       <button class="btn btn-primary" id="button-money">Try to find money</button>
       <button class="btn btn-primary" id="button-rest">Rest</button>
     `;
+    const bossBtn = document.querySelector("#button-fight-boss");
+    bossBtn.addEventListener("click", fightBoss);
   }
   const exploreBtn = document.querySelector("#button-explore");
   const tradeBtn = document.querySelector("#button-trade");
   const moneyBtn = document.querySelector("#button-money");
   const restBtn = document.querySelector("#button-rest");
-  const bossBtn = document.querySelector("#button-fight-boss");
   exploreBtn.addEventListener("click", explore);
   tradeBtn.addEventListener("click", trade);
   moneyBtn.addEventListener("click", findMoney);
   restBtn.addEventListener("click", rest);
-  bossBtn.addEventListener("click", fightBoss);
 }
 
 const updateInfos = () => {
@@ -214,6 +214,8 @@ const fight = (monster) => {
   let m_defense = player_object.default_attack;
   let p_defense = monster_object.default_attack;
   let m_attack = monster_object.default_attack;
+
+  //Check default attack sur "all"
   const isPlayerAttackChanging = player_object.default_attack = "all" ? true : false;
   const isMonsterAttackChanging = monster_object.default_attack = "all" ? true : false;
   let hp_lost = 0;
@@ -226,10 +228,12 @@ const fight = (monster) => {
     console.log("monster hp: ", monster_object.health);
     
     if (player_turn) {
+      //si class Alchemist
       if (isPlayerAttackChanging) {
         p_attack = (Math.random() < 0.5) ? "strength" : "mental";
         m_defense = p_attack;
       }
+
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
       const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack]);
       if (damage_ratio > 0) {
@@ -245,6 +249,12 @@ const fight = (monster) => {
     else
     //monster turn
     {
+      //si ennemi default attack "all"
+      if (isMonsterAttackChanging) {
+        m_attack = (Math.random() < 0.5) ? "strength" : "mental";
+        p_defense = m_attack;
+      }
+
       const damage_ratio = monster_object[m_attack] - player_object[p_defense];
       const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * monster_object[m_attack]);
       if (damage_ratio > 0) {
