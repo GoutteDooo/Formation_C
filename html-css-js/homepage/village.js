@@ -112,10 +112,14 @@ function fight(distance) {
   //recreate new probabilities
   //and select the monster hitting with the rng
   console.log("possible monsters: ", possible_monsters);
-  for (const monster in possible_monsters) { 
-    console.log(data + " : " + monsters[possible_monsters[0]][data]);
-    proba_sum += monsters[possible_monsters]["probability"];
+  for (const m_index in possible_monsters) { 
+    console.log(m_index, ": ", possible_monsters[m_index]);
+    proba_sum += possible_monsters[m_index]["probability"];
   }
   console.log("sum:" + proba_sum);
   
 }
+
+const findObject = () => {
+  console.log("Find object!");
+};
