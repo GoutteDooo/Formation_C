@@ -141,3 +141,8 @@ const fight = (monster) => {
 const findObject = () => {
   console.log("Find object!");
 };
+
+const timePassed = (distance) => {
+  let day_number = JSON.parse(localStorage.getItem("game_datas")).day;
+  day_number += Math.min(1, Math.round(distance / 20));
+}
