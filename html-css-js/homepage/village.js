@@ -230,6 +230,7 @@ const fight = (monster) => {
   /* FIGHT LOOP */
   while (player_object.stats.health > 0 && monster_object.health > 0) {
     console.log("turn to: ", player_turn ? "player" : "monster");
+    console.log("default attack: ", p_attack);
     console.log("player hp: ", player_object.stats.health);
     console.log("monster hp: ", monster_object.health);
     
