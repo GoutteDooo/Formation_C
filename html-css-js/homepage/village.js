@@ -30,7 +30,7 @@ const updatePlayer = () => {
     player_object.stats.max_health += new_health;
     player_object.stats.health = player_object.stats.max_health;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.player_infos = `${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}! You won ${new_strength} strengths, ${new_mental} mentals and ${new_health} healths and your hp are fully restored !`;
+    game_datas.player_infos = `<span class="text-primary">${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}! You won <span class="text-success">${new_strength}</span> strengths, <span class="text-danger">${new_mental}</span> mentals and <span class="text-warning">${new_health}</span> healths and your hp are fully restored !</span>`;
     localStorage.setItem("player", JSON.stringify(player_object));
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
   }
@@ -275,7 +275,7 @@ const fight = (monster) => {
     <br /> 
     You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
     <br />
-    ${monster_object.victory_msg ? monster_object.victory_msg : ""}`;
+    <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`;
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
     return;

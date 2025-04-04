@@ -8,7 +8,8 @@ const monsters = {
     "gold": [30,90],
     "exp": [10,20],
     "distance": [0,20],
-    "probability": 90
+    "probability": 90,
+    "victory_msg": "Tintintintinnn Tintintintintiiiiiiiiiiiiiiin !"
   },
   monster2: {
     "name": "Nasty martian",
