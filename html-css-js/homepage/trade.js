@@ -14,6 +14,10 @@ const updatePage = () => {
   connexion();
   setTimeout(() => {
     internet.textContent = "Afficher les objets";
+    // Display objects of player
+    // Display button to buy sthg (ordering will take time)
+    // Display button to put sthg to sell
+    // Display Invest button to start trading
   }, 2500);
 }
 
