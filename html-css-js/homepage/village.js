@@ -112,9 +112,11 @@ function findMoney(e) {
 function rest(e) {
   const player_object = JSON.parse(localStorage.getItem("player"));
   //get value between 0,20,40,60,80 or 100
-  const pourcentage_hp = Math.floor((player_object.stats.health / player_object.stats.max_health) * 100) / 20;
+  const pourcentage_hp = Math.floor(Math.floor((player_object.stats.health / player_object.stats.max_health) * 100) / 20) * 20;
   //20% hp = 1 day
-  const days_to_rest = 
+  const days_to_rest = (100 - pourcentage_hp) / 20;
+  console.log("days to rest: ",days_to_rest);
+  timePassed(days_to_rest);
 }
 
 /* ACTIONS END */
