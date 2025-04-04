@@ -62,7 +62,7 @@ const monsters = {
     "distance": [15,30],
     "probability": 25,
     "victory_msg": "Ouaw ! This monster was so scary !",
-    "defeat_msg": "When it threw its laser from its ."
+    "defeat_msg": "When it threw its laser from its antenna, you were electrilized like a tazer. Finito."
   },
   monster6: {
     "name": "Little Scary Dragon With A Thousand Teeth",
@@ -74,7 +74,8 @@ const monsters = {
     "exp": [170,280],
     "distance": [25,60],
     "probability": 30,
-    "victory_msg": "Oh my god, did you see all this teeth ?"
+    "victory_msg": "Oh my god, did you see all this teeth ?",
+    "defeat_msg": "It ate your corpse... urk..."
   },
   monster7: {
     "name": "Enraged werewolf",
@@ -86,7 +87,8 @@ const monsters = {
     "exp": [150,220],
     "distance": [30,80],
     "probability": 20,
-    "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !"
+    "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !",
+    "defeat_msg": "When the Werewolf bites you, you tried to flee but you finish into a big shaking and big pain. And then, you died. So sick."
   },
   monster8: {
     "name": "Big button nose Sorcerer",
@@ -98,7 +100,8 @@ const monsters = {
     "exp": [300,500],
     "distance": [60,100],
     "probability": 10,
-    "victory_msg": "You won the moment you pierced the button on that sorcerer's nose."
+    "victory_msg": "You won the moment you pierced the button on that sorcerer's nose.",
+    "defeat_msg": "It transformed you into ."
   }
 }
 
