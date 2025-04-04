@@ -11,6 +11,7 @@ const player = {
     level: 0,
     strength: 0,
     mental: 0,
+    max_health : 0,
     health : 0,
     exp : 0
   }
@@ -48,16 +49,19 @@ const generateHero = () => {
     player.stats.strength = 10;
     player.stats.mental = 4;
     player.stats.health = 360;
+    player.stats.max_health = 360;
     player.default_attack = "strength";
   } else if (player.class == "Mage") {
     player.stats.strength = 3;
     player.stats.mental = 12;
     player.stats.health = 220;
+    player.stats.max_health = 220;
     player.default_attack = "mental";
   } else if (player.class == "Alchemist") {
     player.stats.strength = 7;
     player.stats.mental = 7;
     player.stats.health = 280;
+    player.stats.max_health = 280;
     player.default_attack = "all";
   }
   player.gold = 200;

@@ -141,7 +141,10 @@ function explore_fight(distance) {
 }
 
 const fight = (monster) => {
-  //
+  //Get player stats
+  const player_object = JSON.parse(localStorage.getItem("player"));
+  // Get monster stats
+  const monster_object = monsters[monster];
 }
 
 const findObject = () => {
