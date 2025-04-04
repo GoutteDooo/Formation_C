@@ -147,6 +147,8 @@ const findObject = () => {
 const timePassed = (distance) => {
   let day_number = Number(JSON.parse(localStorage.getItem("game_datas")).day);
   day_number += clamp(Math.round(distance / 20), 1, 5);
-  console.log("day passed: ", day_number);
-  
+  //set new day into localstorage
+  let game_datas = JSON.parse(localStorage.getItem("game_datas"));
+  game_datas.day = day_number;
+  localStorage.setItem("game_datas", JSON.stringify(game_datas));
 }
