@@ -205,17 +205,28 @@ const fight = (monster) => {
   }
   //if player wins, gain all he can win on the monster
   if (monster_object.health <= 0) {
-    console.log("Victory ! Player: ", player_object);
     //wins gold from monster
     const min_gold = monster_object.gold[0];
     const max_gold = monster_object.gold[1];
-    player_object.stats.gold += Math.round((Math.random() * (max_gold - min_gold) + min_gold));
+    const gold_win = Math.round((Math.random() * (max_gold - min_gold) + min_gold));
+    player_object.stats.gold += gold_win;
+    console.log("wins gold: ", gold_win);
+
     //wins exp from monster
     const min_exp = monster_object.exp[0];
     const max_exp = monster_object.exp[1];
-    player_object.stats.exp += Math.round((Math.random() * (max_exp - min_exp) + min_exp));
-    
+    const exp_win = Math.round((Math.random() * (max_exp - min_exp) + min_exp));
+    player_object.stats.exp += exp_win;
+    console.log("wins exp: ", exp_win);
+
+    console.log("Victory ! Player: ", player_object);
+
+    //update player datas
+    localStorage.setItem("player", JSON.stringify(player_object));
+
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    game_datas.player_infos = `You fought against a ${monster_object.name} and won! You have gained ${gold_win} gold and ${exp_win} exp.`;
+    localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
     return;
   }
