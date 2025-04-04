@@ -1,5 +1,3 @@
-import setAttack from "./hero_functions.js";
-
 const PLAYER_TEXT = document.getElementById("player-text");
 const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
@@ -49,18 +47,20 @@ const generateHero = () => {
     player.stats.strength = 10;
     player.stats.mental = 4;
     player.stats.health = 360;
+    player.default_attack = "strength";
   } else if (player.class == "Mage") {
     player.stats.strength = 3;
     player.stats.mental = 12;
     player.stats.health = 220;
+    player.default_attack = "mental";
   } else if (player.class == "Alchemist") {
     player.stats.strength = 7;
     player.stats.mental = 7;
     player.stats.health = 280;
+    player.default_attack = "all";
   }
   player.gold = 200;
   player.stats.level = 1;
-  setAttack(player);
   console.log(player);
   //write player in data.json
   let json_data = JSON.stringify(player);
