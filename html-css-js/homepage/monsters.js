@@ -7,7 +7,7 @@ const monsters = {
     "default_attack": "strength",
     "gold": [30,90],
     "exp": [10,20],
-    "distance": [0,50],
+    "distance": [0,20],
     "probability": 90
   },
   monster2: {
@@ -20,6 +20,39 @@ const monsters = {
     "exp": [50,100],
     "distance": [8,70],
     "probability": 40
+  },
+  monster3: {
+    "name": "Big Slime",
+    "health": 300,
+    "strength": 6,
+    "mental": 4,
+    "default_attack": "strength",
+    "gold": [150,270],
+    "exp": [80,140],
+    "distance": [12,35],
+    "probability": 60
+  },
+  monster4: {
+    "name": "Ugly Glue",
+    "health": 1000,
+    "strength": 3,
+    "mental": 3,
+    "default_attack": "strength",
+    "gold": [1,1],
+    "exp": [1,1],
+    "distance": [0,99],
+    "probability": 5
+  },
+  monster5: {
+    "name": "Little Martian With Big Red Eyes",
+    "health": 100,
+    "strength": 30,
+    "mental": 5,
+    "default_attack": "strength",
+    "gold": [80,140],
+    "exp": [80,150],
+    "distance": [15,30],
+    "probability": 25
   },
   monster3: {
     "name": "Enraged werewolf",

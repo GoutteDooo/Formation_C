@@ -1,3 +1,13 @@
+body {
+  background-color: #d4d4d4;
+  font-size: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.text-warning {
+  color: goldenrod !important;
+}
+
 table {
   margin: auto;
   border: 1px solid #000;

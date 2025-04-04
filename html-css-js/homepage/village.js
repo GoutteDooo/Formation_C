@@ -267,12 +267,17 @@ const fight = (monster) => {
     localStorage.setItem("player", JSON.stringify(player_object));
 
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.player_infos = `You fought against a ${monster_object.name} and won! <br /> You lost ${hp_lost} hp during the battle. <br /> You have gained ${gold_win} gold and ${exp_win} exp.`;
+    game_datas.player_infos = `You fought against a 
+    <span class="text-primary">${monster_object.name}</span> 
+    and <span class="text-warning">won!</span> 
+    <br /> 
+    You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
+    <br /> 
+    You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.`;
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
     return;
   }
-  
 }
 
 const findObject = () => {
