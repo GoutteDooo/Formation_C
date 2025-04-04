@@ -285,7 +285,7 @@ const fight = (monster) => {
     player_object.stats.health = 1;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
     game_datas.player_infos = 
-    `You fought against a ${monster_object.name} and lost.
+    `You fought against ${monster_object.name} and lost.
       <br />
      <span class="text-secondary">${monster_object.defeat_msg ? monster_object.defeat_msg : ""}</span>
      <br /> 
