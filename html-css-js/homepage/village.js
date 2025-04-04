@@ -156,16 +156,9 @@ const fight = (monster) => {
   const p_defense = monster_object.default_attack;
   const m_attack = monster_object.default_attack;
 
-  console.log("default attack: ", p_attack);
-  console.log("monster attack: ", m_attack);
-  console.log("player defense: ", p_defense);
-  console.log("monster defense: ", m_defense);
-
   //fight loop
   let player_turn = Math.random() < 0.5 ? true : false;
   while (player_object.stats.health > 0 && monster_object.health > 0) {
-    console.log("player health: ", player_object.stats.health);
-    console.log("monster health: ", monster_object.health);
 
     if (player_turn) {
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
@@ -211,9 +204,21 @@ const fight = (monster) => {
     return;
   }
   //if player wins, gain all he can win on the monster
-  console.log("player lives left: ", player_object.stats.health);
-  console.log("monster lives left: ", monster_object.health);
-  
+  if (monster_object.health <= 0) {
+    console.log("Victory ! Player: ", player_object);
+    //wins gold from monster
+    const min_gold = monster_object.gold[0];
+    const max_gold = monster_object.gold[1];
+    player_object.stats.gold += Math.round((Math.random() * (max_gold - min_gold) + min_gold));
+    //wins exp from monster
+    const min_exp = monster_object.exp[0];
+    const max_exp = monster_object.exp[1];
+    player_object.stats.exp += Math.round((Math.random() * (max_exp - min_exp) + min_exp));
+    
+    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    updatePage();
+    return;
+  }
   
 }
 
