@@ -11,6 +11,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 const updatePage = () => {
-
+  connexion();
 }
 
+const connexion = () => {
+  internet.textContent = "Connecting to the internet";
+  let dots = 0;
+  setInterval(() => {
+    internet.textContent += '.';
+    dots++;
+    if (dots > 3) {
+    internet.textContent = "Connecting to the internet";
+    dots = 0;
+    }
+  },300)
+}
