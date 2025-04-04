@@ -133,6 +133,7 @@ function explore_fight(distance) {
     }
   }
   console.log("monster to fight: ", monster_to_fight);
+  timePassed(distance);
 }
 
 const fight = (monster) => {
@@ -144,6 +145,8 @@ const findObject = () => {
 };
 
 const timePassed = (distance) => {
-  let day_number = JSON.parse(localStorage.getItem("game_datas")).day;
-  day_number += Math.min(1, Math.round(distance / 20));
+  let day_number = Number(JSON.parse(localStorage.getItem("game_datas")).day);
+  day_number += clamp(Math.round(distance / 20), 1, 5);
+  console.log("day passed: ", day_number);
+  
 }
