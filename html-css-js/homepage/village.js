@@ -138,7 +138,9 @@ function explore_fight(distance) {
     }
   }
   console.log("monster to fight: ", monster_to_fight);
-  fight(monster_to_fight);
+  // fight(monster_to_fight);
+    console.log("test random: ", Math.random() * (1 - 0.8) + 0.8);
+  
 }
 
 const fight = (monster) => {
@@ -166,9 +168,11 @@ const fight = (monster) => {
     if (player_turn) {
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
       if (damage_ratio > 0) {
-        let brut_damage = Math.min(0.8, Math.random()) player_object.stats[p_attack];
+        let brut_damage = Math.random() * (1 - 0.8) + 0.8;
+        player_object.stats[p_attack];
       }
     }
+  }
 }
 
 const findObject = () => {
