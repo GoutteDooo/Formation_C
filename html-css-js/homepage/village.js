@@ -58,6 +58,7 @@ const updatePage = () => {
 updatePage();
 
 /* ACTIONS */
+// State 1
 
 function explore(e) {
   const rng = Math.floor(Math.random() * 100);
@@ -89,6 +90,12 @@ function rest(e) {
   console.log("Rest");
 }
 
+/* ACTIONS END */
+
+
+/* Functions for actions */
+
+
 function fight(distance) {
   const rng = Math.floor(Math.random() * 100);
 
@@ -98,14 +105,14 @@ function fight(distance) {
   for (const monster in monsters) {
     if (monsters[monster].distance[0] <= distance && monsters[monster].distance[1] >= distance) {
       console.log("You have a " + monsters[monster].name + " at distance " + distance);
-      possible_monsters.push(monster);
+      possible_monsters.push(monsters[monster]);
     }
   }
   //do the sum of the probabilities of all monsters
   //recreate new probabilities
   //and select the monster hitting with the rng
   console.log("possible monsters: ", possible_monsters);
-  for (const possible_monster in monsters) { 
+  for (const monster in possible_monsters) { 
     console.log(data + " : " + monsters[possible_monsters[0]][data]);
     proba_sum += monsters[possible_monsters]["probability"];
   }
