@@ -110,6 +110,8 @@ function findMoney(e) {
 }
 
 function rest(e) {
+  const input = prompt("Are you sure you want to rest ?");
+  if (input.toLowerCase() == "no") return;
   const player_object = JSON.parse(localStorage.getItem("player"));
   //get value between 0,20,40,60,80 or 100
   const pourcentage_hp = Math.floor(Math.floor((player_object.stats.health / player_object.stats.max_health) * 100) / 20) * 20;

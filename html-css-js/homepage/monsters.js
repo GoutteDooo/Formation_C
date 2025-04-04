@@ -73,9 +73,9 @@ const monsters = {
   },
   monster7: {
     "name": "Enraged werewolf",
-    "health": 600,
-    "strength": 10,
-    "mental": 5,
+    "health": 1200,
+    "strength": 15,
+    "mental": 10,
     "default_attack": "strength",
     "gold": [300,500],
     "exp": [150,220],
