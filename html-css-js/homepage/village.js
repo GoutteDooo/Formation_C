@@ -170,13 +170,13 @@ const fight = (monster) => {
     if (player_turn) {
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
       if (damage_ratio > 0) {
-        const brut_damage = Math.floor((Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack]);
+        const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack]);
         monster_object.health -= brut_damage;
       }
       else
       //damage ratio is bad, 33% of damages
       {
-        const brut_damage = Math.floor(player_object.stats[p_attack] * 0.33);
+        const brut_damage = Math.round(player_object.stats[p_attack] * 0.33);
         monster_object.health -= brut_damage;
       }
     }
@@ -185,12 +185,12 @@ const fight = (monster) => {
     {
       const damage_ratio = monster_object[m_attack] - player_object[p_defense];
       if (damage_ratio > 0) {
-        const brut_damage = Math.floor((Math.random() * (1 - 0.8) + 0.8) * monster_object.stats[m_attack]);
+        const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * monster_object.stats[m_attack]);
         player_object.stats.health -= brut_damage;
       }
       else
       {
-        const brut_damage = Math.floor(monster_object[m_attack] * 0.33);
+        const brut_damage = Math.round(monster_object[m_attack] * 0.33);
         player_object.stats.health -= brut_damage;
       }
     }
@@ -199,6 +199,7 @@ const fight = (monster) => {
     //change turn
     player_turn = !player_turn;
   }
+
   //end of fight
   //if player loses, set lives to 1 and nothing for him
   if (player_object.health <= 0) {
@@ -206,6 +207,8 @@ const fight = (monster) => {
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
     game_datas.player_infos = `You fought against a ${monster_object.name} and lost. Your body has been reconstitued thanks to the village altar, but it is weak now. You have to regain lives before exploring the world again.`;
     localStorage.setItem("game_datas")
+    updatePage();
+    return;
   }
   //if player wins, gain all he can win on the monster
   console.log("player lives left: ", player_object.stats.health);
