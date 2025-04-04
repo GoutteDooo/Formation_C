@@ -101,7 +101,7 @@ const monsters = {
     "distance": [60,100],
     "probability": 10,
     "victory_msg": "You won the moment you pierced the button on that sorcerer's nose.",
-    "defeat_msg": "It transformed you into ."
+    "defeat_msg": "It turned you into a stuffed pig and hung your new form on a wall of its house."
   }
 }
 
