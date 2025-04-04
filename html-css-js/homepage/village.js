@@ -273,7 +273,9 @@ const fight = (monster) => {
     <br /> 
     You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
     <br /> 
-    You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.`;
+    You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
+    <br />
+    ${monster_object.victory_msg ? monster_object.victory_msg : ""}`;
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
     return;

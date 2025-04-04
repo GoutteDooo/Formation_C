@@ -8,7 +8,8 @@ const monsters = {
     "gold": [30,90],
     "exp": [10,20],
     "distance": [0,20],
-    "probability": 90
+    "probability": 90,
+    "victory_msg": ""
   },
   monster2: {
     "name": "Nasty martian",
@@ -23,13 +24,13 @@ const monsters = {
   },
   monster3: {
     "name": "Big Slime",
-    "health": 300,
-    "strength": 6,
-    "mental": 4,
+    "health": 350,
+    "strength": 8,
+    "mental": 6,
     "default_attack": "strength",
-    "gold": [150,270],
+    "gold": [70,150],
     "exp": [80,140],
-    "distance": [12,35],
+    "distance": [10,40],
     "probability": 60
   },
   monster4: {
