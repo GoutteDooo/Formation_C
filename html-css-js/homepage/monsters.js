@@ -49,7 +49,7 @@ const monsters = {
   },
   monster5: {
     "name": "Little Martian With Big Red Eyes",
-    "health": 300,
+    "health": 100,
     "strength": 30,
     "mental": 5,
     "default_attack": "strength",
