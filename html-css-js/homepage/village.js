@@ -18,6 +18,8 @@ const PLAYER_INFOS = document.getElementById("player-infos");
 
 const ACTIONS = document.getElementById("actions");
 
+let last_distance = 0;
+
 const updatePlayer = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
 
@@ -103,7 +105,8 @@ updatePage();
 function explore(e) {
   const rng = Math.floor(Math.random() * 100);
 
-  let distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms. 20kms = 1 day passed)");
+  let distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms. 20kms = 1 day passed)", last_distance);
+  last_distance = distance;
   while (distance < 0 || distance > 100) { distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms)");}
   if (distance == null) return;
   if (rng < 10)
