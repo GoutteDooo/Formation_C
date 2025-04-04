@@ -340,7 +340,7 @@ const fight = (monster) => {
       <br /> 
       You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
       <br />
-      <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`,500);
+      <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`,300);
     updatePage();
     return;
   }
@@ -369,9 +369,14 @@ const dayPassed = (day) => {
 }
 
 const writeInfos = (text, time) => {
+  const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+  game_datas.player_infos = "";
+  PLAYER_INFOS.textContent = "";
+  localStorage.setItem("game_datas", JSON.stringify(game_datas));
+  updateInfos();
   setTimeout(() => {
-    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
     game_datas.player_infos = text;
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
+    updateInfos();
   }, time);
 }
