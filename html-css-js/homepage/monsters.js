@@ -8,8 +8,7 @@ const monsters = {
     "gold": [30,90],
     "exp": [10,20],
     "distance": [0,20],
-    "probability": 90,
-    "victory_msg": ""
+    "probability": 90
   },
   monster2: {
     "name": "Nasty martian",
@@ -20,7 +19,8 @@ const monsters = {
     "gold": [100,220],
     "exp": [50,100],
     "distance": [8,70],
-    "probability": 40
+    "probability": 40,
+    "victory_msg": "It was so nasty !"
   },
   monster3: {
     "name": "Big Slime",
@@ -31,7 +31,8 @@ const monsters = {
     "gold": [70,150],
     "exp": [80,140],
     "distance": [10,40],
-    "probability": 60
+    "probability": 60,
+    "victory_msg": "Oh my god, I've never seen a slime like that before!"
   },
   monster4: {
     "name": "Ugly Glue",
@@ -42,7 +43,8 @@ const monsters = {
     "gold": [1,1],
     "exp": [1,1],
     "distance": [0,99],
-    "probability": 5
+    "probability": 5,
+    "victory_msg": "Hmmm.... I think we lost times fighting this... thing."
   },
   monster5: {
     "name": "Little Martian With Big Red Eyes",
@@ -53,7 +55,8 @@ const monsters = {
     "gold": [80,140],
     "exp": [80,150],
     "distance": [15,30],
-    "probability": 25
+    "probability": 25,
+    "victory_msg": "Ouaw ! This monster was so scary !"
   },
   monster6: {
     "name": "Little Scary Dragon With A Thousand Teeth",
@@ -64,7 +67,8 @@ const monsters = {
     "gold": [250,400],
     "exp": [170,280],
     "distance": [20,60],
-    "probability": 30
+    "probability": 30,
+    "victory_msg": "Oh my god, did you see all this teeth ?"
   },
   monster7: {
     "name": "Enraged werewolf",
@@ -75,7 +79,8 @@ const monsters = {
     "gold": [300,500],
     "exp": [150,220],
     "distance": [20,100],
-    "probability": 20
+    "probability": 20,
+    "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !"
   },
   monster8: {
     "name": "Big button nose Sorcerer",
@@ -86,7 +91,8 @@ const monsters = {
     "gold": [700,1200],
     "exp": [300,500],
     "distance": [60,100],
-    "probability": 10
+    "probability": 10,
+    "victory_msg": "You won the moment you pierced the button on that sorcerer's nose."
   }
 }
 
