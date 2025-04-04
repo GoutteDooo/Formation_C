@@ -9,7 +9,8 @@ const monsters = {
     "exp": [10,20],
     "distance": [0,20],
     "probability": 90,
-    "victory_msg": "Tintintintinnn Tintintintintiiiiiiiiiiiiiiin !"
+    "victory_msg": "Tintintintinnn Tintintintintiiiiiiiiiiiiiiin !",
+    "defeat_msg": "So sick to lose against a so weak creature."
   },
   monster2: {
     "name": "Nasty martian",
@@ -21,7 +22,8 @@ const monsters = {
     "exp": [50,100],
     "distance": [10,70],
     "probability": 40,
-    "victory_msg": "It was so nasty !"
+    "victory_msg": "It was so nasty !",
+    "defeat_msg": "The Martian danced on your corpse when you died."
   },
   monster3: {
     "name": "Big Slime",
@@ -33,7 +35,8 @@ const monsters = {
     "exp": [80,140],
     "distance": [10,40],
     "probability": 60,
-    "victory_msg": "Oh my god, I've never seen a slime like that before!"
+    "victory_msg": "Oh my god, I've never seen a slime like that before!",
+    "defeat_msg": "It said it was angry because we killed its children."
   },
   monster4: {
     "name": "Ugly Glue",
@@ -45,7 +48,8 @@ const monsters = {
     "exp": [1,1],
     "distance": [0,99],
     "probability": 5,
-    "victory_msg": "Hmmm.... I think we lost times fighting this... thing."
+    "victory_msg": "Hmmm.... I think we lost times fighting this... thing.",
+    "defeat_msg": "The moment it shoves on our eyes, it blinds you, and then, you fall into a big hole and die on the return."
   },
   monster5: {
     "name": "Little Martian With Big Red Eyes",
@@ -57,7 +61,8 @@ const monsters = {
     "exp": [80,150],
     "distance": [15,30],
     "probability": 25,
-    "victory_msg": "Ouaw ! This monster was so scary !"
+    "victory_msg": "Ouaw ! This monster was so scary !",
+    "defeat_msg": "When it threw its laser from its ."
   },
   monster6: {
     "name": "Little Scary Dragon With A Thousand Teeth",
