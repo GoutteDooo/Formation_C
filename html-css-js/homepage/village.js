@@ -193,14 +193,18 @@ const fight = (monster) => {
       }
     }
 
-
-    if (monster_object.health <= 0 || player_object.health <= 0) {
-      break;
-    }
     //end of a hit
     //change turn
     player_turn = !player_turn;
   }
+  //end of fight
+  //if player loses, set lives to 1 and nothing for him
+  if (player_object.health <= 0) {
+    player_object.health = 1;
+    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    localStorage.setItem("game_datas")
+  }
+  //if player wins, gain all he can win on the monster
 }
 
 const findObject = () => {
