@@ -148,7 +148,7 @@ function explore_fight(distance) {
   for (let i = 0; i < proba_sum.proba_monsters.length; i++) {
     //and select the monster hitting with the rng
     if (proba_sum.proba_monsters[i] >= rng) {
-      monster_to_fight = possible_monsters[i];
+      monster_to_fight = {...possible_monsters[i]};
       break;
     }
     else
