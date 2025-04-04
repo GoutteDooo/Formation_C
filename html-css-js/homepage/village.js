@@ -177,7 +177,9 @@ const fight = (monster) => {
   //fight loop
   let player_turn = Math.random() < 0.5 ? true : false;
   while (player_object.stats.health > 0 && monster_object.health > 0) {
-
+    console.log("player hp: ", player_object.stats.health);
+    console.log("monster hp: ", monster_object.health);
+    
     if (player_turn) {
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
       if (damage_ratio > 0) {
@@ -187,7 +189,7 @@ const fight = (monster) => {
       else
       //damage ratio is bad, 33% of damages
       {
-        const brut_damage = Math.round(player_object.stats[p_attack] * 0.33);
+        const brut_damage = Math.round(player_object.stats[p_attack] * 0.34);
         monster_object.health -= brut_damage;
       }
     }
@@ -202,7 +204,7 @@ const fight = (monster) => {
       }
       else
       {
-        const brut_damage = Math.round(monster_object[m_attack] * 0.33);
+        const brut_damage = Math.round(monster_object[m_attack] * 0.34);
         player_object.stats.health -= brut_damage;
         hp_lost += brut_damage;
       }
