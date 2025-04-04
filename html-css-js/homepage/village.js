@@ -340,7 +340,7 @@ const fight = (monster) => {
       <br /> 
       You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
       <br />
-      <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`,500)
+      <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`,500);
     updatePage();
     return;
   }
