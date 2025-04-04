@@ -20,10 +20,23 @@ const monsters = {
     "default_attack": "all",
     "gold": [50,110],
     "exp": [25,40],
-    "distance": [0,20],
-    "probability": 90,
-    "victory_msg": "Tintintintinnn Tintintintintiiiiiiiiiiiiiiin !",
+    "distance": [0,15],
+    "probability": 80,
+    "victory_msg": "Congratulations !",
     "defeat_msg": "So sick to lose against a so weak creature."
+  },
+  monster3: {
+    "name": "Angry Bird With Big Horn", 
+    "health": 180,
+    "strength": 5,
+    "mental": 1,
+    "default_attack": "strength",
+    "gold": [40,100],
+    "exp": [20,35],
+    "distance": [0,25],
+    "probability": 70,
+    "victory_msg": "Few, it was so angry ! It was heading straight on you.",
+    "defeat_msg": "A rain of these creatures were thrown on you. Weird."
   },
   monster2: {
     "name": "Nasty martian",
