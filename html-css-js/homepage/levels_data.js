@@ -139,6 +139,26 @@ const levels_data = {
       },
     }
   },
+  "8": {
+    "exp_needed":999999999999999,
+    "stats_upgrade": {
+      "Warrior": {
+        "strength": 5,
+        "mental": 2,
+        "max_health": 350,
+      },
+      "Mage": {
+        "strength": 2,
+        "mental": 6,
+        "max_health": 220,
+      },
+      "Alchemist": {
+        "strength": 4,
+        "mental": 4,
+        "max_health": 290,
+      },
+    }
+  },
 }
 
 
