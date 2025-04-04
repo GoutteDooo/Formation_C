@@ -155,6 +155,7 @@ const fight = (monster) => {
   const m_defense = player_object.default_attack;
   const p_defense = monster_object.default_attack;
   const m_attack = monster_object.default_attack;
+  let hp_lost = 0;
 
   //fight loop
   let player_turn = Math.random() < 0.5 ? true : false;
@@ -180,11 +181,13 @@ const fight = (monster) => {
       if (damage_ratio > 0) {
         const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * monster_object.stats[m_attack]);
         player_object.stats.health -= brut_damage;
+        hp_lost += brut_damage;
       }
       else
       {
         const brut_damage = Math.round(monster_object[m_attack] * 0.33);
         player_object.stats.health -= brut_damage;
+        hp_lost += brut_damage;
       }
     }
 
@@ -209,7 +212,7 @@ const fight = (monster) => {
     const min_gold = monster_object.gold[0];
     const max_gold = monster_object.gold[1];
     const gold_win = Math.round((Math.random() * (max_gold - min_gold) + min_gold));
-    player_object.stats.gold += gold_win;
+    player_object.gold += gold_win;
     console.log("wins gold: ", gold_win);
 
     //wins exp from monster
@@ -225,7 +228,7 @@ const fight = (monster) => {
     localStorage.setItem("player", JSON.stringify(player_object));
 
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.player_infos = `You fought against a ${monster_object.name} and won! You have gained ${gold_win} gold and ${exp_win} exp.`;
+    game_datas.player_infos = `You fought against a ${monster_object.name} and won! You lost ${hp_lost} hp during the battle. You have gained ${gold_win} gold and ${exp_win} exp.`;
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
     return;
