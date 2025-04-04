@@ -16,6 +16,7 @@ const updatePage = () => {
 
 const connexion = () => {
   internet.textContent = "Connecting to the internet";
+  let connected = false;
   let dots = 0;
   setInterval(() => {
     internet.textContent += '.';
@@ -24,5 +25,13 @@ const connexion = () => {
     internet.textContent = "Connecting to the internet";
     dots = 0;
     }
+    if (connected) {
+      return;
+    }
   },300)
+
+  setTimeout(() => {
+    connected = true;
+    removeInterval();
+  }, 1000);
 }
