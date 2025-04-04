@@ -28,7 +28,7 @@ const updatePlayer = () => {
   PLAYER_MENTAL.textContent = player_object.stats.mental;
   PLAYER_GOLD.textContent = player_object.gold;
 
-  if (player_object.stats.exp > levels_data[player_object.stats.level]) {
+  if (player_object.stats.exp > levels_data[player_object.stats.level]["exp_needed"]) {
     player_object.stats.level += 1;
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
     game_datas.player_infos = `${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}!`;

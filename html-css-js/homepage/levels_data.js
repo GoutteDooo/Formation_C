@@ -6,7 +6,17 @@ const levels_data = {
         "strength": 2,
         "mental": 0,
         "max_health": 30,
-      }
+      },
+      "Mage": {
+        "strength": 0,
+        "mental": 2,
+        "max_health": 15,
+      },
+      "Alchemist": {
+        "strength": 1,
+        "mental": 1,
+        "max_health": 20,
+      },
     }
   },
   "2": {
@@ -16,7 +26,17 @@ const levels_data = {
         "strength": 2,
         "mental": 0,
         "max_health": 50,
-      }
+      },
+      "Mage": {
+        "strength": 0,
+        "mental": 3,
+        "max_health": 35,
+      },
+      "Alchemist": {
+        "strength": 1,
+        "mental": 1,
+        "max_health": 40,
+      },
     }
   },
   "3": {
@@ -26,7 +46,17 @@ const levels_data = {
         "strength": 3,
         "mental": 0,
         "max_health": 100,
-      }
+      },
+      "Mage": {
+        "strength": 0,
+        "mental": 4,
+        "max_health": 55,
+      },
+      "Alchemist": {
+        "strength": 1,
+        "mental": 1,
+        "max_health": 70,
+      },
     }
   },
   "4": {
@@ -36,7 +66,17 @@ const levels_data = {
         "strength": 3,
         "mental": 1,
         "max_health": 170,
-      }
+      },
+      "Mage": {
+        "strength": 1,
+        "mental": 4,
+        "max_health": 80,
+      },
+      "Alchemist": {
+        "strength": 2,
+        "mental": 2,
+        "max_health": 110,
+      },
     }
   },
   "5": {
@@ -46,7 +86,17 @@ const levels_data = {
         "strength": 3,
         "mental": 1,
         "max_health": 200,
-      }
+      },
+      "Mage": {
+        "strength": 1,
+        "mental": 4,
+        "max_health": 110,
+      },
+      "Alchemist": {
+        "strength": 3,
+        "mental": 2,
+        "max_health": 150,
+      },
     }
   },
   "6": {
@@ -56,7 +106,17 @@ const levels_data = {
         "strength": 4,
         "mental": 1,
         "max_health": 250,
-      }
+      },
+      "Mage": {
+        "strength": 1,
+        "mental": 4,
+        "max_health": 170,
+      },
+      "Alchemist": {
+        "strength": 3,
+        "mental": 3,
+        "max_health": 210,
+      },
     }
   },
   "7": {
@@ -66,7 +126,17 @@ const levels_data = {
         "strength": 5,
         "mental": 2,
         "max_health": 350,
-      }
+      },
+      "Mage": {
+        "strength": 2,
+        "mental": 6,
+        "max_health": 220,
+      },
+      "Alchemist": {
+        "strength": 4,
+        "mental": 4,
+        "max_health": 290,
+      },
     }
   },
 }
