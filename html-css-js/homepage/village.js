@@ -1,4 +1,5 @@
 import monsters from "./monsters.js";
+import clamp from "./helper_functions.js";
 
 const player_object = JSON.parse(localStorage.getItem("player"));
 
