@@ -221,8 +221,8 @@ const fight = (monster) => {
   let m_attack = monster_object.default_attack;
 
   //Check default attack sur "all"
-  const isPlayerAttackChanging = player_object.default_attack = "all" ? true : false;
-  const isMonsterAttackChanging = monster_object.default_attack = "all" ? true : false;
+  const isPlayerAttackChanging = player_object.default_attack == "all" ? true : false;
+  const isMonsterAttackChanging = monster_object.default_attack == "all" ? true : false;
   let hp_lost = 0;
 
   let player_turn = Math.random() < 0.5 ? true : false;
