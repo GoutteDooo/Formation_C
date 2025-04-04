@@ -1,7 +1,7 @@
 const monsters = {
   monster1: {
     "name": "Slime",
-    "health": 60,
+    "health": 200,
     "strength": 4,
     "mental": 3,
     "default_attack": "strength",
@@ -13,19 +13,19 @@ const monsters = {
   },
   monster2: {
     "name": "Nasty martian",
-    "health": 200,
+    "health": 500,
     "strength": 8,
     "mental": 5,
     "default_attack": "strength",
     "gold": [100,220],
     "exp": [50,100],
-    "distance": [8,70],
+    "distance": [10,70],
     "probability": 40,
     "victory_msg": "It was so nasty !"
   },
   monster3: {
     "name": "Big Slime",
-    "health": 350,
+    "health": 800,
     "strength": 8,
     "mental": 6,
     "default_attack": "strength",
@@ -37,7 +37,7 @@ const monsters = {
   },
   monster4: {
     "name": "Ugly Glue",
-    "health": 1000,
+    "health": 1200,
     "strength": 3,
     "mental": 3,
     "default_attack": "strength",
@@ -49,7 +49,7 @@ const monsters = {
   },
   monster5: {
     "name": "Little Martian With Big Red Eyes",
-    "health": 100,
+    "health": 300,
     "strength": 30,
     "mental": 5,
     "default_attack": "strength",
@@ -67,25 +67,25 @@ const monsters = {
     "default_attack": "mental",
     "gold": [250,400],
     "exp": [170,280],
-    "distance": [20,60],
+    "distance": [25,60],
     "probability": 30,
     "victory_msg": "Oh my god, did you see all this teeth ?"
   },
   monster7: {
     "name": "Enraged werewolf",
-    "health": 1200,
+    "health": 1100,
     "strength": 15,
     "mental": 10,
     "default_attack": "strength",
     "gold": [300,500],
     "exp": [150,220],
-    "distance": [20,100],
+    "distance": [30,80],
     "probability": 20,
     "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !"
   },
   monster8: {
     "name": "Big button nose Sorcerer",
-    "health": 1500,
+    "health": 2200,
     "strength": 3,
     "mental": 15,
     "default_attack": "mental",
