@@ -69,10 +69,12 @@ const updateActions = () => {
   const tradeBtn = document.querySelector("#button-trade");
   const moneyBtn = document.querySelector("#button-money");
   const restBtn = document.querySelector("#button-rest");
+  const bossBtn = document.querySelector("#button-fight-boss");
   exploreBtn.addEventListener("click", explore);
   tradeBtn.addEventListener("click", trade);
   moneyBtn.addEventListener("click", findMoney);
   restBtn.addEventListener("click", rest);
+  bossBtn.addEventListener("click", fightBoss);
 }
 
 const updateInfos = () => {
