@@ -1,3 +1,5 @@
+import setAttack from "./hero_functions.js";
+
 const PLAYER_TEXT = document.getElementById("player-text");
 const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
@@ -58,6 +60,7 @@ const generateHero = () => {
   }
   player.gold = 200;
   player.stats.level = 1;
+  setAttack(player);
   console.log(player);
   //write player in data.json
   let json_data = JSON.stringify(player);
