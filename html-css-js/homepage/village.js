@@ -210,19 +210,26 @@ const fight = (monster) => {
   const monster_object = monster;
 
   //calculate default attack vs monster attack
-  const p_attack = player_object.default_attack;
-  const m_defense = player_object.default_attack;
-  const p_defense = monster_object.default_attack;
-  const m_attack = monster_object.default_attack;
+  let p_attack = player_object.default_attack;
+  let m_defense = player_object.default_attack;
+  let p_defense = monster_object.default_attack;
+  let m_attack = monster_object.default_attack;
+  const isPlayerAttackChanging = player_object.default_attack = "all" ? true : false;
+  const isMonsterAttackChanging = monster_object.default_attack = "all" ? true : false;
   let hp_lost = 0;
 
-  //fight loop
   let player_turn = Math.random() < 0.5 ? true : false;
+  
+  /* FIGHT LOOP */
   while (player_object.stats.health > 0 && monster_object.health > 0) {
     console.log("player hp: ", player_object.stats.health);
     console.log("monster hp: ", monster_object.health);
     
     if (player_turn) {
+      if (isPlayerAttackChanging) {
+        p_attack = (Math.random() < 0.5) ? "strength" : "mental";
+        m_defense = p_attack;
+      }
       const damage_ratio = player_object.stats[p_attack] - monster_object[m_defense];
       const brut_damage = Math.round((Math.random() * (1 - 0.8) + 0.8) * player_object.stats[p_attack]);
       if (damage_ratio > 0) {
