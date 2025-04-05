@@ -1,4 +1,4 @@
-const internet = document.getElementById("internet");
+const internet = document.getElementById("internet-page");
 const returnBtn = document.getElementById("return");
 
 document.addEventListener("DOMContentLoaded", () => {
