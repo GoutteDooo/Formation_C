@@ -163,6 +163,7 @@ main {
   height: 450px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 #body-buttons {
@@ -199,7 +200,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 500px;
+  width: 600px;
   height: 400px;
   background: rgb(197, 197, 197);
   border: 1px solid black;
