@@ -58,4 +58,10 @@ const createPlayerPage = () => {
   PROFILE.id = "page-profile";
   NAVBAR.appendChild(PROFILE);
   PROFILE.textContent = player_object.name;
+  const PAGE_BODY = document.createElement("div");
+  PAGE_BODY.id = "page-body";
+  INTERNET_PAGE.appendChild(PAGE_BODY);
+  // const CONSULT_PROFILE = document.createElement("button");
+  // CONSULT_PROFILE.textContent = "See your profile";
+  // INTERNET_PAGE.appendChild(CONSULT_PROFILE);
 }
