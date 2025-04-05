@@ -76,4 +76,10 @@ main {
 }
 
 #internet-page {
+  height: 100%;
+}
+
+#connexion {
+  display: inline-block;
+  vertical-align: middle;
 }

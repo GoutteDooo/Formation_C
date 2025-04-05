@@ -1,4 +1,4 @@
-const internet = document.getElementById("internet-page");
+const CONNEXION = document.getElementById("connexion");
 const returnBtn = document.getElementById("return");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const updatePage = () => {
   connexion();
   setTimeout(() => {
-    internet.textContent = "Afficher les objets";
+    CONNEXION.textContent = "Afficher les objets";
     // Display objects of player
     // Display button to buy sthg (ordering will take time)
     // Display button to put sthg to sell
@@ -22,20 +22,20 @@ const updatePage = () => {
 }
 
 const connexion = () => {
-  internet.textContent = "Connecting to the internet";
+  CONNEXION.textContent = "Connecting to the internet";
   let dots = 0;
   const randomTime = Math.floor(Math.random() * 1000) + 1000;
   let interval = setInterval(() => {
-    internet.textContent += '.';
+    CONNEXION.textContent += '.';
     dots++;
     if (dots > 3) {
-    internet.textContent = "Connecting to the internet";
+    CONNEXION.textContent = "Connecting to the internet";
     dots = 0;
     }
   },300)
 
   setTimeout(() => {
     clearInterval(interval);
-    internet.textContent = "Connected !";
+    CONNEXION.textContent = "Connected !";
   }, randomTime);
 }
