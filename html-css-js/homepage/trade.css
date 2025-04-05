@@ -1,5 +1,5 @@
 body {
-  background-color: #d4d4d4;
+  background-color: #171741;
   height: 90vh;
   width: 95vw;
   margin: auto;
@@ -13,7 +13,8 @@ body {
   padding-top: 2rem;
   background: grey;
   border-radius: 15px;
-  height: 80%;
+  height: 90%;
+  min-height: 510px;
   position: relative;
   overflow: hidden;
   border: 3px solid rgb(34, 34, 34);
