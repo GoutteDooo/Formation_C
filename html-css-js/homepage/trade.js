@@ -1,3 +1,6 @@
+//import objects
+import objects from "./objects.js";
+
 //Connexion to Browser
 const CONNEXION = document.getElementById("connexion");
 const INTERNET_PAGE = document.getElementById("internet-page");
@@ -95,10 +98,17 @@ const chargeHomePage = () => {
 const showProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   PROFILE_PAGE.id = "profile-page";
-  PROFILE_PAGE.textContent = `Votre Compte : ${player_object.name}`;
+  PROFILE_PAGE.textContent = `Your Inventory`;
   PAGE_BODY.appendChild(PROFILE_PAGE);
   INVENTORY.id = "inventory";
   PROFILE_PAGE.appendChild(INVENTORY);
+
+  //display objects
+  for (const object of player_object.objects) {
+    const object_div = document.createElement("div");
+    object_div.textContent = object;
+    INVENTORY.appendChild(object_div);
+  }
 }
 
 const buy = () => {

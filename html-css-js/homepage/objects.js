@@ -48,3 +48,5 @@ const objects = {
     "price": 500,
   }
 }
+
+export default objects;
