@@ -17,7 +17,7 @@ const updatePage = () => {
     CONNEXION.textContent = "Afficher les objets";
     INTERNET_PAGE.removeChild(CONNEXION);
     // Display player's page
-
+    createPlayerPage();
     // Display objects of player
     // Display button to buy sthg (ordering will take time)
     // Display button to put sthg to sell
@@ -44,6 +44,8 @@ const connexion = () => {
   }, randomTime);
 }
 
-const playerPage = () => {
-  
+const createPlayerPage = () => {
+  const NAVBAR = document.createElement("div");
+  NAVBAR.id = "page-navbar";
+  INTERNET_PAGE.appendChild(NAVBAR);
 }
