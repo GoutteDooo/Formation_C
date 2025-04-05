@@ -1,17 +1,23 @@
 body {
   background-color: #d4d4d4;
-  height: 80vh;
+  height: 90vh;
   width: 95vw;
   margin: auto;
 }
 
 #browser {
-  background: green;
+  margin-top: 2rem;
+  background: grey;
+  border-radius: 15px;
   height: 80%;
+  position: relative;
 }
 
-#navbar {}
+#navbar {
+  height: 70px;
+  background: green;
+  
+}
 
 #internet-page {
-  margin-top: 2rem;
 }
