@@ -28,7 +28,7 @@ body {
   background: lightgray;
 }
 
-
+/* HEADER */
 header {
   width: 80%;
   margin: auto;
@@ -43,9 +43,18 @@ header {
 .tab {
   display: inline;
   text-align: left;
-  background: rgb(185, 185, 185);
+  background: rgb(170, 170, 170);
   padding: 0.2rem 1.5rem;
   font-style: italic;
+  cursor: pointer;
+}
+
+.tab:hover {
+  background: rgb(185, 185, 185);
+}
+
+.active {
+  background: rgb(197, 197, 197);
 }
 
 #navbar {
@@ -54,6 +63,14 @@ header {
   user-select: none;
   line-height: 50px;
   border-radius: 15px;
+}
+
+/* MAIN */
+
+main {
+  height: 100%;
+  width: 100%;
+  background: red;
 }
 
 #internet-page {
