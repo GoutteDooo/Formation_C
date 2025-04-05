@@ -3,21 +3,27 @@ body {
   height: 90vh;
   width: 95vw;
   margin: auto;
+  font-size: 1.3rem;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 2rem;
 }
 
 #browser {
-  margin-top: 2rem;
+  padding-top: 2rem;
   background: grey;
   border-radius: 15px;
   height: 80%;
-  position: relative;
 }
 
 #navbar {
-  height: 70px;
+  margin-top: 1rem;
+  height: 50px;
+  width: 90%;
+  margin: auto;
   background: green;
-  
+
 }
 
 #internet-page {
+  margin-top: 1rem;
 }
