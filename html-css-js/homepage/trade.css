@@ -44,6 +44,13 @@ header {
   margin: auto;
 }
 
+#marque {
+  position: absolute;
+  left: 1rem;
+  font-style: italic;
+  user-select: none;
+}
+
 #tabs-container {
   display: flex;
   transform: skew(15deg);

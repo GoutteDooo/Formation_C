@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
 const updatePage = () => {
   connexion();
   setTimeout(() => {
-    CONNEXION.textContent = "Afficher les objets";
     INTERNET_PAGE.removeChild(CONNEXION);
     // Display player's page
     createPlayerPage();
@@ -71,13 +70,32 @@ const createPlayerPage = () => {
   const BUTTON_PROFILE = document.createElement("button");
   BUTTON_PROFILE.id = "page-btn-profile";
   BUTTON_PROFILE.textContent = "See your profile";
+  BUTTON_PROFILE.addEventListener("click", showProfile);
   BODY_BUTTONS.appendChild(BUTTON_PROFILE);
   const BUTTON_BUY = document.createElement("button");
   BUTTON_BUY.id = "page-btn-buy";
   BUTTON_BUY.textContent = "Buy";
   BODY_BUTTONS.appendChild(BUTTON_BUY);
+  BUTTON_BUY.addEventListener("click", buy);
   const BUTTON_SELL = document.createElement("button");
   BUTTON_SELL.id = "page-btn-sell";
   BUTTON_SELL.textContent = "Sell";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
+  BUTTON_SELL.addEventListener("click", sell);
+}
+
+const showProfile = () => {
+  const player_object = JSON.parse(localStorage.getItem("player"));
+  console.log("show profile");
+  
+}
+
+const buy = () => {
+  const player_object = JSON.parse(localStorage.getItem("player"));
+  console.log("buy");
+}
+
+const sell = () => {
+  const player_object = JSON.parse(localStorage.getItem("player"));
+  console.log("sell");
 }
