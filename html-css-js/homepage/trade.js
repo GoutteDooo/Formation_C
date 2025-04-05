@@ -110,7 +110,7 @@ const showProfile = () => {
   const OBJECTS_UL = document.createElement("ul");
   for (const object of player_object.objects) {
     const OBJECT_LI = document.createElement("li");
-    OBJECT_LI.textContent = `${capitalize(String(objects[object].name))}`;
+    OBJECT_LI.textContent = capitalizeString(objects[object].name);
     OBJECTS_UL.appendChild(OBJECT_LI);
   }
   INVENTORY.appendChild(OBJECTS_UL);
