@@ -35,7 +35,7 @@ const monsters = {
     "exp": [20,35],
     "distance": [5,39],
     "probability": 60,
-    "victory_msg": "Few, it was so angry ! It was heading straight on you.",
+    "victory_msg": "Few, it was so angry ! It was heading straight on you like you were a castle.",
     "defeat_msg": "A rain of these creatures were thrown on you. Weird."
   },
   monster4: {
@@ -106,21 +106,21 @@ const monsters = {
   monster9: {
     "name": "Enraged Werewolf",
     "health": 1100,
-    "strength": 15,
-    "mental": 10,
+    "strength": 20,
+    "mental": 12,
     "default_attack": "strength",
     "gold": [300,500],
-    "exp": [150,220],
+    "exp": [180,280],
     "distance": [40,100],
     "probability": 20,
     "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !",
     "defeat_msg": "When the Werewolf bites you, you tried to flee but you finish into a big shaking and big pain. And then, you died. So sick."
   },
   monster10: {
-    "name": "Big Button Nose Sorcerer With Piercieng Laugh",
+    "name": "Big Button Nose Sorcerer With Piercing Laugh",
     "health": 2200,
-    "strength": 3,
-    "mental": 15,
+    "strength": 10,
+    "mental": 24,
     "default_attack": "mental",
     "gold": [700,1200],
     "exp": [300,500],
@@ -132,7 +132,7 @@ const monsters = {
   monster11: {
     "name": "Dark Starship Trooper With Laser Gun",
     "health": 3500,
-    "strength": 15,
+    "strength": 16,
     "mental": 30,
     "default_attack": "mental",
     "gold": [2500,4800],
@@ -141,6 +141,19 @@ const monsters = {
     "probability": 5,
     "victory_msg": "I thinked the troopers was in mission on another planet. But it didn't.",
     "defeat_msg": "Damn! The laser he throws just desintegrated you in dust in half of a second for breath."
+  },
+  monster12: {
+    "name": "Weird Red Cactus With Human Arms",
+    "health": 100,
+    "strength": 1,
+    "mental": 1,
+    "default_attack": "mental",
+    "gold": [1000,1000],
+    "exp": [500,500],
+    "distance": [0,100],
+    "probability": 1,
+    "victory_msg": "Oh! So Lucky !",
+    "defeat_msg": "W... What ??? I didn't think that was possible."
   }
 }
 
