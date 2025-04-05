@@ -1,52 +1,32 @@
 const find_object = {
-  object1: {
-    "name":"smelly sock",
+  1: {
     "probability": 0.01,
-    "price": 450000,
   },
-  object2: {
-    "name":"diamond",
+  2: {
     "probability": 0.02,
-    "price": 150000,
   },
-  object3: {
-    "name":"gold ring",
+  3: {
     "probability": 0.03,
-    "price": 60000,
   },
-  object4: {
-    "name":"pretty watch",
+  4: {
     "probability": 0.05,
-    "price": 18000,
   },
-  object5: {
-    "name":"straw hat with red ribbon",
+  5: {
     "probability": 0.09,
-    "price": 5500,
   },
-  object6: {
-    "name":"used golf club",
+  6: {
     "probability": 0.11,
-    "price": 3000,
   },
-  object7: {
-    "name":"old straw hat",
+  7: {
     "probability": 0.12,
-    "price": 1500,
   },
-  object8: {
-    "name":"old book of mathematics theory",
+  8: {
     "probability": 0.14,
-    "price": 1000,
   },
-  object9: {
-    "name":"plastic double laser sword",
+  9: {
     "probability": 0.17,
-    "price": 500,
   },
-  object10: {
-    "name":"screen broken iPhone 3",
+  10: {
     "probability": 0.26,
-    "price": 500,
   },
 }

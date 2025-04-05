@@ -16,7 +16,7 @@ const player = {
     health : 0,
     exp : 0
   },
-  objects: ["old book of mathematics theory"],
+  objects: [10,8],
 }
 
 const game_datas = {
