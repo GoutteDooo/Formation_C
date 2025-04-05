@@ -22,7 +22,7 @@ const player = {
 const game_datas = {
   state: "1",
   day: "1",
-  player_infos: "You are in the village, you have to explore the world to become stronger and fight Zrog the Dragon.",
+  player_infos: "You are in the village, you have to explore the world to become stronger and defeat Zrog the Dragon.",
 }
 /* End of initializing objects */
 
