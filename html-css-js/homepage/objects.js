@@ -1,30 +1,30 @@
 const objects = {
   1: {
-    "name":"smelly sock",
+    "name":"Smelly sock",
     "price": 450000,
   },
   2: {
-    "name":"diamond",
+    "name":"Diamond",
     "price": 150000,
   },
   3: {
-    "name":"gold ring",
+    "name":"Gold ring", 
     "price": 60000,
   },
   4: {
-    "name":"pretty watch",
+    "name":"Pretty watch",
     "price": 18000,
   },
   5: {
-    "name":"straw hat with red ribbon",
+    "name":"Straw hat with red ribbon",
     "price": 5500,
   },
   6: {
-    "name":"used golf club",
+    "name":"Used golf club",
     "price": 3000,
   },
   7: {
-    "name":"old straw hat",
+    "name":"Old straw hat",
     "price": 1500,
   },
   8: {

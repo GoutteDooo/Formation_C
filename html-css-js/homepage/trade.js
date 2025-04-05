@@ -1,6 +1,9 @@
 //import objects
 import objects from "./objects.js";
 
+//import helper functions
+import capitalize from "./helper_functions.js";
+
 //Connexion to Browser
 const CONNEXION = document.getElementById("connexion");
 const INTERNET_PAGE = document.getElementById("internet-page");
@@ -107,7 +110,7 @@ const showProfile = () => {
   const OBJECTS_UL = document.createElement("ul");
   for (const object of player_object.objects) {
     const OBJECT_LI = document.createElement("li");
-    OBJECT_LI.textContent = `${objects[object].name}`;
+    OBJECT_LI.textContent = `${capitalize(String(objects[object].name))}`;
     OBJECTS_UL.appendChild(OBJECT_LI);
   }
   INVENTORY.appendChild(OBJECTS_UL);
