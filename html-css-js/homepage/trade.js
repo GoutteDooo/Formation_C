@@ -95,6 +95,7 @@ const chargeHomePage = () => {
 const showProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   PROFILE_PAGE.id = "profile-page";
+  PROFILE_PAGE.textContent = `Votre Compte : ${player_object.name}`;
   PAGE_BODY.appendChild(PROFILE_PAGE);
   INVENTORY.id = "inventory";
   PROFILE_PAGE.appendChild(INVENTORY);
