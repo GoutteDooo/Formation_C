@@ -13,8 +13,7 @@ body {
   padding-top: 2rem;
   background: grey;
   border-radius: 15px;
-  height: 90%;
-  min-height: 510px;
+  height: 600px;
   position: relative;
   overflow: hidden;
   border: 3px solid rgb(34, 34, 34);
@@ -33,7 +32,7 @@ body {
 /* HEADER */
 header {
   width: 80%;
-  height: 20%;
+  height: 100px;
   margin: auto;
 }
 
@@ -71,13 +70,13 @@ header {
 /* MAIN */
 
 main {
-  height: 80%;
+  height: 500px;
   width: 100%;
   background: whitesmoke;
 }
 
 #internet-page {
-  height: 100%;
+  height: 500px;
 }
 
 #connexion {
@@ -131,7 +130,7 @@ main {
 }
 
 #page-body {
-  height: 100%;
+  height: 450px;
   display: flex;
   flex-direction: column;
 }
