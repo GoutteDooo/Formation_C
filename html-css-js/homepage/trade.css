@@ -87,6 +87,8 @@ main {
 }
 
 #page-navbar {
+  display: flex;
+  align-items: center;
   background: red;
   height: 50px;
   width: 100%;
@@ -102,10 +104,15 @@ main {
   margin-left: 1rem;
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
-  border: 2px solid black;
+  border: 2px solid rgb(146, 67, 67);
   border-radius: 15px;
   height: 90%;
   width: 130px;
   background: tomato;
   cursor: pointer;
+}
+
+#page-logo:hover {
+  transform: scale(1.05);
+  transition: 0.2s;
 }
