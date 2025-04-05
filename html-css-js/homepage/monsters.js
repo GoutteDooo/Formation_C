@@ -39,7 +39,7 @@ const monsters = {
     "defeat_msg": "A rain of these creatures were thrown on you. Weird."
   },
   monster4: {
-    "name": "Nasty martian",
+    "name": "Nasty Martian",
     "health": 500,
     "strength": 8,
     "mental": 5,
@@ -104,7 +104,7 @@ const monsters = {
     "defeat_msg": "It ate your corpse... urk..."
   },
   monster9: {
-    "name": "Enraged werewolf",
+    "name": "Enraged Werewolf",
     "health": 1100,
     "strength": 15,
     "mental": 10,
@@ -117,7 +117,7 @@ const monsters = {
     "defeat_msg": "When the Werewolf bites you, you tried to flee but you finish into a big shaking and big pain. And then, you died. So sick."
   },
   monster10: {
-    "name": "Big button nose Sorcerer",
+    "name": "Big Button Nose Sorcerer",
     "health": 2200,
     "strength": 3,
     "mental": 15,
