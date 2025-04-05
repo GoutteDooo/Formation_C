@@ -137,7 +137,7 @@ const monsters = {
     "default_attack": "mental",
     "gold": [2500,4800],
     "exp": [550,820],
-    "distance": [60,100],
+    "distance": [80,100],
     "probability": 5,
     "victory_msg": "I thinked the troopers was in mission on another planet. But it didn't.",
     "defeat_msg": "Damn! The laser he throws just desintegrated you in dust in half of a second for breath."

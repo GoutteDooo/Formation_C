@@ -65,7 +65,7 @@ const updateActions = () => {
       <button class="btn btn-primary btn-boss" id="button-fight-boss">Fight Zrog the Dragon</button>
       <button class="btn btn-primary" id="button-explore">Explore the world</button>
       <button class="btn btn-primary" id="button-trade">Trade on internet</button>
-      <button class="btn btn-primary" id="button-money">Try to find money</button>
+      <button class="btn btn-primary" id="button-money">Search for a wife</button>
       <button class="btn btn-primary" id="button-rest">Rest</button>
     `;
     const bossBtn = document.querySelector("#button-fight-boss");
@@ -77,7 +77,7 @@ const updateActions = () => {
   const restBtn = document.querySelector("#button-rest");
   exploreBtn.addEventListener("click", explore);
   tradeBtn.addEventListener("click", trade);
-  moneyBtn.addEventListener("click", findMoney);
+  moneyBtn.addEventListener("click", searchWife);
   restBtn.addEventListener("click", rest);
 }
 
@@ -126,8 +126,8 @@ function trade(e) {
   window.location.href = "trade.html";
 }
 
-function findMoney(e) {
-  console.log("Find money");
+function searchWife(e) {
+  console.log("Searching Wife");
 }
 
 function rest(e) {
