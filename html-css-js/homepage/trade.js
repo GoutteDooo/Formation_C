@@ -1,6 +1,9 @@
+const LOGO = document.createElement("div");
+const NAVBAR = document.createElement("div");
 const CONNEXION = document.getElementById("connexion");
 const INTERNET_PAGE = document.getElementById("internet-page");
 const returnBtn = document.getElementById("return");
+const PROFILE = document.createElement("div");
 
 const player_object = JSON.parse(localStorage.getItem("player"));
 
@@ -47,14 +50,11 @@ const connexion = () => {
 
 const createPlayerPage = () => {
   //navbar
-  const NAVBAR = document.createElement("div");
   NAVBAR.id = "page-navbar";
   INTERNET_PAGE.appendChild(NAVBAR);
-  const LOGO = document.createElement("div");
   LOGO.id = "page-logo";
   NAVBAR.appendChild(LOGO);
   LOGO.textContent = "Trade Village 💰";
-  const PROFILE = document.createElement("div");
   PROFILE.id = "page-profile";
   NAVBAR.appendChild(PROFILE);
   PROFILE.textContent = player_object.name;
@@ -87,6 +87,8 @@ const createPlayerPage = () => {
 const showProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   console.log("show profile");
+  console.log(PAGE_BODY);
+  
   
 }
 
