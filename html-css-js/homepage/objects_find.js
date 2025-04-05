@@ -41,12 +41,12 @@ const find_object = {
   },
   object9: {
     "name":"plastic laser sword",
-    "probability": 0.23,
+    "probability": 0.17,
     "price": 500,
   },
   object10: {
     "name":"screen broken iPhone",
-    "probability": 0.30,
+    "probability": 0.26,
     "price": 500,
   },
 }
