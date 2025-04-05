@@ -23,6 +23,7 @@ let last_distance = 0;
 const updatePlayer = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
 
+  //level up
   if (player_object.stats.exp > levels_data[player_object.stats.level]["exp_needed"]) {
     player_object.stats.level += 1;
     const new_strength = levels_data[player_object.stats.level]["stats_upgrade"][player_object.class]["strength"];
@@ -130,8 +131,8 @@ function findMoney(e) {
 }
 
 function rest(e) {
-  const input = prompt("Are you sure you want to rest ? (no answer means yes)");
-  if (input.toLowerCase() == "no") return;
+  const input = prompt("Are you sure you want to rest ?", "yes");
+  if (input === null || input.toLowerCase() === "no") return;
   const player_object = JSON.parse(localStorage.getItem("player"));
   //get value between 0,20,40,60,80 or 100
   const pourcentage_hp = Math.floor(Math.floor((player_object.stats.health / player_object.stats.max_health) * 100) / 20) * 20;
