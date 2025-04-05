@@ -14,7 +14,13 @@ body {
   background: grey;
   border-radius: 15px;
   height: 80%;
+  position: relative;
 }
+
+#return {
+  position: absolute;
+}
+
 
 header {
   width: 80%;
@@ -23,7 +29,9 @@ header {
 
 #tabs-container {
   display: flex;
-  background: ;
+  transform: skew(15deg);
+  padding: 0 1rem;
+  background: gainsboro;
   
 }
 
@@ -31,7 +39,8 @@ header {
   display: inline;
   text-align: left;
   background: red;
-
+  padding: 0.2rem 1.5rem;
+  font-style: italic;
 }
 
 #navbar {
