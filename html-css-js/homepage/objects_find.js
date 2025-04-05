@@ -35,17 +35,17 @@ const find_object = {
     "price": 1500,
   },
   object8: {
-    "name":"old book",
+    "name":"old book of mathematics theory",
     "probability": 0.14,
     "price": 1000,
   },
   object9: {
-    "name":"plastic laser sword",
+    "name":"plastic double laser sword",
     "probability": 0.17,
     "price": 500,
   },
   object10: {
-    "name":"screen broken iPhone",
+    "name":"screen broken iPhone 3",
     "probability": 0.26,
     "price": 500,
   },
