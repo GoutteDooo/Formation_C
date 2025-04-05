@@ -323,7 +323,7 @@ const fight = (monster) => {
     localStorage.setItem("player", JSON.stringify(player_object));
 
     const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    game_datas.player_infos = `You fought against a 
+    game_datas.player_infos = `You fought against 
     <span class="text-primary">${monster_object.name}</span> 
     and <span class="text-warning">won!</span> 
     <br /> 
