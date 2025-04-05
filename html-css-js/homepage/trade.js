@@ -1,9 +1,19 @@
-const LOGO = document.createElement("div");
-const NAVBAR = document.createElement("div");
+//Connexion to Browser
 const CONNEXION = document.getElementById("connexion");
 const INTERNET_PAGE = document.getElementById("internet-page");
 const returnBtn = document.getElementById("return");
+
+//Home Page
+  //Navbar
+const NAVBAR = document.createElement("div");
+const LOGO = document.createElement("div");
 const PROFILE = document.createElement("div");
+  //Body
+const PAGE_BODY = document.createElement("div");
+const BODY_BUTTONS = document.createElement("div");
+const BUTTON_PROFILE = document.createElement("button");
+const BUTTON_BUY = document.createElement("button");
+const BUTTON_SELL = document.createElement("button");
 
 const player_object = JSON.parse(localStorage.getItem("player"));
 
@@ -21,7 +31,7 @@ const updatePage = () => {
   setTimeout(() => {
     INTERNET_PAGE.removeChild(CONNEXION);
     // Display player's page
-    createPlayerPage();
+    chargeHomePage();
     // Display objects of player
     // Display button to buy sthg (ordering will take time)
     // Display button to put sthg to sell
@@ -48,7 +58,7 @@ const connexion = () => {
   }, randomTime);
 }
 
-const createPlayerPage = () => {
+const chargeHomePage = () => {
   //navbar
   NAVBAR.id = "page-navbar";
   INTERNET_PAGE.appendChild(NAVBAR);
@@ -60,24 +70,19 @@ const createPlayerPage = () => {
   PROFILE.textContent = player_object.name;
 
   //body
-  const PAGE_BODY = document.createElement("div");
   PAGE_BODY.id = "page-body";
   INTERNET_PAGE.appendChild(PAGE_BODY);
   //buttons
-  const BODY_BUTTONS = document.createElement("div");
   BODY_BUTTONS.id = "body-buttons";
   PAGE_BODY.appendChild(BODY_BUTTONS);
-  const BUTTON_PROFILE = document.createElement("button");
   BUTTON_PROFILE.id = "page-btn-profile";
   BUTTON_PROFILE.textContent = "See your profile";
   BUTTON_PROFILE.addEventListener("click", showProfile);
   BODY_BUTTONS.appendChild(BUTTON_PROFILE);
-  const BUTTON_BUY = document.createElement("button");
   BUTTON_BUY.id = "page-btn-buy";
   BUTTON_BUY.textContent = "Buy";
   BODY_BUTTONS.appendChild(BUTTON_BUY);
   BUTTON_BUY.addEventListener("click", buy);
-  const BUTTON_SELL = document.createElement("button");
   BUTTON_SELL.id = "page-btn-sell";
   BUTTON_SELL.textContent = "Sell";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
@@ -87,9 +92,8 @@ const createPlayerPage = () => {
 const showProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   console.log("show profile");
-  console.log(PAGE_BODY);
-  
-  
+  console.log(PAGE_BODY); 
+  PAGE_BODY.removeChild(BODY_BUTTONS);
 }
 
 const buy = () => {
