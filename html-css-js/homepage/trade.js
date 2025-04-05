@@ -104,11 +104,13 @@ const showProfile = () => {
   PROFILE_PAGE.appendChild(INVENTORY);
 
   //display objects
+  const OBJECTS_UL = document.createElement("ul");
   for (const object of player_object.objects) {
-    const object_div = document.createElement("div");
-    object_div.textContent = object;
-    INVENTORY.appendChild(object_div);
+    const OBJECT_LI = document.createElement("li");
+    OBJECT_LI.textContent = `${objects[object].name}`;
+    OBJECTS_UL.appendChild(OBJECT_LI);
   }
+  INVENTORY.appendChild(OBJECTS_UL);
 }
 
 const buy = () => {
