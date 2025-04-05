@@ -15,6 +15,10 @@ const BUTTON_PROFILE = document.createElement("button");
 const BUTTON_BUY = document.createElement("button");
 const BUTTON_SELL = document.createElement("button");
 
+//Profile Page
+const PROFILE_PAGE = document.createElement("div");
+const INVENTORY = document.createElement("div");
+
 const player_object = JSON.parse(localStorage.getItem("player"));
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -90,9 +94,10 @@ const chargeHomePage = () => {
 
 const showProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
-  console.log("show profile");
-  console.log(BODY_BUTTONS);
-  PAGE_BODY.appendChild(BODY_BUTTONS);
+  PROFILE_PAGE.id = "profile-page";
+  PAGE_BODY.appendChild(PROFILE_PAGE);
+  INVENTORY.id = "inventory";
+  PROFILE_PAGE.appendChild(INVENTORY);
 }
 
 const buy = () => {
