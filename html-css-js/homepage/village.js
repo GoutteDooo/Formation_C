@@ -56,7 +56,7 @@ const updateActions = () => {
     ACTIONS.innerHTML = `
       <button class="btn btn-primary" id="button-explore">Explore the world</button>
       <button class="btn btn-primary" id="button-trade">Trade on internet</button>
-      <button class="btn btn-primary" id="button-money">Try to find money</button>
+      <button class="btn btn-primary" id="button-money">Search for a wife</button>
       <button class="btn btn-primary" id="button-rest">Rest</button>
     `;
   }

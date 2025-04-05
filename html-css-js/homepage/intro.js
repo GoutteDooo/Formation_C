@@ -22,7 +22,10 @@ const player = {
 const game_datas = {
   state: "1",
   day: "1",
-  player_infos: "You are in the village, you have to explore the world to become stronger and defeat Zrog the Dragon.",
+  player_infos: `You are in the village, you have to explore the world to become stronger and deliver the village from the claws of Zrog the Dragon.
+  <br />
+  Zrog said it will come back in 3 months. It lets you just enough time to gain experience and defeat it.
+  `,
 }
 /* End of initializing objects */
 
