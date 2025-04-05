@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
 const updatePage = () => {
   connexion();
   setTimeout(() => {
@@ -82,22 +81,18 @@ const chargeHomePage = () => {
   BUTTON_BUY.id = "page-btn-buy";
   BUTTON_BUY.textContent = "Buy";
   BODY_BUTTONS.appendChild(BUTTON_BUY);
-  BUTTON_BUY.addEventListener("click", buy);
+  BUTTON_BUY.addEventListener("click", () => loadPage(buy));
   BUTTON_SELL.id = "page-btn-sell";
   BUTTON_SELL.textContent = "Sell";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
-  BUTTON_SELL.addEventListener("click", sell);
+  BUTTON_SELL.addEventListener("click", () => loadPage(sell));
 }
 
 const showProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   console.log("show profile");
-  clearPage();
   console.log(BODY_BUTTONS);
-  setTimeout(() => {
-    PAGE_BODY.appendChild(BODY_BUTTONS);
-  }, 500);
-  
+  PAGE_BODY.appendChild(BODY_BUTTONS);
 }
 
 const buy = () => {
@@ -115,6 +110,7 @@ const clearPage = () => {
 }
 
 const loadPage = (page) => {
+  clearPage();
   const rtime = Math.floor(Math.random() * 100);
   setTimeout(() => {
     page();
