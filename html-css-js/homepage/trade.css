@@ -7,12 +7,24 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin-top: 2rem;
   text-align: center;
+  overflow: hidden;
+}
+
+#screen {
+  border: 15px solid rgb(34, 34, 34);
+  border-radius: 15px;
+  background: white;
+}
+#screen-foot {
+  background: rgb(34, 34, 34);
+  height: 100px;
+  width: 50px;
+  margin: auto;
 }
 
 #browser {
   padding-top: 0.2rem;
   background: grey;
-  border-radius: 15px;
   height: 600px;
   min-width: 500px;
   position: relative;
