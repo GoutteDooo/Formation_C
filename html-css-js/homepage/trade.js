@@ -53,7 +53,7 @@ const createPlayerPage = () => {
   const LOGO = document.createElement("div");
   LOGO.id = "page-logo";
   NAVBAR.appendChild(LOGO);
-  LOGO.textContent = "Trade Village";
+  LOGO.textContent = "Trade Village 💰";
   const PROFILE = document.createElement("div");
   PROFILE.id = "page-profile";
   NAVBAR.appendChild(PROFILE);

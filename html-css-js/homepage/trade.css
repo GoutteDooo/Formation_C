@@ -124,6 +124,7 @@ main {
   height: 90%;
   width: 130px;
   background: tomato;
+  user-select: none;
 }
 
 #page-logo:hover {
