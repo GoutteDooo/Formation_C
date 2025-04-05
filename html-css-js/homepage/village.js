@@ -34,10 +34,9 @@ const updatePlayer = () => {
     player_object.stats.max_health += new_health;
     player_object.stats.health = player_object.stats.max_health;
     localStorage.setItem("player", JSON.stringify(player_object));
-    // const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    // game_datas.player_infos = `<span class="text-primary">${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}! You won <span class="text-success">${new_strength}</span> strengths, <span class="text-danger">${new_mental}</span> mentals and <span class="text-warning">${new_health}</span> healths and your hp are fully restored !</span>`;
-    // localStorage.setItem("game_datas", JSON.stringify(game_datas));
-    writeInfos(`<span class="text-primary">${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}! You won <span class="text-success">${new_strength}</span> strengths, <span class="text-danger">${new_mental}</span> mentals and <span class="text-warning">${new_health}</span> healths and your hp are fully restored !</span>`,300);
+    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    game_datas.player_infos = `<span class="text-primary">${game_datas.player_infos} <br /> You have reached level ${player_object.stats.level}! You won <span class="text-success">${new_strength}</span> strengths, <span class="text-danger">${new_mental}</span> mentals and <span class="text-warning">${new_health}</span> healths and your hp are fully restored !</span>`;
+    localStorage.setItem("game_datas", JSON.stringify(game_datas));
   }
 
   PLAYER_CLASS.textContent = player_object.class;
@@ -323,26 +322,17 @@ const fight = (monster) => {
     //update player datas
     localStorage.setItem("player", JSON.stringify(player_object));
 
-    // const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-    // game_datas.player_infos = `You fought against a 
-    // <span class="text-primary">${monster_object.name}</span> 
-    // and <span class="text-warning">won!</span> 
-    // <br /> 
-    // You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
-    // <br /> 
-    // You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
-    // <br />
-    // <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`;
-    // localStorage.setItem("game_datas", JSON.stringify(game_datas));
-    writeInfos(`You fought against 
-      <span class="text-primary">${monster_object.name}</span> 
-      and <span class="text-warning">won!</span> 
-      <br /> 
-      You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
-      <br /> 
-      You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
-      <br />
-      <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`,300);
+    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    game_datas.player_infos = `You fought against a 
+    <span class="text-primary">${monster_object.name}</span> 
+    and <span class="text-warning">won!</span> 
+    <br /> 
+    You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
+    <br /> 
+    You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
+    <br />
+    <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`;
+    localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
     return;
   }
@@ -368,11 +358,4 @@ const dayPassed = (day) => {
   let game_datas = JSON.parse(localStorage.getItem("game_datas"));
   game_datas.day = day_number;
   localStorage.setItem("game_datas", JSON.stringify(game_datas));
-}
-
-const writeInfos = (text) => {
-  const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-  game_datas.player_infos = text;
-  localStorage.setItem("game_datas", JSON.stringify(game_datas));
-  updateInfos();
 }
