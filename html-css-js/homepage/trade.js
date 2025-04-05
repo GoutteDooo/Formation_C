@@ -61,7 +61,8 @@ const createPlayerPage = () => {
   const PAGE_BODY = document.createElement("div");
   PAGE_BODY.id = "page-body";
   INTERNET_PAGE.appendChild(PAGE_BODY);
-  // const CONSULT_PROFILE = document.createElement("button");
-  // CONSULT_PROFILE.textContent = "See your profile";
-  // INTERNET_PAGE.appendChild(CONSULT_PROFILE);
+  const CONSULT_PROFILE = document.createElement("button");
+  CONSULT_PROFILE.id = "page-btn-profile";
+  CONSULT_PROFILE.textContent = "See your profile";
+  PAGE_BODY.appendChild(CONSULT_PROFILE);
 }

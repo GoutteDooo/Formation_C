@@ -10,10 +10,11 @@ body {
 }
 
 #browser {
-  padding-top: 2rem;
+  padding-top: 0.2rem;
   background: grey;
   border-radius: 15px;
   height: 600px;
+  min-width: 500px;
   position: relative;
   overflow: hidden;
   border: 3px solid rgb(34, 34, 34);
@@ -133,4 +134,18 @@ main {
   height: 450px;
   display: flex;
   flex-direction: column;
+}
+
+#body-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+
+button {
+  background: rgb(197, 197, 197);
+  border: 1px solid black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
 }
