@@ -14,7 +14,9 @@ body {
   border: 15px solid rgb(34, 34, 34);
   border-radius: 15px;
   background: white;
+  min-width: 530px;
 }
+
 #screen-foot {
   background: rgb(34, 34, 34);
   height: 100px;
