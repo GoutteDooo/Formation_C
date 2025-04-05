@@ -28,6 +28,13 @@ body {
   height: 35px;
   width: 35px;
   background: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#return:hover {
+  background: rgb(185, 185, 185);
 }
 
 /* HEADER */

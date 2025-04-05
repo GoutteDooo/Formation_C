@@ -43,7 +43,7 @@ const updatePlayer = () => {
   PLAYER_NAME.textContent = player_object.name;
   PLAYER_LEVEL.textContent = player_object.stats.level;
   PLAYER_EXP.textContent = player_object.stats.exp;
-  PLAYER_HEALTH.textContent = player_object.stats.health;
+  PLAYER_HEALTH.textContent = `${player_object.stats.health}/${player_object.stats.max_health}`;
   PLAYER_STRENGTH.textContent = player_object.stats.strength;
   PLAYER_MENTAL.textContent = player_object.stats.mental;
   PLAYER_GOLD.textContent = player_object.gold;
