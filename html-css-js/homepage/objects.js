@@ -39,4 +39,12 @@ const objects = {
     "name":"screen broken iPhone 3",
     "price": 500,
   },
+  11: {
+    "name":"old book of your grandma",
+    "price": 10000,
+  },
+  12: {
+    "name":"Useless old Blackberry phone",
+    "price": 500,
+  }
 }

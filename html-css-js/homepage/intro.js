@@ -16,7 +16,7 @@ const player = {
     health : 0,
     exp : 0
   },
-  objects: [10,8],
+  objects: [11,12],
 }
 
 const game_datas = {
