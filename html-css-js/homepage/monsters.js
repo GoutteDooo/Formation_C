@@ -7,7 +7,7 @@ const monsters = {
     "default_attack": "strength",
     "gold": [30,90],
     "exp": [10,20],
-    "distance": [0,20],
+    "distance": [0,10],
     "probability": 90,
     "victory_msg": "Tintintintinnn Tintintintintiiiiiiiiiiiiiiin !",
     "defeat_msg": "So sick to lose against a so weak creature."
@@ -20,7 +20,7 @@ const monsters = {
     "default_attack": "all",
     "gold": [50,110],
     "exp": [25,40],
-    "distance": [0,15],
+    "distance": [2,12],
     "probability": 80,
     "victory_msg": "Congratulations !",
     "defeat_msg": "So sick to lose against a so weak creature."
@@ -33,8 +33,8 @@ const monsters = {
     "default_attack": "strength",
     "gold": [40,100],
     "exp": [20,35],
-    "distance": [0,25],
-    "probability": 70,
+    "distance": [5,20],
+    "probability": 60,
     "victory_msg": "Few, it was so angry ! It was heading straight on you.",
     "defeat_msg": "A rain of these creatures were thrown on you. Weird."
   },
@@ -46,7 +46,7 @@ const monsters = {
     "default_attack": "strength",
     "gold": [100,220],
     "exp": [50,100],
-    "distance": [10,70],
+    "distance": [7,22],
     "probability": 40,
     "victory_msg": "It was so nasty !",
     "defeat_msg": "The Martian danced on your corpse when you died."
@@ -59,7 +59,7 @@ const monsters = {
     "default_attack": "strength",
     "gold": [70,150],
     "exp": [80,140],
-    "distance": [10,40],
+    "distance": [10,25],
     "probability": 60,
     "victory_msg": "Oh my god, I've never seen a slime like that before!",
     "defeat_msg": "It said it was angry because we killed its children."
@@ -85,7 +85,7 @@ const monsters = {
     "default_attack": "strength",
     "gold": [80,140],
     "exp": [80,150],
-    "distance": [15,30],
+    "distance": [12,30],
     "probability": 25,
     "victory_msg": "Ouaw ! This monster was so scary !",
     "defeat_msg": "When it threw its laser from its antenna, you were electrilized like a tazer. Finito."
@@ -98,7 +98,7 @@ const monsters = {
     "default_attack": "mental",
     "gold": [250,400],
     "exp": [170,280],
-    "distance": [25,60],
+    "distance": [20,100],
     "probability": 30,
     "victory_msg": "Oh my god, did you see all this teeth ?",
     "defeat_msg": "It ate your corpse... urk..."
@@ -111,7 +111,7 @@ const monsters = {
     "default_attack": "strength",
     "gold": [300,500],
     "exp": [150,220],
-    "distance": [30,80],
+    "distance": [25,100],
     "probability": 20,
     "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !",
     "defeat_msg": "When the Werewolf bites you, you tried to flee but you finish into a big shaking and big pain. And then, you died. So sick."
