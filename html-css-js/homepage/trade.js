@@ -46,6 +46,9 @@ const connexion = () => {
 
 const createPlayerPage = () => {
   const NAVBAR = document.createElement("div");
+  const LOGO = document.createElement("p");
   NAVBAR.id = "page-navbar";
   INTERNET_PAGE.appendChild(NAVBAR);
+  NAVBAR.appendChild(LOGO);
+  LOGO.textContent = "Logo";
 }
