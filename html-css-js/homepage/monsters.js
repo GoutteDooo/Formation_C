@@ -117,17 +117,30 @@ const monsters = {
     "defeat_msg": "When the Werewolf bites you, you tried to flee but you finish into a big shaking and big pain. And then, you died. So sick."
   },
   monster10: {
-    "name": "Big Button Nose Sorcerer",
+    "name": "Big Button Nose Sorcerer With Piercieng Laugh",
     "health": 2200,
     "strength": 3,
     "mental": 15,
     "default_attack": "mental",
     "gold": [700,1200],
     "exp": [300,500],
-    "distance": [60,100],
+    "distance": [50,100],
     "probability": 10,
     "victory_msg": "You won the moment you pierced the button on that sorcerer's nose.",
     "defeat_msg": "It turned you into a stuffed pig and hung your new form on a wall of its house."
+  },
+  monster11: {
+    "name": "Dark Starship Trooper With Laser Gun",
+    "health": 3500,
+    "strength": 15,
+    "mental": 30,
+    "default_attack": "mental",
+    "gold": [2500,4800],
+    "exp": [550,820],
+    "distance": [60,100],
+    "probability": 5,
+    "victory_msg": "I thinked the troopers was in mission on another planet. But it didn't.",
+    "defeat_msg": "Damn! The laser he throws just desintegrated you in dust in half of a second for breath."
   }
 }
 
