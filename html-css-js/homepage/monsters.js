@@ -38,7 +38,7 @@ const monsters = {
     "victory_msg": "Few, it was so angry ! It was heading straight on you.",
     "defeat_msg": "A rain of these creatures were thrown on you. Weird."
   },
-  monster2: {
+  monster4: {
     "name": "Nasty martian",
     "health": 500,
     "strength": 8,
@@ -51,7 +51,7 @@ const monsters = {
     "victory_msg": "It was so nasty !",
     "defeat_msg": "The Martian danced on your corpse when you died."
   },
-  monster3: {
+  monster5: {
     "name": "Big Slime",
     "health": 800,
     "strength": 8,
@@ -64,7 +64,7 @@ const monsters = {
     "victory_msg": "Oh my god, I've never seen a slime like that before!",
     "defeat_msg": "It said it was angry because we killed its children."
   },
-  monster4: {
+  monster6: {
     "name": "Ugly Glue",
     "health": 1200,
     "strength": 3,
@@ -77,7 +77,7 @@ const monsters = {
     "victory_msg": "Hmmm.... I think we lost times fighting this... thing.",
     "defeat_msg": "The moment it shoves on our eyes, it blinds you, and then, you fall into a big hole and die on the return."
   },
-  monster5: {
+  monster7: {
     "name": "Little Martian With Big Red Eyes",
     "health": 100,
     "strength": 30,
@@ -90,7 +90,7 @@ const monsters = {
     "victory_msg": "Ouaw ! This monster was so scary !",
     "defeat_msg": "When it threw its laser from its antenna, you were electrilized like a tazer. Finito."
   },
-  monster6: {
+  monster8: {
     "name": "Little Scary Dragon With A Thousand Teeth",
     "health": 1200,
     "strength": 10,
@@ -103,7 +103,7 @@ const monsters = {
     "victory_msg": "Oh my god, did you see all this teeth ?",
     "defeat_msg": "It ate your corpse... urk..."
   },
-  monster7: {
+  monster9: {
     "name": "Enraged werewolf",
     "health": 1100,
     "strength": 15,
@@ -116,7 +116,7 @@ const monsters = {
     "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !",
     "defeat_msg": "When the Werewolf bites you, you tried to flee but you finish into a big shaking and big pain. And then, you died. So sick."
   },
-  monster8: {
+  monster10: {
     "name": "Big button nose Sorcerer",
     "health": 2200,
     "strength": 3,
