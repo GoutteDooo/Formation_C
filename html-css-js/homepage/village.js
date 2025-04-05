@@ -370,14 +370,9 @@ const dayPassed = (day) => {
   localStorage.setItem("game_datas", JSON.stringify(game_datas));
 }
 
-const writeInfos = (text, time) => {
+const writeInfos = (text) => {
   const game_datas = JSON.parse(localStorage.getItem("game_datas"));
-  game_datas.player_infos = "";
-  PLAYER_INFOS.textContent = "";
+  game_datas.player_infos = text;
+  localStorage.setItem("game_datas", JSON.stringify(game_datas));
   updateInfos();
-  setTimeout(() => {
-    game_datas.player_infos = text;
-    localStorage.setItem("game_datas", JSON.stringify(game_datas));
-    updateInfos();
-  }, time);
 }
