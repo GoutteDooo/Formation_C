@@ -77,7 +77,7 @@ const chargeHomePage = () => {
   PAGE_BODY.appendChild(BODY_BUTTONS);
   BUTTON_PROFILE.id = "page-btn-profile";
   BUTTON_PROFILE.textContent = "See your profile";
-  BUTTON_PROFILE.addEventListener("click", showProfile);
+  BUTTON_PROFILE.addEventListener("click", () => loadPage(showProfile));
   BODY_BUTTONS.appendChild(BUTTON_PROFILE);
   BUTTON_BUY.id = "page-btn-buy";
   BUTTON_BUY.textContent = "Buy";
@@ -92,8 +92,12 @@ const chargeHomePage = () => {
 const showProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   console.log("show profile");
-  console.log(PAGE_BODY); 
-  PAGE_BODY.removeChild(BODY_BUTTONS);
+  clearPage();
+  console.log(BODY_BUTTONS);
+  setTimeout(() => {
+    PAGE_BODY.appendChild(BODY_BUTTONS);
+  }, 500);
+  
 }
 
 const buy = () => {
@@ -104,4 +108,15 @@ const buy = () => {
 const sell = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   console.log("sell");
+}
+
+const clearPage = () => {
+  PAGE_BODY.removeChild(BODY_BUTTONS);
+}
+
+const loadPage = (page) => {
+  const rtime = Math.floor(Math.random() * 100);
+  setTimeout(() => {
+    page();
+  }, rtime);
 }
