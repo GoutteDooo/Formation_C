@@ -2,6 +2,8 @@ const CONNEXION = document.getElementById("connexion");
 const INTERNET_PAGE = document.getElementById("internet-page");
 const returnBtn = document.getElementById("return");
 
+const player_object = JSON.parse(localStorage.getItem("player"));
+
 document.addEventListener("DOMContentLoaded", () => {
   returnBtn.addEventListener("mouseup", () => {
     window.location.href = "village.html";
@@ -46,10 +48,14 @@ const connexion = () => {
 
 const createPlayerPage = () => {
   const NAVBAR = document.createElement("div");
-  const LOGO = document.createElement("div");
   NAVBAR.id = "page-navbar";
-  LOGO.id = "page-logo";
   INTERNET_PAGE.appendChild(NAVBAR);
+  const LOGO = document.createElement("div");
+  LOGO.id = "page-logo";
   NAVBAR.appendChild(LOGO);
   LOGO.textContent = "Trade Village";
+  const PROFILE = document.createElement("div");
+  PROFILE.id = "page-profile";
+  NAVBAR.appendChild(PROFILE);
+  PROFILE.textContent = player_object.name;
 }

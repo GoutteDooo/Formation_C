@@ -109,10 +109,22 @@ main {
   height: 90%;
   width: 130px;
   background: tomato;
-  cursor: pointer;
 }
 
 #page-logo:hover {
   transform: scale(1.05);
   transition: 0.2s;
+}
+
+#page-profile {
+  position: absolute;
+  right: 1rem;
+  border: 1px solid black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  background: rgb(197, 197, 197);
+}
+
+#page-profile:hover {
+  background: rgb(185, 185, 185);
 }
