@@ -15,10 +15,17 @@ body {
   border-radius: 15px;
   height: 80%;
   position: relative;
+  overflow: hidden;
 }
 
 #return {
   position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 5px;
+  height: 35px;
+  aspect-ratio: 1 / 1;
+  background: lightgray;
 }
 
 
@@ -31,14 +38,12 @@ header {
   display: flex;
   transform: skew(15deg);
   padding: 0 1rem;
-  background: gainsboro;
-  
 }
 
 .tab {
   display: inline;
   text-align: left;
-  background: red;
+  background: rgb(185, 185, 185);
   padding: 0.2rem 1.5rem;
   font-style: italic;
 }
