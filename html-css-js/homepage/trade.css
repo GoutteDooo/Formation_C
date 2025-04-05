@@ -140,7 +140,9 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 500px;
+  width: 200px;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 button {

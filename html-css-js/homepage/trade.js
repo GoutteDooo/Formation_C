@@ -47,6 +47,7 @@ const connexion = () => {
 }
 
 const createPlayerPage = () => {
+  //navbar
   const NAVBAR = document.createElement("div");
   NAVBAR.id = "page-navbar";
   INTERNET_PAGE.appendChild(NAVBAR);
@@ -58,11 +59,25 @@ const createPlayerPage = () => {
   PROFILE.id = "page-profile";
   NAVBAR.appendChild(PROFILE);
   PROFILE.textContent = player_object.name;
+
+  //body
   const PAGE_BODY = document.createElement("div");
   PAGE_BODY.id = "page-body";
   INTERNET_PAGE.appendChild(PAGE_BODY);
-  const CONSULT_PROFILE = document.createElement("button");
-  CONSULT_PROFILE.id = "page-btn-profile";
-  CONSULT_PROFILE.textContent = "See your profile";
-  PAGE_BODY.appendChild(CONSULT_PROFILE);
+  //buttons
+  const BODY_BUTTONS = document.createElement("div");
+  BODY_BUTTONS.id = "body-buttons";
+  PAGE_BODY.appendChild(BODY_BUTTONS);
+  const BUTTON_PROFILE = document.createElement("button");
+  BUTTON_PROFILE.id = "page-btn-profile";
+  BUTTON_PROFILE.textContent = "See your profile";
+  BODY_BUTTONS.appendChild(BUTTON_PROFILE);
+  const BUTTON_BUY = document.createElement("button");
+  BUTTON_BUY.id = "page-btn-buy";
+  BUTTON_BUY.textContent = "Buy";
+  BODY_BUTTONS.appendChild(BUTTON_BUY);
+  const BUTTON_SELL = document.createElement("button");
+  BUTTON_SELL.id = "page-btn-sell";
+  BUTTON_SELL.textContent = "Sell";
+  BODY_BUTTONS.appendChild(BUTTON_SELL);
 }
