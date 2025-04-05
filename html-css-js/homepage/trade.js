@@ -46,9 +46,10 @@ const connexion = () => {
 
 const createPlayerPage = () => {
   const NAVBAR = document.createElement("div");
-  const LOGO = document.createElement("p");
+  const LOGO = document.createElement("div");
   NAVBAR.id = "page-navbar";
+  LOGO.id = "page-logo";
   INTERNET_PAGE.appendChild(NAVBAR);
   NAVBAR.appendChild(LOGO);
-  LOGO.textContent = "Logo";
+  LOGO.textContent = "Trade Village";
 }

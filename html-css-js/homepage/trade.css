@@ -91,3 +91,15 @@ main {
   height: 50px;
   width: 100%;
 }
+
+#page-logo {
+  display: flex;
+  text-align: left;
+  line-height: 50px;
+  font-size: 1rem;
+  padding-left: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  border: 2px solid black;
+  height: 100%;
+}
