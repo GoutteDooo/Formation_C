@@ -108,7 +108,7 @@ const chargeHomePage = () => {
   BUTTON_BUY.id = "page-btn-buy";
   BUTTON_BUY.textContent = "Buy";
   BODY_BUTTONS.appendChild(BUTTON_BUY);
-  BUTTON_BUY.addEventListener("click", () => loadPage(generateBuyingPage));
+  BUTTON_BUY.addEventListener("click", () => loadPage(showBuyingPage));
   BUTTON_SELL.id = "page-btn-sell";
   BUTTON_SELL.textContent = "Sell";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
@@ -116,6 +116,7 @@ const chargeHomePage = () => {
 
   //other pages generation background
   generateProfile();
+  generateBuyingPage();
 }
 
 const showHomePage = () => {
@@ -151,17 +152,18 @@ const generateBuyingPage = () => {
   console.log("buy");
   //Display all items sold by sellers
   BUYING_PAGE.id = "buying-page";
-  console.log(market_sellers);
   for (const seller in market) 
   {
     const seller_object = market[seller];
-    console.log(seller_object);
-    
     //Display item sold
-    // const SOLD_ITEM_CONTAINER = document.createElement("div");
+    const SOLD_ITEM_CONTAINER = document.createElement("div");
 
   }
   
+}
+
+const showBuyingPage = () => {
+  PAGE_BODY.appendChild(BUYING_PAGE);
 }
 
 const sell = () => {

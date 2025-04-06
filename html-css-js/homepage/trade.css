@@ -232,3 +232,17 @@ button:hover {
 #inventory li {
   margin-bottom: 0.5rem;
 }
+
+/* BUYING PAGE */
+
+#buying-page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 600px;
+  height: 400px;
+  background: rgb(197, 197, 197);
+  border: 1px solid black;
+  overflow: scroll;
+  border-radius: 10px;
+}
