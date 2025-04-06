@@ -97,6 +97,9 @@ const chargeHomePage = () => {
   BUTTON_SELL.textContent = "Sell";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
   BUTTON_SELL.addEventListener("click", () => loadPage(sell));
+
+  //other pages generation background
+  generateProfile();
 }
 
 const showHomePage = () => {
@@ -107,11 +110,11 @@ const showHomePage = () => {
   BODY_BUTTONS.appendChild(BUTTON_SELL);
 }
 
-const showProfile = () => {
+const generateProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   PROFILE_PAGE.id = "profile-page";
   PROFILE_PAGE.textContent = `Your Inventory`;
-  PAGE_BODY.appendChild(PROFILE_PAGE);
+  // PAGE_BODY.appendChild(PROFILE_PAGE);
   INVENTORY.id = "inventory";
   PROFILE_PAGE.appendChild(INVENTORY);
 
@@ -123,6 +126,10 @@ const showProfile = () => {
     OBJECTS_UL.appendChild(OBJECT_LI);
   }
   INVENTORY.appendChild(OBJECTS_UL);
+}
+
+const showProfile = () => {
+  PAGE_BODY.appendChild(PROFILE_PAGE);
 }
 
 const buy = () => {
