@@ -14,6 +14,7 @@ const returnBtn = document.getElementById("return");
 const NAVBAR = document.createElement("div");
 const LOGO = document.createElement("div");
 const PROFILE = document.createElement("div");
+const NUTS = document.createElement("div");
   //Body
 const PAGE_BODY = document.createElement("div");
 const BODY_BUTTONS = document.createElement("div");

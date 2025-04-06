@@ -11,7 +11,7 @@ const PLAYER_EXP = document.getElementById("player-exp");
 const PLAYER_HEALTH = document.getElementById("player-health");
 const PLAYER_STRENGTH = document.getElementById("player-strength");
 const PLAYER_MENTAL = document.getElementById("player-mental");
-const PLAYER_GOLD = document.getElementById("player-gold");
+const PLAYER_NUTS = document.getElementById("player-nuts");
 
 const GAME_DAY = document.getElementById("game-day");
 const PLAYER_INFOS = document.getElementById("player-infos");
@@ -46,7 +46,7 @@ const updatePlayer = () => {
   PLAYER_HEALTH.textContent = `${player_object.stats.health}/${player_object.stats.max_health}`;
   PLAYER_STRENGTH.textContent = player_object.stats.strength;
   PLAYER_MENTAL.textContent = player_object.stats.mental;
-  PLAYER_GOLD.textContent = player_object.gold;
+  PLAYER_NUTS.textContent = player_object.nuts;
 
 }
 
@@ -304,12 +304,12 @@ const fight = (monster) => {
   }
   //if player wins, gain all he can win on the monster
   if (monster_object.health <= 0) {
-    //wins gold from monster
-    const min_gold = monster_object.gold[0];
-    const max_gold = monster_object.gold[1];
-    const gold_win = Math.round((Math.random() * (max_gold - min_gold) + min_gold));
-    player_object.gold += gold_win;
-    console.log("wins gold: ", gold_win);
+    //wins nuts from monster
+    const min_nuts = monster_object.nuts[0];
+    const max_nuts = monster_object.nuts[1];
+    const nuts_win = Math.round((Math.random() * (max_nuts - min_nuts) + min_nuts));
+    player_object.nuts += nuts_win;
+    console.log("wins nuts: ", nuts_win);
 
     //wins exp from monster
     const min_exp = monster_object.exp[0];
@@ -330,7 +330,7 @@ const fight = (monster) => {
     <br /> 
     You've lost <span class="text-danger font-weight-bold">${hp_lost}</span> hp during the battle. 
     <br /> 
-    You have gained <span class="text-warning">${gold_win}</span> gold and <span class="text-success">${exp_win}</span> exp.
+    You have gained <span class="text-warning">${nuts_win}</span> nuts and <span class="text-success">${exp_win}</span> exp.
     <br />
     <span class="text-secondary">${monster_object.victory_msg ? monster_object.victory_msg : ""}</span>`;
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
