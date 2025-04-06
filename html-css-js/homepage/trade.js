@@ -3,7 +3,7 @@ import objects from "./objects.js";
 import market from "./market.js";
 
 //import helper functions
-import { capitalize } from "./helper_functions.js";
+import { capitalize, displayPrice } from "./helper_functions.js";
 
 //Connexion to Browser
 const CONNEXION = document.getElementById("connexion");
@@ -197,7 +197,7 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_PRICE = document.createElement("div");
       SOLD_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
-      SOLD_ITEM_ACTION_PRICE.textContent = `${seller_object.selling_objects[object].lowest_selling_price} 🥜`;
+      SOLD_ITEM_ACTION_PRICE.textContent = displayPrice(seller_object.selling_objects[object].lowest_selling_price);
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_PRICE);
 
       const SOLD_ITEM_ACTION_BUY = document.createElement("button");
