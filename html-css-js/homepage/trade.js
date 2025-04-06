@@ -26,7 +26,7 @@ const BUTTON_SELL = document.createElement("button");
 //Profile Page
 const PROFILE_PAGE = document.createElement("div");
 const INVENTORY = document.createElement("div");
-const OBJECTS_UL = document.createElement("ul");
+let OBJECTS_UL = document.createElement("ul");
 
 //Buying Page
 const BUYING_PAGE = document.createElement("div");
@@ -60,7 +60,8 @@ const updateDatas = () => {
   NUTS.textContent = displayPrice(player_object.nuts);
   //remove all nodes from OBJECTS_UL
   player_object = JSON.parse(localStorage.getItem("player"));
-  OBJECTS_UL.childNodes.forEach(node => node.remove());
+  OBJECTS_UL.remove();
+  OBJECTS_UL = document.createElement("ul");
   //add new objects to OBJECTS_UL
   for (const object of player_object.objects) {
     const OBJECT_LI = document.createElement("li");
