@@ -56,7 +56,7 @@ const updatePage = () => {
 }
 
 const updateDatas = () => {
-  NUTS.textContent = player_object.nuts;
+  NUTS.textContent = displayPrice(player_object.nuts);
 }
 
 const connexion = () => {
@@ -269,7 +269,7 @@ const buy = (seller_object, selling_object, price) => {
   // if player has enough nuts, buy object
   if (player_object.nuts >= price) {
     // find seller and its object and remove it
-    const seller = sellers.find(seller => seller.name === seller_object.name);
+    const seller = Object.values(sellers).find(seller => seller.name === seller_object.name);
     const item_to_remove = seller_object.selling_objects.indexOf(selling_object);
     seller.selling_objects.splice(item_to_remove, 1);
 
