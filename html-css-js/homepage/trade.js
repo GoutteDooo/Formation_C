@@ -1,4 +1,4 @@
-//import objects
+//imports
 import objects from "./objects.js";
 import market from "./market.js";
 
