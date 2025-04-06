@@ -155,8 +155,22 @@ const generateBuyingPage = () => {
   for (const seller in market) 
   {
     const seller_object = market[seller];
-    //Display item sold
-    const SOLD_ITEM_CONTAINER = document.createElement("div");
+    //Display items sold by seller
+    for (const object in seller_object.selling_objects)
+      //for each object sold by seller
+    {
+      const SOLD_ITEM_CONTAINER = document.createElement("div");
+      SOLD_ITEM_CONTAINER.classList.add("sold-item-container");
+
+      const SELLER_NAME = document.createElement("h3");
+      SELLER_NAME.textContent = capitalize(seller_object.name);
+      SOLD_ITEM_CONTAINER.appendChild(SELLER_NAME);
+
+      const SOLD_ITEM = document.createElement("div");
+      SOLD_ITEM.classList.add("sold-item");
+      SOLD_ITEM.textContent = capitalize(objects[seller_object.selling_objects[object].id].name);
+      SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM);
+    }
 
   }
   
