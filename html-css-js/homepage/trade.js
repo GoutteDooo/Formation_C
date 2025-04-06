@@ -274,13 +274,17 @@ const randomizeSellerPrice = (selling_object) => {
 const buy = (seller_object, selling_object, price, container) => {
   // if player has enough nuts, buy object
   if (player_object.nuts >= price) {
+    // Generate a copy of sellers in localstorage
     const new_sellers = JSON.parse(localStorage.getItem("sellers"));
     // find seller and its object and remove it
-    const target_seller = Object.values(sellers).find(seller => seller.name === seller_object.name);
-    const item_index = seller_object.selling_objects.indexOf(selling_object);
-    //Generate a copy of sellers in localstorage
-    //remove item from sellers in localstorage
-    target_seller.selling_objects.splice(item_index, 1);
+    for (const seller in new_sellers) {
+      if (new_sellers[seller].name === seller_object.name) {
+        const item_index = seller_object.selling_objects.indexOf(selling_object);
+        // remove item from sellers object
+        new_sellers[seller].selling_objects.splice(item_index, 1);
+        break;
+      }
+    }
     // Replace the copy of sellers in localstorage
     localStorage.setItem("sellers", JSON.stringify(new_sellers));
 
