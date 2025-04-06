@@ -168,10 +168,11 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM = document.createElement("div");
       SOLD_ITEM.classList.add("sold-item");
-      const sold_item_name = objects[object["id"]].name;
+      
+      const sold_item_name = objects[seller_object.selling_objects[object]["id"]].name;
       console.log(sold_item_name);
       
-      SOLD_ITEM.textContent = capitalize(sold_item_name);
+      // SOLD_ITEM.textContent = capitalize(sold_item_name);
       SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM);
     }
   }
