@@ -40,7 +40,7 @@ const objects = {
     "price": 500,
   },
   11: {
-    "name":"old book of your grandma",
+    "name":"old book of your grandma about medicine",
     "price": 10000,
   },
   12: {
