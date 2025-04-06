@@ -24,27 +24,27 @@ const objects = {
     "price": 3000,
   },
   7: {
-    "name":"Old straw hat",
+    "name":"👒 Old straw hat",
     "price": 1500,
   },
   8: {
-    "name":"old book of mathematics theory",
+    "name":"📖 old book of mathematics theory",
     "price": 1000,
   },
   9: {
-    "name":"plastic double laser sword",
+    "name":"⚔️ plastic double laser sword",
     "price": 500,
   },
   10: {
-    "name":"screen broken iPhone 3",
+    "name":"📱screen broken iPhone 3",
     "price": 500,
   },
   11: {
-    "name":"old book of your grandma about medicine",
+    "name":"🕮 old book of your grandma about medicine",
     "price": 10000,
   },
   12: {
-    "name":"Useless old Blackberry phone",
+    "name":"📱 Useless old Google Pixel phone",
     "price": 500,
   },
   13: {
