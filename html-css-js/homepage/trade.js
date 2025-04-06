@@ -174,6 +174,29 @@ const generateBuyingPage = () => {
       
       const sold_item_name = sold_item_object.name;
       
+      const SOLD_ITEM_NAME_CONTAINER = document.createElement("div");
+      SOLD_ITEM.appendChild(SOLD_ITEM_NAME_CONTAINER);
+
+      const SOLD_ITEM_NAME = document.createElement("h3");
+      SOLD_ITEM_NAME.textContent = capitalize(sold_item_name);
+      SOLD_ITEM_NAME_CONTAINER.appendChild(SOLD_ITEM_NAME);
+
+      const SOLD_ITEM_ACTIONS = document.createElement("div");
+      SOLD_ITEM_ACTIONS.classList.add("sold-item-actions");
+      SOLD_ITEM.appendChild(SOLD_ITEM_ACTIONS);
+
+      const SOLD_ITEM_ACTION_PRICE = document.createElement("div");
+      SOLD_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
+      SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_PRICE);
+
+      const SOLD_ITEM_ACTION_BUY = document.createElement("button");
+      SOLD_ITEM_ACTION_BUY.textContent = "Buy";
+      SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_BUY);
+
+      const SOLD_ITEM_ACTION_TRADE = document.createElement("button");
+      SOLD_ITEM_ACTION_TRADE.textContent = "Trade";
+
+      SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_TRADE);
       // SOLD_ITEM.textContent = capitalize(sold_item_name);
       SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM);
 
