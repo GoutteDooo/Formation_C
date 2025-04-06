@@ -154,7 +154,6 @@ const showProfile = () => {
 }
 
 const generateBuyingPage = () => {
-  console.log("buy");
   //Display all items sold by sellers
   BUYING_PAGE.id = "buying-page";
   for (const seller in sellers) 
@@ -210,7 +209,7 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_BUY = document.createElement("button");
       SOLD_ITEM_ACTION_BUY.textContent = "Buy";
-      SOLD_ITEM_ACTION_BUY.addEventListener("click", () => buy(seller_object, seller_object.selling_objects[object], item_price));
+      SOLD_ITEM_ACTION_BUY.addEventListener("click", () => buy(seller_object, seller_object.selling_objects[object], item_price, SOLD_ITEM_CONTAINER));
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_BUY);
 
       const SOLD_ITEM_ACTION_TRADE = document.createElement("button");
@@ -261,7 +260,7 @@ const randomizeSellerPrice = (selling_object) => {
   return price;
 }
 
-const buy = (seller_object, selling_object, price) => {
+const buy = (seller_object, selling_object, price, container) => {
   console.log("Buy");
   console.log(seller_object);
   console.log(selling_object);
@@ -280,6 +279,9 @@ const buy = (seller_object, selling_object, price) => {
     localStorage.setItem("sellers", JSON.stringify(seller_object));
     // update player datas
     localStorage.setItem("player", JSON.stringify(player_object));
+
+    //remove node from DOM
+    container.remove();
     updateDatas();
   }
   else
