@@ -200,14 +200,14 @@ const generateBuyingPage = () => {
       SOLD_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
       //declare a price and store it in items_sold
       const item_price = randomizeSellerPrice(seller_object.selling_objects[object]);
-      items_sold.push({id: items_sold.length, seller: seller_object.name, item: sold_item_name, price: item_price});
+      items_sold.push({seller: seller_object.name, item: sold_item_name, price: item_price});
       //display price
       SOLD_ITEM_ACTION_PRICE.textContent = displayPrice(item_price);
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_PRICE);
 
       const SOLD_ITEM_ACTION_BUY = document.createElement("button");
       SOLD_ITEM_ACTION_BUY.textContent = "Buy";
-      SOLD_ITEM_ACTION_BUY.addEventListener("click", () => buy(items_sold[object].id));
+      SOLD_ITEM_ACTION_BUY.addEventListener("click", () => buy(items_sold[object]));
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_BUY);
 
       const SOLD_ITEM_ACTION_TRADE = document.createElement("button");
