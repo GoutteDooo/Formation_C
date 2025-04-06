@@ -165,9 +165,18 @@ const generateBuyingPage = () => {
       const SOLD_ITEM_CONTAINER = document.createElement("div");
       SOLD_ITEM_CONTAINER.classList.add("sold-item-container");
 
+      const SELLER_NAME_CONTAINER = document.createElement("div");
+      SELLER_NAME_CONTAINER.classList.add("seller-name-container");
+      SOLD_ITEM_CONTAINER.appendChild(SELLER_NAME_CONTAINER);
+
       const SELLER_NAME = document.createElement("h3");
       SELLER_NAME.textContent = `${capitalize(seller_object.name)}`;
-      SOLD_ITEM_CONTAINER.appendChild(SELLER_NAME);
+      SELLER_NAME_CONTAINER.appendChild(SELLER_NAME);
+
+      const SELLER_INFOS = document.createElement("button");
+      SELLER_INFOS.textContent = "About";
+      SELLER_INFOS.addEventListener("click", () => seeSellerInfos(seller_object["description"]));
+      SELLER_NAME_CONTAINER.appendChild(SELLER_INFOS);
 
       const SOLD_ITEM = document.createElement("div");
       SOLD_ITEM.classList.add("sold-item");
@@ -222,8 +231,12 @@ const clearPage = () => {
 
 const loadPage = (page) => {
   clearPage();
-  const rtime = Math.floor(Math.random() * 100);
+  const rtime = Math.floor((Math.random() * 100) + 10);
   setTimeout(() => {
     page();
   }, rtime);
+}
+
+const seeSellerInfos = (description) => {
+  window.alert(description);
 }

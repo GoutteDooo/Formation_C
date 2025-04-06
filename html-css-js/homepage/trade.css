@@ -266,16 +266,6 @@ button:hover {
   width: 100%;
 }
 
-.sold-item-container h3:after {
-  content: "";
-  background: black;
-  height: 1px;
-  width: 100%;
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-}
-
 .sold-item {
   display: flex;
   justify-content: center;
@@ -283,15 +273,38 @@ button:hover {
   flex-direction: column;
 }
 
+.seller-name-container {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.seller-name-container h3 {
+  padding: 0.2rem 0;
+  margin-bottom: 0;
+}
+
+.seller-name-container button {
+  margin: 0.2rem;
+  padding: 0.1rem 0.25rem;
+  margin-left: auto;
+  background: rgb(228, 228, 228);
+  cursor: pointer;
+}
+
+.seller-name-container button:hover {
+  background: rgb(200, 200, 200);
+}
+
+.sold-item-name-container {
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
 .sold-item-name-container h3 {
   padding: 1rem 0;
   height: 50px;
   font-size: 1.2rem;
-}
-
-.sold-item-name-container h3:after {
-  width: 1000%;
-  left: -500%;
 }
 
 .sold-item-actions {
