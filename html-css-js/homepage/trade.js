@@ -175,6 +175,7 @@ const generateBuyingPage = () => {
       const sold_item_name = sold_item_object.name;
       
       const SOLD_ITEM_NAME_CONTAINER = document.createElement("div");
+      SOLD_ITEM_NAME_CONTAINER.classList.add("sold-item-name-container");
       SOLD_ITEM.appendChild(SOLD_ITEM_NAME_CONTAINER);
 
       const SOLD_ITEM_NAME = document.createElement("h3");

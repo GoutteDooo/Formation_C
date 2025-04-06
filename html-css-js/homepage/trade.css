@@ -278,10 +278,13 @@ button:hover {
 }
 
 .sold-item {
-  width: 90%;
-  height: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  flex-direction: column;
+}
+
+.sold-item-name-container h3 {
+  height: 50px;
+  
 }
