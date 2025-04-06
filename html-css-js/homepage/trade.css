@@ -287,13 +287,27 @@ button:hover {
 .sold-item-name-container h3 {
   padding: 1rem 0;
   height: 50px;
-  font-size: 1rem;
+  font-size: 1.2rem;
+}
+
+.sold-item-name-container h3:after {
+  width: 1000%;
+  left: -500%;
 }
 
 .sold-item-actions {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 50px;
 }
+
+.sold-item-action-price {
+  width: 100px;
+}
+
+.sold-item-actions button {
+  width: 100px;
+}
+
