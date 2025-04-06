@@ -273,6 +273,10 @@ const buy = (seller_object, selling_object, price) => {
     // update player inventory
     localStorage.setItem("player", JSON.stringify(player_object));
   }
+  else
+  {
+    window.alert("You don't have enough nuts to buy this object.");
+  }
   // add object to player inventory
   // update player datas
 
