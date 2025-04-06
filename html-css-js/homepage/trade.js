@@ -188,6 +188,7 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_PRICE = document.createElement("div");
       SOLD_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
+      SOLD_ITEM_ACTION_PRICE.textContent = `${seller_object.selling_objects[object].lowest_selling_price} 🥜`;
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_PRICE);
 
       const SOLD_ITEM_ACTION_BUY = document.createElement("button");
