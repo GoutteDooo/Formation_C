@@ -41,11 +41,13 @@ const market = {
         id:3,
         default_price_range: [45000,50000],
         lowest_selling_price: 30000,
+        selling_message: "Oh !!! A buyer !!! I'm so happy to sell one object !! ❤️",
       },
       {
-        id:13,
-        default_price_range: [1100,1500],
-        lowest_selling_price: 1000
+        id:6,
+        default_price_range: [2000,2500],
+        lowest_selling_price: 1200
+        selling_message: "THANK YOU !!!! I hope you will like this club !! Otherwise, don't hesitate, I'll rebuy this if you don't like it ❤️❤️❤️",
       }
     ]
   },
