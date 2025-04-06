@@ -205,6 +205,8 @@ button:hover {
   height: 400px;
   background: rgb(197, 197, 197);
   border: 1px solid black;
+  overflow: scroll;
+  border-radius: 10px;
 }
 
 #inventory ul {

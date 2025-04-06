@@ -46,6 +46,10 @@ const objects = {
   12: {
     "name":"Useless old Blackberry phone",
     "price": 500,
+  },
+  13: {
+    "name":"💽 Vinyl of Michael Jackson's Hits",
+    "price": 500,
   }
 }
 
