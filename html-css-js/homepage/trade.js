@@ -202,6 +202,7 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_BUY = document.createElement("button");
       SOLD_ITEM_ACTION_BUY.textContent = "Buy";
+      SOLD_ITEM_ACTION_BUY.addEventListener("click", () => buy(seller_object.selling_objects[object]));
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_BUY);
 
       const SOLD_ITEM_ACTION_TRADE = document.createElement("button");
@@ -245,7 +246,6 @@ const seeSellerInfos = (description) => {
 }
 
 const randomizeSellerPrice = (selling_object) => {
-  console.log("selling_object: ", selling_object);
   const range = selling_object.default_price_range;
   const min_price = range[0];
   const max_price = range[1];
