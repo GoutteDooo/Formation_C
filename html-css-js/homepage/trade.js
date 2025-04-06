@@ -32,8 +32,8 @@ const OBJECTS_UL = document.createElement("ul");
 const BUYING_PAGE = document.createElement("div");
 
 //localstorage
-const player_object = JSON.parse(localStorage.getItem("player"));
-const sellers = JSON.parse(localStorage.getItem("sellers"));
+let player_object = JSON.parse(localStorage.getItem("player"));
+let sellers = JSON.parse(localStorage.getItem("sellers"));
 
 document.addEventListener("DOMContentLoaded", () => {
   returnBtn.addEventListener("mouseup", () => {
@@ -59,6 +59,7 @@ const updatePage = () => {
 const updateDatas = () => {
   NUTS.textContent = displayPrice(player_object.nuts);
   //remove all nodes from OBJECTS_UL
+  player_object = JSON.parse(localStorage.getItem("player"));
   OBJECTS_UL.childNodes.forEach(node => node.remove());
   //add new objects to OBJECTS_UL
   for (const object of player_object.objects) {
