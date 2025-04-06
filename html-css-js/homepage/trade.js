@@ -269,10 +269,10 @@ const buy = (seller_object, selling_object, price) => {
   // if player has enough nuts, buy object
   if (player_object.nuts >= price) {
     // find seller and its object and remove it
-    const seller_name = seller_object.name;
+    const seller = sellers.find(seller => seller.name === seller_object.name);
     const item_to_remove = seller_object.selling_objects.indexOf(selling_object);
-    sellers[seller_name].selling_objects.splice(item_to_remove, 1);
-    
+    seller.selling_objects.splice(item_to_remove, 1);
+
     player_object.nuts -= price;
     // add object to player inventory
     player_object.objects.push(selling_object.id);
