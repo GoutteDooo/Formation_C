@@ -237,6 +237,14 @@ const loadPage = (page) => {
   }, rtime);
 }
 
+/* Helpers functions about trading */
+//Buying
+
 const seeSellerInfos = (description) => {
   window.alert(description);
+}
+
+const randomizeSellerPrice = (selling_object) => {
+  console.log("selling_object: ", selling_object);
+
 }
