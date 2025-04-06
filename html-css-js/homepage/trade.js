@@ -145,8 +145,15 @@ const showProfile = () => {
 }
 
 const buy = () => {
-  const objects = JSON.parse(localStorage.getItem("game_datas")).selled_objects;
-  console.log(objects);
+  console.log("buy");
+  //Display all items sold by sellers
+  const market_sellers = Object.keys(market);
+  console.log(market_sellers);
+  for (const seller in market_sellers) 
+  {
+    const seller_object = market[seller];
+  }
+  
 }
 
 const sell = () => {
