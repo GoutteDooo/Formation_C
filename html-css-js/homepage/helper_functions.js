@@ -7,9 +7,10 @@ export function capitalize(string) {
 }
 
 export function displayPrice(price) {
-  for (let i = 0; i < price.length; i++) {
-    if (i % 3 === 0) {
-      price = price.slice(0, i) + "," + price.slice(i);
+  price = String(price);
+  for (let i = price.length; i >= 0; i--) {
+    if ((price.length - i) % 3 === 0) {
+      price = price.slice(0, i) + " " + price.slice(i);
     }
   }
   return `${price} 🥜`;
