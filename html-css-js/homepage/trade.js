@@ -74,7 +74,7 @@ const chargeHomePage = () => {
   LOGO.id = "page-logo";
   NAVBAR.appendChild(LOGO);
   LOGO.textContent = "Trade Village 💰";
-  LOGO.addEventListener("click", () => loadPage(chargeHomePage)); 
+  LOGO.addEventListener("click", () => loadPage(showHomePage));
   PROFILE.id = "page-profile";
   NAVBAR.appendChild(PROFILE);
   PROFILE.textContent = player_object.name;
@@ -97,6 +97,14 @@ const chargeHomePage = () => {
   BUTTON_SELL.textContent = "Sell";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
   BUTTON_SELL.addEventListener("click", () => loadPage(sell));
+}
+
+const showHomePage = () => {
+  INTERNET_PAGE.appendChild(PAGE_BODY);
+  PAGE_BODY.appendChild(BODY_BUTTONS);
+  BODY_BUTTONS.appendChild(BUTTON_PROFILE);
+  BODY_BUTTONS.appendChild(BUTTON_BUY);
+  BODY_BUTTONS.appendChild(BUTTON_SELL);
 }
 
 const showProfile = () => {
