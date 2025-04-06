@@ -32,7 +32,6 @@ const INVENTORY = document.createElement("div");
 const BUYING_PAGE = document.createElement("div");
 
 const player_object = JSON.parse(localStorage.getItem("player"));
-const items_sold = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   returnBtn.addEventListener("mouseup", () => {
@@ -198,7 +197,7 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_PRICE = document.createElement("div");
       SOLD_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
-      //declare a price and store it in items_sold
+      //declare a price
       const item_price = randomizeSellerPrice(seller_object.selling_objects[object]);
       //display price
       SOLD_ITEM_ACTION_PRICE.textContent = displayPrice(item_price);
@@ -206,7 +205,7 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_BUY = document.createElement("button");
       SOLD_ITEM_ACTION_BUY.textContent = "Buy";
-      SOLD_ITEM_ACTION_BUY.addEventListener("click", () => buy(seller_object.selling_objects[object], item_price));
+      SOLD_ITEM_ACTION_BUY.addEventListener("click", () => buy(seller_object, seller_object.selling_objects[object], item_price));
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_BUY);
 
       const SOLD_ITEM_ACTION_TRADE = document.createElement("button");
@@ -255,4 +254,12 @@ const randomizeSellerPrice = (selling_object) => {
   const max_price = range[1];
   const price = Math.floor((Math.random() * (max_price - min_price) + min_price));
   return price;
+}
+
+const buy = (seller_object, selling_object, price) => {
+  console.log("Buy");
+  console.log(seller_object);
+  console.log(selling_object);
+  console.log(price);
+  // find object in seller inventory
 }
