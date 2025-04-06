@@ -197,7 +197,7 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_PRICE = document.createElement("div");
       SOLD_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
-      SOLD_ITEM_ACTION_PRICE.textContent = displayPrice(seller_object.selling_objects[object].lowest_selling_price);
+      SOLD_ITEM_ACTION_PRICE.textContent = randomizeSellerPrice(seller_object.selling_objects[object]);
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_PRICE);
 
       const SOLD_ITEM_ACTION_BUY = document.createElement("button");
@@ -246,5 +246,10 @@ const seeSellerInfos = (description) => {
 
 const randomizeSellerPrice = (selling_object) => {
   console.log("selling_object: ", selling_object);
+  const range = selling_object.selling_price_range;
+  const min_price = range[0];
+  const max_price = range[1];
+  const price = Math.floor((Math.random() * (max_price - min_price) + min_price));
 
+  return displayPrice(price);
 }

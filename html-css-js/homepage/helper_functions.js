@@ -6,6 +6,11 @@ export function capitalize(string) {
   return string[0].toUpperCase() + string.slice(1);
 }
 
+
+/**
+ * @param {Number} price
+ * @returns {String} price with 3 digits
+ *  */
 export function displayPrice(price) {
   price = String(price);
   for (let i = price.length - 1; i >= 0; i--) {
