@@ -144,7 +144,7 @@ const showProfile = () => {
   PAGE_BODY.appendChild(PROFILE_PAGE);
 }
 
-const buy = () => {
+const generateBuyingPage = () => {
   console.log("buy");
   //Display all items sold by sellers
   const market_sellers = Object.keys(market);
@@ -152,6 +152,9 @@ const buy = () => {
   for (const seller in market_sellers) 
   {
     const seller_object = market[seller];
+    //Display item sold
+    const SOLD_ITEM_CONTAINER = document.createElement("div");
+    
   }
   
 }
