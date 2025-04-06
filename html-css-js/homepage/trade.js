@@ -55,6 +55,10 @@ const updatePage = () => {
   }, 2500);
 }
 
+const updateDatas = () => {
+  NUTS.textContent = player_object.nuts;
+}
+
 const connexion = () => {
   CONNEXION.textContent = "Connecting to the internet";
   let dots = 0;
@@ -268,21 +272,21 @@ const buy = (seller_object, selling_object, price) => {
     const seller_name = seller_object.name;
     const item_to_remove = seller_object.selling_objects.indexOf(selling_object);
     sellers[seller_name].selling_objects.splice(item_to_remove, 1);
+    
     player_object.nuts -= price;
+    // add object to player inventory
     player_object.objects.push(selling_object.id);
     // update sellers datas
     localStorage.setItem("sellers", JSON.stringify(seller_object));
     // update player datas
     localStorage.setItem("player", JSON.stringify(player_object));
-    updatePage();
+    updateDatas();
   }
   else
   {
+    // if player doesn't have enough nuts, play refused message
     window.alert("You don't have enough nuts to buy this object.");
   }
-  // add object to player inventory
-  // update player datas
 
-  // if player doesn't have enough nuts, play refused message from seller
 
 }
