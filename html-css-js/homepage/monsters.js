@@ -149,7 +149,7 @@ const monsters = {
     "mental": 1,
     "default_attack": "mental",
     "gold": [1000,1000],
-    "exp": [500,500],
+    "exp": [1000,1000],
     "distance": [0,100],
     "probability": 1,
     "victory_msg": "Oh! So Lucky !",

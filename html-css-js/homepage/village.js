@@ -18,7 +18,7 @@ const PLAYER_INFOS = document.getElementById("player-infos");
 
 const ACTIONS = document.getElementById("actions");
 
-let last_distance = 0;
+let last_distance = 0;//registered value prompt explore
 
 const updatePlayer = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
