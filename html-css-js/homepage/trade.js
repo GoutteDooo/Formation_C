@@ -68,6 +68,7 @@ const updateDatas = () => {
     OBJECT_LI.textContent = capitalize(objects[object].name);
     OBJECTS_UL.appendChild(OBJECT_LI);
   }
+  INVENTORY.appendChild(OBJECTS_UL);
 }
 
 const connexion = () => {
