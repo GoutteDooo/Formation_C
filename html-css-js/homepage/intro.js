@@ -1,3 +1,4 @@
+import market from "./market.js";
 const PLAYER_TEXT = document.getElementById("player-text");
 const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
@@ -27,6 +28,10 @@ const game_datas = {
   Zrog said it will come back in 3 months. It lets you just enough time to gain experience and defeat it.
   `,
 }
+
+const sellers = market;
+
+
 /* End of initializing objects */
 
 const updateInfoPlayer = (e) => {
@@ -86,6 +91,7 @@ const generateHero = () => {
 
 function startGame() {
   /* Start Game */
+  localStorage.setItem("sellers", JSON.stringify(sellers));
   localStorage.setItem("game_datas", JSON.stringify(game_datas));
   window.location.href = "village.html";
 }

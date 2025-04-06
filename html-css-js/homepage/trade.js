@@ -1,6 +1,5 @@
 //imports
 import objects from "./objects.js";
-import market from "./market.js";
 
 //import helper functions
 import { capitalize, displayPrice } from "./helper_functions.js";
@@ -31,7 +30,9 @@ const INVENTORY = document.createElement("div");
 //Buying Page
 const BUYING_PAGE = document.createElement("div");
 
+//localstorage
 const player_object = JSON.parse(localStorage.getItem("player"));
+const sellers = JSON.parse(localStorage.getItem("sellers"));
 
 document.addEventListener("DOMContentLoaded", () => {
   returnBtn.addEventListener("mouseup", () => {
@@ -152,9 +153,9 @@ const generateBuyingPage = () => {
   console.log("buy");
   //Display all items sold by sellers
   BUYING_PAGE.id = "buying-page";
-  for (const seller in market) 
+  for (const seller in sellers) 
   {
-    const seller_object = market[seller];
+    const seller_object = sellers[seller];
     //Display items sold by seller
     for (const object in seller_object.selling_objects)
       //for each object sold by seller
