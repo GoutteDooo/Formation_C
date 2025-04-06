@@ -144,8 +144,8 @@ const showProfile = () => {
 }
 
 const buy = () => {
-  const player_object = JSON.parse(localStorage.getItem("player"));
-  console.log("buy");
+  const objects = JSON.parse(localStorage.getItem("game_datas")).selled_objects;
+  console.log(objects);
 }
 
 const sell = () => {
