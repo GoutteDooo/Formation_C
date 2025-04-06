@@ -3,6 +3,10 @@ const PLAYER_TEXT = document.getElementById("player-text");
 const NAME_INPUT = document.getElementById("name");
 const SUBMIT_PLAYER = document.getElementById("submit-player");
 
+const RADIO_WARRIOR = document.getElementById("class-warrior");
+const RADIO_MAGE = document.getElementById("class-mage");
+const RADIO_ALCHEMIST = document.getElementById("class-alchemist");
+
 /* Initializing objects */
 const player = {
   name: "John",
@@ -34,7 +38,11 @@ const sellers = market;
 
 /* End of initializing objects */
 
+NAME_INPUT.addEventListener("keyup", (e) => updateInfoPlayer(e));
 SUBMIT_PLAYER.addEventListener("click", (e) => submitPlayer(e));
+RADIO_WARRIOR.addEventListener("click", (e) => updateInfoPlayer(e));
+RADIO_MAGE.addEventListener("click", (e) => updateInfoPlayer(e));
+RADIO_ALCHEMIST.addEventListener("click", (e) => updateInfoPlayer(e));
 
 const updateInfoPlayer = (e) => {
   console.log(e.srcElement.classList.contains("choose-class"));

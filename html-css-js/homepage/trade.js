@@ -264,12 +264,12 @@ const buy = (seller_object, selling_object, price) => {
   console.log(price);
   // if player has enough nuts, buy object
   if (player_object.nuts >= price) {
-    // find object in seller inventory and remove it
+    // find seller and its object and remove it
     seller_object.selling_objects.splice(seller_object.selling_objects.indexOf(selling_object), 1);
     player_object.nuts -= price;
     player_object.objects.push(selling_object.id);
     // update seller inventory
-    localStorage.setItem("seller", JSON.stringify(seller_object));
+    localStorage.setItem("sellers", JSON.stringify(seller_object));
     // update player inventory
     localStorage.setItem("player", JSON.stringify(player_object));
   }

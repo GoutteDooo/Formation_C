@@ -10,14 +10,14 @@
     <body>
         <h1>Hello ! What's your name ?</h1>
         <form action="">
-            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name here" onkeyup="updateInfoPlayer(event)" maxlength="12" minlength="2" autocomplete="off">
+            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name here" maxlength="12" minlength="2" autocomplete="off">
             <fieldset>
                 <legend class="mb-3">Choose your class</legend>
-                <input type="radio" name="choose-class" id="class-warrior" value="Warrior" class="form-check-input choose-class" checked onchange="updateInfoPlayer(event)">
+                <input type="radio" name="choose-class" id="class-warrior" value="Warrior" class="form-check-input choose-class" checked>
                 <label for="class-warrior" class="form-label">Warrior</label>
-                <input type="radio" name="choose-class" id="class-mage" value="Mage" class="form-check-input choose-class" onchange="updateInfoPlayer(event)">
+                <input type="radio" name="choose-class" id="class-mage" value="Mage" class="form-check-input choose-class">
                 <label for="class-mage" class="form-label">Mage</label>
-                <input type="radio" name="choose-class" id="class-alchemist" value="Alchemist" class="form-check-input choose-class" onchange="updateInfoPlayer(event)">
+                <input type="radio" name="choose-class" id="class-alchemist" value="Alchemist" class="form-check-input choose-class">
                 <label for="class-alchemist" class="form-label">Alchemist</label>
             </fieldset>
             <p id="player-text">Your name is: John and you are a Warrior</p>
@@ -26,6 +26,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-        <script src="intro.js"></script>
+        <script type="module" src="intro.js"></script>
     </body>
 </html>
