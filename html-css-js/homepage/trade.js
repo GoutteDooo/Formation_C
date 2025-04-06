@@ -136,7 +136,7 @@ const sell = () => {
 }
 
 const clearPage = () => {
-  PAGE_BODY.removeChild(BODY_BUTTONS);
+  PAGE_BODY.childNodes[0] ? PAGE_BODY.removeChild(PAGE_BODY.childNodes[0]) : null;
 }
 
 const loadPage = (page) => {
