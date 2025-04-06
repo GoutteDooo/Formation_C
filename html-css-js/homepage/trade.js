@@ -276,6 +276,8 @@ const buy = (seller_object, selling_object, price, container) => {
     console.log(seller);
     
     const item_to_remove = seller_object.selling_objects.indexOf(selling_object);
+    //remove item from sellers in localstorage
+    Object.values(sellers).find(seller => seller.name === seller_object.name).selling_objects.splice(item_to_remove, 1);
     seller.selling_objects.splice(item_to_remove, 1);
 
     player_object.nuts -= price;
