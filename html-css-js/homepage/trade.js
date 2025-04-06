@@ -159,6 +159,9 @@ const generateBuyingPage = () => {
     for (const object in seller_object.selling_objects)
       //for each object sold by seller
     {
+      //find object in objects data
+      const sold_item_object = objects[seller_object.selling_objects[object]["id"]];
+
       const SOLD_ITEM_CONTAINER = document.createElement("div");
       SOLD_ITEM_CONTAINER.classList.add("sold-item-container");
 
@@ -169,11 +172,12 @@ const generateBuyingPage = () => {
       const SOLD_ITEM = document.createElement("div");
       SOLD_ITEM.classList.add("sold-item");
       
-      const sold_item_name = objects[seller_object.selling_objects[object]["id"]].name;
-      console.log(sold_item_name);
+      const sold_item_name = sold_item_object.name;
       
       // SOLD_ITEM.textContent = capitalize(sold_item_name);
       SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM);
+
+      BUYING_PAGE.appendChild(SOLD_ITEM_CONTAINER);
     }
   }
   
