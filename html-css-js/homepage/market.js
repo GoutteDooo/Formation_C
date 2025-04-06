@@ -8,37 +8,39 @@ const market = {
         id:9,
         default_price_range: [500,600],
         lowest_selling_price: 400,
-        selling_message: "My kid is not playing with it anymore. Thank you for buying this.",
+        selling_message: "My kid is not playing with it anymore. I hope your child will.",
       },
       {
         id:13,
         default_price_range: [1000,1500],
         lowest_selling_price: 950,
-        selling_message: "Michael Jackson is the best singer of all time. Thank you for buying this.",
+        selling_message: "Michael Jackson is the best singer of all time. Enjoy it.",
       }
     ],
     "buying_objects": [
       {
         id:4,
         default_buying_range: [6000,9000],
-        highest_buying_price: 12000
-        buying_message: ""
+        highest_buying_price: 12000,
+        buying_message: "I hope this watch is like the picture. Otherwise, I'll pursuit you."
       },
       {
         id:5,
         default_buying_range: [1500,2500],
-        highest_buying_price: 3200
+        highest_buying_price: 3200,
+        buying_message: "My kid will appreciate this one."
       }
+    ]
   },
   seller2: {
-    "name": "Jean12345",
-    "nuts": 10000,
-    "description": "He is hard in business.",
+    "name": "Jean65492",
+    "nuts": 2000000,
+    "description": "He is weird, but he is smooth and easy in business.",
     "selling_objects": [
       {
-        id:9,
-        default_price_range: [520,600],
-        lowest_selling_price: 455,
+        id:3,
+        default_price_range: [45000,50000],
+        lowest_selling_price: 30000,
       },
       {
         id:13,
