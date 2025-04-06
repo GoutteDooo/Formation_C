@@ -166,7 +166,7 @@ const generateBuyingPage = () => {
       SOLD_ITEM_CONTAINER.classList.add("sold-item-container");
 
       const SELLER_NAME = document.createElement("h3");
-      SELLER_NAME.textContent = capitalize(seller_object.name);
+      SELLER_NAME.textContent = `${capitalize(seller_object.name)}`;
       SOLD_ITEM_CONTAINER.appendChild(SELLER_NAME);
 
       const SOLD_ITEM = document.createElement("div");
