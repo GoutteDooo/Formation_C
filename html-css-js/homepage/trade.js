@@ -246,7 +246,7 @@ const seeSellerInfos = (description) => {
 
 const randomizeSellerPrice = (selling_object) => {
   console.log("selling_object: ", selling_object);
-  const range = selling_object.selling_price_range;
+  const range = selling_object.default_price_range;
   const min_price = range[0];
   const max_price = range[1];
   const price = Math.floor((Math.random() * (max_price - min_price) + min_price));
