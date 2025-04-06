@@ -154,6 +154,7 @@ main {
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
   background: rgb(197, 197, 197);
+  cursor: pointer;
 }
 
 #page-profile:hover {

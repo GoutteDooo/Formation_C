@@ -77,6 +77,7 @@ const chargeHomePage = () => {
   LOGO.addEventListener("click", () => loadPage(showHomePage));
   PROFILE.id = "page-profile";
   NAVBAR.appendChild(PROFILE);
+  PROFILE.addEventListener("click", () => loadPage(showProfile));
   PROFILE.textContent = player_object.name;
 
   //body
@@ -114,7 +115,6 @@ const generateProfile = () => {
   const player_object = JSON.parse(localStorage.getItem("player"));
   PROFILE_PAGE.id = "profile-page";
   PROFILE_PAGE.textContent = `Your Inventory`;
-  // PAGE_BODY.appendChild(PROFILE_PAGE);
   INVENTORY.id = "inventory";
   PROFILE_PAGE.appendChild(INVENTORY);
 
