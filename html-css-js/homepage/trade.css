@@ -304,10 +304,18 @@ button:hover {
 }
 
 .sold-item-action-price {
-  width: 100px;
+  width: 130px;
+  font-size: 1.2rem;
 }
 
 .sold-item-actions button {
-  width: 100px;
+  width: 80px;
+  border: none;
+  background: lightgoldenrodyellow;
+  margin: 0 0.5rem;
+}
+
+.sold-item-actions button:hover {
+  background: rgb(185, 185, 185);
 }
 
