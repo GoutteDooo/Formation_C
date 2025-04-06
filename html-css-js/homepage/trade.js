@@ -69,19 +69,25 @@ const connexion = () => {
 }
 
 const chargeHomePage = () => {
-  //navbar
+  /* navbar */
   NAVBAR.id = "page-navbar";
   INTERNET_PAGE.appendChild(NAVBAR);
+
   LOGO.id = "page-logo";
-  NAVBAR.appendChild(LOGO);
   LOGO.textContent = "Trade Village 💰";
   LOGO.addEventListener("click", () => loadPage(showHomePage));
+  NAVBAR.appendChild(LOGO);
+
   PROFILE.id = "page-profile";
-  NAVBAR.appendChild(PROFILE);
   PROFILE.addEventListener("click", () => loadPage(showProfile));
   PROFILE.textContent = player_object.name;
+  NAVBAR.appendChild(PROFILE);
 
-  //body
+  NUTS.id = "page-nuts";
+  NUTS.textContent = `🥜 ${player_object.nuts}`;
+  NAVBAR.appendChild(NUTS);
+
+  /* body */
   PAGE_BODY.id = "page-body";
   INTERNET_PAGE.appendChild(PAGE_BODY);
   //buttons
