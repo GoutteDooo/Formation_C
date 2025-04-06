@@ -273,11 +273,12 @@ const buy = (seller_object, selling_object, price, container) => {
   if (player_object.nuts >= price) {
     // find seller and its object and remove it
     const seller = Object.values(sellers).find(seller => seller.name === seller_object.name);
-    console.log(seller);
-    
     const item_to_remove = seller_object.selling_objects.indexOf(selling_object);
+    //Generate a copy of sellers in localstorage
+    const new_sellers = JSON.parse(localStorage.getItem("sellers"));
     //remove item from sellers in localstorage
-    Object.values(sellers).find(seller => seller.name === seller_object.name).selling_objects.splice(item_to_remove, 1);
+    Object.values(new_sellers).find(seller => seller.name === seller_object.name).selling_objects.splice(item_to_remove, 1);
+    // Replace the copy of sellers in localstorage
     seller.selling_objects.splice(item_to_remove, 1);
 
     player_object.nuts -= price;
