@@ -269,10 +269,6 @@ const randomizeSellerPrice = (selling_object) => {
 }
 
 const buy = (seller_object, selling_object, price, container) => {
-  console.log("Buy");
-  console.log(seller_object);
-  console.log(selling_object);
-  console.log(price);
   // if player has enough nuts, buy object
   if (player_object.nuts >= price) {
     // find seller and its object and remove it
