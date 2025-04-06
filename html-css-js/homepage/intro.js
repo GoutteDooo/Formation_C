@@ -34,6 +34,8 @@ const sellers = market;
 
 /* End of initializing objects */
 
+SUBMIT_PLAYER.addEventListener("click", (e) => submitPlayer(e));
+
 const updateInfoPlayer = (e) => {
   console.log(e.srcElement.classList.contains("choose-class"));
   if (e.srcElement.classList.contains("choose-class"))
