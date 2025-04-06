@@ -147,9 +147,15 @@ main {
   transition: 0.2s;
 }
 
-#page-profile {
+#page-profile-nuts {
   position: absolute;
+  display: flex;
+  gap: 0.5rem;
   right: 1rem;
+  
+}
+
+#page-profile {
   border: 1px solid black;
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
@@ -162,12 +168,10 @@ main {
 }
 
 #page-nuts {
-  /* position: absolute; */
-  right: 1rem;
   border: 1px solid black;
   padding: 0.2rem 0.5rem;
   border-radius: 5px;
-  background: rgb(197, 197, 197, 0.5);
+  background: rgb(197, 197, 197, 0.1);
 }
 
 #page-body {

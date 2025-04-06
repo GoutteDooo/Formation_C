@@ -15,6 +15,7 @@ const NAVBAR = document.createElement("div");
 const LOGO = document.createElement("div");
 const PROFILE = document.createElement("div");
 const NUTS = document.createElement("div");
+const PROFILE_NUTS = document.createElement("div");
   //Body
 const PAGE_BODY = document.createElement("div");
 const BODY_BUTTONS = document.createElement("div");
@@ -78,14 +79,17 @@ const chargeHomePage = () => {
   LOGO.addEventListener("click", () => loadPage(showHomePage));
   NAVBAR.appendChild(LOGO);
 
+  PROFILE_NUTS.id = "page-profile-nuts";
+  NAVBAR.appendChild(PROFILE_NUTS);
+
   PROFILE.id = "page-profile";
   PROFILE.addEventListener("click", () => loadPage(showProfile));
   PROFILE.textContent = player_object.name;
-  NAVBAR.appendChild(PROFILE);
+  PROFILE_NUTS.appendChild(PROFILE);
 
   NUTS.id = "page-nuts";
   NUTS.textContent = `🥜 ${player_object.nuts}`;
-  NAVBAR.appendChild(NUTS);
+  PROFILE_NUTS.appendChild(NUTS);
 
   /* body */
   PAGE_BODY.id = "page-body";
