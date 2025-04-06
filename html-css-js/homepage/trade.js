@@ -199,7 +199,6 @@ const generateBuyingPage = () => {
       SOLD_ITEM_ACTION_TRADE.textContent = "Trade";
 
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_TRADE);
-      // SOLD_ITEM.textContent = capitalize(sold_item_name);
       SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM);
 
       BUYING_PAGE.appendChild(SOLD_ITEM_CONTAINER);
