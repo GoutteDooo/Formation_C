@@ -1,5 +1,6 @@
 //import objects
 import objects from "./objects.js";
+import market from "./market.js";
 
 //import helper functions
 import { capitalize } from "./helper_functions.js";

@@ -46,9 +46,23 @@ const market = {
       {
         id:6,
         default_price_range: [2000,2500],
-        lowest_selling_price: 1200
-        selling_message: "THANK YOU !!!! I hope you will like this club !! Otherwise, don't hesitate, I'll rebuy this if you don't like it ❤️❤️❤️",
+        lowest_selling_price: 1200,
+        selling_message: "THANK YOU !!!! I hope you enjoy this club !! If not, don't hesitate to sell it back to me, I'll buy it from you again ❤️❤️❤️",
       }
+    ],
+    "buying_objects": [
+      {
+        id:1,
+        default_buying_range: [300000,400000],
+        highest_buying_price: 450000,
+        buying_message: "Thank you..."
+      },
+      {
+        id:2,
+        default_buying_range: [100000,150000],
+        highest_buying_price: 170000,
+        buying_message: "YEEEEEEEEEAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHH"
+      },
     ]
   },
 }
