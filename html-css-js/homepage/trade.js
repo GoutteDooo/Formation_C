@@ -34,6 +34,7 @@ const BUYING_PAGE = document.createElement("div");
 const player_object = JSON.parse(localStorage.getItem("player"));
 
 document.addEventListener("DOMContentLoaded", () => {
+  const items_sold = {};
   returnBtn.addEventListener("mouseup", () => {
     window.location.href = "village.html";
   });
@@ -197,7 +198,9 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_PRICE = document.createElement("div");
       SOLD_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
-      SOLD_ITEM_ACTION_PRICE.textContent = randomizeSellerPrice(seller_object.selling_objects[object]);
+      const item_price = randomizeSellerPrice(seller_object.selling_objects[object]);
+      items_sold.push({seller: seller_object.name, item: sold_item_name, price: item_price});
+      SOLD_ITEM_ACTION_PRICE.textContent = displayPrice(item_price);
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_PRICE);
 
       const SOLD_ITEM_ACTION_BUY = document.createElement("button");
@@ -250,6 +253,5 @@ const randomizeSellerPrice = (selling_object) => {
   const min_price = range[0];
   const max_price = range[1];
   const price = Math.floor((Math.random() * (max_price - min_price) + min_price));
-
-  return displayPrice(price);
+  return price;
 }
