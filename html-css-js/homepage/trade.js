@@ -74,6 +74,7 @@ const chargeHomePage = () => {
   LOGO.id = "page-logo";
   NAVBAR.appendChild(LOGO);
   LOGO.textContent = "Trade Village 💰";
+  LOGO.addEventListener("click", () => loadPage(showProfile));
   PROFILE.id = "page-profile";
   NAVBAR.appendChild(PROFILE);
   PROFILE.textContent = player_object.name;

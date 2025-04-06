@@ -1,18 +1,18 @@
 const objects = {
   1: {
-    "name":"Smelly sock",
+    "name":"🧦 Smelly socks",
     "price": 450000,
   },
   2: {
-    "name":"Diamond",
+    "name":"💎 Diamond",
     "price": 150000,
   },
   3: {
-    "name":"Gold ring", 
+    "name":"💫 Gold ring", 
     "price": 60000,
   },
   4: {
-    "name":"Pretty watch",
+    "name":"⌚ Pretty watch",
     "price": 18000,
   },
   5: {
@@ -49,7 +49,7 @@ const objects = {
   },
   13: {
     "name":"💽 Vinyl of Michael Jackson's Hits",
-    "price": 500,
+    "price": 1000,
   }
 }
 

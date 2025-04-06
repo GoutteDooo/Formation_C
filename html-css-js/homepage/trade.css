@@ -139,6 +139,7 @@ main {
   width: 150px;
   background: tomato;
   user-select: none;
+  cursor: pointer;
 }
 
 #page-logo:hover {
