@@ -134,6 +134,7 @@ function rest(e) {
   const input = prompt("Are you sure you want to rest ?", "yes");
   if (input === null || input.toLowerCase() === "no") return;
   const player_object = JSON.parse(localStorage.getItem("player"));
+  if (player_object.stats.health === player_object.stats.max_health) return;
   //get value between 0,20,40,60,80 or 100
   const pourcentage_hp = Math.floor(Math.floor((player_object.stats.health / player_object.stats.max_health) * 100) / 20) * 20;
   //20% hp = 1 day
