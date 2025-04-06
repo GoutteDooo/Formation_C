@@ -28,6 +28,9 @@ const BUTTON_SELL = document.createElement("button");
 const PROFILE_PAGE = document.createElement("div");
 const INVENTORY = document.createElement("div");
 
+//Buying Page
+const BUYING_PAGE = document.createElement("div");
+
 const player_object = JSON.parse(localStorage.getItem("player"));
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -105,7 +108,7 @@ const chargeHomePage = () => {
   BUTTON_BUY.id = "page-btn-buy";
   BUTTON_BUY.textContent = "Buy";
   BODY_BUTTONS.appendChild(BUTTON_BUY);
-  BUTTON_BUY.addEventListener("click", () => loadPage(buy));
+  BUTTON_BUY.addEventListener("click", () => loadPage(generateBuyingPage));
   BUTTON_SELL.id = "page-btn-sell";
   BUTTON_SELL.textContent = "Sell";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
@@ -147,14 +150,16 @@ const showProfile = () => {
 const generateBuyingPage = () => {
   console.log("buy");
   //Display all items sold by sellers
-  const market_sellers = Object.keys(market);
+  BUYING_PAGE.id = "buying-page";
   console.log(market_sellers);
-  for (const seller in market_sellers) 
+  for (const seller in market) 
   {
     const seller_object = market[seller];
-    //Display item sold
-    const SOLD_ITEM_CONTAINER = document.createElement("div");
+    console.log(seller_object);
     
+    //Display item sold
+    // const SOLD_ITEM_CONTAINER = document.createElement("div");
+
   }
   
 }
