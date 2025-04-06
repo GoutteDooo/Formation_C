@@ -26,6 +26,7 @@ const game_datas = {
   <br />
   Zrog said it will come back in 3 months. It lets you just enough time to gain experience and defeat it.
   `,
+  selled_objects: []
 }
 /* End of initializing objects */
 
