@@ -261,5 +261,17 @@ const buy = (seller_object, selling_object, price) => {
   console.log(seller_object);
   console.log(selling_object);
   console.log(price);
-  // find object in seller inventory
+  // if player has enough nuts, buy object
+  if (player_object.nuts >= price) {
+    player_object.nuts -= price;
+    // find object in seller inventory and remove it
+    seller_object.selling_objects.splice(seller_object.selling_objects.indexOf(selling_object), 1);
+    
+    
+  }
+  // add object to player inventory
+  // update player datas
+
+  // if player doesn't have enough nuts, play refused message from seller
+
 }
