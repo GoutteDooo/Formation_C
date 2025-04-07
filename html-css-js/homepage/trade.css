@@ -379,14 +379,10 @@ button:hover {
 
 .sold-item-container h3 {
   position: relative;
-  font-size: 1.2rem;
-  padding: 1rem;
+  font-size: 1.3rem;
+  padding: 0.5rem;
   margin: 0.5rem;
   font-style: italic;
   width: 100%;
   border-bottom: 1px solid black;
-}
-
-.sold-item-container p {
-
 }
