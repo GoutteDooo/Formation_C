@@ -169,6 +169,11 @@ const generateProfile = () => {
   INVENTORY.id = "inventory";
   PROFILE_PAGE.appendChild(INVENTORY);
   
+  //if inventory is empty, display "empty"
+  if (player_object.objects.length == 0)
+  {
+    OBJECTS_UL.textContent = "Your inventory is empty !"
+  }
   //display objects
   for (const object_id of player_object.objects) {
     const OBJECT_LI = document.createElement("li");
@@ -259,6 +264,7 @@ const generateBuyingPage = () => {
 }
 
 const generateSellingPage = () => {
+  const player_object = JSON.parse(localStorage.getItem("player"));
   SELLING_PAGE.id = "selling-page";
   if (player_object.sold.length == 0)
   {
