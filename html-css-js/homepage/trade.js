@@ -364,5 +364,6 @@ const trade = (seller_object, selling_object, container) => {
 
 const sell = (object_id) => {
   console.log("sell " + object_id);
-  // 
+  // prompt for a selling price
+  // When 
 }

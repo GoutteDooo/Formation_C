@@ -57,13 +57,11 @@ const market = {
     "buying_objects": [
       {
         id:1,
-        default_buying_range: [300000,400000],
-        highest_buying_price: 450000,
+        highest_buying_price: 500000,
         buying_message: "Thank you..."
       },
       {
         id:2,
-        default_buying_range: [100000,150000],
         highest_buying_price: 170000,
         buying_message: "YEEEEEEEEEAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHH"
       },
