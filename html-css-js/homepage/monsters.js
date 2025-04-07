@@ -217,7 +217,7 @@ const monsters = {
     "exp": [5000,7500],
     "distance": [90,100],
     "probability": 5,
-    "victory_msg": "BOOM ! What does this planet said ?!",
+    "victory_msg": "BOOM ! What does the planet said ?!",
     "defeat_msg": "The planet became angry and threw on you its trees, villages and people. There was too many objects and you couldn't dodge all."
   },
   monster18: {
