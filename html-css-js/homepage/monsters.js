@@ -91,17 +91,17 @@ const monsters = {
     "defeat_msg": "When it threw its laser from its antenna, you were electrilized like a tazer. Finito."
   },
   monster8: {
-    "name": "Little Martian With Big Red Eyes",
-    "health": 150,
-    "strength": 30,
-    "mental": 1,
+    "name": "Big Ant With Human Legs",
+    "health": 700,
+    "strength": 10,
+    "mental": 5,
     "default_attack": "strength",
-    "nuts": [80,140],
-    "exp": [80,150],
+    "nuts": [100,120],
+    "exp": [100,150],
     "distance": [20,39],
-    "probability": 25,
-    "victory_msg": "Ouaw ! This monster was so scary !",
-    "defeat_msg": "When it threw its laser from its antenna, you were electrilized like a tazer. Finito."
+    "probability": 20,
+    "victory_msg": "There are so weird things in the world.",
+    "defeat_msg": "When you saw all the hairs on its legs, you wondered what was the sense of life instead of fight. And it gave you a KO."
   },
   monster9: {
     "name": "Little Cute Chipmunk With Big Eyes But Horrible Scary Smile With Large, Sharp Teeth",
