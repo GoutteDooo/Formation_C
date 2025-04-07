@@ -1,5 +1,5 @@
 function animateText() {
-  const text = document.querySelector("h1").textContent;
+  const TEXT = document.querySelector("h1");
   let index_text = 0;
   const colors = [
     "#00ff00",
@@ -14,10 +14,8 @@ function animateText() {
     "#00ff00",
     "#0000ff",
   ]
-  setInterval(() => {
-    text[index_text] = "a";
-    index_text++;
-  }, 100);
+  console.log(text);
+  
 }
 
 function removeFadeOut() {
