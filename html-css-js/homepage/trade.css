@@ -215,7 +215,6 @@ button:hover {
 #inventory {
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: 600px;
   height: 400px;
   background: rgb(197, 197, 197);
@@ -226,15 +225,20 @@ button:hover {
 
 #inventory ul {
   margin-top: 1rem;
+  margin-left: 0;
+  list-style-type: none;
+  text-align: left;
 }
 
 #inventory li {
+  display: flex;
   margin-bottom: 0.5rem;
 }
 
 #inventory li button {
   background: goldenrod;
-  width: 80px;
+  width: 60px;
+  margin-left: auto;
 }
 
 /* BUYING PAGE */
