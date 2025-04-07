@@ -131,8 +131,8 @@ function searchWife(e) {
 }
 
 function rest(e) {
-  const input = prompt("Are you sure you want to rest ?", "yes");
-  if (input === null || input.toLowerCase() === "no") return;
+  const input = window.confirm("Are you sure you want to rest ?");
+  if (input === null || input === false) return;
   const player_object = JSON.parse(localStorage.getItem("player"));
   if (player_object.stats.health === player_object.stats.max_health) return;
   //get value between 0,20,40,60,80 or 100
