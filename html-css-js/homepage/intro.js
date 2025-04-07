@@ -91,7 +91,7 @@ const generateHero = () => {
     player.stats.max_health = 280;
     player.default_attack = "all";
   }
-  player.nuts = 200;
+  player.nuts = 20000;
   player.stats.level = 1;
   console.log(player);
   //write player in data.json

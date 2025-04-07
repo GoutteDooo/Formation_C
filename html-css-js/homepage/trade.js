@@ -297,7 +297,7 @@ const buy = (seller_object, selling_object, price, container) => {
     container.remove();
 
     // display seller message
-    window.alert(seller_object.selling_message);
+    window.alert(seller_object.name + " sent you a message: \n" + selling_object.selling_message);
     updateDatas();
   }
   else
