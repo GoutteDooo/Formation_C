@@ -307,6 +307,23 @@ const buy = (seller_object, selling_object, price, container) => {
   }
 }
 
-const trade = () => {
+const trade = (seller_object, selling_object, container) => {
+  // display prompt for a value
+  let value = prompt("How much do you propose ? ", selling_object.default_price_range[0]);
+  while (value == null) 
+  {
+    value = prompt("How much do you propose ? ", selling_object.default_price_range[0]);
+  }
+  if (value < selling_object.lowest_selling_price) 
+  {
+    window.alert(selling_object.refused_message);
+    return;
+  }
+  else 
+  {
+    
+  }
+  // if value is > lowes_selling_price, buy it and play selling_message
+  // else, play refused_message
 
 }
