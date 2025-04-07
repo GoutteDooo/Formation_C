@@ -16,7 +16,7 @@ const market = {
         default_price_range: [1000,1500],
         lowest_selling_price: 950,
         selling_message: "Michael Jackson is the best singer of all time. Enjoy it.",
-        refused_message: "It's an insult !! I refuse your price. HMMMMMMM"
+        refused_message: "It's an insult !! I refuse your price. HMMMMMMM 😡😡😡"
       }
     ],
     "buying_objects": [
