@@ -27,3 +27,14 @@ h1 {
     user-select: none;
   }
 }
+
+@keyframes colorRotate {
+  0%   { color: #ff0000; transform: rotate(0deg); }
+  33%  { color: #00ff00; transform: rotate(5deg); }
+  66%  { color: #0000ff; transform: rotate(-5deg); }
+  100% { color: #ff0000; transform: rotate(0deg); }
+}
+
+.animate-colorRotate {
+  animation: colorRotate 2s ease-in-out infinite;
+}

@@ -1,21 +1,7 @@
 function animateText() {
   const TEXT = document.querySelector("h1");
-  let index_text = 0;
-  const colors = [
-    "#00ff00",
-    "#ff0000",
-    "#0000ff",
-    "#ffff00",
-    "#ff00ff",
-    "#00ffff",
-    "#000000",
-    "#ffffff",
-    "#ff0000",
-    "#00ff00",
-    "#0000ff",
-  ]
-  console.log(text);
-  
+  // Appliquer l'animation de couleurs et rotation
+  TEXT.classList.add("animate-colorRotate");
 }
 
 function removeFadeOut() {
