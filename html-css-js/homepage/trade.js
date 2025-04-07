@@ -295,6 +295,9 @@ const buy = (seller_object, selling_object, price, container) => {
     
     //remove node from DOM
     container.remove();
+
+    // display seller message
+    window.alert(seller_object.selling_message);
     updateDatas();
   }
   else
