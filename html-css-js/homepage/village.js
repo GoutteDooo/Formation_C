@@ -72,7 +72,15 @@ const updateActions = () => {
     bossBtn.addEventListener("click", fightBoss);
   }
   if (state == "3") {
-    window.location.href = "victory.html";
+    ACTIONS.innerHTML = `
+      <button class="btn btn-primary" id="button-victory">Victory</button>
+      <button class="btn btn-primary" id="button-explore">Explore the world</button>
+      <button class="btn btn-primary" id="button-trade">Trade on internet</button>
+      <button class="btn btn-primary" id="button-money">Search for a wife</button>
+      <button class="btn btn-primary" id="button-rest">Rest</button>
+    `;
+    const victoryBtn = document.querySelector("#button-victory");
+    victoryBtn.addEventListener("click", victory);
     return;
   }
   const exploreBtn = document.querySelector("#button-explore");
