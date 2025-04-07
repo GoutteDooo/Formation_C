@@ -75,6 +75,10 @@ const updateDatas = () => {
     OBJECTS_UL.appendChild(OBJECT_LI);
   }
   INVENTORY.appendChild(OBJECTS_UL);
+
+  /* SELLING PAGE */
+  SELLING_PAGE.childNodes.forEach(child => child.remove());
+  generateSellingPage();
 }
 
 const connexion = () => {
