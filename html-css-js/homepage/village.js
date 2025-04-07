@@ -71,6 +71,9 @@ const updateActions = () => {
     const bossBtn = document.querySelector("#button-fight-boss");
     bossBtn.addEventListener("click", fightBoss);
   }
+  if (state == "3") {
+    window.location.href = "victory.html";
+  }
   const exploreBtn = document.querySelector("#button-explore");
   const tradeBtn = document.querySelector("#button-trade");
   const moneyBtn = document.querySelector("#button-money");
@@ -161,7 +164,13 @@ function fightBoss(e) {
   const boss_object = {...boss.boss1};
   fight(boss_object);
   console.log(boss_object);
-  
+  //if Zrog is beaten, change state to 3
+  if (boss_object.health <= 0) 
+  {
+    const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+    localStorage.setItem("game_datas", JSON.stringify({...game_datas, state: "3"}));
+    updatePage();
+  }
 }
 
 /* ACTIONS END */
