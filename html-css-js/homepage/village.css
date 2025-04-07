@@ -59,3 +59,13 @@ h1 {
   background: darkred;
   border: 1px solid red;
 }
+
+.btn-victory {
+  background: green;
+  border: 1px solid darkgreen;
+}
+
+.btn-victory:hover {
+  background: darkgreen;
+  border: 1px solid green;
+}

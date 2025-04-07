@@ -73,7 +73,7 @@ const updateActions = () => {
   }
   if (state == "3") {
     ACTIONS.innerHTML = `
-      <button class="btn btn-primary" id="button-victory">Victory</button>
+      <button class="btn btn-primary btn-victory" id="button-victory">Victory</button>
       <button class="btn btn-primary" id="button-explore">Explore the world</button>
       <button class="btn btn-primary" id="button-trade">Trade on internet</button>
       <button class="btn btn-primary" id="button-money">Search for a wife</button>
@@ -172,7 +172,6 @@ function rest(e) {
 function fightBoss(e) {
   const boss_object = {...boss.boss1};
   fight(boss_object);
-  console.log(boss_object);
   //if Zrog is beaten, change state to 3
   if (boss_object.health <= 0) 
   {
@@ -182,6 +181,11 @@ function fightBoss(e) {
   }
 }
 
+//State 3 : Victory
+
+function victory(e) {
+  window.location.href = "victory.html";
+}
 /* ACTIONS END */
 
 
