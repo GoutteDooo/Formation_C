@@ -104,7 +104,7 @@ const monsters = {
     "defeat_msg": "When it threw its laser from its antenna, you were electrilized like a tazer. Finito."
   },
   monster13: {
-    "name": "Little Cute Chipmunk With Big Eyes But Horrible Scary Smile",
+    "name": "Little Cute Chipmunk With Big Eyes But Horrible Scary Smile With Large, Sharp Teeth",
     "health": 5000,
     "strength": 5,
     "mental": 12,
@@ -118,16 +118,29 @@ const monsters = {
   },
   monster9: {
     "name": "Enraged Werewolf",
-    "health": 1100,
-    "strength": 20,
-    "mental": 12,
+    "health": 1600,
+    "strength": 22,
+    "mental": 15,
     "default_attack": "strength",
     "nuts": [300,500],
-    "exp": [180,280],
-    "distance": [40,100],
+    "exp": [300,500],
+    "distance": [40,59],
     "probability": 20,
     "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !",
     "defeat_msg": "When the Werewolf bites you, you tried to flee but you finish into a big shaking and big pain. And then, you died. So sick."
+  },
+  monster13: {
+    "name": "A Lava-Spitting Teapot",
+    "health": 2500,
+    "strength": 10,
+    "mental": 20,
+    "default_attack": "mental",
+    "nuts": [350,550],
+    "exp": [250,600],
+    "distance": [40,59],
+    "probability": 30,
+    "victory_msg": "Wow ! This was the epic fight I've ever did !",
+    "defeat_msg": "W... What ??? I didn't think that was possible."
   },
   monster10: {
     "name": "Big Button Nose Sorcerer With Piercing Laugh",
@@ -135,9 +148,9 @@ const monsters = {
     "strength": 10,
     "mental": 24,
     "default_attack": "mental",
-    "nuts": [700,1200],
+    "nuts": [500,800],
     "exp": [300,500],
-    "distance": [50,100],
+    "distance": [40,79],
     "probability": 10,
     "victory_msg": "You won the moment you pierced the button on that sorcerer's nose.",
     "defeat_msg": "It turned you into a stuffed pig and hung your new form on a wall of its house."
@@ -150,7 +163,7 @@ const monsters = {
     "default_attack": "mental",
     "nuts": [2500,4800],
     "exp": [550,820],
-    "distance": [80,100],
+    "distance": [60,79],
     "probability": 5,
     "victory_msg": "I thinked the troopers was in mission on another planet. But it didn't.",
     "defeat_msg": "Damn! The laser he throws just desintegrated you in dust in half of a second for breath."
