@@ -167,6 +167,10 @@ const generateProfile = () => {
     const OBJECT_LI = document.createElement("li");
     OBJECT_LI.textContent = capitalize(objects[object].name);
     OBJECTS_UL.appendChild(OBJECT_LI);
+    const SELLING_BTN = document.createElement("button");
+    SELLING_BTN.classList.add("sell-btn");
+    SELLING_BTN.textContent = "Sell";
+    OBJECT_LI.appendChild(SELLING_BTN);
   }
   INVENTORY.appendChild(OBJECTS_UL);
 }
@@ -259,7 +263,7 @@ const generateSellingPage = () => {
   for (const item in player_object.sold)
   {
     const sold_item_object = player_object.sold[item];
-    SELLING_PAGE.textContent += capitalize(objects[sold_item_object.id].name) + " sold for " + displayPrice(sold_item_object.selling_price);
+    SELLING_PAGE.textContent += capitalize(objects[sold_item_object.id].name) + " sold for " + displayPrice(sold_item_object.selling_price) + "\n";
   }
 }
 

@@ -226,11 +226,15 @@ button:hover {
 
 #inventory ul {
   margin-top: 1rem;
-  list-style-type:square;
 }
 
 #inventory li {
   margin-bottom: 0.5rem;
+}
+
+#inventory li button {
+  background: goldenrod;
+  width: 80px;
 }
 
 /* BUYING PAGE */
