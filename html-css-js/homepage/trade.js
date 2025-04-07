@@ -182,14 +182,14 @@ const generateBuyingPage = () => {
       //for each object sold by seller
     {
       //find object in objects data
-      const sold_item_object = objects[seller_object.selling_objects[object]["id"]];
+      const buy_item_object = objects[seller_object.selling_objects[object]["id"]];
 
-      const SOLD_ITEM_CONTAINER = document.createElement("div");
-      SOLD_ITEM_CONTAINER.classList.add("sold-item-container");
+      const BUY_ITEM_CONTAINER = document.createElement("div");
+      BUY_ITEM_CONTAINER.classList.add("sold-item-container");
 
       const SELLER_NAME_CONTAINER = document.createElement("div");
       SELLER_NAME_CONTAINER.classList.add("seller-name-container");
-      SOLD_ITEM_CONTAINER.appendChild(SELLER_NAME_CONTAINER);
+      BUY_ITEM_CONTAINER.appendChild(SELLER_NAME_CONTAINER);
 
       const SELLER_NAME = document.createElement("h3");
       SELLER_NAME.textContent = `${capitalize(seller_object.name)}`;
@@ -200,50 +200,53 @@ const generateBuyingPage = () => {
       SELLER_INFOS.addEventListener("click", () => seeSellerInfos(seller_object["description"]));
       SELLER_NAME_CONTAINER.appendChild(SELLER_INFOS);
 
-      const SOLD_ITEM = document.createElement("div");
-      SOLD_ITEM.classList.add("sold-item");
+      const BUY_ITEM = document.createElement("div");
+      BUY_ITEM.classList.add("sold-item");
       
-      const sold_item_name = sold_item_object.name;
+      const buy_item_name = buy_item_object.name;
       
-      const SOLD_ITEM_NAME_CONTAINER = document.createElement("div");
-      SOLD_ITEM_NAME_CONTAINER.classList.add("sold-item-name-container");
-      SOLD_ITEM.appendChild(SOLD_ITEM_NAME_CONTAINER);
+      const BUY_ITEM_NAME_CONTAINER = document.createElement("div");
+      BUY_ITEM_NAME_CONTAINER.classList.add("sold-item-name-container");
+      BUY_ITEM.appendChild(BUY_ITEM_NAME_CONTAINER);
 
-      const SOLD_ITEM_NAME = document.createElement("h3");
-      SOLD_ITEM_NAME.textContent = capitalize(sold_item_name);
-      SOLD_ITEM_NAME_CONTAINER.appendChild(SOLD_ITEM_NAME);
+      const BUY_ITEM_NAME = document.createElement("h3");
+      BUY_ITEM_NAME.textContent = capitalize(buy_item_name);
+      BUY_ITEM_NAME_CONTAINER.appendChild(BUY_ITEM_NAME);
 
-      const SOLD_ITEM_ACTIONS = document.createElement("div");
-      SOLD_ITEM_ACTIONS.classList.add("sold-item-actions");
-      SOLD_ITEM.appendChild(SOLD_ITEM_ACTIONS);
+      const BUY_ITEM_ACTIONS = document.createElement("div");
+      BUY_ITEM_ACTIONS.classList.add("sold-item-actions");
+      BUY_ITEM.appendChild(BUY_ITEM_ACTIONS);
 
-      const SOLD_ITEM_ACTION_PRICE = document.createElement("div");
-      SOLD_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
+      const BUY_ITEM_ACTION_PRICE = document.createElement("div");
+      BUY_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
       //declare a price
       const item_price = randomizeSellerPrice(seller_object.selling_objects[object]);
       //display price
-      SOLD_ITEM_ACTION_PRICE.textContent = displayPrice(item_price);
-      SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_PRICE);
+      BUY_ITEM_ACTION_PRICE.textContent = displayPrice(item_price);
+      BUY_ITEM_ACTIONS.appendChild(BUY_ITEM_ACTION_PRICE);
 
-      const SOLD_ITEM_ACTION_BUY = document.createElement("button");
-      SOLD_ITEM_ACTION_BUY.textContent = "Buy";
-      SOLD_ITEM_ACTION_BUY.addEventListener("click", () => buy(seller_object, seller_object.selling_objects[object], item_price, SOLD_ITEM_CONTAINER));
-      SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_BUY);
+      const BUY_ITEM_ACTION_BUY = document.createElement("button");
+      BUY_ITEM_ACTION_BUY.textContent = "Buy";
+      BUY_ITEM_ACTION_BUY.addEventListener("click", () => buy(seller_object, seller_object.selling_objects[object], item_price, BUY_ITEM_CONTAINER));
+      BUY_ITEM_ACTIONS.appendChild(BUY_ITEM_ACTION_BUY);
 
-      const SOLD_ITEM_ACTION_TRADE = document.createElement("button");
-      SOLD_ITEM_ACTION_TRADE.textContent = "Trade";
-      SOLD_ITEM_ACTION_TRADE.addEventListener("click", () => trade(seller_object, seller_object.selling_objects[object], SOLD_ITEM_CONTAINER));
-      SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_TRADE);
-      SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM);
+      const BUY_ITEM_ACTION_TRADE = document.createElement("button");
+      BUY_ITEM_ACTION_TRADE.textContent = "Trade";
+      BUY_ITEM_ACTION_TRADE.addEventListener("click", () => trade(seller_object, seller_object.selling_objects[object], BUY_ITEM_CONTAINER));
+      BUY_ITEM_ACTIONS.appendChild(BUY_ITEM_ACTION_TRADE);
+      BUY_ITEM_CONTAINER.appendChild(BUY_ITEM);
 
-      BUYING_PAGE.appendChild(SOLD_ITEM_CONTAINER);
+      BUYING_PAGE.appendChild(BUY_ITEM_CONTAINER);
     }
   }
 }
 
 const generateSellingPage = () => {
   SELLING_PAGE.id = "selling-page";
-  
+  for (const item in player_object.sold)
+  {
+    const sold_item_object = player_object.sold[item];
+  }
 }
 
 const showBuyingPage = () => {
