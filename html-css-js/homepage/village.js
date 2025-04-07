@@ -73,6 +73,7 @@ const updateActions = () => {
   }
   if (state == "3") {
     window.location.href = "victory.html";
+    return;
   }
   const exploreBtn = document.querySelector("#button-explore");
   const tradeBtn = document.querySelector("#button-trade");
