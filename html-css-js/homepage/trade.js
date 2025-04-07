@@ -305,6 +305,4 @@ const buy = (seller_object, selling_object, price, container) => {
     // if player doesn't have enough nuts, play refused message
     window.alert("You don't have enough nuts to buy this object.");
   }
-
-
 }
