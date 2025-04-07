@@ -340,7 +340,7 @@ const buy = (seller_object, selling_object, price, container) => {
     // find seller and its object and remove it
     for (const seller in new_sellers) {
       if (new_sellers[seller].name === seller_object.name) {
-        const item_index = seller_object.selling_objects.indexOf(selling_object);
+        const item_index = new_sellers[seller].selling_objects.indexOf(selling_object);
         // remove item from sellers object
         new_sellers[seller].selling_objects.splice(item_index, 1);
         break;
