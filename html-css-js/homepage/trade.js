@@ -394,7 +394,7 @@ const sell = (object_id) => {
   const upper_range = objects[object_id].price;
   const value = prompt(`How much do you want to sell this object for ? \n (Hint: You can sell it surely between ${lower_range} and ${upper_range}, but nothing stops you to try a higher price! )`, lower_range);
   //if player cancel, return
-  if (value === null) return;
+  if (value === null || value.length > 12 || isNaN(value)) return;
   // When player confirms, removes the item from its inventory and add it to the sold array
   player_object.objects.splice(player_object.objects.indexOf(object_id), 1);
   player_object.sold.push({id: object_id, price: value});
