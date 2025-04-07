@@ -1,0 +1,22 @@
+I used 10 HTML tags which are the follows:
+  - div
+  - h1
+  - h2
+  - header
+  - main
+  - button
+  - table
+  - thead
+  - tbody
+  - tr
+  - ... and some others
+
+5 CSS properties : 
+  - margin
+  - padding
+  - border
+  - text-align
+  - box-sizing
+  - font-size
+
+I've used bootstrap for designing buttons and tables and used JS for the mechanics of the game.
