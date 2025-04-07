@@ -101,7 +101,7 @@ const updateInfos = () => {
   const game_datas = JSON.parse(localStorage.getItem("game_datas"));
   GAME_DAY.textContent = game_datas.day;
   PLAYER_INFOS.innerHTML = game_datas.player_infos;
-  if (game_datas.day > "1" && game_datas.state == "1") {
+  if (game_datas.day > "90" && game_datas.state == "1") {
     game_datas.state = "2";
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
@@ -124,7 +124,7 @@ function explore(e) {
 
   let distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms. 20kms = 1 day passed)", last_distance);
   last_distance = distance;
-  while (distance < 0 || distance > 100) { distance = prompt("Which distance do you want to explore ? (From 1 to 100 kms)");}
+  while (distance < 0 || distance > 100) { distance = prompt("Which distance do you want to explore ? (From 0 to 100 kms)");}
   if (distance == null) return;
   if (rng < 10)
   {

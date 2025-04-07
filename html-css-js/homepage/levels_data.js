@@ -248,7 +248,7 @@ const levels_data = {
         "max_health": 1050,
       },
       "Mage": {
-        "strength": 4,
+        "strength": 3,
         "mental": 14,
         "max_health": 770,
       },
@@ -334,7 +334,7 @@ const levels_data = {
       },
       "Alchemist": {
         "strength": 14,
-        "mental": 13,
+        "mental": 14,
         "max_health": 2000,
       },
     }
