@@ -182,7 +182,7 @@ const monsters = {
     "defeat_msg": "It threw it's harpoon and caught you like a common fish."
   },
   monster15: {
-    "name": "iPhone 14 Pro Max",
+    "name": "iPhone 14 Pro Max With Its price Tag",
     "health": 7500,
     "strength": 35,
     "mental": 35,
@@ -191,8 +191,21 @@ const monsters = {
     "exp": [1000,1500],
     "distance": [80,100],
     "probability": 25,
-    "victory_msg": "That was so ",
-    "defeat_msg": "It threw it's harpoon and caught you like a common fish."
+    "victory_msg": "You won the moment you removes the price tag.",
+    "defeat_msg": "Its price has left you speechless."
+  },
+  monster16: {
+    "name": "President Of Big Country",
+    "health": 10000,
+    "strength": 40,
+    "mental": 35,
+    "default_attack": "strength",
+    "nuts": [9000,12000],
+    "exp": [2000,2200],
+    "distance": [80,100],
+    "probability": 10,
+    "victory_msg": "It was a hectic debate.",
+    "defeat_msg": "Its price has left you speechless."
   },
   monster12: {
     "name": "Weird Red Cactus With Human Arms",
