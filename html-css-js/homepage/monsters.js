@@ -139,8 +139,8 @@ const monsters = {
     "exp": [250,600],
     "distance": [40,59],
     "probability": 30,
-    "victory_msg": "Wow ! This was the epic fight I've ever did !",
-    "defeat_msg": "W... What ??? I didn't think that was possible."
+    "victory_msg": "Wow ! This was the most epic fight I've ever did !",
+    "defeat_msg": "Hmm... Lose against a teapot..."
   },
   monster10: {
     "name": "Big Button Nose Sorcerer With Piercing Laugh",
@@ -167,6 +167,19 @@ const monsters = {
     "probability": 5,
     "victory_msg": "I thinked the troopers was in mission on another planet. But it didn't.",
     "defeat_msg": "Damn! The laser he throws just desintegrated you in dust in half of a second for breath."
+  },
+  monster14: {
+    "name": "Humanoid Shark With Hawaiian Shirt And Steel Harpoon",
+    "health": 2500,
+    "strength": 10,
+    "mental": 20,
+    "default_attack": "mental",
+    "nuts": [350,550],
+    "exp": [250,600],
+    "distance": [60,79],
+    "probability": 30,
+    "victory_msg": "Wow ! This was the most epic fight I've ever did !",
+    "defeat_msg": "Hmm... Lose against a teapot..."
   },
   monster12: {
     "name": "Weird Red Cactus With Human Arms",
