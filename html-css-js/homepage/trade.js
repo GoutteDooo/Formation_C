@@ -7,7 +7,7 @@ import { capitalize, displayPrice } from "./helper_functions.js";
 //Connexion to Browser
 const CONNEXION = document.getElementById("connexion");
 const INTERNET_PAGE = document.getElementById("internet-page");
-const returnBtn = document.getElementById("return");
+const RETURN_BTN = document.getElementById("return");
 
 //Home Page
   //Navbar
@@ -39,7 +39,7 @@ let player_object = JSON.parse(localStorage.getItem("player"));
 let sellers = JSON.parse(localStorage.getItem("sellers"));
 
 document.addEventListener("DOMContentLoaded", () => {
-  returnBtn.addEventListener("mouseup", () => {
+  RETURN_BTN.addEventListener("mouseup", () => {
     window.location.href = "village.html";
   });
   updatePage();
@@ -243,6 +243,7 @@ const generateBuyingPage = () => {
 
 const generateSellingPage = () => {
   SELLING_PAGE.id = "selling-page";
+  
 }
 
 const showBuyingPage = () => {
