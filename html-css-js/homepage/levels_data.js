@@ -200,22 +200,142 @@ const levels_data = {
     }
   },
   "11": {
-    "exp_needed":999999,
+    "exp_needed":30000,
     "stats_upgrade": {
       "Warrior": {
-        "strength": 8,
-        "mental": 2,
-        "max_health": 660,
+        "strength": 9,
+        "mental": 3,
+        "max_health": 750,
       },
       "Mage": {
-        "strength": 2,
-        "mental": 8,
-        "max_health": 440,
+        "strength": 3,
+        "mental": 10,
+        "max_health": 500,
       },
       "Alchemist": {
-        "strength": 5,
+        "strength": 6,
+        "mental": 6,
+        "max_health": 680,
+      },
+    }
+  },
+  "12": {
+    "exp_needed":40000,
+    "stats_upgrade": {
+      "Warrior": {
+        "strength": 11,
+        "mental": 3,
+        "max_health": 900,
+      },
+      "Mage": {
+        "strength": 3,
+        "mental": 12,
+        "max_health": 650,
+      },
+      "Alchemist": {
+        "strength": 8,
+        "mental": 8,
+        "max_health": 800,
+      },
+    }
+  },
+  "13": {
+    "exp_needed":52000,
+    "stats_upgrade": {
+      "Warrior": {
+        "strength": 12,
+        "mental": 4,
+        "max_health": 1050,
+      },
+      "Mage": {
+        "strength": 4,
+        "mental": 14,
+        "max_health": 770,
+      },
+      "Alchemist": {
+        "strength": 10,
+        "mental": 9,
+        "max_health": 920,
+      },
+    }
+  },
+  "14": {
+    "exp_needed":67000,
+    "stats_upgrade": {
+      "Warrior": {
+        "strength": 15,
         "mental": 5,
-        "max_health": 550,
+        "max_health": 1500,
+      },
+      "Mage": {
+        "strength": 5,
+        "mental": 14,
+        "max_health": 990,
+      },
+      "Alchemist": {
+        "strength": 11,
+        "mental": 12,
+        "max_health": 1250,
+      },
+    }
+  },
+  "15": {
+    "exp_needed":85000,
+    "stats_upgrade": {
+      "Warrior": {
+        "strength": 19,
+        "mental": 6,
+        "max_health": 1800,
+      },
+      "Mage": {
+        "strength": 8,
+        "mental": 18,
+        "max_health": 1300,
+      },
+      "Alchemist": {
+        "strength": 12,
+        "mental": 13,
+        "max_health": 1550,
+      },
+    }
+  },
+  "16": {
+    "exp_needed":105000,
+    "stats_upgrade": {
+      "Warrior": {
+        "strength": 21,
+        "mental": 7,
+        "max_health": 2300,
+      },
+      "Mage": {
+        "strength": 8,
+        "mental": 20,
+        "max_health": 1600,
+      },
+      "Alchemist": {
+        "strength": 14,
+        "mental": 13,
+        "max_health": 2000,
+      },
+    }
+  },
+  "17": {
+    "exp_needed":105000000,
+    "stats_upgrade": {
+      "Warrior": {
+        "strength": 21,
+        "mental": 7,
+        "max_health": 2300,
+      },
+      "Mage": {
+        "strength": 8,
+        "mental": 20,
+        "max_health": 1600,
+      },
+      "Alchemist": {
+        "strength": 14,
+        "mental": 13,
+        "max_health": 2000,
       },
     }
   },
