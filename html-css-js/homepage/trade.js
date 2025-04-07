@@ -196,7 +196,7 @@ const generateBuyingPage = () => {
       const buy_item_object = objects[seller_object.selling_objects[object]["id"]];
 
       const BUY_ITEM_CONTAINER = document.createElement("div");
-      BUY_ITEM_CONTAINER.classList.add("sold-item-container");
+      BUY_ITEM_CONTAINER.classList.add("buy-item-container");
 
       const SELLER_NAME_CONTAINER = document.createElement("div");
       SELLER_NAME_CONTAINER.classList.add("seller-name-container");
@@ -212,12 +212,12 @@ const generateBuyingPage = () => {
       SELLER_NAME_CONTAINER.appendChild(SELLER_INFOS);
 
       const BUY_ITEM = document.createElement("div");
-      BUY_ITEM.classList.add("sold-item");
+      BUY_ITEM.classList.add("buy-item");
       
       const buy_item_name = buy_item_object.name;
       
       const BUY_ITEM_NAME_CONTAINER = document.createElement("div");
-      BUY_ITEM_NAME_CONTAINER.classList.add("sold-item-name-container");
+      BUY_ITEM_NAME_CONTAINER.classList.add("buy-item-name-container");
       BUY_ITEM.appendChild(BUY_ITEM_NAME_CONTAINER);
 
       const BUY_ITEM_NAME = document.createElement("h3");
@@ -225,11 +225,11 @@ const generateBuyingPage = () => {
       BUY_ITEM_NAME_CONTAINER.appendChild(BUY_ITEM_NAME);
 
       const BUY_ITEM_ACTIONS = document.createElement("div");
-      BUY_ITEM_ACTIONS.classList.add("sold-item-actions");
+      BUY_ITEM_ACTIONS.classList.add("buy-item-actions");
       BUY_ITEM.appendChild(BUY_ITEM_ACTIONS);
 
       const BUY_ITEM_ACTION_PRICE = document.createElement("div");
-      BUY_ITEM_ACTION_PRICE.classList.add("sold-item-action-price");
+      BUY_ITEM_ACTION_PRICE.classList.add("buy-item-action-price");
       //declare a price
       const item_price = randomizeSellerPrice(seller_object.selling_objects[object]);
       //display price
@@ -268,7 +268,7 @@ const generateSellingPage = () => {
     const item_object = player_object.sold[item];
     const SOLD_ITEM_CONTAINER = document.createElement("div");
     SOLD_ITEM_CONTAINER.classList.add("sold-item-container");
-    SELLING_PAGE.textContent += capitalize(objects[item_object.id].name) + " sold for " + displayPrice(sold_item_object.price) + "\n";
+    SELLING_PAGE.textContent += capitalize(objects[item_object.id].name) + " sold for " + displayPrice(item_object.price) + "\n";
   }
 }
 
