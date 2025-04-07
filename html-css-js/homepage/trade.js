@@ -32,7 +32,7 @@ let OBJECTS_UL = document.createElement("ul");
 const BUYING_PAGE = document.createElement("div");
 
 //Selling Page
-const SELLING_PAGE = document.createElement("div");
+let SELLING_PAGE = document.createElement("div");
 
 //localstorage
 let player_object = JSON.parse(localStorage.getItem("player"));
@@ -77,7 +77,8 @@ const updateDatas = () => {
   INVENTORY.appendChild(OBJECTS_UL);
 
   /* SELLING PAGE */
-  SELLING_PAGE.childNodes.forEach(child => child.remove());
+  SELLING_PAGE.remove();
+  SELLING_PAGE = document.createElement("div");
   generateSellingPage();
 }
 
@@ -262,7 +263,7 @@ const generateSellingPage = () => {
     SELLING_PAGE.appendChild(BTN_PROFILE);
     return;
   }
-  for (const item in player_object.sold)
+  for (const item in player_object.sold) //item : {object_id, price}
   {
     const sold_item_object = player_object.sold[item];
     SELLING_PAGE.textContent += capitalize(objects[sold_item_object.id].name) + " sold for " + displayPrice(sold_item_object.price) + "\n";
@@ -367,12 +368,12 @@ const sell = (object_id) => {
   // prompt for a selling price (help player with a price range between 80% and 100% of the selling price)
   const lower_range = objects[object_id].price * 0.8;
   const upper_range = objects[object_id].price;
-  const value = prompt(`How much do you want to sell this object for ? \n (Hint: You can sell it surely between ${lower_range} and ${upper_range}, but nothing stops you to try a higher price! )`);
+  const value = prompt(`How much do you want to sell this object for ? \n (Hint: You can sell it surely between ${lower_range} and ${upper_range}, but nothing stops you to try a higher price! )`, lower_range);
   //if player cancel, return
   if (value === null) return;
   // When player confirms, removes the item from its inventory and add it to the sold array
   player_object.objects.splice(player_object.objects.indexOf(object_id), 1);
-  player_object.sold.push({object_id, price: value});
+  player_object.sold.push({id: object_id, price: value});
   localStorage.setItem("player", JSON.stringify(player_object));
   // update page
   updateDatas();
