@@ -215,7 +215,7 @@ const monsters = {
     "default_attack": "all",
     "nuts": [18000,25000],
     "exp": [5000,7500],
-    "distance": [80,100],
+    "distance": [90,100],
     "probability": 5,
     "victory_msg": "BOOM ! What does this planet said ?!",
     "defeat_msg": "The planet became angry and threw on you its trees, villages and people. There was too many objects and you couldn't dodge all."
