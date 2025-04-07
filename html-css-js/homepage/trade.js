@@ -265,8 +265,10 @@ const generateSellingPage = () => {
   }
   for (const item in player_object.sold) //item : {object_id, price}
   {
-    const sold_item_object = player_object.sold[item];
-    SELLING_PAGE.textContent += capitalize(objects[sold_item_object.id].name) + " sold for " + displayPrice(sold_item_object.price) + "\n";
+    const item_object = player_object.sold[item];
+    const SOLD_ITEM_CONTAINER = document.createElement("div");
+    SOLD_ITEM_CONTAINER.classList.add("sold-item-container");
+    SELLING_PAGE.textContent += capitalize(objects[item_object.id].name) + " sold for " + displayPrice(sold_item_object.price) + "\n";
   }
 }
 
