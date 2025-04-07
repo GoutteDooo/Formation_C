@@ -38,6 +38,12 @@ let SELLING_PAGE = document.createElement("div");
 let player_object = JSON.parse(localStorage.getItem("player"));
 let sellers = JSON.parse(localStorage.getItem("sellers"));
 
+// if victory, redirect to victory page
+if (JSON.parse(localStorage.getItem("game_datas")).state == "4") {
+  window.location.href = "victory.html";
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
   RETURN_BTN.addEventListener("mouseup", () => {
     window.location.href = "village.html";

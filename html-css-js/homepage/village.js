@@ -83,6 +83,10 @@ const updateActions = () => {
     victoryBtn.addEventListener("click", victory);
     return;
   }
+  if (state == "4") {
+    window.location.href = "victory.html";
+    return;
+  }
   const exploreBtn = document.querySelector("#button-explore");
   const tradeBtn = document.querySelector("#button-trade");
   const moneyBtn = document.querySelector("#button-money");
@@ -185,6 +189,9 @@ function fightBoss(e) {
 
 function victory(e) {
   window.location.href = "victory.html";
+  const game_datas = JSON.parse(localStorage.getItem("game_datas"));
+  localStorage.setItem("game_datas", JSON.stringify({...game_datas, state: "4"}));
+  updatePage();
 }
 /* ACTIONS END */
 
