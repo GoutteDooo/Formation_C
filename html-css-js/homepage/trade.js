@@ -225,7 +225,7 @@ const generateBuyingPage = () => {
 
       const SOLD_ITEM_ACTION_TRADE = document.createElement("button");
       SOLD_ITEM_ACTION_TRADE.textContent = "Trade";
-
+      SOLD_ITEM_ACTION_TRADE.addEventListener("click", () => trade(seller_object, seller_object.selling_objects[object], SOLD_ITEM_CONTAINER));
       SOLD_ITEM_ACTIONS.appendChild(SOLD_ITEM_ACTION_TRADE);
       SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM);
 
@@ -305,4 +305,8 @@ const buy = (seller_object, selling_object, price, container) => {
     // if player doesn't have enough nuts, play refused message
     window.alert("You don't have enough nuts to buy this object.");
   }
+}
+
+const trade = () => {
+
 }
