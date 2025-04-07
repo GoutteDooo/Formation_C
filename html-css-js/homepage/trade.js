@@ -144,7 +144,7 @@ const chargeHomePage = () => {
   BODY_BUTTONS.appendChild(BUTTON_BUY);
   BUTTON_BUY.addEventListener("click", () => loadPage(showBuyingPage));
   BUTTON_SELL.id = "page-btn-sell";
-  BUTTON_SELL.textContent = "Sell";
+  BUTTON_SELL.textContent = "Items selling";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
   BUTTON_SELL.addEventListener("click", () => loadPage(showSellingPage));
 
