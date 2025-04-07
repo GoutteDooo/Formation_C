@@ -65,7 +65,6 @@ const updateDatas = () => {
 
   /* Inventory */
   //remove all nodes from OBJECTS_UL
-  player_object = JSON.parse(localStorage.getItem("player"));
   /*
   OBJECTS_UL.remove();
   OBJECTS_UL = document.createElement("ul");
@@ -395,4 +394,5 @@ const sell = (object_id) => {
   localStorage.setItem("player", JSON.stringify(player_object));
   // update page
   updateDatas();
+  showProfile();
 }
