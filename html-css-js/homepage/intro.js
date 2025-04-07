@@ -92,7 +92,7 @@ const generateHero = () => {
     player.stats.max_health = 280;
     player.default_attack = "all";
   }
-  player.nuts = 20000;
+  player.nuts = 200;
   player.stats.level = 1;
   console.log(player);
   //write player in data.json
@@ -105,12 +105,4 @@ function startGame() {
   localStorage.setItem("sellers", JSON.stringify(sellers));
   localStorage.setItem("game_datas", JSON.stringify(game_datas));
   window.location.href = "village.html";
-
-  //test
-  player.stats.strength = 70;
-  player.stats.mental = 70;
-  player.stats.health = 28000;
-  player.stats.max_health = 28000;
-  player.default_attack = "all";
-  localStorage.setItem("player", JSON.stringify(player));
 }
