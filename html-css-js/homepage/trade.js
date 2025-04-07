@@ -245,7 +245,11 @@ const generateSellingPage = () => {
   SELLING_PAGE.id = "selling-page";
   if (player_object.sold.length == 0)
   {
-    SELLING_PAGE.textContent = "You don't have any item to sell.";
+    SELLING_PAGE.innerHTML = "You haven't sold any item yet. <br /> Go to your profile to sell items.";
+    const BTN_PROFILE = document.createElement("button");
+    BTN_PROFILE.textContent = "Go to your profile";
+    BTN_PROFILE.addEventListener("click", () => loadPage(showProfile));
+    SELLING_PAGE.appendChild(BTN_PROFILE);
     return;
   }
   for (const item in player_object.sold)

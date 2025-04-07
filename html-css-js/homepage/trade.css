@@ -338,9 +338,16 @@ button:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
   width: 95%;
   height: 95%;
   margin: auto;
   overflow: scroll;
   background: lightblue;
+}
+
+#selling-page button {
+  width: 250px;
+  height: 70px;
 }
