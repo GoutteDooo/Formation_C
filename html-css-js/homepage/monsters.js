@@ -205,7 +205,20 @@ const monsters = {
     "distance": [80,100],
     "probability": 10,
     "victory_msg": "It was a hectic debate.",
-    "defeat_msg": "Its price has left you speechless."
+    "defeat_msg": "You haven't managed to come up with your best counter-arguments..."
+  },
+  monster17: {
+    "name": "Little Planet With Little Sun",
+    "health": 30000,
+    "strength": 50,
+    "mental": 50,
+    "default_attack": "all",
+    "nuts": [18000,25000],
+    "exp": [5000,7500],
+    "distance": [80,100],
+    "probability": 5,
+    "victory_msg": "BOOM ! What does this planet said ?!",
+    "defeat_msg": "The planet became angry and threw on you its trees, villages and people. There was too many objects and you couldn't dodge all."
   },
   monster12: {
     "name": "Weird Red Cactus With Human Arms",
