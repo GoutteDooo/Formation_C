@@ -364,6 +364,9 @@ const trade = (seller_object, selling_object, container) => {
 
 const sell = (object_id) => {
   console.log("sell " + object_id);
-  // prompt for a selling price
-  // When 
+  // prompt for a selling price (help player with a price range between 80% and 100% of the selling price)
+  const value = prompt("How much do you want to sell this object for ?", objects[object_id]);
+  //if player cancel, return
+  // When player confirms, removes the item from its inventory and add it to the sold array
+  // update page
 }
