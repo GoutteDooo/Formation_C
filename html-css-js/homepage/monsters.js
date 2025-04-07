@@ -179,7 +179,20 @@ const monsters = {
     "distance": [60,79],
     "probability": 50,
     "victory_msg": "OMG ! It tries to fishing you !",
-    "defeat_msg": "It threw it's harpoon and catch you inside its "
+    "defeat_msg": "It threw it's harpoon and caught you like a common fish."
+  },
+  monster15: {
+    "name": "iPhone 14 Pro Max",
+    "health": 7500,
+    "strength": 35,
+    "mental": 35,
+    "default_attack": "all",
+    "nuts": [7000,10000],
+    "exp": [1000,1500],
+    "distance": [80,100],
+    "probability": 25,
+    "victory_msg": "That was so ",
+    "defeat_msg": "It threw it's harpoon and caught you like a common fish."
   },
   monster12: {
     "name": "Weird Red Cactus With Human Arms",
