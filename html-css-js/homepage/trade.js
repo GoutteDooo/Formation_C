@@ -79,8 +79,9 @@ const updateDatas = () => {
   */
   PROFILE_PAGE.remove();
   PROFILE_PAGE = document.createElement("div");
+  INVENTORY = document.createElement("div");
   generateProfile();
-  
+
   /* SELLING PAGE */
   SELLING_PAGE.remove();
   SELLING_PAGE = document.createElement("div");
