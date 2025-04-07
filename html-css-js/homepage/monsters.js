@@ -175,7 +175,7 @@ const monsters = {
     "mental": 30,
     "default_attack": "all",
     "nuts": [2200,4600],
-    "exp": [600,900],
+    "exp": [700,1100],
     "distance": [60,89],
     "probability": 50,
     "victory_msg": "OMG ! It tries to fishing you !",
