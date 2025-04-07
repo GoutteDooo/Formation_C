@@ -33,7 +33,7 @@ const monsters = {
     "default_attack": "strength",
     "nuts": [40,100],
     "exp": [20,35],
-    "distance": [5,19],
+    "distance": [10,29],
     "probability": 60,
     "victory_msg": "Few, it was so angry ! It was heading straight on you like you were a castle.",
     "defeat_msg": "A rain of these creatures were thrown on you. Weird."
@@ -46,7 +46,7 @@ const monsters = {
     "default_attack": "strength",
     "nuts": [100,220],
     "exp": [70,140],
-    "distance": [20,39],
+    "distance": [20,29],
     "probability": 40,
     "victory_msg": "It was so nasty !",
     "defeat_msg": "The Martian danced on your corpse when you died."
@@ -98,7 +98,7 @@ const monsters = {
     "default_attack": "strength",
     "nuts": [100,120],
     "exp": [100,150],
-    "distance": [20,39],
+    "distance": [30,49],
     "probability": 20,
     "victory_msg": "There are so weird things in the world.",
     "defeat_msg": "When you saw all the hairs on its legs, you wondered what was the sense of life instead of fight. And it gave you a KO with a back kick."
@@ -111,7 +111,7 @@ const monsters = {
     "default_attack": "mental",
     "nuts": [250,400],
     "exp": [400,600],
-    "distance": [20,39],
+    "distance": [30,49],
     "probability": 10,
     "victory_msg": "This smile gave me goose humps.",
     "defeat_msg": "Its mouth became giant and swallowed you whole."
@@ -137,7 +137,7 @@ const monsters = {
     "default_attack": "mental",
     "nuts": [350,550],
     "exp": [250,600],
-    "distance": [40,59],
+    "distance": [45,69],
     "probability": 30,
     "victory_msg": "Wow ! This was the most epic fight I've ever did !",
     "defeat_msg": "Hmm... Lose against a teapot..."
@@ -163,7 +163,7 @@ const monsters = {
     "default_attack": "mental",
     "nuts": [2500,4800],
     "exp": [550,820],
-    "distance": [60,79],
+    "distance": [60,89],
     "probability": 50,
     "victory_msg": "I thinked the troopers was in mission on another planet. But it didn't.",
     "defeat_msg": "Damn! The laser he throws just desintegrated you in dust in half of a second for breath."
@@ -176,7 +176,7 @@ const monsters = {
     "default_attack": "all",
     "nuts": [2200,4600],
     "exp": [600,900],
-    "distance": [60,79],
+    "distance": [60,89],
     "probability": 50,
     "victory_msg": "OMG ! It tries to fishing you !",
     "defeat_msg": "It threw it's harpoon and caught you like a common fish."
