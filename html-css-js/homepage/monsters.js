@@ -101,18 +101,18 @@ const monsters = {
     "distance": [20,39],
     "probability": 20,
     "victory_msg": "There are so weird things in the world.",
-    "defeat_msg": "When you saw all the hairs on its legs, you wondered what was the sense of life instead of fight. And it gave you a KO."
+    "defeat_msg": "When you saw all the hairs on its legs, you wondered what was the sense of life instead of fight. And it gave you a KO with a back kick."
   },
   monster9: {
     "name": "Little Cute Chipmunk With Big Eyes But Horrible Scary Smile With Large, Sharp Teeth",
-    "health": 5000,
+    "health": 2500,
     "strength": 5,
     "mental": 12,
     "default_attack": "mental",
-    "nuts": [200,300],
-    "exp": [130,220],
+    "nuts": [250,400],
+    "exp": [400,600],
     "distance": [20,39],
-    "probability": 30,
+    "probability": 10,
     "victory_msg": "This smile gave me goose humps.",
     "defeat_msg": "Its mouth became giant and swallowed you whole."
   },
