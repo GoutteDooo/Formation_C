@@ -135,11 +135,12 @@ const chargeHomePage = () => {
   BUTTON_SELL.id = "page-btn-sell";
   BUTTON_SELL.textContent = "Sell";
   BODY_BUTTONS.appendChild(BUTTON_SELL);
-  BUTTON_SELL.addEventListener("click", () => loadPage(sell));
+  BUTTON_SELL.addEventListener("click", () => loadPage(showSellingPage));
 
   //other pages generation background
   generateProfile();
   generateBuyingPage();
+  generateSellingPage();
 }
 
 const showHomePage = () => {
@@ -248,9 +249,8 @@ const showBuyingPage = () => {
   PAGE_BODY.appendChild(BUYING_PAGE);
 }
 
-const sell = () => {
-  const player_object = JSON.parse(localStorage.getItem("player"));
-  console.log("sell");
+const showSellingPage = () => {
+  PAGE_BODY.appendChild(SELLING_PAGE);
 }
 
 const clearPage = () => {
@@ -338,3 +338,7 @@ const trade = (seller_object, selling_object, container) => {
   }
 }
 
+const sell = () => {
+  const player_object = JSON.parse(localStorage.getItem("player"));
+  console.log("sell");
+}

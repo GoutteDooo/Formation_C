@@ -331,3 +331,15 @@ button:hover {
   background: rgb(185, 185, 185);
 }
 
+/* SELLING PAGE */
+
+#selling-page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 95%;
+  height: 95%;
+  margin: auto;
+  overflow: scroll;
+  background: lightblue;
+}
