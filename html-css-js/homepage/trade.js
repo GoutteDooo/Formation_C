@@ -31,6 +31,9 @@ let OBJECTS_UL = document.createElement("ul");
 //Buying Page
 const BUYING_PAGE = document.createElement("div");
 
+//Selling Page
+const SELLING_PAGE = document.createElement("div");
+
 //localstorage
 let player_object = JSON.parse(localStorage.getItem("player"));
 let sellers = JSON.parse(localStorage.getItem("sellers"));
@@ -57,7 +60,10 @@ const updatePage = () => {
 }
 
 const updateDatas = () => {
+  /* navbar */
   NUTS.textContent = displayPrice(player_object.nuts);
+
+  /* Inventory */
   //remove all nodes from OBJECTS_UL
   player_object = JSON.parse(localStorage.getItem("player"));
   OBJECTS_UL.remove();
@@ -232,7 +238,10 @@ const generateBuyingPage = () => {
       BUYING_PAGE.appendChild(SOLD_ITEM_CONTAINER);
     }
   }
-  
+}
+
+const generateSellingPage = () => {
+  SELLING_PAGE.id = "selling-page";
 }
 
 const showBuyingPage = () => {
