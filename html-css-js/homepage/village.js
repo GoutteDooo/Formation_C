@@ -85,7 +85,7 @@ const updateInfos = () => {
   const game_datas = JSON.parse(localStorage.getItem("game_datas"));
   GAME_DAY.textContent = game_datas.day;
   PLAYER_INFOS.innerHTML = game_datas.player_infos;
-  if (game_datas.day > "90" && game_datas.state == "1") {
+  if (game_datas.day > "1" && game_datas.state == "1") {
     game_datas.state = "2";
     localStorage.setItem("game_datas", JSON.stringify(game_datas));
     updatePage();
@@ -160,6 +160,8 @@ function rest(e) {
 function fightBoss(e) {
   const boss_object = boss.boss1;
   fight(boss_object);
+  if (boss_object.health <= 0) {
+  
 }
 
 /* ACTIONS END */
