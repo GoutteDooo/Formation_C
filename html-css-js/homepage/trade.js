@@ -79,6 +79,7 @@ const updateDatas = () => {
   PROFILE_PAGE.remove();
   PROFILE_PAGE = document.createElement("div");
   INVENTORY = document.createElement("div");
+  OBJECTS_UL = document.createElement("ul");
   generateProfile();
 
   /* SELLING PAGE */
@@ -167,7 +168,7 @@ const generateProfile = () => {
   PROFILE_PAGE.textContent = `Your Inventory`;
   INVENTORY.id = "inventory";
   PROFILE_PAGE.appendChild(INVENTORY);
-
+  
   //display objects
   for (const object_id of player_object.objects) {
     const OBJECT_LI = document.createElement("li");
