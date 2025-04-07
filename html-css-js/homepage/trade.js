@@ -268,7 +268,17 @@ const generateSellingPage = () => {
     const item_object = player_object.sold[item];
     const SOLD_ITEM_CONTAINER = document.createElement("div");
     SOLD_ITEM_CONTAINER.classList.add("sold-item-container");
-    SELLING_PAGE.textContent += capitalize(objects[item_object.id].name) + " sold for " + displayPrice(item_object.price) + "\n";
+
+    const SOLD_ITEM_NAME = document.createElement("h3");
+    SOLD_ITEM_NAME.textContent = capitalize(objects[item_object.id].name);
+    SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM_NAME);
+    SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM_NAME);
+
+    const SOLD_ITEM_PRICE = document.createElement("p");
+    SOLD_ITEM_PRICE.textContent = displayPrice(item_object.price);
+    SOLD_ITEM_CONTAINER.appendChild(SOLD_ITEM_PRICE);
+
+    SELLING_PAGE.appendChild(SOLD_ITEM_CONTAINER);
   }
 }
 
