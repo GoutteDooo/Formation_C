@@ -109,7 +109,7 @@ const chargeHomePage = () => {
   PROFILE_NUTS.appendChild(PROFILE);
 
   NUTS.id = "page-nuts";
-  NUTS.textContent = `🥜 ${player_object.nuts}`;
+  NUTS.textContent = `${displayPrice(player_object.nuts)}`;
   PROFILE_NUTS.appendChild(NUTS);
 
   /* body */
@@ -273,7 +273,7 @@ const randomizeSellerPrice = (selling_object) => {
 
 const buy = (seller_object, selling_object, price, container) => {
   //display confirm pop up
-  const confirm = window.confirm(`Are you sure you want to buy ${selling_object.name} for ${displayPrice(price)} 🥜 ?`);
+  const confirm = window.confirm(`Are you sure you want to buy ${objects[selling_object.id].name} for ${displayPrice(price)} ?`);
   if (!confirm) return;
   // if player has enough nuts, buy object
   if (player_object.nuts >= price) {

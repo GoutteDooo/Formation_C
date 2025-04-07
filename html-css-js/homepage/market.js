@@ -37,7 +37,7 @@ const market = {
   seller2: {
     "name": "Jean65492",
     "nuts": 2000000,
-    "description": "He is weird, but he is smooth and easy in business.",
+    "description": "He is smooth and easy in business.",
     "selling_objects": [
       {
         id:3,
