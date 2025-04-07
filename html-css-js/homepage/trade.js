@@ -243,6 +243,11 @@ const generateBuyingPage = () => {
 
 const generateSellingPage = () => {
   SELLING_PAGE.id = "selling-page";
+  if (player_object.sold.length == 0)
+  {
+    SELLING_PAGE.textContent = "You don't have any item to sell.";
+    return;
+  }
   for (const item in player_object.sold)
   {
     const sold_item_object = player_object.sold[item];
