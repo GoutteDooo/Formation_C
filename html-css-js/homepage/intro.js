@@ -107,10 +107,10 @@ function startGame() {
   window.location.href = "village.html";
 
   //test
-  player.stats.strength = 70;
-  player.stats.mental = 70;
-  player.stats.health = 28000;
-  player.stats.max_health = 28000;
-  player.default_attack = "all";
-  localStorage.setItem("player", JSON.stringify(player));
+  // player.stats.strength = 70;
+  // player.stats.mental = 70;
+  // player.stats.health = 28000;
+  // player.stats.max_health = 28000;
+  // player.default_attack = "all";
+  // localStorage.setItem("player", JSON.stringify(player));
 }

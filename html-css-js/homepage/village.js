@@ -158,9 +158,9 @@ function rest(e) {
 //State 2 : BOSS
 
 function fightBoss(e) {
-  const boss_object = boss.boss1;
+  const boss_object = {...boss.boss1};
   fight(boss_object);
-  if (boss_object.health <= 0) {
+  console.log(boss_object);
   
 }
 
