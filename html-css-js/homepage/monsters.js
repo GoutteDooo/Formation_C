@@ -164,22 +164,22 @@ const monsters = {
     "nuts": [2500,4800],
     "exp": [550,820],
     "distance": [60,79],
-    "probability": 5,
+    "probability": 50,
     "victory_msg": "I thinked the troopers was in mission on another planet. But it didn't.",
     "defeat_msg": "Damn! The laser he throws just desintegrated you in dust in half of a second for breath."
   },
   monster14: {
     "name": "Humanoid Shark With Hawaiian Shirt And Steel Harpoon",
-    "health": 2500,
-    "strength": 10,
-    "mental": 20,
-    "default_attack": "mental",
-    "nuts": [350,550],
-    "exp": [250,600],
+    "health": 4200,
+    "strength": 30,
+    "mental": 30,
+    "default_attack": "all",
+    "nuts": [2200,4600],
+    "exp": [600,900],
     "distance": [60,79],
-    "probability": 30,
-    "victory_msg": "Wow ! This was the most epic fight I've ever did !",
-    "defeat_msg": "Hmm... Lose against a teapot..."
+    "probability": 50,
+    "victory_msg": "OMG ! It tries to fishing you !",
+    "defeat_msg": "It threw it's harpoon and catch you inside its "
   },
   monster12: {
     "name": "Weird Red Cactus With Human Arms",
