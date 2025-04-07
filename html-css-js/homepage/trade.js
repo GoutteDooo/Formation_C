@@ -272,6 +272,9 @@ const randomizeSellerPrice = (selling_object) => {
 }
 
 const buy = (seller_object, selling_object, price, container) => {
+  //display confirm pop up
+  const confirm = window.confirm(`Are you sure you want to buy ${selling_object.name} for ${displayPrice(price)} 🥜 ?`);
+  if (!confirm) return;
   // if player has enough nuts, buy object
   if (player_object.nuts >= price) {
     // Generate a copy of sellers in localstorage
@@ -310,13 +313,11 @@ const buy = (seller_object, selling_object, price, container) => {
 const trade = (seller_object, selling_object, container) => {
   // display prompt for a value
   let value = prompt("How much do you propose ? ", selling_object.default_price_range[0]);
-  while (value == null || value == "") 
-  {
-    value = prompt("How much do you propose ? ", selling_object.default_price_range[0]);
-  }
+  if (value == null || value == "") return;
+
   if (value < selling_object.lowest_selling_price) 
   {
-    window.alert(selling_object.refused_message);
+    window.alert(`${seller_object.name} sent you a message: \n ${selling_object.refused_message}`);  
     return;
   }
   else 
