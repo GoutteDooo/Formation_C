@@ -363,6 +363,6 @@ const trade = (seller_object, selling_object, container) => {
 }
 
 const sell = (object_id) => {
-  console.log("sell");
-  
+  console.log("sell " + object_id);
+  // 
 }
