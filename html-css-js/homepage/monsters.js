@@ -105,7 +105,7 @@ const monsters = {
   },
   monster13: {
     "name": "Little Cute Chipmunk With Big Eyes But Horrible Scary Smile",
-    "health": 10000,
+    "health": 5000,
     "strength": 5,
     "mental": 12,
     "default_attack": "mental",
@@ -113,8 +113,8 @@ const monsters = {
     "exp": [130,220],
     "distance": [20,39],
     "probability": 30,
-    "victory_msg": "This smile gives me a lot of  ?",
-    "defeat_msg": "It ate your corpse... urk..."
+    "victory_msg": "This smile gave me goose humps.",
+    "defeat_msg": "Its mouth became giant and swallowed you whole."
   },
   monster9: {
     "name": "Enraged Werewolf",
