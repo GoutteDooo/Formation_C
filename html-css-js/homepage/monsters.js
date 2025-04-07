@@ -90,7 +90,7 @@ const monsters = {
     "victory_msg": "Ouaw ! This monster was so scary !",
     "defeat_msg": "When it threw its laser from its antenna, you were electrilized like a tazer. Finito."
   },
-  monster7: {
+  monster8: {
     "name": "Little Martian With Big Red Eyes",
     "health": 150,
     "strength": 30,
@@ -103,7 +103,7 @@ const monsters = {
     "victory_msg": "Ouaw ! This monster was so scary !",
     "defeat_msg": "When it threw its laser from its antenna, you were electrilized like a tazer. Finito."
   },
-  monster13: {
+  monster9: {
     "name": "Little Cute Chipmunk With Big Eyes But Horrible Scary Smile With Large, Sharp Teeth",
     "health": 5000,
     "strength": 5,
@@ -116,7 +116,7 @@ const monsters = {
     "victory_msg": "This smile gave me goose humps.",
     "defeat_msg": "Its mouth became giant and swallowed you whole."
   },
-  monster9: {
+  monster10: {
     "name": "Enraged Werewolf",
     "health": 1600,
     "strength": 22,
@@ -129,7 +129,7 @@ const monsters = {
     "victory_msg": "Urk! So much drool was dripping out from that's wolf mouth !",
     "defeat_msg": "When the Werewolf bites you, you tried to flee but you finish into a big shaking and big pain. And then, you died. So sick."
   },
-  monster13: {
+  monster11: {
     "name": "A Lava-Spitting Teapot",
     "health": 2500,
     "strength": 10,
@@ -142,7 +142,7 @@ const monsters = {
     "victory_msg": "Wow ! This was the most epic fight I've ever did !",
     "defeat_msg": "Hmm... Lose against a teapot..."
   },
-  monster10: {
+  monster12: {
     "name": "Big Button Nose Sorcerer With Piercing Laugh",
     "health": 2200,
     "strength": 10,
@@ -155,7 +155,7 @@ const monsters = {
     "victory_msg": "You won the moment you pierced the button on that sorcerer's nose.",
     "defeat_msg": "It turned you into a stuffed pig and hung your new form on a wall of its house."
   },
-  monster11: {
+  monster13: {
     "name": "Dark Starship Trooper With Laser Gun",
     "health": 3500,
     "strength": 16,
@@ -220,7 +220,7 @@ const monsters = {
     "victory_msg": "BOOM ! What does this planet said ?!",
     "defeat_msg": "The planet became angry and threw on you its trees, villages and people. There was too many objects and you couldn't dodge all."
   },
-  monster12: {
+  monster18: {
     "name": "Weird Red Cactus With Human Arms",
     "health": 100,
     "strength": 1,
