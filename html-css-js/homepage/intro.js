@@ -22,6 +22,7 @@ const player = {
     exp : 0
   },
   objects: [11,12],
+  sold:[],
 }
 
 const game_datas = {
