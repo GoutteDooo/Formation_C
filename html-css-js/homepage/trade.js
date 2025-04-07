@@ -163,13 +163,15 @@ const generateProfile = () => {
   PROFILE_PAGE.appendChild(INVENTORY);
 
   //display objects
-  for (const object of player_object.objects) {
+  for (const object_id of player_object.objects) {
     const OBJECT_LI = document.createElement("li");
-    OBJECT_LI.textContent = capitalize(objects[object].name);
+    OBJECT_LI.textContent = capitalize(objects[object_id].name);
     OBJECTS_UL.appendChild(OBJECT_LI);
     const SELLING_BTN = document.createElement("button");
     SELLING_BTN.classList.add("sell-btn");
     SELLING_BTN.textContent = "Sell";
+    SELLING_BTN.addEventListener("click", () => sell(object_id));
+    
     OBJECT_LI.appendChild(SELLING_BTN);
   }
   INVENTORY.appendChild(OBJECTS_UL);
@@ -360,7 +362,7 @@ const trade = (seller_object, selling_object, container) => {
   }
 }
 
-const sell = () => {
-  const player_object = JSON.parse(localStorage.getItem("player"));
+const sell = (object_id) => {
   console.log("sell");
+  
 }
