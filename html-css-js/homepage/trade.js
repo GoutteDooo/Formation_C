@@ -317,6 +317,8 @@ const trade = (seller_object, selling_object, container) => {
 
   if (value < selling_object.lowest_selling_price) 
   {
+    const confirm = window.confirm(`Are you sure you want to buy ${objects[selling_object.id].name} for ${displayPrice(price)} ?`);
+    if (!confirm) return;
     window.alert(`${seller_object.name} sent you a message: \n ${selling_object.refused_message}`);  
     return;
   }
