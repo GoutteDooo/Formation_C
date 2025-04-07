@@ -24,8 +24,8 @@ const BUTTON_BUY = document.createElement("button");
 const BUTTON_SELL = document.createElement("button");
 
 //Profile Page
-const PROFILE_PAGE = document.createElement("div");
-const INVENTORY = document.createElement("div");
+let PROFILE_PAGE = document.createElement("div");
+let INVENTORY = document.createElement("div");
 let OBJECTS_UL = document.createElement("ul");
 
 //Buying Page
@@ -66,6 +66,7 @@ const updateDatas = () => {
   /* Inventory */
   //remove all nodes from OBJECTS_UL
   player_object = JSON.parse(localStorage.getItem("player"));
+  /*
   OBJECTS_UL.remove();
   OBJECTS_UL = document.createElement("ul");
   //add new objects to OBJECTS_UL
@@ -75,7 +76,11 @@ const updateDatas = () => {
     OBJECTS_UL.appendChild(OBJECT_LI);
   }
   INVENTORY.appendChild(OBJECTS_UL);
-
+  */
+  PROFILE_PAGE.remove();
+  PROFILE_PAGE = document.createElement("div");
+  generateProfile();
+  
   /* SELLING PAGE */
   SELLING_PAGE.remove();
   SELLING_PAGE = document.createElement("div");
