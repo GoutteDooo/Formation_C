@@ -6,6 +6,9 @@
     <title>Hello</title>
   </head>
   <body>
-    Hello, {{ name }}!
+    <form action="/greet">
+      <input type="text" name="name" placeholder="Your name" autocomplete="off" autofocus>
+      <button type="submit">Greet</button>
+    </form>
   </body>
 </html>
