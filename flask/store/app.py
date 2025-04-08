@@ -16,7 +16,7 @@ def index():
   return render_template("books.html", books=books)
 
 
-@app.route("/cart")
+@app.route("/cart", methods=["GET","POST"])
 def cart():
 
   if "cart" not in session:
@@ -28,5 +28,5 @@ def cart():
       session["cart"].append(book_id)
     return redirect("/cart")
 
-    books = db.execute("SELECT * FROM books WHERE id IN (?)", session["cart"])
-    return render_template("cart.html", books=books)
+  books = db.execute("SELECT * FROM books WHERE id IN (?)", session["cart"])
+  return render_template("cart.html", books=books)
