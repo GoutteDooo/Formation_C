@@ -8,6 +8,10 @@ SPORTS=[
   "Baseball"
 ]
 
+REGISTRANTS = {
+  
+}
+
 
 @app.route('/')
 def index():
