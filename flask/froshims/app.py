@@ -33,5 +33,5 @@ def register():
   return render_template("success.html")
 
 @app.route("/registrants")
-def registrants:
-  return render_template("registrants.html")
+def registrants():
+  return render_template("registrants.html", registrants=REGISTRANTS)
