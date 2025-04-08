@@ -4,9 +4,9 @@
 
   <h1>Register</h1>
   <form action="/register" method="post">
-    <input type="text" name="name" placeholder="Your name" autocomplete="off" autofocus required>
+    <input type="text" name="name" placeholder="Your name" autocomplete="off" autofocus>
       {% for sport in sports %}
-        <input name="sport" type="radio" value="{{ sport }}" required>
+        <input name="sport" type="radio" value="{{ sport }}">
         <label>{{ sport }}</label>
       {% endfor %}
     <button type="submit">Register</button>
