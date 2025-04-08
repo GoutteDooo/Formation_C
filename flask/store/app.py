@@ -14,3 +14,16 @@ Session(app)
 def index():
   books = db.execute("SELECT * FROM books")
   return render_template("books.html", books=books)
+
+
+@app.route("/cart")
+def cart():
+
+  if "cart" not in session:
+    session["cart"] = []
+
+  if request.method == "POST":
+    book_id = request.form.get("book_id")
+    if book_id:
+      session["cart"].append(book_id)
+    return redirect("/cart")
