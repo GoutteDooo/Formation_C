@@ -201,7 +201,7 @@ const monsters = {
     "mental": 35,
     "default_attack": "strength",
     "nuts": [9000,12000],
-    "exp": [2000,2200],
+    "exp": [2000,3000],
     "distance": [80,100],
     "probability": 10,
     "victory_msg": "It was a hectic debate.",
