@@ -37,9 +37,9 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for bday in bdays %}
                             <tr>
-                                <td>{{ bday.name }}</td>
-                                <td>{{ bday.month }}/{{ bday.day }}</td>
-                                <td>
+                                <td id="{{ bday.id }}-{{ bday.name }}">{{ bday.name }}</td>
+                                <td id="{{ bday.id }}-{{ bday.month }}-{{ bday.day }}">{{ bday.month }}/{{ bday.day }}</td>
+                                <td id="{{ bday.id }}">
                                     <button value="Edit">Edit</button>
                                     <form action="/delete" method="post">
                                         <input type="hidden" name="friend" value="{{ bday.name }}">
