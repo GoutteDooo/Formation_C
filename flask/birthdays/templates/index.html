@@ -31,7 +31,12 @@
           </tr>
         </thead>
         <tbody>
-
+          {% for bday in birthdays %}
+            <tr>
+              <td>{{ bday.friend }}</td>
+              <td>{{ bday.month }}/{{ bday.day }}</td>
+            </tr>
+            {% endfor %}
         </tbody>
       </table>
     </div>
