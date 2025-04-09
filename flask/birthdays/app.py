@@ -10,9 +10,15 @@ app = Flask(__name__)
 def index():
   friend_name = request.form.get("friend")
   if not friend_name:
-    return redirect("/")
+    redirect("/")
+
   month = request.form.get("month")
+  if not month:
+    redirect("/")
   day = request.form.get("day")
+  if not day:
+    redirect("/")
+    
   if request.method == "POST":
     db.execute("INSERT INTO birthdays (friend, month, day) VALUES (?, ?, ?)", friend_name, month, day)
     return redirect("/")
