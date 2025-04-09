@@ -35,7 +35,7 @@ def index():
         month = request.form.get("month")
         if not month:
             return redirect("/")
-            
+
         day = request.form.get("day")
         if not day:
             return redirect("/")
@@ -46,7 +46,7 @@ def index():
     else:
 
         # TODO: Display the entries in the database on index.html
-
-        return render_template("index.html")
+        birthdays = db.execute("SELECT * FROM birthdays")
+        return render_template("index.html", bdays=birthdays)
 
 
