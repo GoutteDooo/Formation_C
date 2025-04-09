@@ -23,5 +23,6 @@ def index():
     
     db.execute("INSERT INTO birthdays (friend, month, day) VALUES (?, ?, ?)", friend_name, month, day)
     return redirect("/")
-
-  return render_template("index.html")
+  else:
+    birthdays = db.execute("SELECT * FROM birthdays")
+    return render_template("index.html", birthdays=birthdays)
