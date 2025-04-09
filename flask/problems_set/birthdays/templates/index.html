@@ -61,6 +61,7 @@
                 name.contentEditable = true;
                 date.contentEditable = true;
                 e.textContent = "Save";
+                e.setAttribute("type","submit");
                 e.addEventListener("click", function() {
                     name.contentEditable = false;
                     date.contentEditable = false;
