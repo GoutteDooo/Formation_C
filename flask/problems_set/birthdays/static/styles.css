@@ -77,6 +77,10 @@ table td {
     vertical-align: middle;
 }
 
+table tbody tr td:nth-child(3) {
+    width: 20%;
+}
+
 tbody tr:nth-of-type(odd) {
     background-color: rgb(179, 208, 255, 0.3)
 }
