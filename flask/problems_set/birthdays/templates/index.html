@@ -37,10 +37,10 @@
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for bday in bdays %}
                             <tr>
-                                <td id="{{ bday.id }}-{{ bday.name }}">{{ bday.name }}</td>
-                                <td id="{{ bday.id }}-{{ bday.month }}-{{ bday.day }}">{{ bday.month }}/{{ bday.day }}</td>
-                                <td id="{{ bday.id }}">
-                                    <button value="Edit">Edit</button>
+                                <td id="name-{{ bday.id }}">{{ bday.name }}</td>
+                                <td id="date-{{ bday.id }}">{{ bday.month }}/{{ bday.day }}</td>
+                                <td>
+                                    <button id="{{ bday.id }}" value="Edit" onclick="edit(this, '{{ bday.id }}')">Edit</button>
                                     <form action="/delete" method="post">
                                         <input type="hidden" name="friend" value="{{ bday.name }}">
                                         <input type="hidden" name="month" value="{{ bday.month }}">
@@ -54,5 +54,10 @@
                 </table>
             </div>
         </div>
+        <script>
+            function edit(e, id) {
+                e.style.display = "none";
+            }
+        </script>
     </body>
 </html>
