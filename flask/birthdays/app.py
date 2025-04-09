@@ -6,7 +6,7 @@ db = SQL("sqlite:///birthdays.db")0
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=["GET","POST"])
 def index():
   friend = request.form.get("friend")
   month = request.form.get("month")
