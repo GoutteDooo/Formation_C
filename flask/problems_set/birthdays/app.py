@@ -60,12 +60,12 @@ def delete():
 
 @app.route("/update", methods=["POST"])
 def update():
-    id = request.form.get("id")
-    name = request.form.get("name")
-    date = request.form.get("birthday")
+    data = request.get_json()
+    id = data["id"]
+    name = data["name"]
+    date = data["birthday"]
     print(id,name,date)
-    # day = date.split("/")[1]
-    # month = date.split("/")[0]
-    # db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?", name, month, day, id)
-    # return jsonify({"success": True})
-    return redirect("/")
+    day = date.split("/")[1]
+    month = date.split("/")[0]
+    db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?", name, month, day, id)
+    return jsonify({"success": True})
