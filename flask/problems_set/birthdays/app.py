@@ -63,7 +63,9 @@ def update():
     id = request.form.get("id")
     name = request.form.get("name")
     date = request.form.get("birthday")
-    day = date.split("/")[1]
-    month = date.split("/")[0]
-    db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?", name, month, day, id)
-    return jsonify({"success": True})
+    print(id,name,date)
+    # day = date.split("/")[1]
+    # month = date.split("/")[0]
+    # db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?", name, month, day, id)
+    # return jsonify({"success": True})
+    return redirect("/")
