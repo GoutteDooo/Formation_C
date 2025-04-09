@@ -40,18 +40,8 @@
                                 <td>{{ bday.name }}</td>
                                 <td>{{ bday.month }}/{{ bday.day }}</td>
                                 <td>
-                                    <form action="/" method="post">
-                                        <input type="hidden" name="friend" value="{{ bday.name }}">
-                                        <input type="hidden" name="month" value="{{ bday.month }}">
-                                        <input type="hidden" name="day" value="{{ bday.day }}">
-                                        <button type="submit" value="Edit">Edit</button>
-                                    </form>
-                                    <form action="/" method="post">
-                                        <input type="hidden" name="friend" value="{{ bday.name }}">
-                                        <input type="hidden" name="month" value="{{ bday.month }}">
-                                        <input type="hidden" name="day" value="{{ bday.day }}">
-                                        <button type="submit" value="Delete">Delete</button>
-                                    </form>
+                                        <button value="Edit">Edit</button>
+                                        <button value="Delete">Delete</button>
                                 </td>
                             </tr>
                         {% endfor %}
