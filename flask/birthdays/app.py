@@ -1,5 +1,5 @@
 from cs50 import SQL
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 db = SQL("sqlite:///birthdays.db")
 
