@@ -8,18 +8,20 @@ app = Flask(__name__)
 
 @app.route('/', methods=["GET","POST"])
 def index():
-  friend_name = request.form.get("friend")
-  if not friend_name:
-    redirect("/")
-
-  month = request.form.get("month")
-  if not month:
-    redirect("/")
-  day = request.form.get("day")
-  if not day:
-    redirect("/")
-    
   if request.method == "POST":
+
+    friend_name = request.form.get("friend")
+    if not friend_name:
+      return redirect("/")
+
+    month = request.form.get("month")
+    if not month:
+      return redirect("/")
+    day = request.form.get("day")
+    if not day:
+      return redirect("/")
+    
     db.execute("INSERT INTO birthdays (friend, month, day) VALUES (?, ?, ?)", friend_name, month, day)
     return redirect("/")
+
   return render_template("index.html")
