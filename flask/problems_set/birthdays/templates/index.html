@@ -37,11 +37,11 @@
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
                         {% for bday in bdays %}
-                            <tr>
+                            <tr id="row-{{ bday.id }}">
                                 <td id="name-{{ bday.id }}">{{ bday.name }}</td>
                                 <td id="date-{{ bday.id }}">{{ bday.month }}/{{ bday.day }}</td>
                                 <td>
-                                    <button id="{{ bday.id }}" value="Edit" onclick="edit(this, '{{ bday.id }}')">Edit</button>
+                                    <button onclick="editAndUpdate(this, '{{ bday.id }}')">Edit</button>
                                     <form action="/delete" method="post">
                                         <input type="hidden" name="friend" value="{{ bday.name }}">
                                         <input type="hidden" name="month" value="{{ bday.month }}">
@@ -56,18 +56,43 @@
             </div>
         </div>
         <script>
-            function edit(e, id) {
+            function editAndUpdate(btn, id) {
                 const name = document.getElementById('name-' + id);
                 const date = document.getElementById('date-' + id);
-                name.contentEditable = true;
-                date.contentEditable = true;
-                e.textContent = "Save";
-                e.setAttribute("type","submit");
-                e.addEventListener("click", function() {
+                if (btn.textContent == "Edit") {
+                    name.contentEditable = true;
+                    date.contentEditable = true;
+                    btn.textContent = "Save";
+                }
+                else
+                {
+                    const newName = name.textContent;
+                    const newDate = date.textContent;
                     name.contentEditable = false;
                     date.contentEditable = false;
-                    e.textContent = "Edit";
-                });
+                    fetch('/update', 
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            id: id,
+                            name: newName,
+                            birthday: newDate
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            console.log("Update successful : " + data);
+                            btn.textContent = "Edit";
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Update failed : " + err);
+                    });
+                }
             }
         </script>
     </body>
