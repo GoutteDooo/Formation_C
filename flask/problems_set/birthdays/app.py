@@ -57,3 +57,13 @@ def delete():
     day = request.form.get("day")
     db.execute("DELETE FROM birthdays WHERE name = ? AND month = ? AND day = ?", name, month, day)
     return redirect("/")
+
+@app.route("/update", methods=["POST"])
+def update():
+    id = request.form.get("id")
+    name = request.form.get("name")
+    date = request.form.get("birthday")
+    day = date.split("/")[1]
+    month = date.split("/")[0]
+    db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?", name, month, day, id)
+    return jsonify({"success": True})
