@@ -106,6 +106,12 @@ def logout():
 @login_required
 def quote():
     """Get stock quote."""
+    symbol = request.args.get("symbol")
+    if not symbol:
+        return apology("must provide symbol", 403)
+    quote = lookup(symbol)
+    if not quote:
+        return apology("invalid symbol", 403)
     return apology("TODO")
 
 
