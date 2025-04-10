@@ -121,7 +121,7 @@ def register():
             return apology("must provide password", 403)
 
         try:
-            new_user = db.execute("SELECT * FROM users WHERE username = ?", username)
+            db.execute("SELECT * FROM users WHERE username = ?", username)
             # db.execute will raise a ValueError if username already exists
         except ValueError:
             print("Username already exist!")
