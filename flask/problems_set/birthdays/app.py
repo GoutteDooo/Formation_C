@@ -68,4 +68,4 @@ def update():
     day = date.split("/")[1]
     month = date.split("/")[0]
     db.execute("UPDATE birthdays SET name = ?, month = ?, day = ? WHERE id = ?", name, month, day, id)
-    return jsonify({"success": True})
+    return jsonify({ "success": True })
