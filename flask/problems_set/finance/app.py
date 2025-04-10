@@ -52,9 +52,8 @@ def buy():
         shares = request.form.get("shares")
         if int(shares) < 0:
             return apology("must provide positive shares", 403)
-            print("buy successfully")
-            return redirect("/")
-        return render_template("buy.html", symbol=lookup(symbol))
+            
+        return redirect("/")
 
     #if "GET"
     else:
