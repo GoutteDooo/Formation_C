@@ -118,12 +118,13 @@ def register():
         confirm = request.form.get("confirmation")
         if not username:
             return apology("must provide username", 403)
-        if not password:
+        if not password or not confirmation:
             return apology("must provide password", 403)
-
+        if password != confirm:
+            return apology("password and confirmation password do not match", 403)
 
         try:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, password)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, generate_password_hash(password))
             # db.execute will raise a ValueError if username already exists
         except ValueError:
             print("Username already exist!")
