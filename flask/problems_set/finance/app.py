@@ -110,7 +110,6 @@ def quote():
         symbol = request.form.get("symbol")
         if not symbol:
             return apology("must provide symbol", 403)
-        print(lookup(symbol))
         return render_template("quoted.html", quotes=lookup(symbol))
     
     return render_template("quote.html")
