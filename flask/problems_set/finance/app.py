@@ -46,9 +46,11 @@ def buy():
         symbol = request.form.get("symbol")
         if not symbol or not lookup(symbol):
             return apology("must provide symbol", 403)
+
         shares = request.form.get("shares")
         if shares < 0:
             return apology("must provide positive shares", 403)
+            
         return redirect("/")
 
     return render_template("buy.html", symbol=symbol)
