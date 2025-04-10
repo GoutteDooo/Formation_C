@@ -52,9 +52,11 @@ def buy():
             return apology("must provide positive shares", 403)
 
             return redirect("/")
+        return render_template("buy.html", symbol=lookup(symbol))
+
     #if "GET"
     else:
-        return render_template("buy.html", symbol=symbol)
+        return render_template("buy.html")
 
 
 @app.route("/history")
