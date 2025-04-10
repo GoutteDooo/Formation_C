@@ -120,15 +120,18 @@ def register():
         if not password:
             return apology("must provide password", 403)
 
-        # Raise ValueError if username already exists
         try:
             new_user = db.execute("SELECT * FROM users WHERE username = ?", username)
-        except NameError:
+            # db.execute will raise a ValueError if username already exists
+        except ValueError:
             print("Username already exist!")
+            return apology("username already exist", 403)
         except:
             print("An error occured")
+            return apology("an error occured", 403)
         else:
-            db.execute("INSERT INTO users (username, password) VALUES (?, ?)", username, password)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, password)
+            print("User registered successfully!")
             return redirect("/")
     
     return render_template("register.html")
