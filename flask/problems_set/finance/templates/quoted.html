@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block main %}
-    <table>
-        <thead>
+    <table class="table">
+        <thead class="table-dark">
             <tr>
                 <th>Symbol</th>
                 <th>Name</th>
@@ -14,13 +14,11 @@
             </tr>
         </thead>
         <tbody>
-            {% for quote in quotes %}
-                <tr>
-                    <td>{{ quote.symbol }}</td>
-                    <td>{{ quote.name }}</td>
-                    <td>{{ quote.price }}</td>
-                </tr>
-            {% endfor %}
+            <tr>
+                <td>{{ quotes.symbol }}</td>
+                <td>{{ quotes.name }}</td>
+                <td>{{ quotes.price }}</td>
+            </tr>
         </tbody>
     </table>
 {% endblock %}
