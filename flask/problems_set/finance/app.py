@@ -50,10 +50,11 @@ def buy():
         shares = request.form.get("shares")
         if shares < 0:
             return apology("must provide positive shares", 403)
-            
-        return redirect("/")
 
-    return render_template("buy.html", symbol=symbol)
+            return redirect("/")
+    #if "GET"
+    else:
+        return render_template("buy.html", symbol=symbol)
 
 
 @app.route("/history")
