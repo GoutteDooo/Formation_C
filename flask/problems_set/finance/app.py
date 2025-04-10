@@ -42,13 +42,14 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    symbol = request.form.get("symbol")
-    if not symbol or not lookup(symbol):
-        return apology("must provide symbol", 403)
-    shares = request.form.get("shares")
-    if shares < 0:
-        return apology("must provide positive shares", 403)
-
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        if not symbol or not lookup(symbol):
+            return apology("must provide symbol", 403)
+        shares = request.form.get("shares")
+        if shares < 0:
+            return apology("must provide positive shares", 403)
+        return redirect("/")
 
     return render_template("buy.html", symbol=symbol)
 
