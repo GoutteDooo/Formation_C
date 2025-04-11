@@ -38,7 +38,7 @@ def index():
     """Show portfolio of stocks"""
     #TODO: get all stocks
     #get current datas of all companies which are in the purchases table of the user
-    user_shares = db.execute("SELECT DISTINCT symbol, COUNT(shares) as shares FROM purchases WHERE user_id = ? GROUP BY symbol", session["user_id"])
+    user_shares = db.execute("SELECT symbol, SUM(shares) as shares FROM purchases WHERE user_id = ? GROUP BY symbol", session["user_id"])
     #for all symbols
     stocks = []
     for i in range(len(user_shares)):
