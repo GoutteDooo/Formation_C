@@ -239,7 +239,7 @@ def sell():
 
     #get list of all symbols buyed by the user
     try:
-        user_symbols = db.execute("SELECT DISTINCT symbol FROM history WHERE username = ?", username)
+        user_symbols = db.execute("SELECT DISTINCT symbol FROM stocks WHERE username = ?", username)
     except:
         return apology("Sorry, an error occured", 403)
 
@@ -271,13 +271,13 @@ def sell():
 
 
         #calculate the sum of shares sold
-        lookup = lookup(symbol.upper())
-        sold = lookup["price"] * shares
+        look_up = lookup(symbol)
+        sold = look_up["price"] * shares
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         #Insert new sell into history table
         try:
-            db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, shares, symbol.upper(), lookup["price"], sold, date, session["user_id"], "sell")
+            db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, shares, symbol.upper(), look_up["price"], sold, date, session["user_id"], "sell")
         except:
             return apology("Sorry, an error occured when inserting your sell", 403)
 
