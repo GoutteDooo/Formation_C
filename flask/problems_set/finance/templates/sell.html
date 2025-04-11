@@ -6,13 +6,12 @@
 
 {% block main %}
     <form action="/sell" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="select">
-            <option value="AAPL">AAPL</option>
-        </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number" min="0">
-        </div>
-        <button class="btn btn-primary" type="submit">Sell</button>
+        <label for="symbol">Select a Symbol to sell</label>
+        <select class="form-control mx-auto w-auto" id="symbol" name="symbol">
+            {% for purchase in user_purchases %}
+                <option value="{{ purchase.symbol }}">{{ purchase.symbol }}</option>
+            {% endfor %}
+        </select>
+        <input type="number" name="shares" placeholder="Shares" min="0" max="{{ user_purchases[0].shares }}">
     </form>
 {% endblock %}
