@@ -262,7 +262,7 @@ def sell():
         
         #And if the user has enough shares
         try:
-            user_shares = db.execute("SELECT SUM(shares) as shares FROM history WHERE username = ? AND symbol = ?", username, symbol.upper())[0]['shares']
+            user_shares = db.execute("SELECT shares FROM stocks WHERE username = ? AND symbol = ?", username, symbol.upper())[0]['shares']
         except:
             return apology("Sorry, an error occured when getting your shares", 403)
 
