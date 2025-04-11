@@ -255,6 +255,8 @@ def sell():
         if user_shares < shares:
             return apology("Sorry, you don't have enough shares to sell this stock", 403)
 
+        #When all conditions have passed, delete the amount of shares from the stocks table
+
         return redirect("/")
 
     return render_template("sell.html", user_symbols=user_symbols)
