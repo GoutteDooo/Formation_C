@@ -37,14 +37,14 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     #get all stocks
-    #get current datas of all companies which are in the purchases table of the user
+    #get current datas of all companies which are in the history table of the user
     user_shares = db.execute("SELECT symbol, shares FROM stocks WHERE user_id = ?", session["user_id"])  
     #stock this data in a dictionary with the following format :
     # {'company':company, 'symbol':symbol, 'shares':shares, 'price':price, 'total_holdings':total_holdings}
     stocks = []
     #for all symbols
     for i in range(len(user_shares)):
-        # do this for all companies in the purchases table of the user
+        # do this for all companies in the history table of the user
         shares_data = lookup(user_shares[i]["symbol"])
         stock = {}
         stock["company"] = shares_data["name"]
@@ -97,17 +97,17 @@ def buy():
             # if it is not the case, return an apology
             return apology("Sorry, you don't have enough money to buy this stock", 403)
 
-        # If it is the case, save the buy into purchases table and update user's money into users table
+        # If it is the case, save the buy into history table and update user's money into users table
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         try:
-            db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol.upper(), share_price, buy_cost, date, session["user_id"])
+            db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol.upper(), share_price, buy_cost, date, session["user_id"])
         except:
             return apology("Sorry, an error occured during the purchase", 403)
         
         try:
             db.execute("UPDATE users SET cash = cash - ? WHERE username = ?", buy_cost, username)
         except:
-            db.execute("DELETE FROM purchases WHERE date = ? AND username = ?", date, username)
+            db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
             return apology("Sorry, an error occured when updating your account", 403)
 
         #insert new stock into stocks table
@@ -121,7 +121,7 @@ def buy():
                 db.execute("UPDATE stocks SET shares = shares + ? WHERE user_id = ? AND symbol = ?", int(shares), session["user_id"], symbol.upper())
         except:
             db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", buy_cost, username)
-            db.execute("DELETE FROM purchases WHERE date = ? AND username = ?", date, username)
+            db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
             return apology("Sorry, an error occured when inserting your stock", 403)
         
         return redirect("/")
@@ -239,7 +239,7 @@ def sell():
 
     #get list of all symbols buyed by the user
     try:
-        user_symbols = db.execute("SELECT DISTINCT symbol FROM purchases WHERE username = ?", username)
+        user_symbols = db.execute("SELECT DISTINCT symbol FROM history WHERE username = ?", username)
     except:
         return apology("Sorry, an error occured", 403)
 
@@ -250,7 +250,7 @@ def sell():
             #If not, return an apology
             return apology("must provide symbol", 403)
 
-        #Verify if symbol is in the purchases table of the user
+        #Verify if symbol is in the history table of the user
         if symbol.lower() not in [item["symbol"].lower() for item in user_symbols]:
             #If not, return an apology
             return apology("Symbol doesn't exist in your purchases", 403)
@@ -262,7 +262,7 @@ def sell():
         
         #And if the user has enough shares
         try:
-            user_shares = db.execute("SELECT SUM(shares) as shares FROM purchases WHERE username = ? AND symbol = ?", username, symbol.upper())[0]['shares']
+            user_shares = db.execute("SELECT SUM(shares) as shares FROM history WHERE username = ? AND symbol = ?", username, symbol.upper())[0]['shares']
         except:
             return apology("Sorry, an error occured when getting your shares", 403)
 
