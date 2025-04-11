@@ -56,6 +56,8 @@ def buy():
         # TODO: Verify if user has enough money for the buy
         user_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         print(user_money)
+        print("money:", user_money[0]["cash"], "share price:", type(lookup(symbol)["price"]))
+        # if user_money[1] < int(shares) * 
         # TODO: If it is the case, save the buy into purchases table and update user's money into users table
         # TODO: if it is not the case, return an apology
         return redirect("/")
