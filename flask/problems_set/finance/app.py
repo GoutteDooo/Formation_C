@@ -272,6 +272,14 @@ def sell():
         #When all conditions have passed, delete the amount of shares from the stocks table
         #if all shares are sold, delete the stock from the stocks table
         #else, update the shares of the stock
+
+        #calculate the sum of shares sold
+        sold = lookup(symbol)["price"] * shares
+        try:
+            db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", sold, username)
+        except:
+            return apology("Sorry, an error occured when updating your account", 403)
+        
         if shares == user_shares:
             try:
                 db.execute("DELETE FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
@@ -282,7 +290,8 @@ def sell():
                 db.execute("UPDATE stocks SET shares = shares - ? WHERE user_id = ? AND symbol = ?", shares, session["user_id"], symbol.upper())
             except:
                 return apology("Sorry, an error occured when updating your stock", 403)
-            db.execute("DELETE FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
+
+        #Once done, give cash back to the user
         return redirect("/")
 
     return render_template("sell.html", user_symbols=user_symbols)
