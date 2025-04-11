@@ -6,6 +6,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
 from helpers import apology, login_required, lookup, usd
+from datetime import datetime
 
 # Configure application
 app = Flask(__name__)
@@ -66,18 +67,19 @@ def buy():
 
         # If it is the case, save the buy into purchases table and update user's money into users table
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+        username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
         buy_cost = int(shares) * lookup(symbol)["price"]
+        print("PRINT:", username, buy_cost, date)
         try:
             db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date) VALUES (?, ?, ?, ?, ?, ?)", username, int(shares), symbol, lookup(symbol)["price"], buy_cost, date)
         except:
-            return apology("Sorry, an error occured", 403)
+            return apology("Sorry, an error occured during the purchase", 403)
         
         try:
             db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", buy_cost, session["user_id"])
         except:
             db.execute("DELETE FROM purchases WHERE date = ? AND username = ?", date, username)
-            return apology("Sorry, an error occured", 403)
+            return apology("Sorry, an error occured when updating your account", 403)
 
         return redirect("/")
 
