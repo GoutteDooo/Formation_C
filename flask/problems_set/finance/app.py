@@ -271,11 +271,13 @@ def sell():
 
 
         #calculate the sum of shares sold
-        sold = lookup(symbol)["price"] * shares
+        lookup = lookup(symbol.upper())
+        sold = lookup["price"] * shares
+        date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         #Insert new sell into history table
         try:
-            db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, shares, symbol.upper(), share_price, sold, date, session["user_id"], "sell")
+            db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, shares, symbol.upper(), lookup["price"], sold, date, session["user_id"], "sell")
         except:
             return apology("Sorry, an error occured when inserting your sell", 403)
 
