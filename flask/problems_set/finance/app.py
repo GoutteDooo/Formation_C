@@ -114,10 +114,11 @@ def buy():
         #if symbol already exist for user, update the shares
         #else, insert new stock
         try:
-            db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
-            db.execute("UPDATE stocks SET shares = shares + ? WHERE user_id = ? AND symbol = ?", int(shares), session["user_id"], symbol.upper())
-        except:
-            db.execute("INSERT INTO stocks (user_id, username, symbol, shares) VALUES (?, ?, ?, ?)", session["user_id"], username, symbol.upper(), int(shares))
+            rows = db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
+            if len(rows) == 0:
+                db.execute("INSERT INTO stocks (user_id, username, symbol, shares) VALUES (?, ?, ?, ?)", session["user_id"], username, symbol.upper(), int(shares))
+            else:
+                db.execute("UPDATE stocks SET shares = shares + ? WHERE user_id = ? AND symbol = ?", int(shares), session["user_id"], symbol.upper())
         except:
             db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", buy_cost, username)
             db.execute("DELETE FROM purchases WHERE date = ? AND username = ?", date, username)
