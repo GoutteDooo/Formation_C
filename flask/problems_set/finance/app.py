@@ -88,7 +88,7 @@ def buy():
         try:
             user_money = db.execute("SELECT cash FROM users WHERE username = ?", username)[0]["cash"]
         except:
-            return apology("Sorry, an error occured", 403)
+            return apology("Sorry, an error occured when getting your money", 403)
 
         share_price = s_looked_up["price"]
         buy_cost = round((int(shares) * share_price),2)
@@ -102,6 +102,7 @@ def buy():
         try:
             db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol.upper(), share_price, buy_cost, date, session["user_id"], "buy")
         except:
+            print("Error while inserting buy into history table")
             return apology("Sorry, an error occured during the purchase", 403)
         
         try:
