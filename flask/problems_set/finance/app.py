@@ -221,23 +221,26 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
+
+    #get list of all symbols buyed by the user
+    try:
+        user_symbols = db.execute("SELECT DISTINCT symbol FROM purchases WHERE username = ?", username)
+    except:
+        return apology("Sorry, an error occured", 403)
+
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
         #Verify if symbol exists
         if not symbol:
             #If not, return an apology
             return apology("must provide symbol", 403)
 
         #Verify if symbol is in the purchases table of the user
-        try:
-            user_symbols = db.execute("SELECT DISTINCT symbol FROM purchases WHERE username = ?", username)
-        except:
-            return apology("Sorry, an error occured", 403)
-        print(user_symbols)
         if symbol not in user_symbols:
             #If not, return an apology
-            return apology("Symbol doesn't existe in your purchases", 403)
+            return apology("Symbol doesn't exist in your purchases", 403)
 
-        return render_template("sell.html",user_symbols=user_symbols)
-    return render_template("sell.html")
+        return render_template("sell.html", user_symbols=user_symbols)
+    print(user_symbols)
+    return render_template("sell.html", user_symbols=user_symbols)

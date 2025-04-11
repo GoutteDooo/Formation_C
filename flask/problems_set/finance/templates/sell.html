@@ -8,6 +8,7 @@
     <form action="/sell" method="post">
         <label for="symbol">Select a Symbol to sell</label>
         <select class="form-control mx-auto w-auto" id="symbol" name="symbol">
+            <option default selected disabled>Choose a symbol</option>
             {% for symbol in user_symbols %}
                 <option value="{{ symbol.symbol }}">{{ symbol.symbol }}</option>
             {% endfor %}
