@@ -103,6 +103,8 @@ def buy():
             db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol.upper(), share_price, buy_cost, date, session["user_id"], "buy")
         except:
             print("Error while inserting buy into history table")
+            print("values inserted : username, shares, symbol, stockprice, total_purchase, date, user_id, type")
+            print(username, int(shares), symbol.upper(), share_price, buy_cost, date, session["user_id"], "buy")
             return apology("Sorry, an error occured during the purchase", 403)
         
         try:
