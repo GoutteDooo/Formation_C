@@ -247,15 +247,14 @@ def sell():
             return apology("must provide positive shares", 403)
         
         #And if the user has enough shares
-        print(username, symbol.upper())
         try:
-            user_shares = db.execute("SELECT SUM(shares) as shares FROM purchases WHERE username = ? AND symbol = ?", username, symbol.upper())
+            user_shares = db.execute("SELECT SUM(shares) as shares FROM purchases WHERE username = ? AND symbol = ?", username, symbol.upper())[0]['shares']
         except:
             return apology("Sorry, an error occured when getting your shares", 403)
 
-        if user_shares < shares:
+        if user_shares["shares"] < shares:
             return apology("Sorry, you don't have enough shares to sell this stock", 403)
-
+    
 
         return render_template("sell.html", user_symbols=user_symbols)
     print(user_symbols)
