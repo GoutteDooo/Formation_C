@@ -66,7 +66,17 @@ def buy():
         # TODO: If it is the case, save the buy into purchases table and update user's money into users table
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
-        db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date) VALUES (?, ?, ?, ?, ?, ?)", username, int(shares), symbol, lookup(symbol)["price"], int(shares) * lookup(symbol)["price"], date)
+        buy_cost = int(shares) * lookup(symbol)["price"]
+        try:
+            db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date) VALUES (?, ?, ?, ?, ?, ?)", username, int(shares), symbol, lookup(symbol)["price"], buy_cost, date)
+        except:
+            return apology("Sorry, an error occured", 403)
+        
+        try:
+            db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", buy_cost, session["user_id"])
+        except:
+            db.execute("")
+            return apology("Sorry, an error occured", 403)
         # TODO: if it is not the case, return an apology
 
         return redirect("/")
