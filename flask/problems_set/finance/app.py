@@ -291,6 +291,8 @@ def sell():
             except:
                 return apology("Sorry, an error occured when updating your stock", 403)
 
+        #Insert new sell into history table
+
         #Once done, give cash back to the user
         return redirect("/")
 
