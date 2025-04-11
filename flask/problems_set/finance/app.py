@@ -56,7 +56,7 @@ def index():
 
     #TODO: get cash balance
     #get the cash balance of the user
-    user_cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+    user_cash = round(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"],2)
     print("user_cash: ", user_cash)
 
     #TODO: get all total holdings
@@ -64,8 +64,8 @@ def index():
     all_total_holdings = 0
     for i in range(len(stocks)):
         all_total_holdings += stocks[i]["total_holdings"]
+    all_total_holdings = round(all_total_holdings,2)
     print("all_total_holdings: ", all_total_holdings)
-    return apology("TODO", 400)
     return render_template("index.html", stocks=stocks, user_cash=user_cash, all_total_holdings=all_total_holdings)
 
 
