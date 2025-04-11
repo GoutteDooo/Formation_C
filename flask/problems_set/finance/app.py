@@ -269,34 +269,41 @@ def sell():
         if user_shares < shares:
             return apology("Sorry, you don't have enough shares to sell this stock", 403)
 
-        #When all conditions have passed, delete the amount of shares from the stocks table
-        #if all shares are sold, delete the stock from the stocks table
-        #else, update the shares of the stock
 
         #calculate the sum of shares sold
         sold = lookup(symbol)["price"] * shares
-        try:
-            db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", sold, username)
-        except:
-            return apology("Sorry, an error occured when updating your account", 403)
-        
-        if shares == user_shares:
-            try:
-                db.execute("DELETE FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
-            except:
-                return apology("Sorry, an error occured when deleting your stock", 403)
-        else:
-            try:
-                db.execute("UPDATE stocks SET shares = shares - ? WHERE user_id = ? AND symbol = ?", shares, session["user_id"], symbol.upper())
-            except:
-                return apology("Sorry, an error occured when updating your stock", 403)
 
         #Insert new sell into history table
         try:
             db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, shares, symbol.upper(), share_price, sold, date, session["user_id"], "sell")
         except:
             return apology("Sorry, an error occured when inserting your sell", 403)
-        #Once done, give cash back to the user
+
+        #give cash back to the user first (if not, the operation will fail)
+        try:
+            db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", sold, username)
+        except:
+            db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
+            return apology("Sorry, an error occured when updating your account", 403)
+        
+        #When all conditions have passed, delete the amount of shares from the stocks table
+        #if all shares are sold, delete the stock from the stocks table
+        #else, update the shares of the stock
+        if shares == user_shares:
+            try:
+                db.execute("DELETE FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
+            except:
+                db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
+                db.execute("UPDATE users SET cash = cash - ? WHERE username = ?", sold, username)
+                return apology("Sorry, an error occured when deleting your stock", 403)
+        else:
+            try:
+                db.execute("UPDATE stocks SET shares = shares - ? WHERE user_id = ? AND symbol = ?", shares, session["user_id"], symbol.upper())
+            except:
+                db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
+                db.execute("UPDATE users SET cash = cash - ? WHERE username = ?", sold, username)
+                return apology("Sorry, an error occured when updating your stock", 403)
+
         return redirect("/")
 
     return render_template("sell.html", user_symbols=user_symbols)
