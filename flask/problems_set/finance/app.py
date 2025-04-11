@@ -36,8 +36,19 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+    #TODO: get all stocks
+    #get current datas of all companies which are in the purchases table of the user
+    #stock this data in a dictionary with the following format :
+    # {'company':company, 'symbol':symbol, 'shares':shares, 'price':price, 'total_holdings':total_holdings}
+    # do this for all companies in the purchases table of the user
+
+    #TODO: get cash balance
+    #get the cash balance of the user
     
-    return render_template("index.html")
+    #TODO: get all total holdings
+    #Do the sum of all total_holdings of the stocks
+
+    return render_template("index.html", stocks=stocks, )
 
 
 @app.route("/buy", methods=["GET", "POST"])
