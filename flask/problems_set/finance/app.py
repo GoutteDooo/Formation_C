@@ -60,18 +60,18 @@ def buy():
         except:
             return apology("Sorry, an error occured", 403)
 
-        print(user_money)
-        if user_money < int(shares) * lookup(symbol)["price"]:
+        share_price = lookup(symbol)["price"]
+        buy_cost = int(shares) * share_price
+
+        if user_money < buy_cost:
             # if it is not the case, return an apology
             return apology("Sorry, you don't have enough money to buy this stock", 403)
 
         # If it is the case, save the buy into purchases table and update user's money into users table
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
-        buy_cost = int(shares) * lookup(symbol)["price"]
-        print("PRINT:", type(username), type(int(shares)), type(symbol), type(lookup(symbol)["price"]), type(buy_cost), type(date))
         try:
-            db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol, lookup(symbol)["price"], buy_cost, date, session["user_id"])
+            db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol, share_price, buy_cost, date, session["user_id"])
         except:
             return apology("Sorry, an error occured during the purchase", 403)
         
