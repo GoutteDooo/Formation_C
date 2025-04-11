@@ -69,9 +69,9 @@ def buy():
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
         buy_cost = int(shares) * lookup(symbol)["price"]
-        print("PRINT:", username, int(shares), symbol, lookup(symbol)["price"], buy_cost, date)
+        print("PRINT:", type(username), type(int(shares)), type(symbol), type(lookup(symbol)["price"]), type(buy_cost), type(date))
         try:
-            db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date) VALUES (?, ?, ?, ?, ?, ?)", username, int(shares), symbol, lookup(symbol)["price"], buy_cost, date)
+            db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol, lookup(symbol)["price"], buy_cost, date, session["user_id"])
         except:
             return apology("Sorry, an error occured during the purchase", 403)
         
