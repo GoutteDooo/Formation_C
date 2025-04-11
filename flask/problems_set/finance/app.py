@@ -94,7 +94,7 @@ def buy():
             return apology("Sorry, an error occured", 403)
 
         share_price = s_looked_up["price"]
-        buy_cost = int(shares) * share_price
+        buy_cost = round((int(shares) * share_price),2)
 
         if user_money < buy_cost:
             # if it is not the case, return an apology
