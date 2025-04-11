@@ -234,10 +234,10 @@ def sell():
             user_symbols = db.execute("SELECT DISTINCT symbol FROM purchases WHERE username = ?", username)
         except:
             return apology("Sorry, an error occured", 403)
-        
+        print(user_symbols)
         if symbol not in user_symbols:
             #If not, return an apology
             return apology("Symbol doesn't existe in your purchases", 403)
 
-        return render_template("sell.html")
+        return render_template("sell.html",user_symbols=user_symbols)
     return render_template("sell.html")
