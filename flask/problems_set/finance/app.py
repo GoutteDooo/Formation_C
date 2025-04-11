@@ -42,6 +42,9 @@ def index():
     #for all symbols
     stocks = []
     for i in range(len(user_shares)):
+        #stock this data in a dictionary with the following format :
+        # {'company':company, 'symbol':symbol, 'shares':shares, 'price':price, 'total_holdings':total_holdings}
+        # do this for all companies in the purchases table of the user
         shares_data = lookup(user_shares[i]["symbol"])
         stock = {}
         stock["company"] = shares_data["name"]
@@ -50,16 +53,18 @@ def index():
         stock["price"] = shares_data["price"]
         stock["total_holdings"] = stock["price"] * user_shares[i]["shares"]
         stocks.append(stock)
-    #stock this data in a dictionary with the following format :
-    print("stocks: ", stocks)
-    # {'company':company, 'symbol':symbol, 'shares':shares, 'price':price, 'total_holdings':total_holdings}
-    # do this for all companies in the purchases table of the user
 
     #TODO: get cash balance
     #get the cash balance of the user
-    
+    user_cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+    print("user_cash: ", user_cash)
+
     #TODO: get all total holdings
     #Do the sum of all total_holdings of the stocks
+    all_total_holdings = 0
+    for i in range(len(stocks)):
+        all_total_holdings += stocks[i]["total_holdings"]
+    print("all_total_holdings: ", all_total_holdings)
     return apology("TODO", 400)
     return render_template("index.html", stocks=stocks, user_cash=user_cash, all_total_holdings=all_total_holdings)
 
