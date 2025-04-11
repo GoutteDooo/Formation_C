@@ -40,9 +40,15 @@ def index():
     #get current datas of all companies which are in the purchases table of the user
     user_shares = db.execute("SELECT DISTINCT symbol, COUNT(shares) as shares FROM purchases WHERE user_id = ? GROUP BY symbol", session["user_id"])
     #for all symbols
+    stocks = {}
     for i in range(len(user_shares)):
         shares_data = lookup(user_shares[i]["symbol"])
-        print("company: ", shares_data)
+        stocks[i]["company"] = shares_data["name"]
+        stocks[i]["symbol"] = shares_data["symbol"]
+        stocks[i]["shares"] = user_shares[i]["shares"]
+        stocks[i]["price"] = shares_data["price"]
+        stocks[i]["total_holdings"] = stocks[i]["price"] * user_shares[i]["shares"]
+        print("stocks[", i, "]: ", stocks[i])
     #stock this data in a dictionary with the following format :
     # {'company':company, 'symbol':symbol, 'shares':shares, 'price':price, 'total_holdings':total_holdings}
     # do this for all companies in the purchases table of the user
