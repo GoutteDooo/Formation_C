@@ -223,6 +223,13 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        print(symbol)
+        #Verify if symbol exists
+        if not symbol:
+            #If not, return an apology
+            return apology("must provide symbol", 403)
+        #Verify if symbol is in the purchases table of the user
+        try:
+            db.execute("SELECT * FROM purchases")
+        #If not, return an apology
         return apology("TODO - sell")
     return apology("TODO")
