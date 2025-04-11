@@ -39,7 +39,7 @@ def index():
     #TODO: get all stocks
     #get current datas of all companies which are in the purchases table of the user
     all_symbols = db.execute("SELECT DISTINCT symbol FROM purchases WHERE user_id = ?", session["user_id"])
-    print(session["user_id"])
+    # all_shares = db.execute()
     #stock this data in a dictionary with the following format :
     # {'company':company, 'symbol':symbol, 'shares':shares, 'price':price, 'total_holdings':total_holdings}
     # do this for all companies in the purchases table of the user
@@ -49,7 +49,7 @@ def index():
     
     #TODO: get all total holdings
     #Do the sum of all total_holdings of the stocks
-
+    return apology("TODO", 400)
     return render_template("index.html", stocks=stocks, user_cash=user_cash, all_total_holdings=all_total_holdings)
 
 
