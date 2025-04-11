@@ -51,7 +51,7 @@ def index():
         stock["symbol"] = shares_data["symbol"]
         stock["shares"] = user_shares[i]["shares"]
         stock["price"] = shares_data["price"]
-        stock["total_holdings"] = stock["price"] * user_shares[i]["shares"]
+        stock["total_holdings"] = round((stock["price"] * user_shares[i]["shares"]),2)
         stocks.append(stock)
 
     #get the cash balance of the user
