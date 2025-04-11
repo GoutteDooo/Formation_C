@@ -237,7 +237,7 @@ def sell():
             return apology("must provide symbol", 403)
 
         #Verify if symbol is in the purchases table of the user
-        if symbol not in user_symbols:
+        if symbol not in [data["symbol"] for data in user_symbols]:
             #If not, return an apology
             return apology("Symbol doesn't exist in your purchases", 403)
 
