@@ -111,7 +111,12 @@ def buy():
             return apology("Sorry, an error occured when updating your account", 403)
 
         #insert new stock into stocks table
+        #if symbol already exist for user, update the shares
+        #else, insert new stock
         try:
+            db.execute("SELECT * FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
+            db.execute("UPDATE stocks SET shares = shares + ? WHERE user_id = ? AND symbol = ?", int(shares), session["user_id"], symbol.upper())
+        except:
             db.execute("INSERT INTO stocks (user_id, username, symbol, shares) VALUES (?, ?, ?, ?)", session["user_id"], username, symbol.upper(), int(shares))
         except:
             db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", buy_cost, username)
