@@ -6,4 +6,22 @@
 
 {% block main %}
     <table class="table">
-      
+      <thead class="table-dark">
+        <tr class="table-primary">
+          <th>Company</th>
+          <th>Symbol</th>
+          <th># Shares</th>
+          <th>Current price of a share</th> 
+          <th>Total holdings</th>
+        </tr>
+      </thead>
+      <tbody class="table-secondary">
+        <tr class="table-success">
+          {% for stock in stocks %}
+            <td>{{ stock.company }}</td>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.shares }}</td>
+            <td>{{ stock.price }}</td>
+            <td>{{ stock.total_holdings }}</td>
+          </tr>
+          {% endfor %}
