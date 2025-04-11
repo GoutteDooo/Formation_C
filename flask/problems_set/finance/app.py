@@ -54,8 +54,8 @@ def buy():
             return apology("must provide positive shares", 403)
             
         # TODO: Verify if user has enough money for the buy
-        print("USER:", session["user_id"])
-        # user = db.execute("SELECT * from users WHERE username = ?", session["user_id"]) 
+        user_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        print(user_money)
         # TODO: If it is the case, save the buy into purchases table and update user's money into users table
         # TODO: if it is not the case, return an apology
         return redirect("/")
