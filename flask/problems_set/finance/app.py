@@ -38,7 +38,7 @@ def index():
     """Show portfolio of stocks"""
     #get all stocks
     #get current datas of all companies which are in the purchases table of the user
-    user_shares = db.execute("SELECT symbol, SUM(shares) as shares FROM purchases WHERE user_id = ? GROUP BY symbol", session["user_id"])
+    user_shares = db.execute("SELECT symbol, shares FROM stocks WHERE user_id = ?", session["user_id"])  
     #stock this data in a dictionary with the following format :
     # {'company':company, 'symbol':symbol, 'shares':shares, 'price':price, 'total_holdings':total_holdings}
     stocks = []
