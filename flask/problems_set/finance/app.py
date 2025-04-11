@@ -270,7 +270,19 @@ def sell():
             return apology("Sorry, you don't have enough shares to sell this stock", 403)
 
         #When all conditions have passed, delete the amount of shares from the stocks table
-
+        #if all shares are sold, delete the stock from the stocks table
+        #else, update the shares of the stock
+        if shares == user_shares:
+            try:
+                db.execute("DELETE FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
+            except:
+                return apology("Sorry, an error occured when deleting your stock", 403)
+        else:
+            try:
+                db.execute("UPDATE stocks SET shares = shares - ? WHERE user_id = ? AND symbol = ?", shares, session["user_id"], symbol.upper())
+            except:
+                return apology("Sorry, an error occured when updating your stock", 403)
+            db.execute("DELETE FROM stocks WHERE user_id = ? AND symbol = ?", session["user_id"], symbol.upper())
         return redirect("/")
 
     return render_template("sell.html", user_symbols=user_symbols)
