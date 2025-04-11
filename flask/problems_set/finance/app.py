@@ -247,8 +247,9 @@ def sell():
             return apology("must provide positive shares", 403)
         
         #And if the user has enough shares
+        print(username, symbol.upper())
         try:
-            user_shares = db.execute("SELECT SUM(shares) as shares FROM purchases WHERE username = ? AND symbol = ?", username, symbol.lower())["shares"]
+            user_shares = db.execute("SELECT SUM(shares) as shares FROM purchases WHERE username = ? AND symbol = ?", username, symbol.upper())
         except:
             return apology("Sorry, an error occured when getting your shares", 403)
 
