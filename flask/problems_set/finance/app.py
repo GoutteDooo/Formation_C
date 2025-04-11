@@ -240,6 +240,21 @@ def sell():
         if symbol.lower() not in [item["symbol"].lower() for item in user_symbols]:
             #If not, return an apology
             return apology("Symbol doesn't exist in your purchases", 403)
+        
+        #Verify if positive shares are provided
+        shares = int(request.form.get("shares"))
+        if shares < 0:
+            return apology("must provide positive shares", 403)
+        
+        #And if the user has enough shares
+        try:
+            user_shares = db.execute("SELECT SUM(shares) as shares FROM purchases WHERE username = ? AND symbol = ?", username, symbol.lower())["shares"]
+        except:
+            return apology("Sorry, an error occured when getting your shares", 403)
+
+        if user_shares < shares:
+            return apology("Sorry, you don't have enough shares to sell this stock", 403)
+
 
         return render_template("sell.html", user_symbols=user_symbols)
     print(user_symbols)
