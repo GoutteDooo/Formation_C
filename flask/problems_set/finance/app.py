@@ -223,13 +223,21 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
+        username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
         #Verify if symbol exists
         if not symbol:
             #If not, return an apology
             return apology("must provide symbol", 403)
+
         #Verify if symbol is in the purchases table of the user
         try:
-            db.execute("SELECT * FROM purchases")
-        #If not, return an apology
+            user_symbols = db.execute("SELECT DISTINCT symbol FROM purchases WHERE username = ?", username)
+        except:
+            return apology("Sorry, an error occured", 403)
+        
+        if symbol not in user_symbols:
+            #If not, return an apology
+            return apology("Symbol doesn't existe in your purchases", 403)
+            
         return apology("TODO - sell")
     return apology("TODO")
