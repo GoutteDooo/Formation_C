@@ -47,6 +47,7 @@ def buy():
         symbol = request.form.get("symbol")
         #get value from the market
         s_looked_up = lookup(symbol)
+        username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
         if not symbol:
             return apology("must provide symbol", 403)
         if not s_looked_up:
@@ -58,7 +59,7 @@ def buy():
             
         #Verify if user has enough money for the buy
         try:
-            user_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+            user_money = db.execute("SELECT cash FROM users WHERE username = ?", username)[0]["cash"]
         except:
             return apology("Sorry, an error occured", 403)
 
@@ -71,14 +72,13 @@ def buy():
 
         # If it is the case, save the buy into purchases table and update user's money into users table
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
         try:
             db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol, share_price, buy_cost, date, session["user_id"])
         except:
             return apology("Sorry, an error occured during the purchase", 403)
         
         try:
-            db.execute("UPDATE users SET cash = cash - ? WHERE id = ?", buy_cost, session["user_id"])
+            db.execute("UPDATE users SET cash = cash - ? WHERE username = ?", buy_cost, username)
         except:
             db.execute("DELETE FROM purchases WHERE date = ? AND username = ?", date, username)
             return apology("Sorry, an error occured when updating your account", 403)
