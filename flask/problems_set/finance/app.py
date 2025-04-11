@@ -110,6 +110,14 @@ def buy():
             db.execute("DELETE FROM purchases WHERE date = ? AND username = ?", date, username)
             return apology("Sorry, an error occured when updating your account", 403)
 
+        #insert new stock into stocks table
+        try:
+            db.execute("INSERT INTO stocks (user_id, username, symbol, shares) VALUES (?, ?, ?, ?)", session["user_id"], username, symbol.upper(), int(shares))
+        except:
+            db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", buy_cost, username)
+            db.execute("DELETE FROM purchases WHERE date = ? AND username = ?", date, username)
+            return apology("Sorry, an error occured when inserting your stock", 403)
+        
         return redirect("/")
 
     #if "GET"
