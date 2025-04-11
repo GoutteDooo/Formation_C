@@ -252,9 +252,9 @@ def sell():
         except:
             return apology("Sorry, an error occured when getting your shares", 403)
 
-        if user_shares["shares"] < shares:
+        if user_shares < shares:
             return apology("Sorry, you don't have enough shares to sell this stock", 403)
 
-        return render_template("sell.html", user_symbols=user_symbols)
+        return redirect("/")
 
     return render_template("sell.html", user_symbols=user_symbols)
