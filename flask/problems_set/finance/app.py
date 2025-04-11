@@ -54,12 +54,20 @@ def buy():
             return apology("must provide positive shares", 403)
             
         # TODO: Verify if user has enough money for the buy
-        user_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        try:
+            user_money = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"]
+        except:
+            return apology("Sorry, an error occured", 403)
+
         print(user_money)
-        print("money:", user_money[0]["cash"], "share price:", type(lookup(symbol)["price"]))
-        # if user_money[1] < int(shares) * 
+        if user_money < int(shares) * lookup(symbol)["price"]:
+            return apology("Sorry, you don't have enough money to buy this stock", 403)
+
         # TODO: If it is the case, save the buy into purchases table and update user's money into users table
+        date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        db.execute("INSERT INTO purchases (user_id, symbol, shares, date) VALUES (?, ?, ?, ?)", session["user_id"], symbol, int(shares), date)
         # TODO: if it is not the case, return an apology
+
         return redirect("/")
 
     #if "GET"
