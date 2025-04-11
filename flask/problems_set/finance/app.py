@@ -221,4 +221,8 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+    if request.method == "POST":
+        symbol = request.form.get("symbol")
+        print(symbol)
+        return apology("TODO - sell")
     return apology("TODO")
