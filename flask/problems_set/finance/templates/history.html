@@ -19,7 +19,11 @@
       </thead>
       <tbody class="table-secondary">
         {% for transaction in history %}
+          {% if transaction.type == "buy" %}
           <tr class="table-success">
+          {% else %}
+          <tr class="table-danger">
+          {% endif %}
             <td>{{ transaction.date }}</td>
             <td>{{ transaction.type }}</td>
             <td>{{ transaction.symbol }}</td>
