@@ -254,8 +254,7 @@ def sell():
 
         if user_shares["shares"] < shares:
             return apology("Sorry, you don't have enough shares to sell this stock", 403)
-    
 
         return render_template("sell.html", user_symbols=user_symbols)
-    print(user_symbols)
+
     return render_template("sell.html", user_symbols=user_symbols)
