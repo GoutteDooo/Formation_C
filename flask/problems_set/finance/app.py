@@ -65,7 +65,8 @@ def buy():
 
         # TODO: If it is the case, save the buy into purchases table and update user's money into users table
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        db.execute("INSERT INTO purchases (user_id, symbol, shares, date) VALUES (?, ?, ?, ?)", session["user_id"], symbol, int(shares), date)
+        username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])
+        db.execute("INSERT INTO purchases (username, shares, symbol, stockprice, total_purchase, date) VALUES (?, ?, ?, ?, ?, ?)", username, int(shares), symbol, lookup(symbol)["price"], int(shares) * lookup(symbol)["price"], date)
         # TODO: if it is not the case, return an apology
 
         return redirect("/")
