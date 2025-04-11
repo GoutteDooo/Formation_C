@@ -16,12 +16,29 @@
         </tr>
       </thead>
       <tbody class="table-secondary">
-        <tr class="table-success">
-          {% for stock in stocks %}
+        {% for stock in stocks %}
+          <tr class="table-success">
             <td>{{ stock.company }}</td>
             <td>{{ stock.symbol }}</td>
             <td>{{ stock.shares }}</td>
             <td>{{ stock.price }}</td>
             <td>{{ stock.total_holdings }}</td>
           </tr>
-          {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+    <table class="table">
+      <thead class="table-dark">
+        <tr class="table-primary">
+          <th>Your Cash Balance</th>
+          <th>All Total Holdings</th>
+        </tr>
+      </thead>
+      <tbody class="table-secondary">
+        <tr class="table-success">
+          <td>{{ user_cash }}</td>
+          <td>{{ all_total_holdings }}</td>
+        </tr>
+      </tbody>
+    </table>
+{% endblock %}
