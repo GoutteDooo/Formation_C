@@ -100,7 +100,7 @@ def buy():
         # If it is the case, save the buy into history table and update user's money into users table
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         try:
-            db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol.upper(), share_price, buy_cost, date, session["user_id"])
+            db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol.upper(), share_price, buy_cost, date, session["user_id"], "buy")
         except:
             return apology("Sorry, an error occured during the purchase", 403)
         
@@ -292,7 +292,10 @@ def sell():
                 return apology("Sorry, an error occured when updating your stock", 403)
 
         #Insert new sell into history table
-
+        try:
+            db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_purchase, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, shares, symbol.upper(), share_price, sold, date, session["user_id"], "sell")
+        except:
+            return apology("Sorry, an error occured when inserting your sell", 403)
         #Once done, give cash back to the user
         return redirect("/")
 
