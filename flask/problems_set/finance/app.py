@@ -45,9 +45,10 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         symbol = request.form.get("symbol")
+        s_looked_up = lookup(symbol)
         if not symbol:
             return apology("must provide symbol", 403)
-        if not lookup(symbol):
+        if not s_looked_up:
             return apology("invalid symbol", 403)
 
         shares = request.form.get("shares")
@@ -60,7 +61,7 @@ def buy():
         except:
             return apology("Sorry, an error occured", 403)
 
-        share_price = lookup(symbol)["price"]
+        share_price = s_looked_up["price"]
         buy_cost = int(shares) * share_price
 
         if user_money < buy_cost:
