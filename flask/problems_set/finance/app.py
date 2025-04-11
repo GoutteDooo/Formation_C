@@ -273,7 +273,7 @@ def sell():
 
         #calculate the sum of shares sold
         look_up = lookup(symbol)
-        sold = look_up["price"] * shares
+        sold = round(look_up["price"] * shares, 2)
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         #Insert new sell into history table
