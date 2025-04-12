@@ -74,9 +74,9 @@ def buy():
         s_looked_up = lookup(symbol)
         username = db.execute("SELECT username FROM users WHERE id = ?", session["user_id"])[0]["username"]
         if not symbol:
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
         if not s_looked_up:
-            return apology("invalid symbol", 403)
+            return apology("invalid symbol", 400)
 
         shares = request.form.get("shares")
 
@@ -197,11 +197,11 @@ def quote():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         if not symbol:
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
         quote = lookup(symbol)
         if not quote:
             return apology("invalid symbol", 400)
-        return render_template("quoted.html", quotes=lookup(symbol))
+        return render_template("quoted.html", quotes=quote)
     
     return render_template("quote.html")
 
@@ -246,36 +246,36 @@ def sell():
     try:
         user_symbols = db.execute("SELECT DISTINCT symbol FROM stocks WHERE username = ?", username)
     except:
-        return apology("Sorry, an error occured", 403)
+        return apology("Sorry, an error occured", 400)
 
     if request.method == "POST":
         symbol = request.form.get("symbol")
         #Verify if symbol exists
         if not symbol:
             #If not, return an apology
-            return apology("must provide symbol", 403)
+            return apology("must provide symbol", 400)
 
         #Verify if symbol is in the history table of the user
         if symbol.lower() not in [item["symbol"].lower() for item in user_symbols]:
             #If not, return an apology
-            return apology("Symbol doesn't exist in your purchases", 403)
+            return apology("Symbol doesn't exist in your purchases", 400)
         
         #Verify if positive shares are provided
         shares = int(request.form.get("shares"))
         if type(shares) != int:
-            return apology("Hmm... looks like you didn't provide an integer", 403)
+            return apology("Hmm... looks like you didn't provide an integer", 400)
 
         if shares < 0:
-            return apology("must provide positive shares", 403)
+            return apology("must provide positive shares", 400)
         
         #And if the user has enough shares
         try:
             user_shares = db.execute("SELECT shares FROM stocks WHERE username = ? AND symbol = ?", username, symbol.upper())[0]['shares']
         except:
-            return apology("Sorry, an error occured when getting your shares", 403)
+            return apology("Sorry, an error occured when getting your shares", 400)
 
         if user_shares < shares:
-            return apology("Sorry, you don't have enough shares to sell this stock", 403)
+            return apology("Sorry, you don't have enough shares to sell this stock", 400)
 
 
         #calculate the sum of shares sold
@@ -287,14 +287,14 @@ def sell():
         try:
             db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_transaction, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, shares, symbol.upper(), look_up["price"], sold, date, session["user_id"], "sell")
         except:
-            return apology("Sorry, an error occured when inserting your sell", 403)
+            return apology("Sorry, an error occured when inserting your sell", 400)
 
         #give cash back to the user first (if not, the operation will fail)
         try:
             db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", sold, username)
         except:
             db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
-            return apology("Sorry, an error occured when updating your account", 403)
+            return apology("Sorry, an error occured when updating your account", 400)
         
         #When all conditions have passed, delete the amount of shares from the stocks table
         #if all shares are sold, delete the stock from the stocks table
@@ -305,14 +305,14 @@ def sell():
             except:
                 db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
                 db.execute("UPDATE users SET cash = cash - ? WHERE username = ?", sold, username)
-                return apology("Sorry, an error occured when deleting your stock", 403)
+                return apology("Sorry, an error occured when deleting your stock", 400)
         else:
             try:
                 db.execute("UPDATE stocks SET shares = shares - ? WHERE user_id = ? AND symbol = ?", shares, session["user_id"], symbol.upper())
             except:
                 db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
                 db.execute("UPDATE users SET cash = cash - ? WHERE username = ?", sold, username)
-                return apology("Sorry, an error occured when updating your stock", 403)
+                return apology("Sorry, an error occured when updating your stock", 400)
 
         return redirect("/")
 
