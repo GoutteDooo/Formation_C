@@ -81,7 +81,7 @@ def buy():
             return apology("invalid symbol", 403)
 
         shares = request.form.get("shares")
-        if int(shares) < 0:
+        if  type(shares) != int or int(shares) < 0:
             return apology("must provide positive shares", 403)
             
         #Verify if user has enough money for the buy
