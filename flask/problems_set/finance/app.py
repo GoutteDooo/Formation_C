@@ -50,8 +50,8 @@ def index():
         stock["company"] = shares_data["name"]
         stock["symbol"] = shares_data["symbol"]
         stock["shares"] = user_shares[i]["shares"]
-        stock["price"] = shares_data["price"]
-        stock["total_holdings"] = round((stock["price"] * user_shares[i]["shares"]),2)
+        stock["price"] = usd(shares_data["price"])
+        stock["total_holdings"] = usd(round((stock["price"] * user_shares[i]["shares"]),2))
         stocks.append(stock)
 
     #get the cash balance of the user
@@ -63,7 +63,7 @@ def index():
     for i in range(len(stocks)):
         all_total_holdings += stocks[i]["total_holdings"]
     all_total_holdings = round(all_total_holdings,2)
-    return render_template("index.html", stocks=stocks, user_cash=user_cash, all_total_holdings=all_total_holdings)
+    return render_template("index.html", stocks=stocks, user_cash=usd(user_cash), all_total_holdings=all_total_holdings)
 
 
 @app.route("/buy", methods=["GET", "POST"])
