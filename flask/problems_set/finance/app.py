@@ -310,3 +310,28 @@ def sell():
         return redirect("/")
 
     return render_template("sell.html", user_symbols=user_symbols)
+
+
+@app.route("/password", methods=["GET", "POST"])
+@login_required
+def password():
+    """Change password"""
+    if request.method == "POST":
+        old_password = request.form.get("old_password")
+        new_password = request.form.get("new_password")
+        confirmation = request.form.get("confirmation")
+        if not old_password:
+            return apology("must provide old password", 403)
+        if not new_password or not confirmation:
+            return apology("must provide new password", 403)
+        if new_password != confirmation:
+            return apology("password and confirmation password do not match", 403)
+
+        try:
+            db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(new_password), session["user_id"])
+        except:
+            return apology("Sorry, an error occured when updating your password", 403)
+        else:
+            return redirect("/")
+    
+    return render_template("password.html")
