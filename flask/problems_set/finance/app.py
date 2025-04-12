@@ -51,7 +51,7 @@ def index():
         stock["symbol"] = shares_data["symbol"]
         stock["shares"] = user_shares[i]["shares"]
         stock["price"] = usd(shares_data["price"])
-        stock["total_holdings"] = round((shares_data["price"] * user_shares[i]["shares"]),2)
+        stock["total_holdings"] = usd(round((shares_data["price"] * user_shares[i]["shares"]),2))
         stocks.append(stock)
 
     #get the cash balance of the user
@@ -61,7 +61,7 @@ def index():
     #Do the sum of all total_holdings of the stocks
     all_total_holdings = 0
     for i in range(len(stocks)):
-        all_total_holdings += stocks[i]["total_holdings"]
+        all_total_holdings += round((shares_data["price"] * user_shares[i]["shares"]),2)
     all_total_holdings = usd(round(all_total_holdings,2))
     return render_template("index.html", stocks=stocks, user_cash=usd(user_cash), all_total_holdings=all_total_holdings)
 
@@ -136,6 +136,9 @@ def buy():
 def history():
     """Show history of transactions"""
     history = db.execute("SELECT * FROM history WHERE user_id = ?", session["user_id"])
+    for i in range(len(history)):
+        history[i]["total_transaction"] = usd(history[i]["total_transaction"])
+        history[i]["stockprice"] = usd(history[i]["stockprice"])
     return render_template("history.html", history=history)
 
 
