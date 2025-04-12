@@ -81,8 +81,6 @@ def buy():
             return apology("invalid symbol", 403)
 
         shares = request.form.get("shares")
-        if  type(shares) != int:
-            return apology("Hmm... looks like you didn't provide a number", 403)
 
         if int(shares) < 0: 
             return apology("must provide positive shares", 403)
@@ -265,7 +263,7 @@ def sell():
         shares = int(request.form.get("shares"))
         if type(shares) != int:
             return apology("Hmm... looks like you didn't provide an integer", 403)
-            
+
         if shares < 0:
             return apology("must provide positive shares", 403)
         
