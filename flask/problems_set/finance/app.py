@@ -348,6 +348,7 @@ def addfunds():
         value = request.json["value"]
         if int(value) < 0:
             return apology("must provide positive value", 403)
+            
         try:
             db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", value, session["user_id"])
         except:

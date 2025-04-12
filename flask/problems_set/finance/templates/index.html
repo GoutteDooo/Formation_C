@@ -46,6 +46,10 @@
     <script>
         function addFunds() {
             let value = prompt("Enter the amount of cash you want to add to your account");
+            if (value < 0) {
+                alert("Must provide positive value");
+                return;
+            }
             fetch("/addfunds", {
                 method: "POST",
                 headers: {
