@@ -198,6 +198,9 @@ def quote():
         symbol = request.form.get("symbol")
         if not symbol:
             return apology("must provide symbol", 403)
+        quote = lookup(symbol)
+        if not quote:
+            return apology("invalid symbol", 400)
         return render_template("quoted.html", quotes=lookup(symbol))
     
     return render_template("quote.html")
@@ -211,21 +214,21 @@ def register():
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         if not username:
-            return apology("must provide username", 403)
+            return apology("must provide username", 400)
         if not password or not confirmation:
-            return apology("must provide password", 403)
+            return apology("must provide password", 400)
         if password != confirmation:
-            return apology("password and confirmation password do not match", 403)
+            return apology("password and confirmation password do not match", 400)
 
         try:
             db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, generate_password_hash(password))
             # db.execute will raise a ValueError if username already exists
         except ValueError:
             print("Username already exist!")
-            return apology("username already exist", 403)
+            return apology("username already exist", 400)
         except:
             print("Error while registering user!")
-            return apology("Sorry, an error occured", 403)
+            return apology("Sorry, an error occured", 400)
         else:
             print("User registered successfully!")
             return redirect("/")
@@ -348,7 +351,7 @@ def addfunds():
         value = request.json["value"]
         if int(value) < 0:
             return apology("must provide positive value", 403)
-            
+
         try:
             db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", value, session["user_id"])
         except:
