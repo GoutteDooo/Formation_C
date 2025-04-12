@@ -207,6 +207,7 @@ def quote():
         quote = lookup(symbol)
         if not quote:
             return apology("invalid symbol", 400)
+        quote["price"] = usd(quote["price"])
         return render_template("quoted.html", quotes=quote)
     
     return render_template("quote.html")
