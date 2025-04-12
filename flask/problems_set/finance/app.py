@@ -42,6 +42,7 @@ def index():
     #stock this data in a dictionary with the following format :
     # {'company':company, 'symbol':symbol, 'shares':shares, 'price':price, 'total_holdings':total_holdings}
     stocks = []
+    all_total_holdings = 0
     #for all symbols
     for i in range(len(user_shares)):
         # do this for all companies in the history table of the user
@@ -53,15 +54,12 @@ def index():
         stock["price"] = usd(shares_data["price"])
         stock["total_holdings"] = usd(round((shares_data["price"] * user_shares[i]["shares"]),2))
         stocks.append(stock)
+        #get all total holdings
+        all_total_holdings += round((shares_data["price"] * user_shares[i]["shares"]),2)
 
     #get the cash balance of the user
     user_cash = round(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"],2)
 
-    #get all total holdings
-    #Do the sum of all total_holdings of the stocks
-    all_total_holdings = 0
-    for i in range(len(stocks)):
-        all_total_holdings += round((shares_data["price"] * user_shares[i]["shares"]),2)
     all_total_holdings = usd(round(all_total_holdings,2))
     return render_template("index.html", stocks=stocks, user_cash=usd(user_cash), all_total_holdings=all_total_holdings)
 
