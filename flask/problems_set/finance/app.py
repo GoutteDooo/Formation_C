@@ -328,7 +328,7 @@ def password():
             return apology("password and confirmation password do not match", 403)
 
         try:
-            db.execute("UPDATE users SET hash = ? WHERE username = ?", generate_password_hash(new_password), session["user_id"])
+            db.execute("UPDATE users SET hash = ? WHERE id = ?", generate_password_hash(new_password), session["user_id"])
         except:
             return apology("Sorry, an error occured when updating your password", 403)
         else:
