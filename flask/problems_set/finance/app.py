@@ -81,32 +81,32 @@ def buy():
         shares = request.form.get("shares")
 
         if int(shares) < 0: 
-            return apology("must provide positive shares", 403)
+            return apology("must provide positive shares", 400)
         #Verify if user has enough money for the buy
         try:
             user_money = db.execute("SELECT cash FROM users WHERE username = ?", username)[0]["cash"]
         except:
-            return apology("Sorry, an error occured when getting your money", 403)
+            return apology("Sorry, an error occured when getting your money", 400)
 
         share_price = s_looked_up["price"]
         buy_cost = round((int(shares) * share_price),2)
 
         if user_money < buy_cost:
             # if it is not the case, return an apology
-            return apology("Sorry, you don't have enough money to buy this stock", 403)
+            return apology("Sorry, you don't have enough money to buy this stock", 400)
 
         # If it is the case, save the buy into history table and update user's money into users table
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         try:
             db.execute("INSERT INTO history (username, shares, symbol, stockprice, total_transaction, date, user_id, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)", username, int(shares), symbol.upper(), share_price, buy_cost, date, session["user_id"], "buy")
         except:
-            return apology("Sorry, an error occured during the purchase", 403)
+            return apology("Sorry, an error occured during the purchase", 400)
         
         try:
             db.execute("UPDATE users SET cash = cash - ? WHERE username = ?", buy_cost, username)
         except:
             db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
-            return apology("Sorry, an error occured when updating your account", 403)
+            return apology("Sorry, an error occured when updating your account", 400)
 
         #insert new stock into stocks table
         #if symbol already exist for user, update the shares
@@ -120,7 +120,7 @@ def buy():
         except:
             db.execute("UPDATE users SET cash = cash + ? WHERE username = ?", buy_cost, username)
             db.execute("DELETE FROM history WHERE date = ? AND username = ?", date, username)
-            return apology("Sorry, an error occured when inserting your stock", 403)
+            return apology("Sorry, an error occured when inserting your stock", 400)
         
         return redirect("/")
 
