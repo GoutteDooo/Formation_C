@@ -60,7 +60,7 @@ def index():
     #get the cash balance of the user
     user_cash = round(db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])[0]["cash"],2)
 
-    all_total_holdings = usd(round(all_total_holdings,2))
+    all_total_holdings = round(all_total_holdings,2)
     return render_template("index.html", stocks=stocks, user_cash=usd(user_cash), all_total_holdings=all_total_holdings)
 
 
