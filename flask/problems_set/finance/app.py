@@ -198,6 +198,7 @@ def quote():
         symbol = request.form.get("symbol")
         if not symbol:
             return apology("must provide symbol", 400)
+        
         quote = lookup(symbol)
         if not quote:
             return apology("invalid symbol", 400)
