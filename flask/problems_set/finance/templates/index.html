@@ -45,7 +45,20 @@
     
     <script>
         function addFunds() {
-            alert("Add Funds");
+            let value = prompt("Enter the amount of cash you want to add to your account");
+            fetch("/addfunds", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    "value": value
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            });
         }
     </script>
 {% endblock %}

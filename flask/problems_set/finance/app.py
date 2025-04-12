@@ -335,3 +335,18 @@ def password():
             return redirect("/")
     
     return render_template("password.html")
+
+@app.route("/addfunds", methods=["POST"])
+@login_required
+def addfunds():
+    """Add funds to user's account"""
+    if request.method == "POST":
+        value = request.json["value"]
+        try:
+            db.execute("UPDATE users SET cash = cash + ? WHERE id = ?", value, session["user_id"])
+        except:
+            return apology("Sorry, an error occured when updating your account", 403)
+        else:
+            return jsonify({"message": "Funds added successfully !"})
+    
+    return jsonify({"message": "Invalid request"})
