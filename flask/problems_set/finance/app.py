@@ -79,9 +79,14 @@ def buy():
             return apology("invalid symbol", 400)
 
         shares = request.form.get("shares")
+        try:
+            shares = int(shares)
+        except:
+            return apology("must provide an integer", 400)
 
-        if int(shares) < 0: 
+        if shares < 0: 
             return apology("must provide positive shares", 400)
+        
         #Verify if user has enough money for the buy
         try:
             user_money = db.execute("SELECT cash FROM users WHERE username = ?", username)[0]["cash"]
